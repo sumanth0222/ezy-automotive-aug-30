@@ -14,12 +14,11 @@ import {
 import Pageheader from "../../../layout/layoutcomponent/pageheader";
 
 const Gallery = () => {
-
   const [Server, setServer] = useState("");
   const navigate = useNavigate();
 
-  const handleOnchangeServer = () => {
-    setServer(Server);
+  const handleOnchangeServer = (e) => {
+    setServer(e.target.value);
   };
 
   function PaperComponent(props) {
@@ -42,8 +41,8 @@ const Gallery = () => {
 
   // Custom validation
   const [Custom, setCustom] = useState("");
-  const handleOnchangeCustom = () => {
-    setCustom(Custom);
+  const handleOnchangeCustom = (e) => {
+    setCustom(e.target.value);
   };
 
   const [validatedCustom, setValidatedCustom] = useState(false);
@@ -64,7 +63,7 @@ const Gallery = () => {
   ];
 
   const [filter, setFilter] = useState(""); // Search filter state
-  const [isActive, setIsActive] = useState(false); // State for toggle button
+  const [isActive, setIsActive] = useState(true); // Set initial state to true to show table by default
 
   // Toggle button handler
   const toggleActiveState = () => {
@@ -84,17 +83,16 @@ const Gallery = () => {
     navigate("/advancedui/carousel"); // Navigate to the form page
   };
 
+  const [dark1, setdark1] = useState("on");
+
   return (
-
-
-
     <Fragment>
       <Pageheader title="Mechanics" heading="Pages" active="Mechanics" />
       <div className="row mt-5">
         <Col lg={12} md={12}>
           <Card>
             <Card.Header
-              className="row-sm row justify-content-between"
+              className="row-sm row justify-content-between bg-primary"
               style={{ backgroundColor: "#41bde1" }}
             >
               <div className="row-sm row">
@@ -115,30 +113,18 @@ const Gallery = () => {
               </div>
 
               <div className="row-sm row">
-                {/* Summary By Field */}
-                <div className="col-lg-3">
-                  <div className="form-group ">
-                    <label className="custom-switch form-switch mb-0 p-0 form-label">
-                      <input
-                        type="checkbox"
-                        className="custom-switch-input form-control"
-                        checked={isActive}
-                        onChange={toggleActiveState}
-                      />
-                      <span
-                        className="custom-switch-indicator custom-switch-indicator-lg"
-                        style={{
-                          backgroundColor: isActive ? "green" : "orange",
-                          color: "white",
-                        }}
-                      >
-                        {isActive ? "On" : "Off"}
-                      </span>
-                    </label>
+                <div className="col-lg-3 mt-2">
+                  <div
+                    className={`main-toggle ms-sm-2 main-toggle-dark ${dark1}`}
+                    onClick={() => {
+                      setdark1(dark1 === "on" ? "off" : "on");
+                    }}
+                  >
+                    <span className={`${dark1 === "on" ? "active" : ""}`} onClick={toggleActiveState}></span>
                   </div>
                 </div>
 
-                <div className="form-group col-lg-5">
+                <div className="form-group col-lg-8 d-flex align-items-center">
                   <input
                     autoComplete="off"
                     placeholder="Search..."
@@ -147,23 +133,22 @@ const Gallery = () => {
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
                   />
-                </div>
-
-                <div>
-                  <a
-                    className="btn ripple btn-success text-white btn-icon"
-                    data-placement="top"
-                    data-bs-toggle="tooltip"
-                    title="Add File"
-                    href="#"
-                  >
-                    <button
-                      className="btn btn-sm btn-primary"
-                      onClick={handlePlusClick}
+                  <div>
+                    <a
+                      className="btn ripple btn-success text-white btn-icon"
+                      data-placement="top"
+                      data-bs-toggle="tooltip"
+                      title="Add File"
+                      href="#"
                     >
-                      <li className="fa fa-plus"></li>
-                    </button>
-                  </a>
+                      <button
+                        className="btn btn-sm btn-primary"
+                        onClick={handlePlusClick}
+                      >
+                        <li className="fa fa-plus"></li>
+                      </button>
+                    </a>
+                  </div>
                 </div>
               </div>
             </Card.Header>
@@ -175,12 +160,11 @@ const Gallery = () => {
                   validated={validatedCustom}
                   onSubmit={handleSubmitCustom}
                 >
-                  {/* Orders Table */}
                   <div className="table-responsive mt-4">
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className=" text-center">Name</th>
+                          <th className="text-center">Name</th>
                           <th>Cell</th>
                           <th>Options</th>
                         </tr>
@@ -189,7 +173,7 @@ const Gallery = () => {
                         {filterData(ordersData, "name").length > 0 ? (
                           filterData(ordersData, "name").map((name, index) => (
                             <tr key={index}>
-                              <td className=" text-center">{name.name}</td>
+                              <td className="text-center">{name.name}</td>
                               <td>{name.cell}</td>
                               <td>
                                 <div className="row">
@@ -200,7 +184,6 @@ const Gallery = () => {
                                   ></button>
                                   <button
                                     className="btn btn-sm btn-dark fa fa-user"
-                                    // onClick={() => handleEditClick(item.itemcode)}
                                     style={{ marginLeft: "5px" }}
                                   ></button>
                                   <button
@@ -214,7 +197,7 @@ const Gallery = () => {
                           ))
                         ) : (
                           <tr>
-                            <td colSpan="7" className="text-center">
+                            <td colSpan="3" className="text-center">
                               No records Found.
                             </td>
                           </tr>
@@ -222,33 +205,25 @@ const Gallery = () => {
                       </tbody>
                     </table>
                     <div className="d-flex mt-4 align-items-center">
-                      <span className="">
-                        Page <strong>1 of 4</strong>{" "}
-                      </span>
+                      <span>Page <strong>1 of 4</strong></span>
                       <span className="ms-auto ps-2">
                         <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn">
-                          {" "}
-                          Previous{" "}
+                          Previous
                         </button>
                         <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn">
-                          {" "}
-                          &lt;&lt;{" "}
+                          &lt;&lt;
                         </button>
                         <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn">
-                          {" "}
-                          &lt;{" "}
+                          &lt;
                         </button>
                         <button type="button" className="btn-default tablebutton me-2 my-2 btn">
-                          {" "}
-                          &gt;{" "}
+                          &gt;
                         </button>
                         <button type="button" className="btn-default tablebutton me-2 my-2 btn">
-                          {" "}
-                          &gt;&gt;{" "}
+                          &gt;&gt;
                         </button>
                         <button type="button" className="btn-default tablebutton me-2 my-2 btn">
-                          {" "}
-                          Next{" "}
+                          Next
                         </button>
                       </span>
                     </div>
@@ -276,29 +251,19 @@ const Gallery = () => {
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            <label className="form-label" htmlFor="validationCustom05">
-              Cell
-            </label>
+            <label className="form-label" htmlFor="validationCustom05">Cell</label>
             <input className="form-control" id="validationCustom05" type="text" required />
-            <label className="form-label" htmlFor="validationCustom06">
-              Message
-            </label>
-            <textarea className="form-control" id="validationCustom06" type="text" required></textarea>
+            <label className="form-label" htmlFor="validationCustom06">Message</label>
+            <textarea className="form-control" id="validationCustom06" required></textarea>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClosedraggable}>
-            Cancel
-          </Button>
+          <Button onClick={handleClosedraggable}>Cancel</Button>
           <Button onClick={handleClosedraggable}>Send</Button>
         </DialogActions>
       </Dialog>
     </Fragment>
   );
 }
-
-Gallery.propTypes = {};
-
-Gallery.defaultProps = {};
 
 export default Gallery;

@@ -91,7 +91,7 @@ const Cart = () => {
        <Col lg={12} md={12}>
          <Card>
            <Card.Header
-             className="row-sm row justify-content-between"
+             className="row-sm row justify-content-between bg-primary"
              style={{ backgroundColor: "#41bde1" }}
            >
              <div className="row-sm row">

@@ -4,34 +4,15 @@ import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import { Breadcrumb, Form } from "react-bootstrap";
 import {
   CForm,
-  CCol,
-  CFormLabel,
-  CFormFeedback,
-  CFormInput,
-  CInputGroup,
-  CInputGroupText,
-  CButton,
-  CFormCheck,
 } from "@coreui/react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
-
-
-
 
 const EmptyPage = () => {
   const [Server, setServer] = useState("");
   const navigate = useNavigate(); // Initialize useNavigate hook
 
-  const handleOnchangeServer = () => {
-    setServer(Server);
-  };
-
   // Custom validation
   const [Custom, setCustom] = useState("");
-
-  const handleOnchangeCustom = () => {
-    setCustom(Custom);
-  };
   const [validatedCustom, setValidatedCustom] = useState(false);
   const handleSubmitCustom = (event) => {
     const form = event.currentTarget;
@@ -40,45 +21,6 @@ const EmptyPage = () => {
       event.stopPropagation();
     }
     setValidatedCustom(true);
-  };
-
-  // SingleSelect
-  const [Single, setSingle] = useState("");
-
-  const handleOnchangeSingle = () => {
-    setSingle(Single);
-  };
-
-  // Tooltips
-  const [Tooltips, setTooltips] = useState("");
-
-  const handleOnchangeTooltips = () => {
-    setTooltips(Tooltips);
-  };
-  const [validatedTooltips, setValidatedTooltips] = useState(false);
-  const handleSubmitTooltips = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    setValidatedTooltips(true);
-  };
-
-  // DefaultValidation
-  const [Default, setDefault] = useState("");
-
-  const handleOnchangedefault = () => {
-    setDefault(Default);
-  };
-  const [validateddefault, setValidateddefault] = useState(false);
-  const handleSubmitdefault = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    setValidateddefault(true);
   };
 
   const ordersData = [
@@ -90,12 +32,12 @@ const EmptyPage = () => {
     { itemcode: "NPN04", description: "Loan Car", brand: "", price: "$0.00", cost: "$0.00", qty: "" },
   ];
 
-  const [filter, setFilter] = useState(""); // Search filter state
-  const [isActive, setIsActive] = useState(false); // State for toggle button
+  const [filter, setFilter] = useState("");
+  const [isActive, setIsActive] = useState(true);
 
   // Toggle button handler
   const toggleActiveState = () => {
-    setIsActive(!isActive);
+    setIsActive((prev) => !prev);
   };
 
   // Filtering based on search term
@@ -112,20 +54,17 @@ const EmptyPage = () => {
   const handlePlusClick = () => {
     navigate('/advancedui/collapse'); // Navigate to the form page
   };
+ 
+  const [dark1, setdark1] = useState("on");
 
   return (
-
-
-
     <Fragment>
       <Pageheader title="Products" heading="Pages" active="Products" />
       <div className="row mt-5">
         <Col lg={12} md={12}>
           <Card>
             <Card.Header
-              className="row-sm row justify-content-between"
-              style={{ backgroundColor: "#41bde1" }}
-            >
+              className="row-sm row justify-content-between bg-primary">
               <div className="row-sm row">
                 <div>
                   <a
@@ -144,30 +83,21 @@ const EmptyPage = () => {
               </div>
 
               <div className="row-sm row">
-                {/* Summary By Field */}
-                <div className="col-lg-3">
-                  <div className="form-group ">
-                    <label className="custom-switch form-switch mb-0 p-0 form-label">
-                      <input
-                        type="checkbox"
-                        className="custom-switch-input form-control"
-                        checked={isActive}
-                        onChange={toggleActiveState}
-                      />
-                      <span
-                        className="custom-switch-indicator custom-switch-indicator-lg"
-                        style={{
-                          backgroundColor: isActive ? "green" : "orange",
-                          color: "white",
-                        }}
-                      >
-                        {isActive ? "On" : "Off"}
-                      </span>
-                    </label>
-                  </div>
+                <div className="col-lg-3 d-flex mt-2">
+
+                <div className={`main-toggle ms-sm-2  main-toggle-dark ${dark1}`} onClick={() => { dark1 == "on" ? setdark1("off") : setdark1("on"); }}>
+                  <span className={`${dark1 === "on" ? 'active' : ''}`}
+                    onClick={toggleActiveState}>
+                      {isActive ? 'ACTIVE' : 'INACTIVE'}
+                    </span>
+                </div>
+             
+               
+
                 </div>
 
-                <div className="form-group col-lg-5">
+                <div className="form-group col-lg-8 d-flex align-items-center">
+                  <div>
                   <input
                     autoComplete="off"
                     placeholder="Search..."
@@ -176,24 +106,25 @@ const EmptyPage = () => {
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
                   />
+                  </div>
+                  <div>
+                    <a
+                      className="btn ripple btn-success text-white btn-icon"
+                      data-placement="top"
+                      data-bs-toggle="tooltip"
+                      title="Add File"
+                      href="#"
+                    >
+                      <button
+                        className="btn btn-sm btn-primary"
+                        onClick={handlePlusClick}
+                      >
+                        <li className="fa fa-plus"></li>
+                      </button>
+                    </a>
+                  </div>
                 </div>
 
-                <div>
-                  <a
-                    className="btn ripple btn-success text-white btn-icon"
-                    data-placement="top"
-                    data-bs-toggle="tooltip"
-                    title="Add File"
-                    href="#"
-                  >
-                    <button
-                      className="btn btn-sm btn-primary"
-                      onClick={handlePlusClick}
-                    >
-                      <li className="fa fa-plus"></li>
-                    </button>
-                  </a>
-                </div>
               </div>
             </Card.Header>
             <Card.Body>
@@ -252,7 +183,15 @@ const EmptyPage = () => {
                       </tbody>
                     </table>
                     <div className="d-flex mt-4 align-items-center">
-                      <span class="">Page <strong>1 of 4</strong> </span><span class="ms-auto ps-2"><button type="button" disabled="" class="btn-default tablebutton me-2 my-2 btn"> Previous </button><button type="button" disabled="" class="btn-default tablebutton me-2 my-2 btn"> &lt;&lt; </button><button type="button" disabled="" class="btn-default tablebutton me-2 my-2 btn"> &lt; </button><button type="button" class="btn-default tablebutton me-2 my-2 btn"> &gt; </button><button type="button" class="btn-default tablebutton me-2 my-2 btn"> &gt;&gt; </button><button type="button" class="btn-default tablebutton me-2 my-2 btn"> Next </button></span>
+                      <span>Page <strong>1 of 4</strong> </span>
+                      <span className="ms-auto ps-2">
+                        <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn"> Previous </button>
+                        <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn"> &lt;&lt; </button>
+                        <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn"> &lt; </button>
+                        <button type="button" className="btn-default tablebutton me-2 my-2 btn"> &gt; </button>
+                        <button type="button" className="btn-default tablebutton me-2 my-2 btn"> &gt;&gt; </button>
+                        <button type="button" className="btn-default tablebutton me-2 my-2 btn"> Next </button>
+                      </span>
                     </div>
                   </div>
                 </CForm>
@@ -267,10 +206,6 @@ const EmptyPage = () => {
       </div>
     </Fragment>
   );
-}
-
-EmptyPage.propTypes = {};
-
-EmptyPage.defaultProps = {};
+};
 
 export default EmptyPage;
