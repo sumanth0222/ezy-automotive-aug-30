@@ -7,7 +7,14 @@ import "./index.scss";
 import Loader from './layout/layoutcomponent/loaders';
 import { Routingdata } from './common/routingdata';
 import Switcher1 from './components/pages/switcher/switcher1/switcher1';
-
+import SalesReport from './components/elements/alerts/sales-report'
+import Alerts from './components/elements/alerts/alerts';
+import PartsReport from './components/elements/alerts/parts-report';
+import VReport from './components/elements/alerts/vendors-report';
+import Workshop from './components/elements/alerts/workshop-reports';
+import Mechanic from './components/elements/alerts/mechanic-report';
+import Customer from  './components/elements/alerts/customer-report';
+import LogoReports from './components/elements/alerts/logo-reports';
 
 const App = React.lazy(() => import("./layout/App"));
 const Switcherapp = React.lazy(() => import("./layout/Switcherapp"));
@@ -82,6 +89,21 @@ root.render(
          <Route path={`${import.meta.env.BASE_URL}`}element={<Switcherapp />} >
           <Route path={`${import.meta.env.BASE_URL}pages/switcher/switcher1`}element={<Switcher1 />} />
         </Route> 
+
+      <Route>
+        <Route path="/" element={<Alerts />} />
+        <Route path={`${import.meta.env.BASE_URL}elements/alerts/sales-report`} element={<SalesReport />} />
+        <Route path={`${import.meta.env.BASE_URL}elements/alerts/parts-report`} element={<PartsReport />} />
+        <Route path={`${import.meta.env.BASE_URL}elements/alerts/vendors-report`} element={<VReport />} />
+        <Route path={`${import.meta.env.BASE_URL}elements/alerts/workshop-reports`} element={<Workshop />} />
+        <Route path={`${import.meta.env.BASE_URL}elements/alerts/mechanic-report`} element={<Mechanic />} />
+        <Route path={`${import.meta.env.BASE_URL}elements/alerts/customer-report`} element={<Customer />} />
+        <Route path={`${import.meta.env.BASE_URL}elements/alerts/logo-reports`} element={<LogoReports />} />
+
+
+      </Route>
+
+
         <Route></Route>
       </Routes>
     </React.Suspense>
