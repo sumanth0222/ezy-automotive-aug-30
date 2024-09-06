@@ -1,15 +1,13 @@
 import React, { Fragment, useState } from 'react';
 import { Card, Col, Form, Collapse, Row, Alert, Accordion, Button, Modal } from "react-bootstrap";
-import { Alertdatacontentdata, Alertdatalinkdata, initialListdata, initialListdismissingdata, initialListiconsdata } from '../../../common/commondata';
-import Pageheader from '../../../layout/layoutcomponent/pageheader';
+
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MultiSelect } from "react-multi-select-component";
-import { options } from "../../../common/selectdata";
-import { cardsdata1, cardsdata10, cardsdata2, cardsdata3, cardsdata4, cardsdata5, cardsdata6, cardsdata7, cardsdata8, cardsdata9 } from "../../../common/commondata";
 import { Link as RouterLink } from 'react-router-dom';
 
-const Alerts = () => {
+const SalesReports = () => {
   const [open, setOpen] = useState(false);
   const [alertData, setalertData] = useState(initialListdata);
   const [Outline, setOutline] = useState(false);
@@ -3337,4 +3335,4 @@ Alerts.propTypes = {};
 
 Alerts.defaultProps = {};
 
-export default Alerts;
+export default SalesReports;

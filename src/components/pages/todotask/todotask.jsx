@@ -89,7 +89,7 @@ const Todotask = () => {
                           className="list-group-item d-flex align-items-center justify-content-between border-0"
                         >
                           <div className="d-flex align-items-center">
-                            <i className="fe fe-codepen fs-18 me-4 p-2 border-primary brround bg-primary-transparent text-primary"></i>
+                            <i className="fa fa-user fs-18 me-4 p-2 border-primary brround bg-primary-transparent text-primary"></i>
                             Select A Customer
                           </div>
                           <div className="d-flex align-items-center">
@@ -124,8 +124,8 @@ const Todotask = () => {
                           className="list-group-item d-flex align-items-center justify-content-between border-0"
                         >
                           <div className="d-flex align-items-center">
-                            <i className="fe fe-alert-octagon fs-18 me-4 p-2 border-warning brround bg-warning-transparent text-warning"></i>
-                            Select A Vehicle (Optional)
+                            <i className="fa fa-taxi fs-18 me-4 p-2 border-warning brround bg-warning-transparent text-warning"></i>
+                            Select A Vehicle
                           </div>
                           <div className="d-flex align-items-center">
                             <div className="form-group mt-3 mx-2">
@@ -166,7 +166,7 @@ const Todotask = () => {
             <Tab.Content>
               {/* Customer Selection Tab */}
               <Tab.Pane eventKey="TabStyle01">
-                <Row className="row-sm g-4">
+                <Row className="row-sm">
                   <Col lg={12} md={12} sm={12}>
 
 
@@ -219,7 +219,7 @@ const Todotask = () => {
 
                           {/* Toggle option button for Individual and Company */}
                           <ButtonGroup className="mb-3">
-                            <ToggleButton
+                            <ToggleButton className='bg-primary'
                               id="radio-individual"
                               type="radio"
                               variant={radioValue === 'individual' ? 'primary' : 'outline-primary'}
@@ -246,58 +246,52 @@ const Todotask = () => {
                           {radioValue === 'individual' && (
                             <Form>
                               <Row>
-                                <Col md={6}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField1">
                                     <Form.Label>First Name</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                                <Col md={6}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField2">
                                     <Form.Label>Last Name</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                              </Row>
-
-                              <Row>
-                                <Col md={6}>
+                            
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField3">
                                     <Form.Label>Phone</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                                <Col md={6}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField4">
                                     <Form.Label>Cell</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                              </Row>
-
-                              <Row>
-                                <Col md={6}>
+                            
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField5">
                                     <Form.Label>Email</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                                <Col md={6}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField6">
                                     <Form.Label>Address</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                              </Row>
-
-                              <Row>
-                                <Col md={6}>
+                             
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField7">
                                     <Form.Label>City</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                                <Col md={6}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField8">
                                     <Form.Label>State</Form.Label>
                                     <Form.Select aria-label="Select State">
@@ -311,16 +305,14 @@ const Todotask = () => {
                                     </Form.Select>
                                   </Form.Group>
                                 </Col>
-                              </Row>
-
-                              <Row>
-                                <Col md={6}>
+                             
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField9">
                                     <Form.Label>Zip Code</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                                <Col md={6}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField10">
                                     <Form.Label>Price Type</Form.Label>
                                     <Form.Select aria-label="Select Price Type">
@@ -527,7 +519,7 @@ const Todotask = () => {
 
               {/* Vehicle Selection Tab */}
               <Tab.Pane eventKey="TabStyle02">
-                <Row className="row-sm g-4">
+                <Row className="row-sm">
                   <Col lg={12} md={12} sm={12}>
 
 
@@ -569,13 +561,13 @@ const Todotask = () => {
                           {
                             <Form>
                               <Row>
-                                <Col md={4}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField1">
                                     <Form.Label>Rego</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                                <Col md={4}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField8">
                                     <Form.Label>State</Form.Label>
                                     <Form.Select aria-label="Select State">
@@ -589,23 +581,20 @@ const Todotask = () => {
                                     </Form.Select>
                                   </Form.Group>
                                 </Col>
-                                <Col md={4}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField1">
                                     <Form.Label>VIN</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                              </Row>
-
-
-                              <Row>
-                                <Col md={4}>
+                            
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField1">
                                     <Form.Label>Make</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                                <Col md={4}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField8">
                                     <Form.Label>Body Type</Form.Label>
                                     <Form.Select aria-label="Select State">
@@ -619,16 +608,13 @@ const Todotask = () => {
                                     </Form.Select>
                                   </Form.Group>
                                 </Col>
-                                <Col md={4}>
+                                <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField1">
                                     <Form.Label>Model</Form.Label>
                                     <Form.Control type="text" placeholder="" />
                                   </Form.Group>
                                 </Col>
-                              </Row>
-
-
-                              <Row>
+                             
                                 <Col md={3}>
                                   <Form.Group className="mb-3" controlId="formField1">
                                     <Form.Label>Color</Form.Label>
@@ -777,7 +763,7 @@ const Todotask = () => {
               <h3 className="card-title">Bookings</h3>
             </Card.Header>
             <Card.Body>
-              <div className='p-4'>
+              <div className=''>
                 {
                   <Form>
                     <Row>

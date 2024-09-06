@@ -1131,10 +1131,10 @@ export const Filmanager1data= [
   
   
   export const dropdownwithiconsdata = [
-    { id: 1, color:'danger', class:'mail'},
-    { id: 2, color:'info' , class:'more-horizontal'},
+    // { id: 1, color:'danger', class:'mail'},
+    // { id: 2, color:'info' , class:'more-horizontal'},
     { id: 3, color:'secondary' , class:'more-vertical'},
-    { id: 4, color:'outline-primary' , class:'settings '}
+    // { id: 4, color:'outline-primary' , class:'settings '}
   
   ];
   

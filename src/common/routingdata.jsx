@@ -3,7 +3,6 @@ import Dashboard from '../components/dashboard/dashboard1/dashboard';
 import Dashboard2 from '../components/dashboard/dashboard2/dashboard2';
 import Dashboard3 from '../components/dashboard/dashboard3/dashboard3';
 import Cards from '../components/app/cards/cards';
-
 import Calendar from '../components/app/calendar/calendar';
 import Contacts from '../components/app/contacts/contacts';
 import Rangeslider from '../components/app/rangeslider/rangeslider';
@@ -107,6 +106,7 @@ import Widgets from '../components/widgets/widgets';
 import LeafletMaps from '../components/maps/leafletmaps/leafletmaps';
 import Simplemaps from '../components/maps/simplemaps/simplemaps';
 import Error501 from '../components/pages/authentication/501error/501error';
+
 
 
 export const Routingdata = [
@@ -231,7 +231,7 @@ export const Routingdata = [
 
   { path:`${import.meta.env.BASE_URL}maps/leafletmaps`, element: <LeafletMaps /> },
   { path:`${import.meta.env.BASE_URL}maps/simplemaps`, element: <Simplemaps /> },
-  { path:`${import.meta.env.BASE_URL}pages/authentication/501error`, element:<Error501 />}
+  { path:`${import.meta.env.BASE_URL}pages/authentication/501error`, element:<Error501 />},
 
 ];
 
@@ -313,7 +313,8 @@ export const Sidebarcomponents=[
   { path:`${import.meta.env.BASE_URL}pages/todotask`, title:'Todotask' },
   { path:`${import.meta.env.BASE_URL}pages/faqs`, title:'Faqs' },
   { path:`${import.meta.env.BASE_URL}pages/emptypage`, title:'EmptyPage' },
-  { path:`${import.meta.env.BASE_URL}pages/switcher/switcher1`,title: 'Switcher-1' } ,
+  { path:`${import.meta.env.BASE_URL}pages/switcher/switcher1`,title: 'Switcher-1' },
+
 
   { path:`${import.meta.env.BASE_URL}utilities/background`, title: "Background"  },
   { path:`${import.meta.env.BASE_URL}utilities/border`, title: "Border"  },
@@ -371,3 +372,5 @@ export const Sidebarcomponents=[
 { path:`${import.meta.env.BASE_URL}pages/authentication/501error`, title: "501 Error"},
 
 ];
+
+

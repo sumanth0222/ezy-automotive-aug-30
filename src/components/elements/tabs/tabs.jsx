@@ -1,11 +1,12 @@
 import React, { Fragment, useState } from "react";
-import { Card, Col, Form, Row, Tab, Tabs } from "react-bootstrap";
+import { Card, Col, Form, Row, Tab, Tabs, Dropdown, DropdownButton, Collapse, ButtonGroup } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import { MultiSelect } from "react-multi-select-component";
 import { options } from "../../../common/selectdata";
 import { Link } from "react-router-dom";
+import { dropdownwithiconsdata } from "../../../common/commondata";
 
 // Sample data
 const bookingsData = [
@@ -46,9 +47,23 @@ const Tabss = () => {
       item[field]?.toLowerCase().includes(filter.toLowerCase())
     );
 
+
+
   // Handle image upload
   const handleImageUpload = (e) => {
     setSelectedImage(e.target.files[0]);
+  };
+
+  const [Default, setDefault] = useState(false);
+
+  const handleEditClick = (id) => {
+    console.log("Edit clicked for ID:", id);
+    // Your logic for edit action
+  };
+
+  const handleDeleteClick = (id) => {
+    console.log("Delete clicked for ID:", id);
+    // Your logic for delete action
   };
 
   return (
@@ -136,7 +151,7 @@ const Tabss = () => {
                           </div>
 
                           {/* Image Upload Section */}
-                          <div className="row-sm row mt-4">
+                          {/* <div className="row-sm row mt-4">
                             <div className="col-lg-4">
                               <Form.Label>Upload Image</Form.Label>
                               <input
@@ -156,13 +171,17 @@ const Tabss = () => {
                                 </div>
                               )}
                             </div>
-                          </div>
+                          </div> */}
 
                           {/* Bookings Table */}
                           <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
+                                  <th>S. No</th>
+                                  <th>Invoice No</th>
+                                  <th>Booking Date</th>
+                                  <th>Source</th>
                                   <th>Service Reg Date</th>
                                   <th>SRC CMP DT</th>
                                   <th>Foremen Name</th>
@@ -172,88 +191,238 @@ const Tabss = () => {
                                   <th>Make</th>
                                   <th>Model</th>
                                   <th>Service Cost</th>
-                                  <th>Payment link</th>
+                                  <th>Payment Link</th>
                                   <th>Payment Mode</th>
-                                  <th>Status</th>
+                                  <th>Duration</th>
+                                  <th>TAT Status</th>
                                   <th>Action</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>#01</td>
+                                  <td>1</td>
+                                  <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV001</Link> </td>
+                                  <td>2023-08-15</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-16</td>
+                                  <td>2023-08-18</td>
+                                  <td>John Doe</td>
                                   <td>Tiger Nixon</td>
-                                  <td>Tiger Nixon</td>
-                                  <td>Tiger Nixon</td>
-                                  <td>PRO12345</td>
-                                  <td>PRO12345</td>
-                                  <td>PRO8765</td>
-                                  <td>PRO8765</td>
-                                  <td>$345.00</td>
-                                  <td>✔</td>
-                                  <td>Online Payment</td>
+                                  <td>9876543210</td>
+                                  <td>XYZ1234</td>
+                                  <td>Toyota</td>
+                                  <td>Corolla</td>
+                                  <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$345.00</Link></td>
+                                  <td>
+                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    </Link>
+                                  </td>
+                                  <td className="bg-green">Online Payment</td>
+                                  <td>2 Days</td>
                                   <td>Delivered</td>
                                   <td>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                    {/* <button
+                                      className="btn btn-sm btn-primary fa fa-edit"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    <button
+                                      className="btn btn-sm btn-danger fa fa-trash-alt"
+                                      onClick={() => handleDeleteClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button> */}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>#06</td>
+                                  <td>2</td>
+                                  <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV002</Link> </td>
+                                  <td>2023-08-12</td>
+                                  <td>Web Application</td>
+                                  <td>2023-08-13</td>
+                                  <td>2023-08-15</td>
+                                  <td>Jane Smith</td>
                                   <td>Briele Williamson</td>
-                                  <td>Briele Williamson</td>
-                                  <td>Briele Williamson</td>
-                                  <td>PRO6789</td>
-                                  <td>PRO6789</td>
-                                  <td>PRO6789</td>
-                                  <td>PRO6789</td>
-                                  <td>$372,000</td>
-                                  <td>✔</td>
-                                  <td>Cash on delivered</td>
+                                  <td>9876543211</td>
+                                  <td>XYZ5678</td>
+                                  <td>Honda</td>
+                                  <td>Civic</td>
+                                  <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$372,000</Link></td>
+                                  <td>
+                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    </Link>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
                                   <td>Delivering</td>
                                   <td>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>#07</td>
+                                  <td>3</td>
+                                  <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}></Link> INV003</td>
+                                  <td>2023-08-10</td>
+                                  <td>QR SCAN</td>
+                                  <td>2023-08-11</td>
+                                  <td>2023-08-13</td>
+                                  <td>Michael Johnson</td>
                                   <td>Harrod Chandler</td>
-                                  <td>Harrod Chandler</td>
-                                  <td>Harrod Chandler</td>
-                                  <td>PRO4567</td>
-                                  <td>PRO4567</td>
-                                  <td>PRO4567</td>
-                                  <td>PRO4567</td>
-                                  <td>$137,000</td>
-                                  <td>✔</td>
-                                  <td>Cash on delivered</td>
+                                  <td>9876543212</td>
+                                  <td>XYZ9101</td>
+                                  <td>Ford</td>
+                                  <td>Focus</td>
+                                  <td><Link  to={`${import.meta.env.BASE_URL}pages/invoice`}className="text-primary">$137,000</Link></td>
+                                  <td>
+                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    </Link>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>4 Days</td>
                                   <td>Awaiting</td>
                                   <td>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>#09</td>
+                                  <td>4</td>
+                                  <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV004</Link> </td>
+                                  <td>2023-08-05</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-06</td>
+                                  <td>2023-08-08</td>
+                                  <td>Chris Evans</td>
                                   <td>Colleen Hurst</td>
-                                  <td>Colleen Hurst</td>
-                                  <td>Colleen Hurst</td>
-                                  <td>PRO3678</td>
-                                  <td>PRO3678</td>
-                                  <td>PRO6785</td>
-                                  <td>PRO6785</td>
-                                  <td>$109,000</td>
-                                  <td>✔</td>
-                                  <td>Cash on delivered</td>
+                                  <td>9876543213</td>
+                                  <td>XYZ1212</td>
+                                  <td>Nissan</td>
+                                  <td>Altima</td>
+                                  <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$109,000</Link></td>
+                                  <td>
+                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    </Link>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
                                   <td>Delivered</td>
                                   <td>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
                                   </td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
+
+
 
                         </div>
                       </Tab>
@@ -282,27 +451,244 @@ const Tabss = () => {
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
-                                  <th className="wd-5p text-center">Post Date</th>
-                                  <th>Inspector</th>
-                                  <th>Report</th>
+                                  <th>S. No</th>
+                                  <th>Invoice No</th>
+                                  <th>Booking Date</th>
+                                  <th>Source</th>
+                                  <th>Service Reg Date</th>
+                                  <th>SRC CMP DT</th>
+                                  <th>Foremen Name</th>
+                                  <th>Client Name</th>
+                                  <th>Contact No</th>
+                                  <th>Veh/Reg No</th>
+                                  <th>Make</th>
+                                  <th>Model</th>
+                                  <th>Service Cost</th>
+                                  <th>Payment Link</th>
+                                  <th>Payment Mode</th>
+                                  <th>Duration</th>
+                                  <th>TAT Status</th>
+                                  <th>Action</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                {filterData(inspectionsData, "inspector").length > 0 ? (
-                                  filterData(inspectionsData, "inspector").map((inspection, index) => (
-                                    <tr key={index}>
-                                      <td className="wd-5p text-center">{inspection.date}</td>
-                                      <td>{inspection.inspector}</td>
-                                      <td>{inspection.report}</td>
-                                    </tr>
-                                  ))
-                                ) : (
-                                  <tr>
-                                    <td colSpan="3" className="text-center">
-                                      No results found.
-                                    </td>
-                                  </tr>
-                                )}
+                                <tr>
+                                  <td>1</td>
+                                  <td>INV001</td>
+                                  <td>2023-08-15</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-16</td>
+                                  <td>2023-08-18</td>
+                                  <td>John Doe</td>
+                                  <td>Tiger Nixon</td>
+                                  <td>9876543210</td>
+                                  <td>XYZ1234</td>
+                                  <td>Toyota</td>
+                                  <td>Corolla</td>
+                                  <td><Link className="text-primary">$345.00</Link></td>
+                                  <td>
+                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    </Link>
+                                  </td>
+                                  <td className="bg-green">Online Payment</td>
+                                  <td>2 Days</td>
+                                  <td>Delivered</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                    {/* <button
+                                      className="btn btn-sm btn-primary fa fa-edit"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    <button
+                                      className="btn btn-sm btn-danger fa fa-trash-alt"
+                                      onClick={() => handleDeleteClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button> */}
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>INV002</td>
+                                  <td>2023-08-12</td>
+                                  <td>Web Application</td>
+                                  <td>2023-08-13</td>
+                                  <td>2023-08-15</td>
+                                  <td>Jane Smith</td>
+                                  <td>Briele Williamson</td>
+                                  <td>9876543211</td>
+                                  <td>XYZ5678</td>
+                                  <td>Honda</td>
+                                  <td>Civic</td>
+                                  <td><Link className="text-primary">$372,000</Link></td>
+                                  <td>
+                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    </Link>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
+                                  <td>Delivering</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>INV003</td>
+                                  <td>2023-08-10</td>
+                                  <td>QR SCAN</td>
+                                  <td>2023-08-11</td>
+                                  <td>2023-08-13</td>
+                                  <td>Michael Johnson</td>
+                                  <td>Harrod Chandler</td>
+                                  <td>9876543212</td>
+                                  <td>XYZ9101</td>
+                                  <td>Ford</td>
+                                  <td>Focus</td>
+                                  <td><Link className="text-primary">$137,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>4 Days</td>
+                                  <td>Awaiting</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>4</td>
+                                  <td>INV004</td>
+                                  <td>2023-08-05</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-06</td>
+                                  <td>2023-08-08</td>
+                                  <td>Chris Evans</td>
+                                  <td>Colleen Hurst</td>
+                                  <td>9876543213</td>
+                                  <td>XYZ1212</td>
+                                  <td>Nissan</td>
+                                  <td>Altima</td>
+                                  <td><Link className="text-primary">$109,000</Link></td>
+                                  <td>
+                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    </Link>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
+                                  <td>Delivered</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                  </td>
+                                </tr>
                               </tbody>
                             </table>
                           </div>
@@ -334,39 +720,238 @@ const Tabss = () => {
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
-                                  <th className="wd-5p text-center">Date</th>
-                                  <th>Customer</th>
+                                  <th>S. No</th>
+                                  <th>Invoice No</th>
+                                  <th>Booking Date</th>
+                                  <th>Source</th>
+                                  <th>Service Reg Date</th>
+                                  <th>SRC CMP DT</th>
+                                  <th>Foremen Name</th>
+                                  <th>Client Name</th>
+                                  <th>Contact No</th>
+                                  <th>Veh/Reg No</th>
                                   <th>Make</th>
                                   <th>Model</th>
-                                  <th>Rego</th>
-                                  <th>Jobcard</th>
-                                  <th>Status</th>
-                                  <th>Status Comment</th>
-                                  <th>Total</th>
+                                  <th>Service Cost</th>
+                                  <th>Payment Link</th>
+                                  <th>Payment Mode</th>
+                                  <th>Duration</th>
+                                  <th>TAT Status</th>
+                                  <th>Action</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                {filterData(jobsData, "customer").length > 0 ? (
-                                  filterData(jobsData, "customer").map((job, index) => (
-                                    <tr key={index}>
-                                      <td className="wd-5p text-center">{job.date}</td>
-                                      <td>{job.customer}</td>
-                                      <td>{job.make}</td>
-                                      <td>{job.model}</td>
-                                      <td>{job.rego}</td>
-                                      <td>{job.jobcard}</td>
-                                      <td>{job.status}</td>
-                                      <td>{job.statuscomment}</td>
-                                      <td>{job.total}</td>
-                                    </tr>
-                                  ))
-                                ) : (
-                                  <tr>
-                                    <td colSpan="9" className="text-center">
-                                      No results found.
-                                    </td>
-                                  </tr>
-                                )}
+                                <tr>
+                                  <td>1</td>
+                                  <td>INV001</td>
+                                  <td>2023-08-15</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-16</td>
+                                  <td>2023-08-18</td>
+                                  <td>John Doe</td>
+                                  <td>Tiger Nixon</td>
+                                  <td>9876543210</td>
+                                  <td>XYZ1234</td>
+                                  <td>Toyota</td>
+                                  <td>Corolla</td>
+                                  <td><Link className="text-primary">$345.00</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-green">Online Payment</td>
+                                  <td>2 Days</td>
+                                  <td>Delivered</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                    {/* <button
+                                      className="btn btn-sm btn-primary fa fa-edit"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    <button
+                                      className="btn btn-sm btn-danger fa fa-trash-alt"
+                                      onClick={() => handleDeleteClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button> */}
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>INV002</td>
+                                  <td>2023-08-12</td>
+                                  <td>Web Application</td>
+                                  <td>2023-08-13</td>
+                                  <td>2023-08-15</td>
+                                  <td>Jane Smith</td>
+                                  <td>Briele Williamson</td>
+                                  <td>9876543211</td>
+                                  <td>XYZ5678</td>
+                                  <td>Honda</td>
+                                  <td>Civic</td>
+                                  <td><Link className="text-primary">$372,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
+                                  <td>Delivering</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>INV003</td>
+                                  <td>2023-08-10</td>
+                                  <td>QR SCAN</td>
+                                  <td>2023-08-11</td>
+                                  <td>2023-08-13</td>
+                                  <td>Michael Johnson</td>
+                                  <td>Harrod Chandler</td>
+                                  <td>9876543212</td>
+                                  <td>XYZ9101</td>
+                                  <td>Ford</td>
+                                  <td>Focus</td>
+                                  <td><Link className="text-primary">$137,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>4 Days</td>
+                                  <td>Awaiting</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>4</td>
+                                  <td>INV004</td>
+                                  <td>2023-08-05</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-06</td>
+                                  <td>2023-08-08</td>
+                                  <td>Chris Evans</td>
+                                  <td>Colleen Hurst</td>
+                                  <td>9876543213</td>
+                                  <td>XYZ1212</td>
+                                  <td>Nissan</td>
+                                  <td>Altima</td>
+                                  <td><Link className="text-primary">$109,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
+                                  <td>Delivered</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                  </td>
+                                </tr>
                               </tbody>
                             </table>
                           </div>
@@ -376,39 +961,242 @@ const Tabss = () => {
                       {/* Orders Tab */}
                       <Tab eventKey="Orders" title={<><span>Orders</span> <span className="badge bg-danger ms-2">1</span></>}>
                         <div className="tab-pane active">
-                          <div className="table-responsive mt-4">
+                        <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
-                                  <th className="wd-5p text-center">Order</th>
-                                  <th>Date</th>
-                                  <th>Supplier</th>
-                                  <th>Status</th>
-                                  <th>Attached</th>
-                                  <th>Subtotal</th>
-                                  <th>Total</th>
+                                  <th>S. No</th>
+                                  <th>Invoice No</th>
+                                  <th>Booking Date</th>
+                                  <th>Source</th>
+                                  <th>Service Reg Date</th>
+                                  <th>SRC CMP DT</th>
+                                  <th>Foremen Name</th>
+                                  <th>Client Name</th>
+                                  <th>Contact No</th>
+                                  <th>Veh/Reg No</th>
+                                  <th>Make</th>
+                                  <th>Model</th>
+                                  <th>Service Cost</th>
+                                  <th>Payment Link</th>
+                                  <th>Payment Mode</th>
+                                  <th>Duration</th>
+                                  <th>TAT Status</th>
+                                  <th>Action</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                {filterData(ordersData, "supplier").length > 0 ? (
-                                  filterData(ordersData, "supplier").map((order, index) => (
-                                    <tr key={index}>
-                                      <td className="wd-5p text-center">{order.order}</td>
-                                      <td>{order.date}</td>
-                                      <td>{order.supplier}</td>
-                                      <td>{order.status}</td>
-                                      <td>{order.attached}</td>
-                                      <td>{order.subtotal}</td>
-                                      <td>{order.total}</td>
-                                    </tr>
-                                  ))
-                                ) : (
-                                  <tr>
-                                    <td colSpan="7" className="text-center">
-                                      No results found.
-                                    </td>
-                                  </tr>
-                                )}
+                                <tr>
+                                  <td>1</td>
+                                  <td>INV001</td>
+                                  <td>2023-08-15</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-16</td>
+                                  <td>2023-08-18</td>
+                                  <td>John Doe</td>
+                                  <td>Tiger Nixon</td>
+                                  <td>9876543210</td>
+                                  <td>XYZ1234</td>
+                                  <td>Toyota</td>
+                                  <td>Corolla</td>
+                                  <td><Link className="text-primary">$345.00</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-green">Online Payment</td>
+                                  <td>2 Days</td>
+                                  <td>Delivered</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                    {/* <button
+                                      className="btn btn-sm btn-primary fa fa-edit"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    <button
+                                      className="btn btn-sm btn-danger fa fa-trash-alt"
+                                      onClick={() => handleDeleteClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button> */}
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>INV002</td>
+                                  <td>2023-08-12</td>
+                                  <td>Web Application</td>
+                                  <td>2023-08-13</td>
+                                  <td>2023-08-15</td>
+                                  <td>Jane Smith</td>
+                                  <td>Briele Williamson</td>
+                                  <td>9876543211</td>
+                                  <td>XYZ5678</td>
+                                  <td>Honda</td>
+                                  <td>Civic</td>
+                                  <td><Link className="text-primary">$372,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
+                                  <td>Delivering</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>INV003</td>
+                                  <td>2023-08-10</td>
+                                  <td>QR SCAN</td>
+                                  <td>2023-08-11</td>
+                                  <td>2023-08-13</td>
+                                  <td>Michael Johnson</td>
+                                  <td>Harrod Chandler</td>
+                                  <td>9876543212</td>
+                                  <td>XYZ9101</td>
+                                  <td>Ford</td>
+                                  <td>Focus</td>
+                                  <td><Link className="text-primary">$137,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>4 Days</td>
+                                  <td>Awaiting</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>4</td>
+                                  <td>INV004</td>
+                                  <td>2023-08-05</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-06</td>
+                                  <td>2023-08-08</td>
+                                  <td>Chris Evans</td>
+                                  <td>Colleen Hurst</td>
+                                  <td>9876543213</td>
+                                  <td>XYZ1212</td>
+                                  <td>Nissan</td>
+                                  <td>Altima</td>
+                                  <td><Link className="text-primary">$109,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
+                                  <td>Delivered</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                  </td>
+                                </tr>
                               </tbody>
                             </table>
                           </div>
@@ -418,41 +1206,242 @@ const Tabss = () => {
                       {/* Invoices Tab */}
                       <Tab eventKey="Invoices" title={<><span>Invoices</span> <span className="badge bg-danger ms-2">2</span></>}>
                         <div className="tab-pane active">
-                          <div className="table-responsive mt-4">
+                        <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
-                                  <th className="wd-5p text-center">Post Date</th>
-                                  <th>Reference</th>
-                                  <th>Supplier</th>
-                                  <th>Invoice Type</th>
-                                  <th>Term</th>
-                                  <th>Tax</th>
-                                  <th>GST</th>
-                                  <th>Total</th>
+                                  <th>S. No</th>
+                                  <th>Invoice No</th>
+                                  <th>Booking Date</th>
+                                  <th>Source</th>
+                                  <th>Service Reg Date</th>
+                                  <th>SRC CMP DT</th>
+                                  <th>Foremen Name</th>
+                                  <th>Client Name</th>
+                                  <th>Contact No</th>
+                                  <th>Veh/Reg No</th>
+                                  <th>Make</th>
+                                  <th>Model</th>
+                                  <th>Service Cost</th>
+                                  <th>Payment Link</th>
+                                  <th>Payment Mode</th>
+                                  <th>Duration</th>
+                                  <th>TAT Status</th>
+                                  <th>Action</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                {filterData(invoicesData, "supplier").length > 0 ? (
-                                  filterData(invoicesData, "supplier").map((invoice, index) => (
-                                    <tr key={index}>
-                                      <td className="wd-5p text-center">{invoice.postdatedate}</td>
-                                      <td>{invoice.reference}</td>
-                                      <td>{invoice.supplier}</td>
-                                      <td>{invoice.invoicetype}</td>
-                                      <td>{invoice.term}</td>
-                                      <td>{invoice.tax}</td>
-                                      <td>{invoice.gst}</td>
-                                      <td>{invoice.total}</td>
-                                    </tr>
-                                  ))
-                                ) : (
-                                  <tr>
-                                    <td colSpan="8" className="text-center">
-                                      No results found.
-                                    </td>
-                                  </tr>
-                                )}
+                                <tr>
+                                  <td>1</td>
+                                  <td>INV001</td>
+                                  <td>2023-08-15</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-16</td>
+                                  <td>2023-08-18</td>
+                                  <td>John Doe</td>
+                                  <td>Tiger Nixon</td>
+                                  <td>9876543210</td>
+                                  <td>XYZ1234</td>
+                                  <td>Toyota</td>
+                                  <td>Corolla</td>
+                                  <td><Link className="text-primary">$345.00</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-green">Online Payment</td>
+                                  <td>2 Days</td>
+                                  <td>Delivered</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                    {/* <button
+                                      className="btn btn-sm btn-primary fa fa-edit"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    <button
+                                      className="btn btn-sm btn-danger fa fa-trash-alt"
+                                      onClick={() => handleDeleteClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button> */}
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>INV002</td>
+                                  <td>2023-08-12</td>
+                                  <td>Web Application</td>
+                                  <td>2023-08-13</td>
+                                  <td>2023-08-15</td>
+                                  <td>Jane Smith</td>
+                                  <td>Briele Williamson</td>
+                                  <td>9876543211</td>
+                                  <td>XYZ5678</td>
+                                  <td>Honda</td>
+                                  <td>Civic</td>
+                                  <td><Link className="text-primary">$372,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
+                                  <td>Delivering</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>INV003</td>
+                                  <td>2023-08-10</td>
+                                  <td>QR SCAN</td>
+                                  <td>2023-08-11</td>
+                                  <td>2023-08-13</td>
+                                  <td>Michael Johnson</td>
+                                  <td>Harrod Chandler</td>
+                                  <td>9876543212</td>
+                                  <td>XYZ9101</td>
+                                  <td>Ford</td>
+                                  <td>Focus</td>
+                                  <td><Link className="text-primary">$137,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>4 Days</td>
+                                  <td>Awaiting</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>4</td>
+                                  <td>INV004</td>
+                                  <td>2023-08-05</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-06</td>
+                                  <td>2023-08-08</td>
+                                  <td>Chris Evans</td>
+                                  <td>Colleen Hurst</td>
+                                  <td>9876543213</td>
+                                  <td>XYZ1212</td>
+                                  <td>Nissan</td>
+                                  <td>Altima</td>
+                                  <td><Link className="text-primary">$109,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
+                                  <td>Delivered</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                  </td>
+                                </tr>
                               </tbody>
                             </table>
                           </div>

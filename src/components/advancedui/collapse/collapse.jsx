@@ -50,6 +50,24 @@ const Collapse = () => {
 
   const [dark1, setdark1] = useState("on");
 
+
+   // State to track each toggle button's state
+   const [toggleStates, setToggleStates] = useState({
+    gstFree: false,
+    dontUpdateQty: false,
+    serialNumber: false,
+    priceLookup: false,
+  });
+
+  // Toggle button handler for individual switches
+  const handleToggle = (key) => {
+    setToggleStates((prevState) => ({
+      ...prevState,
+      [key]: !prevState[key],
+    }));
+  };
+
+
   return (
 
 
@@ -81,9 +99,9 @@ const Collapse = () => {
                         </div>
                       </div>
                       <div className="col-lg-3">
-                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${dark1}`} onClick={() => { dark1 === "on" ? setdark1("off") : setdark1("on"); }}>
+                        {/* <div className={`main-toggle ms-sm-2 main-toggle-dark ${dark1}`} onClick={() => { dark1 === "on" ? setdark1("off") : setdark1("on"); }}>
                           <span></span>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
@@ -226,94 +244,92 @@ const Collapse = () => {
 
                           {/* Toggle Bars By Field */}
                           <div className="col-lg-3">
-                            <label className="form-label" htmlFor="validationCustom05">GST Free</label>
-                            <div className="form-group ">
+                            <label className="form-label" htmlFor="gstFree">GST Free</label>
+                            <div className="form-group">
                               <label className="custom-switch form-switch mb-0 p-0 form-label">
                                 <input
                                   type="checkbox"
                                   className="custom-switch-input form-control"
-                                  checked={isActive}
-                                  onChange={toggleActiveState}
+                                  checked={toggleStates.gstFree}
+                                  onChange={() => handleToggle('gstFree')}
                                 />
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: isActive ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree ? "green" : "orange",
                                     color: "white",
                                   }}
                                 >
-                                  {isActive ? "On" : "Off"}
+                                  {toggleStates.gstFree ? "On" : "Off"}
                                 </span>
                               </label>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
-                            <label className="form-label" htmlFor="validationCustom05">Don't Upd.Qty</label>
-                            <div className="form-group ">
+                            <label className="form-label" htmlFor="dontUpdateQty">Don't Upd.Qty</label>
+                            <div className="form-group">
                               <label className="custom-switch form-switch mb-0 p-0 form-label">
                                 <input
                                   type="checkbox"
                                   className="custom-switch-input form-control"
-                                  checked={isActive}
-                                  onChange={toggleActiveState}
+                                  checked={toggleStates.dontUpdateQty}
+                                  onChange={() => handleToggle('dontUpdateQty')}
                                 />
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: isActive ? "green" : "orange",
+                                    backgroundColor: toggleStates.dontUpdateQty ? "green" : "orange",
                                     color: "white",
                                   }}
                                 >
-                                  {isActive ? "On" : "Off"}
+                                  {toggleStates.dontUpdateQty ? "On" : "Off"}
                                 </span>
                               </label>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
-                            <label className="form-label" htmlFor="validationCustom05">Required Serial Number</label>
-                            <div className="form-group ">
+                            <label className="form-label" htmlFor="serialNumber">Required Serial Number</label>
+                            <div className="form-group">
                               <label className="custom-switch form-switch mb-0 p-0 form-label">
                                 <input
                                   type="checkbox"
                                   className="custom-switch-input form-control"
-                                  checked={isActive}
-                                  onChange={toggleActiveState}
+                                  checked={toggleStates.serialNumber}
+                                  onChange={() => handleToggle('serialNumber')}
                                 />
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: isActive ? "green" : "orange",
+                                    backgroundColor: toggleStates.serialNumber ? "green" : "orange",
                                     color: "white",
                                   }}
                                 >
-                                  {isActive ? "On" : "Off"}
+                                  {toggleStates.serialNumber ? "On" : "Off"}
                                 </span>
                               </label>
                             </div>
                           </div>
 
-
-
                           <div className="col-lg-3">
-                            <label className="form-label" htmlFor="validationCustom05">Price Lookup</label>
-                            <div className="form-group ">
+                            <label className="form-label" htmlFor="priceLookup">Price Lookup</label>
+                            <div className="form-group">
                               <label className="custom-switch form-switch mb-0 p-0 form-label">
                                 <input
                                   type="checkbox"
                                   className="custom-switch-input form-control"
-                                  checked={isActive}
-                                  onChange={toggleActiveState}
+                                  checked={toggleStates.priceLookup}
+                                  onChange={() => handleToggle('priceLookup')}
                                 />
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: isActive ? "green" : "orange",
+                                    backgroundColor: toggleStates.priceLookup ? "green" : "orange",
                                     color: "white",
                                   }}
                                 >
-                                  {isActive ? "On" : "Off"}
+                                  {toggleStates.priceLookup ? "On" : "Off"}
                                 </span>
                               </label>
                             </div>
@@ -326,7 +342,7 @@ const Collapse = () => {
                             <div class="input-group input-group">
                               <div class="input-group-text">
                                 <label class="ckbox wd-16 mg-b-0">
-                                  <i className="fab fa-cc-visa"></i>
+                                  <i className="far fa-newspaper"></i>
                                 </label>
                               </div>
 
@@ -339,7 +355,7 @@ const Collapse = () => {
                             <div class="input-group input-group">
                               <div class="input-group-text">
                                 <label class="ckbox wd-16 mg-b-0">
-                                  <i className="fab fa-cc-visa"></i>
+                                  <i className="fa fa-credit-card"></i>
                                 </label>
                               </div>
 
@@ -353,7 +369,7 @@ const Collapse = () => {
                             <div class="input-group input-group">
                               <div class="input-group-text">
                                 <label class="ckbox wd-16 mg-b-0">
-                                  <i className="fab fa-cc-visa"></i>
+                                  <i className="far fa-credit-card"></i>
                                 </label>
                               </div>
 
@@ -367,7 +383,7 @@ const Collapse = () => {
                             <div class="input-group input-group">
                               <div class="input-group-text">
                                 <label class="ckbox wd-16 mg-b-0">
-                                  <i className="fab fa-cc-visa"></i>
+                                  <i className="mdi mdi-bank"></i>
                                 </label>
                               </div>
 
@@ -380,7 +396,7 @@ const Collapse = () => {
                             <div class="input-group input-group">
                               <div class="input-group-text">
                                 <label class="ckbox wd-16 mg-b-0">
-                                  <i className="fab fa-cc-visa"></i>
+                                <i className="mdi mdi-bank"></i>
                                 </label>
                               </div>
 
@@ -394,7 +410,7 @@ const Collapse = () => {
                             <div class="input-group input-group">
                               <div class="input-group-text">
                                 <label class="ckbox wd-16 mg-b-0">
-                                  <i className="fab fa-cc-visa"></i>
+                                <i className="mdi mdi-bank"></i>
                                 </label>
                               </div>
 
