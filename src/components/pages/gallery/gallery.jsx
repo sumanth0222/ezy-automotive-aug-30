@@ -93,27 +93,27 @@ const Gallery = () => {
           <Card>
             <Card.Header
               className="row-sm row justify-content-between bg-primary"
-              style={{ backgroundColor: "#41bde1" }}
+              style={{ backgroundColor: "#41bde1", paddingBottom:"6px"}}
             >
               <div className="row-sm row">
                 <div>
                   <a
-                    className="btn ripple btn-dark text-white btn-icon"
+                    className="btn ripple btn-dark text-white btn-icon mt-2"
                     data-placement="top"
                     data-bs-toggle="tooltip"
-                    title=""
+                    title="icon"
                     href="#"
                   >
                     <i className="fa fa-cogs"></i>
                   </a>
                 </div>
                 <div>
-                  <h3 className="">Mechanics</h3>
+                  <h3 className="mt-2">Mechanics</h3>
                 </div>
               </div>
 
               <div className="row-sm row">
-                <div className="col-lg-3 mt-2">
+                <div className="col-lg-3 mt-3">
                   <div
                     className={`main-toggle ms-sm-2 main-toggle-dark ${dark1}`}
                     onClick={() => {
@@ -124,7 +124,7 @@ const Gallery = () => {
                   </div>
                 </div>
 
-                <div className="form-group col-lg-8 d-flex align-items-center">
+                <div className="form-group col-lg-8 d-flex align-items-center mt-2">
                   <input
                     autoComplete="off"
                     placeholder="Search..."
