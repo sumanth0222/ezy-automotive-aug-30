@@ -18,28 +18,23 @@ const Modals = () => {
     
 
     <Fragment>
-    <Pageheader title="Service Advisors"  heading="Advanced UI"   active="Service Advisors" />
-      <Row className='faq mt-5'>
+    <Pageheader title="Employees"  heading="Service Advisors"   active="Add Advisor" />
+      <Row className='faq'>
         <Col xl={12}>
-          <div className="panel-group2" id="accordion11" role="tablist">
-            <Accordion className='overflow-hidden card'>
-              <Accordion.Item eventKey="0">
-                <Accordion.Header className='accordion-toggle font-weight-semibold tx-12 panel-heading2'>
-                  <div className="row-sm row">
-                    <div>
-                      <a className="btn ripple btn-dark text-white btn-icon" data-placement="top" href="#">
-                        <i className="fa fa-user"></i>
-                      </a>
-                    </div>
-                    <div>
-                      <h3 className="">Service Advisor</h3>
-                    </div>
-                  </div>
-                </Accordion.Header>
+          <div className="" id="" role="">
+            <Accordion className='overflow-hidden'>
+              <Accordion.Item>
+             
 
-                <Accordion.Body id="collapseFour1" className="panel-body">
+                <Accordion.Body id="" className="">
                   <div className="col-lg-12 col-md-12">
                     <div className="card">
+                    <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
+                        <div>
+                          <h3 className="">Service Advisors</h3>
+                        </div>
+                        
+                      </div>
                       <div className="">
                         <form className="row g-3 needs-validation" noValidate>
                           {/* Additional Fields */}

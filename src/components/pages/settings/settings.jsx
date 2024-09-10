@@ -79,7 +79,7 @@ const Settings = () => {
       {/* <Pageheader />   */}
       <Pageheader title="Edit"     active="Edit" />
 
-      <Row className='faq mt-5'>
+      <Row className='faq'>
         <Col xl={12}>
           <div className="panel-group2" id="accordion11" role="tablist">
 
@@ -141,28 +141,28 @@ const Settings = () => {
                         <form className="row g-3 needs-validation" noValidate>
 
                           {/* Additional Fields */}
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Item Code</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Description</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Description 2</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
 
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Searchable Tags</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label className="form-label" htmlFor="validationCustom05">Group</label>
                             <div class="input-group input-group">
                               <input placeholder="" type="text" class="form-control form-control" fdprocessedid="2wwup" />
@@ -212,7 +212,7 @@ const Settings = () => {
 
 
 
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Category</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
@@ -220,7 +220,7 @@ const Settings = () => {
 
 
                           {/* Search By Field */}
-                          <div className="col-lg-4">
+                          <div className="col-lg-3">
                             <p>Type</p>
                             <MultiSelect
                               value={selected}
@@ -229,14 +229,13 @@ const Settings = () => {
                               options={options}
                             />
                           </div>
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Default Labour Qty</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
 
-                          <div className="col-md-4">
-                          </div>
+                         
 
 
 
@@ -315,7 +314,7 @@ const Settings = () => {
 
 
                           {/*  */}
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label className="form-label" htmlFor="validationCustom05">Retail Price</label>
                             <div class="input-group input-group">
                               <div class="input-group-text">

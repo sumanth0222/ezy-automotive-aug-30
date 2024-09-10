@@ -2,6 +2,7 @@ import React ,{ Fragment } from 'react';
 import { Accordion, Col, Row, } from 'react-bootstrap';
 import "react-datepicker/dist/react-datepicker.css";
 import Pageheader from "../../../layout/layoutcomponent/pageheader";
+import { useNavigate } from 'react-router-dom';
 
 const Carousels = () => {
   // const settings = {
@@ -63,6 +64,14 @@ const Carousels = () => {
   //     }
   //   ]
   // };
+
+
+  const navigate = useNavigate();
+
+  const handleCancel = () => {
+    navigate(-1);  // Redirect to the previous page
+  };
+
   return(
 
 
@@ -70,10 +79,10 @@ const Carousels = () => {
 <Fragment>
 
 
-<Pageheader title="CAROUSEL" heading="Advanced UI" active="Carousel" />
+<Pageheader title="Mechanic" heading="Employees" active="Mechanic" />
 
 
- <Row className='faq mt-5'>
+ <Row className='faq'>
    <Col xl={12}>
      <div className="panel-group2" id="accordion11" role="tablist">
        
@@ -165,7 +174,7 @@ const Carousels = () => {
                          <div id="button6">
                            <div className="text-wrap row justify-content-between">
                              <div className="btn-list">
-                               <button type="button" className="btn btn-primary">
+                               <button type="button" className="btn btn-primary" onClick={handleCancel}>
                                  Cancel
                                </button>
                                

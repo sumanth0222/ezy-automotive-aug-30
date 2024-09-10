@@ -19,8 +19,8 @@ const Checkout = ({ local_varaiable }) =>{
 
 
 <Fragment>
-<Pageheader title="Mechanic Clock On"  heading="Ecommerce"   active="Mechanic Clock On" />
-      <div className="row mt-5">
+<Pageheader title="Employees"  heading="Employees"   active="Mechanic Clock On" />
+      <div className="row">
         <Col lg={12} md={12}>
           <Card>
             <Card.Header

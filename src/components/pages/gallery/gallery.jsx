@@ -87,7 +87,7 @@ const Gallery = () => {
 
   return (
     <Fragment>
-      <Pageheader title="Mechanics" heading="Pages" active="Mechanics" />
+      <Pageheader title="Employee" heading="Employee" active="Mechanics" />
       <div className="row">
         <Col lg={12} md={12}>
           <Card>

@@ -13,12 +13,17 @@ import {
   Paper,
 } from "@mui/material";
 import Pageheader from "../../../layout/layoutcomponent/pageheader";
+import { useNavigate } from 'react-router-dom'; 
 
 
 const Collapse = () => {
   const [selected, setSelected] = useState([]);
 
+  const navigate = useNavigate();  // Initialize useNavigate
 
+  const handleCancel = () => {
+    navigate(-1);  // Redirect to the previous page
+  };
 
   function PaperComponent(props) {
     return (
@@ -73,18 +78,18 @@ const Collapse = () => {
 
 
     <Fragment>
-      <Pageheader title="Product Add" heading="Advanced UI" active="Product Add" />
+      <Pageheader title="Products" heading="Products" active="Add Product" />
 
 
 
-      <Row className='faq mt-5'>
+      <Row className='faq'>
         <Col xl={12}>
           <div className="panel-group2" id="accordion11" role="tablist">
 
             <Accordion defaultActiveKey="0" className='overflow-hidden card'>
               <Accordion.Item eventKey="0">
-                <Accordion.Header className='accordion-toggle font-weight-semibold tx-12 panel-heading2 bg-primary'>
-                  <div className='row-sm row justify-content-between'>
+                <Accordion.Header className='accordion-toggle font-weight-semibold tx-12 panel-heading2 bg-primary d-flex'>
+                  <div className='row-sm row d-flex justify-content-between'>
                     <div className="row-sm row">
                       <div>
                         <a className="btn ripple btn-dark text-white btn-icon" data-placement="top" href="#">
@@ -92,17 +97,19 @@ const Collapse = () => {
                         </a>
                       </div>
                     </div>
-                    <div className="row-sm row justify-content-between">
+                    <div className="row-sm row ">
                       <div className="col-lg-3">
                         <div className={`main-toggle ms-sm-2 main-toggle-dark ${dark1}`} onClick={() => { dark1 === "on" ? setdark1("off") : setdark1("on"); }}>
                           <span></span>
                         </div>
                       </div>
-                      <div className="col-lg-3">
+
+                      {/* <div className="col-lg-3"> */}
                         {/* <div className={`main-toggle ms-sm-2 main-toggle-dark ${dark1}`} onClick={() => { dark1 === "on" ? setdark1("off") : setdark1("on"); }}>
                           <span></span>
                         </div> */}
-                      </div>
+                      {/* </div> */}
+
                     </div>
                   </div>
                 </Accordion.Header>
@@ -118,28 +125,28 @@ const Collapse = () => {
                         <form className="row g-3 needs-validation" noValidate>
 
                           {/* Additional Fields */}
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Item Code</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Description</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Description 2</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
 
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Searchable Tags</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label className="form-label" htmlFor="validationCustom05">Group</label>
                             <div class="input-group input-group">
                               <input placeholder="" type="text" class="form-control form-control" fdprocessedid="2wwup" />
@@ -189,19 +196,19 @@ const Collapse = () => {
 
 
 
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Category</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
 
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Vendor</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
 
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Brand</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
@@ -209,7 +216,7 @@ const Collapse = () => {
 
 
                           {/* Search By Field */}
-                          <div className="col-lg-4">
+                          <div className="col-lg-3">
                             <p>Type</p>
                             <MultiSelect
                               value={selected}
@@ -218,23 +225,23 @@ const Collapse = () => {
                               options={options}
                             />
                           </div>
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Qty on Hand</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
 
-                          <div className="col-md-2">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Minimum</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
-                          <div className="col-md-2">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Maximum</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Location</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
@@ -337,7 +344,7 @@ const Collapse = () => {
 
 
                           {/*  */}
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label className="form-label" htmlFor="validationCustom05">Retail Price</label>
                             <div class="input-group input-group">
                               <div class="input-group-text">
@@ -350,7 +357,7 @@ const Collapse = () => {
                             </div>
                           </div>
 
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label className="form-label" htmlFor="validationCustom05">Cost(Excl.Tax)</label>
                             <div class="input-group input-group">
                               <div class="input-group-text">
@@ -364,7 +371,7 @@ const Collapse = () => {
                           </div>
 
 
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label className="form-label" htmlFor="validationCustom05">Cost(Incl.Tax)</label>
                             <div class="input-group input-group">
                               <div class="input-group-text">
@@ -378,7 +385,7 @@ const Collapse = () => {
                           </div>
 
 
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label className="form-label" htmlFor="validationCustom05">Price 2</label>
                             <div class="input-group input-group">
                               <div class="input-group-text">
@@ -391,7 +398,7 @@ const Collapse = () => {
                             </div>
                           </div>
 
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label className="form-label" htmlFor="validationCustom05">Price 3</label>
                             <div class="input-group input-group">
                               <div class="input-group-text">
@@ -405,7 +412,7 @@ const Collapse = () => {
                           </div>
 
 
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label className="form-label" htmlFor="validationCustom05">Price 4</label>
                             <div class="input-group input-group">
                               <div class="input-group-text">
@@ -419,7 +426,7 @@ const Collapse = () => {
                           </div>
 
 
-                          <div className="col-md-4">
+                          <div className="col-md-3">
                             <label className="form-label" htmlFor="validationCustom05">Imported ID</label>
                             <input className="form-control" id="validationCustom05" type="text" required />
                             {/* <div className="invalid-feedback">Please provide a valid zip.</div> */}
@@ -446,7 +453,7 @@ const Collapse = () => {
                     <div id="button6">
                       <div className="text-wrap row justify-content-between">
                         <div className="btn-list">
-                          <button type="button" className="btn btn-primary">
+                          <button type="button" className="btn btn-primary" onClick={handleCancel}>
                             Cancel
                           </button>
 

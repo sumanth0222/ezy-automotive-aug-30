@@ -86,13 +86,12 @@ const Cart = () => {
    
 
      <Fragment>
-           <Pageheader title="Service Advisors"  heading="Ecommerce"   active="Service Advisors" />
-     <div className="row mt-5">
+           <Pageheader title="Employees"  heading="Employees"   active="Service Advisors" />
+     <div className="row">
        <Col lg={12} md={12}>
          <Card>
            <Card.Header
              className="row-sm row justify-content-between bg-primary"
-             style={{ backgroundColor: "#41bde1" }}
            >
              <div className="row-sm row">
                <div>
