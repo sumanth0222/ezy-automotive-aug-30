@@ -60,7 +60,7 @@ const EmptyPage = () => {
   return (
     <Fragment>
       <Pageheader title="Products" heading="Pages" active="Products" />
-      <div className="row mt-5">
+      <div className="row">
         <Col lg={12} md={12}>
           <Card>
             <Card.Header

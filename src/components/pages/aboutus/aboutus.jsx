@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Draggable from 'react-draggable';
 import { Paper} from "@mui/material";
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
-
+import { useNavigate } from 'react-router-dom';
 
 const Aboutus = () => {
 
@@ -49,6 +49,13 @@ const Aboutus = () => {
         item[field].toLowerCase().includes(filter.toLowerCase())
       );
 
+
+      const navigate = useNavigate();  // Initialize useNavigate
+
+      const handleCancel = () => {
+        navigate(-1);  // Redirect to the previous page
+      };
+
   return(
 
  
@@ -56,16 +63,16 @@ const Aboutus = () => {
 
     <Fragment>
 
-<Pageheader title="ABOUT US"  heading="Pages"   active="About Us" />
+<Pageheader title="Employee"  heading="Mechanic"   active="Edit Mechanic Details" />
  
  
-     <Row className='faq mt-5'>
+     <Row className='faq'>
        <Col xl={12}>
          <div className="panel-group2" id="accordion11" role="tablist">
            
              <Accordion className='overflow-hidden card'>
            <Accordion.Item eventKey="0" >
-             <Accordion.Header className='accordion-toggle font-weight-semibold tx-12 panel-heading2 ' >
+             <Accordion.Header className='accordion-toggle font-weight-semibold tx-12 panel-heading2 d-flex justify-content-between' >
  
             
                <div className="row-sm row " >
@@ -81,7 +88,7 @@ const Aboutus = () => {
                  
                </div>
                
-               <div className="row-sm row justify-content-between">
+               <div className="row-sm row justify-content-between d-flex">
                              {/* Summary  Fields */}
                                  
                                  <div class="col-lg-3">
@@ -479,7 +486,7 @@ const Aboutus = () => {
                              <div id="button6">
                                <div className="text-wrap row justify-content-between">
                                  <div className="btn-list">
-                                   <button type="button" className="btn btn-primary">
+                                   <button type="button" className="btn btn-primary" onClick={handleCancel}>
                                      Cancel
                                    </button>
                                    <button type="button" className="btn btn-danger">
