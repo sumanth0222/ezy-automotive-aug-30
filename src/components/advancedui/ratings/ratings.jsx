@@ -1,274 +1,257 @@
-import React,  { Fragment } from 'react';
-import { Box, Rating, styled } from '@mui/material';
-import {  Card, Col, Row } from 'react-bootstrap';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import StarRateIcon from '@mui/icons-material/StarRate';
-import Stack from '@mui/material/Stack';
-import StarsIcon from '@mui/icons-material/Stars';
+import React, { Fragment,useState } from 'react';
+import { Accordion, Col, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import "react-datepicker/dist/react-datepicker.css";
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
 
-const Ratings = () => {
-  const StyledRating = styled(Rating)({ color: "#F1C40F" });
-  const StyledStarRating = styled(Rating)({ color: "#E74C3C" });
-  const StyledheartRating = styled(Rating)({ color: "#E74C3C" });
-  const onChange = (value) => {
-    window.alert(`rating is ${value}`);
+
+const Collapse = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
+  // Handler for the Cancel button
+  const handleCancel = () => {
+    navigate(-1); // Navigate back to the previous page
   };
+
+  // State to track each toggle button's state
+  const [toggleStates, setToggleStates] = useState({
+    gstFree: false,
+    dontUpdateQty: false,
+    serialNumber: false,
+    priceLookup: false,
+    priceLookup1: false,
+    priceLookup2: false,
+  });
+
+  // Toggle button handler for individual switches
+  const handleToggle = (key) => {
+    setToggleStates((prevState) => ({
+      ...prevState,
+      [key]: !prevState[key],
+    }));
+  };
+
+
   return (
-    <Fragment>
-         <Pageheader title="RATINGS"  heading="Advanced UI"   active="Ratings" />
 
     
-      <Row className="row-cards">
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>Star Rating</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block" id="rating-1" data-stars="2">
-                <div className="rating-stars block">
-                  <Box
-                    sx={{
-                      "& > legend": { mt: 2 },
-                    }}
-                  >
-                    <Rating name="no-value" size="large" value={3} max={5} />
-                  </Box>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>Heart Rating</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block" id="rating-2" data-stars="2">
-                <div className="rating-stars block">
-                  <Box
-                    sx={{
-                      "& > legend": { mt: 2 },
-                    }}
-                  >
-                    <StyledRating
-                      name="customized-color"
-                      defaultValue={2}
-                      icon={<FavoriteIcon fontSize="inherit" />}
-                      emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
-                    />
-                  </Box>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>Multi Star Rating</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block" id="rating-3" data-stars="2">
-                <div className="rating-stars block">
-                  <Box
-                    sx={{
-                      "& > legend": { mt: 2 },
-                    }}
-                  >
-                    <StyledStarRating name="no-value" size="large" value={3} max={10} />
-                  </Box>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>Multi Heart Rating</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block" id="rating-6" data-stars="2">
-                <div className="rating-stars block">
-                  <Box
-                    sx={{
-                      "& > legend": { mt: 2 },
-                    }}
-                  >
-                    <StyledheartRating
-                      name="no-value"
-                      size="large"
-                      value={3}
-                      max={10}
-                      icon={<FavoriteIcon fontSize="inherit" />}
-                      emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
-                    />
-                  </Box>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>Thumbs-up Rating</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block" id="rating-5" data-stars="2">
-                <div className="rating-stars block">
-                  <Box
-                    sx={{
-                      "& > legend": { mt: 2 },
-                    }}
-                  >
-                    <Rating
-                      name="no-value"
-                      size="large"
-                      value={3}
-                      max={5}
-                      icon={<ThumbUpIcon fontSize="inherit" />}
-                      emptyIcon={<ThumbUpIcon fontSize="inherit" />}
-                    />
-                  </Box>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>Basic Star Rating</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block my-rating">
-                <Stack spacing={1} className="rating-stars block my-rating ratingcenter">
-                  <Rating
-                    name="half-rating"
-                    value={3}
-                    precision={0.5}
-                    size="large"
-                    icon={<StarRateIcon fontSize="inherit" />}
-                    emptyIcon={<StarRateIcon fontSize="inherit" />}
-                  />
-                </Stack>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>Rounded star Rating</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block my-rating-4" data-stars="2">
-                <Stack spacing={1} className="rating-stars  block my-rating-4 ratingcenter">
-                  <Rating
-                    name="half-rating"
-                    value={3}
-                    precision={0.5}
-                    size="large"
-                    icon={<StarsIcon fontSize="inherit" />}
-                    emptyIcon={<StarsIcon fontSize="inherit" />}
-                  />
-                </Stack>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>gradients Rating</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block my-rating-5" data-stars="2">
-                <Stack spacing={1} className="rating-stars block my-rating-5 ratingcenter">
-                  <Rating
-                    name="half-rating"
-                    value={3}
-                    precision={0.5}
-                    size="large"
-                    icon={<StarRateIcon fontSize="inherit" />}
-                    emptyIcon={<StarRateIcon fontSize="inherit" />}
-                  />
-                </Stack>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>Execute callback when rating</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block my-rating-6" data-stars="2">
-                <Stack spacing={1} className="rating-stars block my-rating-6 ratingcenter">
-                  <Rating
-                    name="half-rating"
-                    value={3}
-                    precision={0.5}
-                    size="large"
-                    onChange={onChange}
-                    icon={<StarRateIcon fontSize="inherit" />}
-                    emptyIcon={<StarRateIcon fontSize="inherit" />}
-                  />
-                </Stack>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>read only mode</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block my-rating-7" data-stars="2">
-                <Stack spacing={1} className="rating-stars block my-rating-7 ratingcenter">
-                  <Rating name="half-rating-read" value={3} max={5} size="large" readOnly />
-                </Stack>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Card.Title className='tx-14'>Use fullstars</Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="rating-stars block my-rating-8" data-stars="2">
-                <div className="rating-stars block">
-                  <Box
-                    sx={{
-                      "& > legend": { mt: 2 },
-                    }}
-                  >
-                    <Rating name="no-value" size="large" max={5} />
-                  </Box>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
 
+    <Fragment>
+    <Pageheader title="Inspection"  heading="New Inspection"   active="Inspection Settings" />
+      <Row className='faq'>
+        <Col xl={12}>
+          <div className="" id="" role="">
+            <Accordion className='overflow-hidden'>
+              <Accordion.Item>
+             
+
+                <Accordion.Body id="" className="">
+                  <div className="col-lg-12 col-md-12">
+                    <div className="card">
+                    <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
+                        <div>
+                          <h3 className="">Inspection Settings</h3>
+                        </div>
+                        
+                      </div>
+                      <div className="">
+                        <form className="row g-3 needs-validation" noValidate>
+                          {/* Additional Fields */}
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Default Product ID</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Default Service Advisor</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Default Contact Name</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="validationCustom05">Default Contact Number</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="validationCustom05">Default Contact Email</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="gstFree">Hide Estimated Cost</label>
+                            <div className="form-group">
+                              <label className="custom-switch form-switch mb-0 p-0 form-label">
+                                <input
+                                  type="checkbox"
+                                  className="custom-switch-input form-control"
+                                  checked={toggleStates.gstFree}
+                                  onChange={() => handleToggle('gstFree')}
+                                />
+                                <span
+                                  className="custom-switch-indicator custom-switch-indicator-lg"
+                                  style={{
+                                    backgroundColor: toggleStates.gstFree ? "green" : "orange",
+                                    color: "white",
+                                  }}
+                                >
+                                  {toggleStates.gstFree ? "On" : "Off"}
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="dontUpdateQty">Hide Estimated Hours</label>
+                            <div className="form-group">
+                              <label className="custom-switch form-switch mb-0 p-0 form-label">
+                                <input
+                                  type="checkbox"
+                                  className="custom-switch-input form-control"
+                                  checked={toggleStates.dontUpdateQty}
+                                  onChange={() => handleToggle('dontUpdateQty')}
+                                />
+                                <span
+                                  className="custom-switch-indicator custom-switch-indicator-lg"
+                                  style={{
+                                    backgroundColor: toggleStates.dontUpdateQty ? "green" : "orange",
+                                    color: "white",
+                                  }}
+                                >
+                                  {toggleStates.dontUpdateQty ? "On" : "Off"}
+                                </span>
+                              </label>
+                            </div>
+                    </div>
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="serialNumber">Notify On Approval</label>
+                            <div className="form-group">
+                              <label className="custom-switch form-switch mb-0 p-0 form-label">
+                                <input
+                                  type="checkbox"
+                                  className="custom-switch-input form-control"
+                                  checked={toggleStates.serialNumber}
+                                  onChange={() => handleToggle('serialNumber')}
+                                />
+                                <span
+                                  className="custom-switch-indicator custom-switch-indicator-lg"
+                                  style={{
+                                    backgroundColor: toggleStates.serialNumber ? "green" : "orange",
+                                    color: "white",
+                                  }}
+                                >
+                                  {toggleStates.serialNumber ? "On" : "Off"}
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="priceLookup">Notify On Refusal</label>
+                            <div className="form-group">
+                              <label className="custom-switch form-switch mb-0 p-0 form-label">
+                                <input
+                                  type="checkbox"
+                                  className="custom-switch-input form-control"
+                                  checked={toggleStates.priceLookup}
+                                  onChange={() => handleToggle('priceLookup')}
+                                />
+                                <span
+                                  className="custom-switch-indicator custom-switch-indicator-lg"
+                                  style={{
+                                    backgroundColor: toggleStates.priceLookup ? "green" : "orange",
+                                    color: "white",
+                                  }}
+                                >
+                                  {toggleStates.priceLookup ? "On" : "Off"}
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                          
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="priceLookup1">Hide Estimated Product Cost</label>
+                            <div className="form-group">
+                              <label className="custom-switch form-switch mb-0 p-0 form-label">
+                                <input
+                                  type="checkbox"
+                                  className="custom-switch-input form-control"
+                                  checked={toggleStates.priceLookup1}
+                                  onChange={() => handleToggle('priceLookup1')}
+                                />
+                                <span
+                                  className="custom-switch-indicator custom-switch-indicator-lg"
+                                  style={{
+                                    backgroundColor: toggleStates.priceLookup1 ? "green" : "orange",
+                                    color: "white",
+                                  }}
+                                >
+                                  {toggleStates.priceLookup1 ? "On" : "Off"}
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="priceLookup">Hide Estimated Product Price</label>
+                            <div className="form-group">
+                              <label className="custom-switch form-switch mb-0 p-0 form-label">
+                                <input
+                                  type="checkbox"
+                                  className="custom-switch-input form-control"
+                                  checked={toggleStates.priceLookup2}
+                                  onChange={() => handleToggle('priceLookup2')}
+                                />
+                                <span
+                                  className="custom-switch-indicator custom-switch-indicator-lg"
+                                  style={{
+                                    backgroundColor: toggleStates.priceLookup2 ? "green" : "orange",
+                                    color: "white",
+                                  }}
+                                >
+                                  {toggleStates.priceLookup2 ? "On" : "Off"}
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          
+                        </form>
+                      </div>
+                    </div>
+
+                   
+
+                    <div id="button6">
+                      <div className="text-wrap row justify-content-between">
+                        <div className="btn-list">
+                          <button type="button" className="btn btn-primary" onClick={handleCancel}>
+                            Cancel
+                          </button>
+                        </div>
+                        <div>
+                          <button type="button" className="btn btn-teal">
+                            Save
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </div>
+        </Col>
       </Row>
-      
     </Fragment>
   );
-}
+};
 
-Ratings.propTypes = {};
+Collapse.propTypes = {};
 
-Ratings.defaultProps = {};
+Collapse.defaultProps = {};
 
-export default Ratings;
+export default Collapse;

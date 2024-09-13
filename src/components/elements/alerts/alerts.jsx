@@ -97,7 +97,7 @@ const Alerts = () => {
           <Card style={{ ...cardStyle, backgroundImage: cardImages.logo }}>
             <Card.Body>
               <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/logo-reports`}>
-                Logo Reports
+                Log Reports
               </RouterLink>
             </Card.Body>
           </Card>

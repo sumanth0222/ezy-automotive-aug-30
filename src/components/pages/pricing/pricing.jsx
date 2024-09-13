@@ -1,165 +1,159 @@
-import React, { Fragment, useState } from 'react';
-import { Row, Col, Card, Button, Form, Tabs, Tab } from 'react-bootstrap';
-import { Link } from "react-router-dom";
-import { Wizard, WizardStep } from "react-wizard-primitive";
-import Select from "react-select";
+import React, { useState, Fragment } from 'react';
+import { Card, Col } from 'react-bootstrap';
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
+import { CForm } from "@coreui/react";
+import { useNavigate } from "react-router-dom"; 
 
-const option = [
-  { value: 'USA', label: 'United States' },
-  { value: 'CAN', label: 'Canada' },
-];
-const option1 = [
-  { value: 'CA', label: 'California' },
-  { value: 'TX', label: 'Texas' },
-];
 
-const Pricing = () => {
-  const [activeTab, setActiveTab] = useState('CreditCard');
+const Groups = () => {
+ 
+  const navigate = useNavigate(); 
 
-  function dec(el) {
-    const unit = el.currentTarget.parentElement.querySelector("input").value;
-    if (Number(unit) === 0) {
-      return false;
-    } else {
-      el.currentTarget.parentElement.querySelector("input").value--;
+  // Custom validation
+ 
+  const [validatedCustom, setValidatedCustom] = useState(false);
+  const handleSubmitCustom = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
     }
-  }
-
-  function inc(el) {
-    el.currentTarget.parentElement.querySelector("input").value++;
-  }
-
-  const MyCustomWizard = (props) => {
-    const stepCount = React.Children.count(props.children);
-    return (
-      <Wizard>
-        {({ activeStepIndex, previousStep, nextStep }) => (
-          <div className="wizard-wrapper">
-            <div>{props.children}</div>
-            <div className="checkout-btns">
-              <button
-                className="previous btn"
-                disabled={activeStepIndex === 0}
-                onClick={previousStep}
-              >
-                Previous
-              </button>
-              <button
-                className="next btn btn-primary"
-                disabled={activeStepIndex === stepCount - 1}
-                onClick={nextStep}
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        )}
-      </Wizard>
-    );
+    setValidatedCustom(true);
   };
 
-  MyCustomWizard.Step = (props) => (
-    <WizardStep>
-      {({ isActive }) => isActive && <div className="step">{props.children}</div>}
-    </WizardStep>
-  );
+  const ordersData = [
+    { itemcode: "EXTR", description: "EXTERIOR"},
+    { itemcode: "INTR", description: "INTERIOR"},
+    { itemcode: "STAND", description: "STANDARD"},
+    { itemcode: "TYRES", description: "TYRES"},
+    { itemcode: "UNDBDY", description: "UNDERBODY"},
+    { itemcode: "UNDBON", description: "UNDER BONNET"},
+  ];
+
+  const [filter, setFilter] = useState("");
+
+
+  // Filtering based on search term
+  const filterData = (data, field) =>
+    data.filter((item) =>
+      item[field].toLowerCase().includes(filter.toLowerCase())
+    );
+
+  const handleEditClick = (itemCode) => {
+    // Navigate to the edit page with the itemCode
+    navigate(`${import.meta.env.BASE_URL}forms/forminputspinners`);
+  };
+
+  const handlePlusClick = () => {
+    navigate(`${import.meta.env.BASE_URL}forms/formeditor`); // Navigate to the form page
+  };
+ 
+  
 
   return (
     <Fragment>
-      <Pageheader title="Payment Link" heading="Pages" active="Payment Link" />
+      <Pageheader title="Inspection" heading="Inspection" active="Groups" />
+      <div className="row">
+        <Col lg={12} md={12}>
+          <Card>
+            <Card.Header
+              className="row-sm row justify-content-between bg-primary" style={{paddingBottom:"6px"}}>
+              <div className="row-sm row">
+                <div>
+                  <a
+                    className="btn ripple btn-dark text-white btn-icon mt-2"
+                    data-placement="top"
+                    data-bs-toggle="tooltip"
+                    title=""
+                    href="#"
+                  >
+                    <i className="fa fa-bars"></i>
+                  </a>
+                </div>
+                <div>
+                  <h3 className="mt-2">Inspection Groups</h3>
+                </div>
+              </div>
 
-      <MyCustomWizard>
-        <MyCustomWizard.Step>
-          <h4>Payments</h4>
-          <section>
-            <Tabs
-              activeKey={activeTab}
-              onSelect={(k) => setActiveTab(k)}
-              className="tabs-menu"
-            >
-              <Tab
-                eventKey="CreditCard"
-                title="Credit Card"
-                tabClassName={activeTab === 'CreditCard' ? 'bg-primary text-white' : ''}
-              >
-                {/* <Form.Group>
-                  <Form.Label>CardHolder Name</Form.Label>
-                  <Form.Control placeholder="First Name" />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Card number</Form.Label>
-                  <Form.Control placeholder="Enter card number" />
-                </Form.Group> */}
-                <Row>
-                <Col sm={3}>
-                <Form.Group>
-                  <Form.Label>CardHolder Name</Form.Label>
-                  <Form.Control placeholder="First Name" />
-                </Form.Group>
-                </Col>
+              <div className="row-sm row">
+               
+
+                <div className="form-group col-lg-8 d-flex align-items-center mt-2">
                 
-                <Col sm={3}>
-                <Form.Group>
-                  <Form.Label>Card number</Form.Label>
-                  <Form.Control placeholder="Enter card number" />
-                </Form.Group>
-                </Col>
+                  <div>
+                    
+                      <button
+                        className="btn ripple btn-success text-white btn-icon"
+                        data-placement="top"
+                        data-bs-toggle="tooltip"
+                        title="Add Group"
+                        onClick={handlePlusClick}
+                      >
+                        <li className="fa fa-plus"></li>
+                      </button>
+                
+                  </div>
+                </div>
 
-                  <Col sm={3}>
-                    <Form.Group>
-                      <Form.Label>Expiration</Form.Label>
-                      <Row>
-                        <Col>
-                          <Form.Control placeholder="MM" />
-                        </Col>
-                        <Col>
-                          <Form.Control placeholder="YY" />
-                        </Col>
-                      </Row>
-                    </Form.Group>
-                  </Col>
-                  <Col sm={3}>
-                    <Form.Group>
-                      <Form.Label>CVV</Form.Label>
-                      <Form.Control type="number" placeholder="CVV" />
-                    </Form.Group>
-                  </Col>
-                </Row>
-              </Tab>
-
-              <Tab
-                eventKey="Paypal"
-                title="Paypal"
-                tabClassName={activeTab === 'Paypal' ? 'bg-primary text-white' : ''}
-              >
-                <p>Paypal is the easiest way to pay online</p>
-                <Button variant="primary">
-                  <i className="fab fa-paypal"></i> Log in to my Paypal
-                </Button>
-              </Tab>
-
-              <Tab
-                eventKey="BankTransfer"
-                title="Bank Transfer"
-                tabClassName={activeTab === 'BankTransfer' ? 'bg-primary text-white' : ''}
-              >
-                <p>Bank account details:</p>
-                <dl className="card-text">
-                  <dt>BANK:</dt>
-                  <dd>THE UNION BANK 0456</dd>
-                  <dt>Account number:</dt>
-                  <dd>67542897653214</dd>
-                  <dt>IBAN:</dt>
-                  <dd>543218769</dd>
-                </dl>
-              </Tab>
-            </Tabs>
-          </section>
-        </MyCustomWizard.Step>
-      </MyCustomWizard>
+              </div>
+            </Card.Header>
+            <Card.Body>
+              
+                <CForm
+                  className="row g-3 needs-validation"
+                  noValidate
+                  validated={validatedCustom}
+                  onSubmit={handleSubmitCustom}
+                >
+                  {/* Orders Table */}
+                  <div className="table-responsive mt-4">
+                    <table className="table table-bordered text-nowrap border-bottom">
+                      <thead>
+                        <tr>
+                          <th className="wd-5p text-center">Item Code</th>
+                          <th>Description</th>
+                          <th>Edit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {filterData(ordersData, "itemcode").length > 0 ? (
+                          filterData(ordersData, "itemcode").map(
+                            (item, index) => (
+                              <tr key={index}>
+                                <td className="wd-5p text-center">
+                                  {item.itemcode}
+                                </td>
+                                <td>{item.description}</td>
+                                <td>
+                                  <button
+                                    className="btn btn-sm btn-primary"
+                                    onClick={() => handleEditClick(item.itemcode)}
+                                  >
+                                    Edit
+                                  </button>
+                                </td>
+                              </tr>
+                            )
+                          )
+                        ) : (
+                          <tr>
+                            <td colSpan="3" className="text-center">
+                              No results found.
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                 
+                  </div>
+                </CForm>
+              
+            </Card.Body>
+          </Card>
+        </Col>
+      </div>
     </Fragment>
   );
 };
 
-export default Pricing;
+export default Groups;

@@ -16,6 +16,7 @@ import Mechanic from './components/elements/alerts/mechanic-report';
 import Customer from  './components/elements/alerts/customer-report';
 import LogoReports from './components/elements/alerts/logo-reports';
 
+
 const App = React.lazy(() => import("./layout/App"));
 const Switcherapp = React.lazy(() => import("./layout/Switcherapp"));
 const Custompages = React.lazy(() => import("./layout/custompages"));
@@ -102,6 +103,7 @@ root.render(
 
 
       </Route>
+
 
 
         <Route></Route>

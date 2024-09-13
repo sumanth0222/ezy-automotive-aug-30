@@ -4,7 +4,7 @@ import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MultiSelect } from "react-multi-select-component";
-import { options } from "../../../common/selectdata";
+import { VendorReport3 , CustomerReport1} from "../../../common/selectdata";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Alerts = () => {
@@ -82,7 +82,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={VendorReport3}
                             />
                           </div>
 
@@ -163,7 +163,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={VendorReport3}
                             />
                           </div>
 
@@ -216,7 +216,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={VendorReport3}
                             />
                           </div>
 
@@ -302,7 +302,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={CustomerReport1}
                             />
                           </div>
 

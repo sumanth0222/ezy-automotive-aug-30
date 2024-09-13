@@ -4,7 +4,7 @@ import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MultiSelect } from "react-multi-select-component";
-import { options } from "../../../common/selectdata";
+import { options, partsvalue1,partslisting ,Stockstatus} from "../../../common/selectdata";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Alerts = () => {
@@ -92,7 +92,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={partsvalue1}
                             />
                           </div>
 
@@ -156,7 +156,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={partslisting}
                             />
                           </div>
 
@@ -283,7 +283,7 @@ const Alerts = () => {
                 </Accordion.Body>
 
                 <Accordion.Body id="collapseFour1" className="panel-body">
-                  <div className="col-lg-12 col-md-12">
+                  <div className="col-lg-12 col-md-12" style={{paddingBottom:"150px"}}>
                     <div className="card">
                       <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                         <div>
@@ -353,36 +353,30 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={Stockstatus}
                             />
                           </div>
 
 
                         </form>
+
+
+                      </div>
+                      <div className="text-center mt-4 pb-3">
+                          <button className="btn btn-primary" onClick={handleBack}>
+                            Back
+                          </button>
                       </div>
                     </div>
                   </div>
                 </Accordion.Body>
 
-
+              
               </Accordion.Item>
             </Accordion>
-
-
-
-
           </div>
         </Col>
       </Row>
-
-
-                    {/* Back Button */}
-      <div className="text-center mt-4 pb-3">
-        <button className="btn btn-primary" onClick={handleBack}>
-          Back
-        </button>
-      </div>
-   
 
     </Fragment>
 

@@ -110,6 +110,156 @@ export function Disabled() {
   
   );
 }
+// New Inspection 
+export const Inspection = [
+  { value: "Price 1", label: " price 1" },
+  { value: "Price 2", label: " price 2" },
+  { value: "Price 3", label: " price 3" },
+  { value: "price 4", label: " price 4" },
+  { value: "Price 5", label: " price 5" },
+  { value: "price 6", label: " price 6" },
+];
+
+
+// Transaction Center
+export const InspectionBookings = [
+  { value: "Finalized", label: " Finalized " },
+  { value: "Draft", label: " Draft" },
+  { value: "Requested Approval", label: " Requested Approval" },
+  { value: "Work", label: " Work" },
+  { value: "Approved", label: " Approved" },
+  { value: "Refused", label: " Refused " },
+  
+];
+
+
+// Products
+export const Products = [
+  { value: "Parts", label: " Parts " },
+  { value: "Labor", label: " Labor" },
+  { value: "Sublet Repairs", label: " Sublet Repairs" },
+  { value: "Consumables", label: " Consumables" },
+  { value: "Accessories", label: " Accessories" },
+  { value: "Tires", label: " Tires " }, 
+];
+export const SalesReport1 = [
+  { value: "Customer", label: " Customer " },
+  { value: "Post Date", label: " Post Date" },
+  { value: "Rego", label: " Rego" },
+  { value: "Invoice Type", label: " Invoice Type" },
+];
+export const SalesReport2 = [
+  { value: "Rego", label: " Rego " },
+  { value: "Customer Name", label: " Customer Name" },
+  { value: "Invoice Number", label: " Invoice Number" },
+];
+
+export const SalesReport3 = [ 
+  { value: "Invoice", label: " Invoice" },
+  { value: "Credit", label: " Credit" },
+];
+export const SalesReport4 = [
+  { value: "Internal Only", label: " Internal Only" },
+  { value: "No Internal", label: " No Internal" },
+];
+export const SalesReport5 = [ 
+  { value: "Cash", label: " Cash" },
+  { value: "Account", label: " Account" },
+];
+export const itemsales = [ 
+  { value: "Product Group", label: " Product Group" },
+  { value: "Vendor", label: " Vendor" },
+  { value: "Brand", label: " Brand" },
+  { value: "Item code", label: " Item code" },
+  { value: "Product Category", label: " Product Category" },
+];
+
+
+
+// Parts Report
+export const partsvalue1 =[
+  { value: "Vendor Name", label: " Vendor Name" },
+  { value: "Brand", label: " Brand" },
+  { value: "Location", label: " Location" },
+  { value: "Product Group", label: " Product Group" },
+];
+export const partslisting = [
+  { value: "Parts", label: " Parts " },
+  { value: "Labor", label: " Labor" },
+  { value: "Sublet Repairs", label: " Sublet Repairs" },
+  { value: "Consumables", label: " Consumables" },
+  { value: "Accessories", label: " Accessories" },
+  { value: "Tires", label: " Tires " }, 
+];
+export const Stockstatus =[
+  { value: "Suggested", label: " Suggested" },
+  { value: "On Order", label: " On Order" },
+  { value: "Received", label: " Received" },
+];
+
+
+
+//  Vendor Report
+export const VendorReport1 =[
+  { value: "Vendor Name", label: " Vendor Name" },
+  { value: "Date", label: " Date" },
+  { value: "Invoice type", label: " Invoice type" },
+];
+export const VendorReport2 =[
+  { value: "Product Group", label: " Product Group" },
+  { value: "Vendor", label: " Vendor" },
+  { value: "Brand", label: " Brand" },
+  { value: "Item Code", label: " Item Code" },
+];
+export const VendorReport3 =[
+  { value: "Name", label: " Name" },
+  { value: "Contact Name", label: " Contact Name" },
+  { value: "City", label: " City" },
+  { value: "State", label: " State" },
+];
+
+
+// Workshop Report
+export const workshop =[
+  { value: "Rego", label: " Rego" },
+  { value: "Vehicle Make", label: " Vehicle Make" },
+  { value: "Customer Name", label: " Customer Name" },
+];
+
+
+// Mechanic Report
+export const Mechanic1 =[
+  { value: "Edit Me Mechanic 1", label: " Edit Me Mechanic 1" },
+  { value: "Edit Me Mechanic 2", label: " Edit Me Mechanic 2" },
+  { value: "Edit Me Mechanic 3", label: " Edit Me Mechanic 3" },
+];
+
+
+// Customer Report
+export const CustomerReport1 =[
+  { value: "Customer Name", label: " Customer Name" },
+  { value: "Rego", label: " Rego" },
+  { value: "Date", label: " Date" },
+  { value: "Type", label: " Type" },
+];
+
+
+// Log Report
+export const log1 =[
+  { value: "Customer Invoice", label: " Customer Invoice" },
+  { value: "Customer Payments", label: " Customer Payments" },
+  { value: "Vendor Invoices", label: " Vendor Invoices" },
+  { value: "Vendor Payment", label: " Vendor Payment" },
+];
+export const log2 =[
+  { value: "Invoice", label: " Invoice" },
+  { value: "Bookings", label: " Bookings" },
+  { value: "Purchase Order", label: " Purchase Order" },
+  { value: "Company Settings", label: " Company Settings" },
+  { value: "Vendor Invoice", label: " Vendor Invoice" },
+  { value: "Other", label: " Other" },
+];
+
 
 //advancedforms
 export const options = [

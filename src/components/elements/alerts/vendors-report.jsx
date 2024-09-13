@@ -4,7 +4,7 @@ import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MultiSelect } from "react-multi-select-component";
-import { options } from "../../../common/selectdata";
+import { options, VendorReport1,VendorReport2, VendorReport3 } from "../../../common/selectdata";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Alerts = () => {
@@ -202,7 +202,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={VendorReport1}
                             />
                           </div>
 
@@ -285,7 +285,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={VendorReport2}
                             />
                           </div>
 
@@ -318,7 +318,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={VendorReport2}
                             />
                           </div>
 
@@ -372,7 +372,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={VendorReport3}
                             />
                           </div>
 
@@ -424,7 +424,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={VendorReport3}
                             />
                           </div>
 
@@ -450,7 +450,7 @@ const Alerts = () => {
                   </div>
                 </Accordion.Body>
 
-                <Accordion.Body id="collapseFour1" className="panel-body">
+                <Accordion.Body id="collapseFour1" className="panel-body" style={{paddingBottom:'50px'}}>
                   <div className="col-lg-12 col-md-12">
                     <div className="card">
                       <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>

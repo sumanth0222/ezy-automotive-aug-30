@@ -1,242 +1,155 @@
-import React, {useState , Fragment} from 'react';
-import { Breadcrumb, Card, Col, Form, FormGroup, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-// import { FromInlineEditEditor } from '../../Forms/FormEditor/InlineEditeditor';
-import SunEditor from 'suneditor-react';
-import { Instructordata, Language } from '../../../common/selectdata';
-import Select from 'react-select';
+import React, { useState, Fragment } from 'react';
+import { Card, Col } from 'react-bootstrap';
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
-import { FilePond, registerPlugin } from 'react-filepond';
-import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation';
-import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
-registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
+import { CForm } from "@coreui/react";
+import { useNavigate } from "react-router-dom"; 
 
 
-const Editpost = () =>{
-    //filepond
-    const [files, setFiles] = useState([]);
-      // sun editor
-      const htmlWithTableImages = '<center>  </center>';
-      // Editor
-      const [value, setValue] = useState(htmlWithTableImages);
+const Groups = () => {
+ 
+  const navigate = useNavigate(); 
+
+  // Custom validation
+ 
+  const [validatedCustom, setValidatedCustom] = useState(false);
+  const handleSubmitCustom = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidatedCustom(true);
+  };
+
+  const ordersData = [
+    { name: "SERVICE", description: "Service Checksheet"},
+    { name: "VISUAL CHECK", description: "Complimentary Reliability & Safety Visual Checks"},
+  ];
+
+  const [filter, setFilter] = useState("");
 
 
-  return(
-  <Fragment>
-     <Pageheader title="EDIT POST"  heading="Advanced UI"   active="Edit-Post" />
+  // Filtering based on search term
+  const filterData = (data, field) =>
+    data.filter((item) =>
+      item[field].toLowerCase().includes(filter.toLowerCase())
+    );
 
-    <Row>
-      <Col lg={12}md={12} >
-        <Card>
-          <Card.Body>
-            <FormGroup>
-              <Form.Label className="form-label text-dark">Course Title</Form.Label>
-              <input
-                type="text"
-                className="form-control"
-                defaultevalue="Advanced Web Develpment"
-              />
-            </FormGroup>
-            <FormGroup>
-              <Form.Label className="form-label text-dark">Category</Form.Label>
-              <Language/>
-            </FormGroup>
-            <FormGroup>
-              <Form.Label className="form-label text-dark">Instructor</Form.Label>
-              <Select options={Instructordata} className="multi-select" classNamePrefix='Select2' placeholder="" /> 
-            </FormGroup>
-            <FormGroup>
-              <Form.Label className="form-label text-dark">Type of mode</Form.Label>
-              <div className="d-md-flex ad-post-details">
-                <Form.Label className="custom-control custom-radio mb-2 me-4">
-                  <input
-                    type="radio"
-                    className="custom-control-input"
-                    name="radios2"
-                    defaultevalue="option1"
-                    defaultChecked
-                  />
-                  <span className="custom-control-label">
-                    <Link to="#" className="">
-                      Online{" "}
-                    </Link>
-                  </span>
-                </Form.Label>
-                <Form.Label className="custom-control custom-radio  mb-2">
-                  <input
-                    type="radio"
-                    className="custom-control-input"
-                    name="radios2"
-                    defaultevalue="option2"
-                  />
-                  <span className="custom-control-label">
-                    <Link to="#" className="">
-                      Offline
-                    </Link>
-                  </span>
-                </Form.Label>
-              </div>
-            </FormGroup>
-            <div className="ql-wrapper border">
-              
-             
-              <SunEditor
-                setContents={value}
-                onChange={setValue}
-                setOptions={{
-                  buttonList: [
-                    ['undo', 'redo'],
-                    ['font', 'fontSize'],
-                    ['paragraphStyle', 'blockquote'],
-                    [
-                      'bold',
-                      'underline',
-                      'italic',
-                      'strike',
-                      'subscript',
-                      'superscript'
-                    ],
-                    ['fontColor', 'hiliteColor'],
-                    ['align', 'list', 'lineHeight'],
-                    ['outdent', 'indent'],
-                    ['table', 'horizontalRule', 'link', 'image', 'video'],
-                    ['preview', 'print'],
-                    ['removeFormat']
-                  ],
-                  defaultTag: 'div',
-                  minHeight: '300px',
-                  showPathLabel: false,
-                  attributesWhitelist: {
-                    all: 'style',
-                    table: 'cellpadding|width|cellspacing|height|style',
-                    tr: 'valign|style',
-                    td: 'styleinsert|height|style',
-                    img: 'title|alt|src|style'
-                  }
-                }}
-              />
-              <hr />
-            </div>
-            <FormGroup>
-              <Form.Label className="form-label text-dark">Course Type</Form.Label>
-              <div className="d-md-flex ad-post-details">
-                <Form.Label className="custom-control custom-radio mb-2 me-4">
-                  <input
-                    type="radio"
-                    className="custom-control-input"
-                    name="radios12"
-                    defaultevalue="option1"
-                    defaultChecked
-                  />
-                  <span className="custom-control-label">
-                    <Link to="#" className="">
-                      Free{" "}
-                    </Link>
-                  </span>
-                </Form.Label>
-                <Form.Label className="custom-control custom-radio  mb-2">
-                  <input
-                    type="radio"
-                    className="custom-control-input"
-                    name="radios12"
-                    defaultevalue="option2"
-                  />
-                  <span className="custom-control-label">
-                    <Link to="#" className="">
-                      Paid
-                    </Link>
-                  </span>
-                </Form.Label>
-              </div>
-            </FormGroup>
-            <FormGroup className="p-4 border mb-4 form-group">
-              <div>
-              <div>
-              <FilePond
-        files={files} onupdatefiles={setFiles} allowMultiple={true}  maxFiles={3}  server="/api"  name="files" /* sets the file input name, it's filepond by default */  labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
-      />
-    </div>
-              </div>
-            </FormGroup>
-            <FormGroup>
-              <Form.Label className="form-label">Upload Video URL</Form.Label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="https://videos.com"
-                defaultevalue="https://www.youtube.com/embed/tMWkeBIohBs"
-              />
-            </FormGroup>
-            <div className="control-group form-group  mb-0">
-              <Form.Label className="form-label text-dark">
-                Course Post Package
-              </Form.Label>
-              <div className=" border p-3 br-7">
-                <div className="d-md-flex ad-post-details">
-                  <label className="custom-control custom-radio mb-0 me-5">
-                    <input
-                      type="radio"
-                      className="custom-control-input"
-                      name="radios1"
-                      defaultevalue="option7"
-                    />
-                    <span className="custom-control-label">30 Days Free</span>
-                  </label>
-                  <label className="custom-control custom-radio  mb-0 me-4">
-                    <input
-                      type="radio"
-                      className="custom-control-input"
-                      name="radios1"
-                      defaultevalue="option8"
-                      defaultChecked
-                    />
-                    <span className="custom-control-label">
-                      60 days / <span className="font-weight-bold">$20</span>
-                    </span>
-                  </label>
-                  <label className="custom-control custom-radio  mb-0 me-4">
-                    <input
-                      type="radio"
-                      className="custom-control-input"
-                      name="radios1"
-                      defaultevalue="option9"
-                    />
-                    <span className="custom-control-label">
-                      6months /<span className="font-weight-bold">$50</span>
-                    </span>
-                  </label>
-                  <label className="custom-control custom-radio  mb-0">
-                    <input
-                      type="radio"
-                      className="custom-control-input"
-                      name="radios1"
-                      defaultevalue="option10"
-                    />
-                    <span className="custom-control-label">
-                      1 year / <span className="font-weight-bold">$80</span>
-                    </span>
-                  </label>
+  const handleEditClick = (itemCode) => {
+    // Navigate to the edit page with the itemCode
+    navigate(`${import.meta.env.BASE_URL}advancedui/blogdetails`);
+  };
+
+  const handlePlusClick = () => {
+    navigate(`${import.meta.env.BASE_URL}advancedui/fileattachments`); // Navigate to the form page
+  };
+ 
+  
+
+  return (
+    <Fragment>
+      <Pageheader title="Inspection" heading="Inspection" active="Inspection Templates" />
+      <div className="row">
+        <Col lg={12} md={12}>
+          <Card>
+            <Card.Header
+              className="row-sm row justify-content-between bg-primary" style={{paddingBottom:"6px"}}>
+              <div className="row-sm row">
+                <div>
+                  <a
+                    className="btn ripple btn-dark text-white btn-icon mt-2"
+                    data-placement="top"
+                    data-bs-toggle="tooltip"
+                    title=""
+                    href="#"
+                  >
+                    <i className="fa fa-file"></i>
+                  </a>
+                </div>
+                <div>
+                  <h3 className="mt-2">Inspection Templates</h3>
                 </div>
               </div>
-            </div>
-          </Card.Body>
-          <div className="card-footer ">
-            <Link to="#" className="btn btn-secondary">
-              Save to Draft
-            </Link>
-            <Link to="#" className="btn btn-primary float-end">
-              Publish Now
-            </Link>
-          </div>
-        </Card>
-      </Col>
-    </Row>
-  </Fragment>
-);
-  }
 
-Editpost.propTypes = {};
+              <div className="row-sm row">
+               
 
-Editpost.defaultProps = {};
+                <div className="form-group col-lg-8 d-flex align-items-center mt-2">
+                
+                  <div>
+                    
+                      <button
+                        className="btn ripple btn-success text-white btn-icon"
+                        data-placement="top"
+                        data-bs-toggle="tooltip"
+                        title="Add Group"
+                        onClick={handlePlusClick}
+                      >
+                        <li className="fa fa-plus"></li>
+                      </button>
+                
+                  </div>
+                </div>
 
-export default Editpost;
+              </div>
+            </Card.Header>
+            <Card.Body>
+              
+                <CForm
+                  className="row g-3 needs-validation"
+                  noValidate
+                  validated={validatedCustom}
+                  onSubmit={handleSubmitCustom}
+                >
+                  {/* Orders Table */}
+                  <div className="table-responsive mt-4">
+                    <table className="table table-bordered text-nowrap border-bottom">
+                      <thead>
+                        <tr>
+                          <th className="wd-5p text-center">Name</th>
+                          <th>Description</th>
+                          <th>Edit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {filterData(ordersData, "name").length > 0 ? (
+                          filterData(ordersData, "name").map(
+                            (name, index) => (
+                              <tr key={index}>
+                                <td className="wd-5p text-center">
+                                  {name.name}
+                                </td>
+                                <td>{name.description}</td>
+                                <td>
+                                  <button
+                                    className="btn btn-sm btn-primary"
+                                    onClick={() => handleEditClick(name.itemcode)}
+                                  >
+                                    Edit
+                                  </button>
+                                </td>
+                              </tr>
+                            )
+                          )
+                        ) : (
+                          <tr>
+                            <td colSpan="3" className="text-center">
+                              No results found.
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                 
+                  </div>
+                </CForm>
+              
+            </Card.Body>
+          </Card>
+        </Col>
+      </div>
+    </Fragment>
+  );
+};
+
+export default Groups;
