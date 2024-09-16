@@ -51,28 +51,28 @@ export const MENUITEMS = [
         active:false,
         children: [
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}advancedui/timeline`,
             type: "link",
             active:false,
             selected:false,
             title: "New Inspections",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}pages/pricing/`,
             type: "link",
             active:false,
             selected:false,
             title: "Groups",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}advancedui/editPost`,
             type: "link",
             active:false,
             selected:false,
             title: "Templates",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}advancedui/ratings`,
             type: "link",
             active:false,
             selected:false,
@@ -91,7 +91,7 @@ export const MENUITEMS = [
         title: "Customers",
       },
       {
-        path: ``,
+        path: `${import.meta.env.BASE_URL}advancedui/search`,
         icon: (
           <i class="fas fa-taxi side-menu__icon"></i>
         ),

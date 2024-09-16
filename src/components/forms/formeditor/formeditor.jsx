@@ -1,149 +1,84 @@
-import React, { Fragment, useState } from 'react';
-import {  Button, Card, Col, Modal, Row } from 'react-bootstrap';
+import React, { Fragment } from 'react';
+import { Accordion, Col, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import "react-datepicker/dist/react-datepicker.css";
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
-import SunEditor from 'suneditor-react';
-import ReactQuill from 'react-quill';
-import { Link } from 'react-router-dom';
-const FormEditor = () => {
-    //quill
-    const [value1, setValue1] = useState('');
-    // sun editor
-    const htmlWithTableImages = '<center>  </center>';
-      // Editor
-  const [value, setValue] = useState(htmlWithTableImages);
-    // Modal Editor
-    const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-  return(
-  <Fragment>
-    <div className="main-container container-fluid">
- 
-      <Pageheader title="FORM EDITOR"  heading="Forms"   active="Form Editor" />
+
+const Collapse = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
+  // Handler for the Cancel button
+  const handleCancel = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
+
+  return (
 
     
-      <Row>
-        <Col md={12}>
-          <Card>
-            <Card.Header className="border-bottom-0">
-              <h3 className="card-title">Summernote Editor</h3>
-            </Card.Header>
-            <Card.Body>
-            <SunEditor />
-            </Card.Body>
-          </Card>
+
+    <Fragment>
+    <Pageheader title="Inspection"  heading="New Inspection"   active="Inspection Group" />
+      <Row className='faq'>
+        <Col xl={12}>
+          <div className="" id="" role="">
+            <Accordion className='overflow-hidden'>
+              <Accordion.Item>
+             
+
+                <Accordion.Body id="" className="">
+                  <div className="col-lg-12 col-md-12">
+                    <div className="card">
+                    <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
+                        <div>
+                          <h3 className="">Inspection Group</h3>
+                        </div>
+                        
+                      </div>
+                      <div className="">
+                        <form className="row g-3 needs-validation" noValidate>
+                          {/* Additional Fields */}
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Code</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Description</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          
+                          
+                        </form>
+                      </div>
+                    </div>
+
+                    <div id="button6">
+                      <div className="text-wrap row justify-content-between">
+                        <div className="btn-list">
+                          <button type="button" className="btn btn-primary" onClick={handleCancel}>
+                            Cancel
+                          </button>
+                        </div>
+                        <div>
+                          <button type="button" className="btn btn-teal">
+                            Save
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </div>
         </Col>
       </Row>
+    </Fragment>
+  );
+};
 
-      <Row>
-        <Col md={12}>
-          <Card>
-            <Card.Header className="border-bottom-0">
-              <h3 className="card-title">Wysiwyag Form Editor</h3>
-            </Card.Header>
-            <Card.Body>
-            <SunEditor
-                setContents={value}
-                onChange={setValue}
-                setOptions={{
-                  buttonList: [
-                    ['undo', 'redo'],
-                    ['font', 'fontSize'],
-                    ['paragraphStyle', 'blockquote'],
-                    [
-                      'bold',
-                      'underline',
-                      'italic',
-                      'strike',
-                      'subscript',
-                      'superscript'
-                    ],
-                    ['fontColor', 'hiliteColor'],
-                    ['align', 'list', 'lineHeight'],
-                    ['outdent', 'indent'],
-                    ['table', 'horizontalRule', 'link', 'image', 'video'],
-                    ['preview', 'print'],
-                    ['removeFormat']
-                  ],
-                  defaultTag: 'div',
-                  minHeight: '300px',
-                  showPathLabel: false,
-                  attributesWhitelist: {
-                    all: 'style',
-                    table: 'cellpadding|width|cellspacing|height|style',
-                    tr: 'valign|style',
-                    td: 'styleinsert|height|style',
-                    img: 'title|alt|src|style'
-                  }
-                }}
-              />
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+Collapse.propTypes = {};
 
-      
-      <Row>
-        <Col md={12}>
-          <Card>
-            <Card.Header className="border-bottom-0">
-              <Card.Title className="card-title">Form Editor in Modal</Card.Title>
-            </Card.Header>
-            <Card.Body>
-          
-              <Button variant="primary" className="mt-3 me-2" data-bs-target="#modalQuill" onClick={handleShow}
-                        data-bs-toggle="modal">View Live Demo</Button>
-                         <Modal show={show} onHide={handleClose} size="lg" variant='primary' aria-labelledby="contained-modal-title-vcenter" centered>
-                  <Modal.Header className='pd-20'>
-                    <Modal.Title as='h6'>Create New Document</Modal.Title>
-                    <Link  to="#" className="text-dark d-flex ms-auto my-auto" onClick={() => { handleClose("Basic"); }}><i className='fe fe-x ms-auto'></i></Link>
-                  </Modal.Header>
-                  <Modal.Body className="">
-                    <ReactQuill theme="snow" value={value1} onChange={setValue1} />
-                  </Modal.Body>
-                  <Modal.Footer className="pd-20">
-                    <Button variant="secondary" onClick={handleClose}>
-                      Close
-                    </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                      Save Changes
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-     
-      <Row>
-        <Col md={12}>
-          <Card>
-            <Card.Header className="border-bottom-0">
-              <Card.Title className="card-title">
-                From Inline-Edit Editor
-              </Card.Title>
-            </Card.Header>
-            <Card.Body>
-              <div className="wd-xl-100p ht-sm-350">
-                <div
-                  className="ql-scrolling-demo p-4 border"
-                  id="scrolling-container"
-                >
-                  
-                  <ReactQuill theme="snow" value={value1} onChange={setValue1} />
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </div>
-  </Fragment>
-);}
+Collapse.defaultProps = {};
 
-FormEditor.propTypes = {};
-
-FormEditor.defaultProps = {};
-
-export default FormEditor;
+export default Collapse;

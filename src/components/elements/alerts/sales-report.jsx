@@ -5,7 +5,7 @@ import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MultiSelect } from "react-multi-select-component";
-import { options } from "../../../common/selectdata";
+import { SalesReport1,SalesReport2, SalesReport3, SalesReport4,SalesReport5,itemsales} from "../../../common/selectdata";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Alerts = () => {
@@ -157,7 +157,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={SalesReport1}
                             />
                           </div>
                           {/* Search By Field */}
@@ -167,7 +167,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={SalesReport2}
                             />
                           </div>
                           {/* Additional Fields */}
@@ -188,7 +188,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={SalesReport3}
                             />
                           </div>
                           <div className="col-lg-3">
@@ -197,7 +197,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={SalesReport4}
                             />
                           </div>
                           <div className="col-lg-3">
@@ -206,7 +206,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={SalesReport5}
                             />
                           </div>
                         </form>
@@ -296,7 +296,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={SalesReport4}
                             />
                           </div>
 
@@ -378,7 +378,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={itemsales}
                             />
                           </div>
                           {/* Search By Field */}
@@ -388,7 +388,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={itemsales}
                             />
                           </div>
                           {/* Additional Fields */}
@@ -418,7 +418,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={SalesReport4}
                             />
                           </div>
 

@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { Accordion, Col, Row, Form, Card, Button } from 'react-bootstrap';
 import "react-datepicker/dist/react-datepicker.css";
 import { MultiSelect } from "react-multi-select-component";
-import { options } from "../../../common/selectdata";
+import { Products } from "../../../common/selectdata";
 
 import Draggable from 'react-draggable';
 import {
@@ -226,7 +226,7 @@ const Settings = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={Products}
                             />
                           </div>
                           <div className="col-md-3">

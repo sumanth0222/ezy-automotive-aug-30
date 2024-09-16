@@ -1,242 +1,184 @@
-import React, { Fragment } from 'react';
-import {  Row, Col, Card } from "react-bootstrap";
-import { Link } from 'react-router-dom';
-import { imagesData } from '../../../common/commonimages';
+import React, { Fragment, useState } from 'react';
+import { Accordion, Col, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import "react-datepicker/dist/react-datepicker.css";
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
+import { MultiSelect } from "react-multi-select-component";
+import { Inspection } from "../../../common/selectdata";
 
-const Timeline = () =>{
+const Collapse = () => {
+
+  const [selected, setSelected] = useState([]);
+
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
+  // Handler for the Cancel button
+  const handleCancel = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
+
+  // State to track each toggle button's state
+  const [toggleStates, setToggleStates] = useState({
+    gstFree: true, // The toggle state
+  });
+
+  // Toggle button handler for individual switches
+  const handleToggle = (key) => {
+    setToggleStates((prevState) => ({
+      ...prevState,
+      [key]: !prevState[key],
+    }));
+  };
+
   return (
-  <Fragment>
-   <Pageheader title="TIMELINE"  heading="Advanced UI"   active="Timeline" />
-    <Row>
-      <Col lg={12}>
-        <Card className="custom-card">
-          <Card.Header className=" custom-card-header">
-            <h6 className="card-title mb-0">Vertical Timeline</h6>
-          </Card.Header>
-          <Card.Body className="">
-            <div className="vtimeline ">
-              <div className='vtimeline-dot-start'></div>
-              <div className="timeline-wrapper timeline-wrapper-primary">
-                <div className="timeline-badge success">
-                  <img
-                    className="timeline-image"
-                    alt=""
-                    src={imagesData('female3')}
-                  />{" "}
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h6 className="timeline-title">
-                      Art Ramadani posted a status update
-                    </h6>
-                  </div>
-                  <div className="timeline-body">
-                    <p>
-                      Tolerably earnestly middleton extremely distrusts she boy
-                      now not. Add and offered prepare how cordial two promise.
-                      Greatly who affixed suppose but enquire compact prepare
-                      all put. Added forth chief trees but rooms think may.
-                    </p>
-                  </div>
-                  <div className="timeline-footer d-flex align-items-center flex-wrap">
-                    <i className="fe fe-heart  text-muted me-1"></i>
-                    <span>19</span>
-                    <span className="ms-auto">
-                      <i className="fe fe-calendar text-muted me-1"></i>{' '}19 Oct
-                      2020
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="timeline-wrapper timeline-inverted timeline-wrapper-primary">
-                <div className="timeline-badge">
-                  <i className="las la-business-time"></i>
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h6 className="timeline-title">Job Meeting</h6>
-                  </div>
-                  <div className="timeline-body">
-                    <p>You have a meeting at Laborator Office Today.</p>
-                  </div>
-                  <div className="timeline-footer d-flex align-items-center flex-wrap">
-                    <i className="fe fe-heart  text-muted me-1"></i>
-                    <span>25</span>
-                    <span className="ms-auto">
-                      <i className="fe fe-calendar text-muted me-1"></i>{' '}10th Oct
-                      2020
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="timeline-wrapper timeline-wrapper-primary">
-                <div className="timeline-badge">
-                  <i className="las la-user-circle"></i>
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h6 className="timeline-title">
-                      Arlind Nushi checked in at New York
-                    </h6>
-                  </div>
-                  <div className="timeline-body">
-                    <p>
-                      Alpha 5 has arrived just over a month after Alpha 4 with
-                      some major feature improvements and a boat load of bug
-                      fixes.
-                    </p>
-                  </div>
-                  <div className="timeline-footer d-flex align-items-center flex-wrap">
-                    <i className="fe fe-heart  text-muted me-1"></i>
-                    <span>19</span>
-                    <span className="ms-auto">
-                      <i className="fe fe-calendar text-muted me-1"></i>{' '}8th june
-                      2021
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="timeline-wrapper timeline-inverted timeline-wrapper-primary">
-                <div className="timeline-badge success">
-                  <img
-                    className="timeline-image"
-                    alt=""
-                    src={imagesData('female12')}
-                  />{" "}
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h6 className="timeline-title">
-                      Eroll Maxhuni uploaded 4 new photos to album Summer Trip
-                    </h6>
-                  </div>
-                  <div className="timeline-body">
-                    <p>
-                      Pianoforte principles our unaffected not for astonished
-                      travelling are particular.
-                    </p>
-                    <img
-                      src={imagesData('media4')}
-                      className="mb-3 br-5"
-                      alt=""
-                    />
-                  </div>
-                  <div className="timeline-footer d-flex align-items-center flex-wrap">
-                    <i className="fe fe-heart  text-muted me-1"></i>
-                    <span>19</span>
-                    <span className="ms-auto">
-                      <i className="fe fe-calendar text-muted me-1"></i>{' '}27th Sep
-                      2021
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="timeline-wrapper timeline-wrapper-primary">
-                <div className="timeline-badge">
-                  <i className="las la-envelope-open-text"></i>
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h6 className="timeline-title">
-                      Support Team sent you an email
-                    </h6>
-                  </div>
-                  <div className="timeline-body">
-                    <p>
-                      Etsy doostang zoodles disqus groupon greplin oooj voxy
-                      zoodles, weebly ning heekya handango imeem plugg dopplr
-                      jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
-                      Babblely odeo kaboodle quora plaxo ideeli hulu weebly
-                      balihoo....
-                    </p>
-                    <Link
-                      to="#"
-                      className="btn ripple btn-primary text-white mb-3"
-                    >
-                      Read more
-                    </Link>
-                  </div>
-                  <div className="timeline-footer d-flex align-items-center flex-wrap">
-                    <i className="fe fe-heart  text-muted me-1"></i>
-                    <span>25</span>
-                    <span className="ms-auto">
-                      <i className="fe fe-calendar text-muted me-1"></i>{' '}25th oct
-                      2021
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="timeline-wrapper timeline-inverted timeline-wrapper-primary">
-                <div className="timeline-badge success">
-                  <img
-                    className="timeline-image"
-                    alt=""
-                    src={imagesData('female15')}
-                  />{" "}
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h6 className="timeline-title">Mr. Doe shared a video</h6>
-                  </div>
-                  <div className="timeline-body">
-                    <div className="embed-responsive embed-responsive-16by9 mb-3 br-5">
-                      <iframe
-                        title="Mr. Doe shared a video"
-                        className="embed-responsive-item"
-                        src="https://www.youtube.com/embed/XZmGGAbHqa0?rel=0&amp;controls=0&amp;showinfo=0"
-                        allowFullScreen
-                      ></iframe>
+    <Fragment>
+      <Pageheader title="Inspection" heading="Inspection" active="New Inspection" />
+      <Row className='faq'>
+        <Col xl={12}>
+          <div className="" id="" role="">
+            <Accordion className='overflow-hidden'>
+              <Accordion.Item>
+                <Accordion.Body id="" className="" >
+                  <div className="col-lg-12 col-md-12">
+                    <div className="card">
+                      <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
+                        <div>
+                          <h3 className="">New Inspection</h3>
+                        </div>
+                      </div>
+                      <div className="" style={{paddingBottom:"15px"}}>
+                        <form className="row g-3 needs-validation" noValidate>
+                          
+                          <div className="col-lg-12">
+                            <label className="form-label" htmlFor="gstFree">Company/Individual</label>
+                            <div className="form-group">
+                              <label className="custom-switch form-switch mb-0 p-0 form-label">
+                                <input
+                                  type="checkbox"
+                                  className="custom-switch-input form-control"
+                                  checked={toggleStates.gstFree}
+                                  onChange={() => handleToggle('gstFree')}
+                                />
+                                <span
+                                  className="custom-switch-indicator custom-switch-indicator-lg"
+                                  style={{
+                                    backgroundColor: toggleStates.gstFree ? "green" : "orange",
+                                    color: "white",
+                                  }}
+                                >
+                                  {toggleStates.gstFree ? "On" : "Off"}
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          {/* Conditionally render fields based on toggle state */}
+                          {toggleStates.gstFree ? (
+                            <>
+                              {/* If toggle is ON (Individual), show First and Last Name */}
+                              <div className="col-md-3">
+                                <label className="form-label" htmlFor="firstName">First Name</label>
+                                <input className="form-control" id="firstName" type="text" required />
+                              </div>
+                              <div className="col-md-3">
+                                <label className="form-label" htmlFor="lastName">Last Name</label>
+                                <input className="form-control" id="lastName" type="text" required />
+                              </div>
+                            </>
+                          ) : (
+                            <>
+                              {/* If toggle is OFF (Company), show Company Name */}
+                              <div className="col-md-6">
+                                <label className="form-label" htmlFor="companyName">Company Name</label>
+                                <input className="form-control" id="companyName" type="text" required />
+                              </div>
+                            </>
+                          )}
+
+                          {/* Rest of the fields */}
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="phone">Phone</label>
+                            <input className="form-control" id="phone" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="cell">Cell</label>
+                            <input className="form-control" id="cell" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="email">Email</label>
+                            <input className="form-control" id="email" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="address">Address</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="city">City</label>
+                            <input className="form-control" id="city" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-lg-3">
+                            <p>Price Type</p>
+                            <MultiSelect
+                              value={selected}
+                              onChange={setSelected}
+                              labelledBy="Select"
+                              options={Inspection}
+                            />
+                          </div>
+
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="state">State</label>
+                            <input className="form-control" id="state" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="zipCode">Zip Code</label>
+                            <input className="form-control" id="zipCode" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="preferredContact">Preferred Method Of Contact</label>
+                            <input className="form-control" id="preferredContact" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-md-3">
+                            <label className="form-label" htmlFor="customerSource">Customer Source</label>
+                            <input className="form-control" id="customerSource" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+                    <div id="button6">
+                      <div className="text-wrap row justify-content-between">
+                        <div className="btn-list">
+                          <button type="button" className="btn btn-primary" onClick={handleCancel}>
+                            Cancel
+                          </button>
+                        </div>
+                        <div>
+                          <button type="button" className="btn btn-teal">
+                            Save
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="timeline-footer d-flex align-items-center flex-wrap">
-                    <i className="fe fe-heart  text-muted me-1"></i>
-                    <span>32</span>
-                    <span className="ms-auto">
-                      <i className="fe fe-calendar text-muted me-1"></i>{' '}19th oct
-                      2020
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="timeline-wrapper timeline-wrapper-primary mb-0">
-                <div className="timeline-badge">
-                  <i className="las la-check-circle"></i>
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h6 className="timeline-title">
-                      Sarah Young accepted your friend request
-                    </h6>
-                  </div>
-                  <div className="timeline-body">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Amet cupiditate, delectus deserunt doloribus earum eveniet
-                      explicabo fuga iste magni maxime
-                    </p>
-                  </div>
-                  <div className="timeline-footer d-flex align-items-center flex-wrap">
-                    <i className="fe fe-heart text-muted me-1"></i>
-                    <span>26</span>
-                    <span className="ms-auto">
-                      <i className="fe fe-calendar text-muted me-1"></i>{' '}12th dec
-                      2021
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className='vtimeline-dot-end'></div>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
-  </Fragment>
-);}
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </div>
+        </Col>
+      </Row>
+    </Fragment>
+  );
+};
 
-Timeline.propTypes = {};
-
-Timeline.defaultProps = {};
-
-export default Timeline;
+export default Collapse;

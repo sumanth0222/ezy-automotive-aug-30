@@ -64,11 +64,11 @@ const EmptyPage = () => {
         <Col lg={12} md={12}>
           <Card>
             <Card.Header
-              className="row-sm row justify-content-between bg-primary">
+              className="row-sm row justify-content-between bg-primary" style={{paddingBottom:"6px"}}>
               <div className="row-sm row">
                 <div>
                   <a
-                    className="btn ripple btn-dark text-white btn-icon"
+                    className="btn ripple btn-dark text-white btn-icon mt-2"
                     data-placement="top"
                     data-bs-toggle="tooltip"
                     title=""
@@ -78,12 +78,12 @@ const EmptyPage = () => {
                   </a>
                 </div>
                 <div>
-                  <h3 className="">Products</h3>
+                  <h3 className="mt-2">Products</h3>
                 </div>
               </div>
 
               <div className="row-sm row">
-                <div className="col-lg-3 d-flex mt-2">
+                <div className="col-lg-3 d-flex mt-3">
 
                 <div className={`main-toggle ms-sm-2  main-toggle-dark ${dark1}`} onClick={() => { dark1 == "on" ? setdark1("off") : setdark1("on"); }}>
                   <span className={`${dark1 === "on" ? 'active' : ''}`}
@@ -96,7 +96,7 @@ const EmptyPage = () => {
 
                 </div>
 
-                <div className="form-group col-lg-8 d-flex align-items-center">
+                <div className="form-group col-lg-8 d-flex align-items-center mt-2">
                   <div>
                   <input
                     autoComplete="off"

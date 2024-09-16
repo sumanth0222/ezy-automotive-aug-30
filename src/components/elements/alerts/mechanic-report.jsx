@@ -4,7 +4,7 @@ import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MultiSelect } from "react-multi-select-component";
-import { options } from "../../../common/selectdata";
+import { Mechanic1 ,SalesReport4} from "../../../common/selectdata";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Alerts = () => {
@@ -137,7 +137,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={SalesReport4}
                             />
                           </div>
 
@@ -376,7 +376,7 @@ const Alerts = () => {
                               value={selected}
                               onChange={setSelected}
                               labelledBy="Select"
-                              options={options}
+                              options={Mechanic1}
                             />
                           </div>
 
@@ -386,7 +386,7 @@ const Alerts = () => {
                   </div>
                 </Accordion.Body>
 
-                <Accordion.Body id="collapseFour1" className="panel-body">
+                <Accordion.Body id="collapseFour1" className="panel-body" style={{paddingBottom:"65px"}}>
                   <div className="col-lg-12 col-md-12">
                     <div className="card">
                       <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>

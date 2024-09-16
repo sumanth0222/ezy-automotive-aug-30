@@ -1,156 +1,110 @@
 import React, { Fragment, useState } from 'react';
-import { Card, Col, Row} from "react-bootstrap";
-import {  initialListdata, initialListdismissingdata, initialListiconsdata } from '../../../common/commondata';
+import { Card, Col, Row } from "react-bootstrap";
+import { initialListdata, initialListdismissingdata, initialListiconsdata } from '../../../common/commondata';
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import "react-datepicker/dist/react-datepicker.css";
 import { Link as RouterLink } from 'react-router-dom';
+import cars from '../../../assets/ezy-images/cars.jpg';
+
 
 const Alerts = () => {
- 
-  const [alertData, setalertData] = useState(initialListdata);
+  const cardStyle = {
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    color: 'white', 
+    minHeight: '200px', 
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    borderRadius: '10px',
+    padding: '20px'
+  };
+
+  const cardImages = {
+    sales: `url(${cars})`,
+    parts: `url(${cars})`,
+    vendor: `url(${cars})`,
+    workshop: `url(${cars})`,
+    mechanic: `url(${cars})`,
+    customer: `url(${cars})`,
+    logo: `url(${cars})`,
+    
+  };
+
   
-  const [outline, setoutline] = useState(initialListdata);
-
-  const [solid, setsolid] = useState(initialListdata);
- 
-  const [filter, setFilter] = useState("");
- 
-
-
-
-  const [show, setShow] = useState(true);
-  const [isFirstCollapsed, setIsFirstCollapsed] = useState(true);
-  const [isFirstCollapseds, setIsFirstCollapseds] = useState(true);
-  const [fullscreen, setFullscreen] = useState(true);
-  const [shows, setShows] = useState(false);
-
-  // Filtering based on search term
-  const filterData = (data, field) =>
-    data.filter((item) =>
-      item[field].toLowerCase().includes(filter.toLowerCase()));
-
-  const [Alertdismissing, setAlertdismissing] = useState(initialListdismissingdata);
-  const [iconsdismissing, seticonsdismissing] = useState(initialListiconsdata);
-  let handleRemove = (id) => {
-    const newList = alertData.filter((list) => list.id !== id);
-    setalertData(newList);
-  }
-  let handleRemoveoutline = (id) => {
-    const newList = outline.filter((list) => list.id !== id);
-    setoutline(newList);
-  }
-  let handleRemovesolid = (id) => {
-    const newList = solid.filter((list) => list.id !== id);
-    setsolid(newList);
-  }
-  let handleRemovedismissing = (id) => {
-    const newList = Alertdismissing.filter((list) => list.id !== id);
-    setAlertdismissing(newList);
-  }
-  let handleRemoveicons = (id) => {
-    const newList = iconsdismissing.filter((list) => list.id !== id);
-    seticonsdismissing(newList);
-  }
-
-  const first = () => {
-    setIsFirstCollapsed(!isFirstCollapsed);
-  };
-
-  const firsts = () => {
-    setIsFirstCollapseds(!isFirstCollapseds);
-  };
-
-  function handleShow(breakpoint) {
-    setFullscreen(breakpoint);
-    setShows(true);
-  }
 
   return (
-
     <Fragment>
-
       <Pageheader title="Business Reports" heading="Elements" active="Business Reports" />
 
-
       <Row className="row-sm">
-        <Col className="mg-md-t-0 text-center" sm={12} md={12} lg={4} xl={4}>
-          <Card>
+        <Col sm={12} md={12} lg={4} xl={4}>
+          <Card style={{ ...cardStyle, backgroundImage: cardImages.sales }}>
             <Card.Body>
-            <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/sales-report`} >Sales Report</RouterLink>
+              <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/sales-report`} style={{ textAlign: "center" }}>
+                Sales Report
+              </RouterLink>
             </Card.Body>
-            {/* <Card.Footer className="bd-t tx-center">
-              
-            </Card.Footer> */}
           </Card>
         </Col>
-        <Col className="mg-md-t-0 text-center" sm={12} md={12} lg={4} xl={4}>
-          <Card>
+        <Col sm={12} md={12} lg={4} xl={4}>
+          <Card style={{ ...cardStyle, backgroundImage: cardImages.parts }}>
             <Card.Body>
-            <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/parts-report`}>Parts Reports</RouterLink>
+              <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/parts-report`}>
+                Parts Reports
+              </RouterLink>
             </Card.Body>
-            {/* <Card.Footer className="bd-t tx-center">
-              
-            </Card.Footer> */}
           </Card>
         </Col>
-        <Col className="mg-md-t-0 text-center" sm={12} md={12} lg={4} xl={4}>
-          <Card>
+        <Col sm={12} md={12} lg={4} xl={4}>
+          <Card style={{ ...cardStyle, backgroundImage: cardImages.vendor }}>
             <Card.Body>
-            <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/vendors-report`}>Vendor Reports</RouterLink>
+              <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/vendors-report`}>
+                Vendor Reports
+              </RouterLink>
             </Card.Body>
-            {/* <Card.Footer className="bd-t tx-center">
-              
-            </Card.Footer> */}
           </Card>
         </Col>
-        <Col className="mg-md-t-0 text-center" sm={12} md={12} lg={4} xl={4}>
-          <Card>
+        <Col sm={12} md={12} lg={4} xl={4}>
+          <Card style={{ ...cardStyle, backgroundImage: cardImages.workshop }}>
             <Card.Body>
-            <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/workshop-reports`}>Workshop Reports</RouterLink>
+              <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/workshop-reports`}>
+                Workshop Reports
+              </RouterLink>
             </Card.Body>
-            {/* <Card.Footer className="bd-t tx-center">
-              
-            </Card.Footer> */}
           </Card>
         </Col>
-        <Col className="mg-md-t-0 text-center" sm={12} md={12} lg={4} xl={4}>
-          <Card>
+        <Col sm={12} md={12} lg={4} xl={4}>
+          <Card style={{ ...cardStyle, backgroundImage: cardImages.mechanic }}>
             <Card.Body>
-            <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/mechanic-report`}>Mechanics Report</RouterLink>
+              <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/mechanic-report`}>
+                Mechanics Report
+              </RouterLink>
             </Card.Body>
-            {/* <Card.Footer className="bd-t tx-center">
-              
-            </Card.Footer> */}
           </Card>
         </Col>
-        <Col className="mg-md-t-0 text-center" sm={12} md={12} lg={4} xl={4}>
-          <Card>
+        <Col sm={12} md={12} lg={4} xl={4}>
+          <Card style={{ ...cardStyle, backgroundImage: cardImages.customer }}>
             <Card.Body>
-            <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/customer-report`}>Customer Report</RouterLink>
+              <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/customer-report`}>
+                Customer Report
+              </RouterLink>
             </Card.Body>
-            {/* <Card.Footer className="bd-t tx-center">
-              
-            </Card.Footer> */}
           </Card>
         </Col>
-        <Col className="mg-md-t-0 text-center" sm={12} md={12} lg={4} xl={4}>
-          <Card>
+        <Col sm={12} md={12} lg={4} xl={4}>
+          <Card style={{ ...cardStyle, backgroundImage: cardImages.logo }}>
             <Card.Body>
-            <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/logo-reports`}>Logo Reports</RouterLink>
+              <RouterLink to={`${import.meta.env.BASE_URL}elements/alerts/logo-reports`}>
+                Log Reports
+              </RouterLink>
             </Card.Body>
-            {/* <Card.Footer className="bd-t tx-center">
-              
-            </Card.Footer> */}
           </Card>
         </Col>
       </Row>
-
     </Fragment>
-
   );
 }
-Alerts.propTypes = {};
-
-Alerts.defaultProps = {};
 
 export default Alerts;

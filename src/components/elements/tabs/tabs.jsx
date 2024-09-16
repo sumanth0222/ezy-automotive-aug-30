@@ -4,9 +4,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import { MultiSelect } from "react-multi-select-component";
-import { options } from "../../../common/selectdata";
+import { options, InspectionBookings } from "../../../common/selectdata";
 import { Link } from "react-router-dom";
 import { dropdownwithiconsdata } from "../../../common/commondata";
+import { useNavigate } from "react-router-dom";
 
 // Sample data
 const bookingsData = [
@@ -66,6 +67,13 @@ const Tabss = () => {
     // Your logic for delete action
   };
 
+  const navigate = useNavigate();
+  const handlePlusClick = () => {
+    navigate(`${import.meta.env.BASE_URL}pages/todotask`); // Navigate to the form page
+  };
+  const handlePlus2Click = () => {
+    navigate(`${import.meta.env.BASE_URL}advancedui/timeline`)
+  }
   return (
     <Fragment>
       <Pageheader title="Transaction Centre" heading="Pages" active="Transaction Centre" />
@@ -143,10 +151,12 @@ const Tabss = () => {
                               className="btn ripple btn-warning text-white btn-icon"
                               data-placement="top"
                               data-bs-toggle="tooltip"
-                              title="Add Profile"
+                              title="Create New"
                               href="#"
+                              onClick={handlePlusClick}
                             >
                               <i className="fe fe-plus"></i>
+                              
                             </a>
                           </div>
 
@@ -227,7 +237,7 @@ const Tabss = () => {
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -289,7 +299,7 @@ const Tabss = () => {
                                   <td>Delivering</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -342,7 +352,7 @@ const Tabss = () => {
                                   <td>Awaiting</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -394,7 +404,7 @@ const Tabss = () => {
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -437,11 +447,11 @@ const Tabss = () => {
                                 value={selected}
                                 onChange={setSelected}
                                 labelledBy="Select"
-                                options={options}
+                                options={InspectionBookings}
                               />
                             </div>
                             <div className="col-lg-2">
-                              <a className="btn ripple btn-warning text-white btn-icon mt-5" data-placement="top" data-bs-toggle="tooltip" title="Add Profile" href="#">
+                              <a className="btn ripple btn-warning text-white btn-icon mt-5" data-placement="top" data-bs-toggle="tooltip" title="Create New" href="#"  onClick={handlePlus2Click}>
                                 <i className="fe fe-plus"></i>
                               </a>
                             </div>
@@ -500,7 +510,7 @@ const Tabss = () => {
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -562,7 +572,7 @@ const Tabss = () => {
                                   <td>Delivering</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -613,7 +623,7 @@ const Tabss = () => {
                                   <td>Awaiting</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -665,7 +675,7 @@ const Tabss = () => {
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -698,6 +708,7 @@ const Tabss = () => {
                       {/* Jobs Tab */}
                       <Tab eventKey="Jobs" title={<><span>Jobs</span> <span className="badge bg-danger ms-2">6</span></>}>
                         <div className="tab-pane active">
+                          
                           <div className="row-sm row">
                             <div className="col-lg-12">
                               <div className="text-wrap">
@@ -767,7 +778,7 @@ const Tabss = () => {
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -827,7 +838,7 @@ const Tabss = () => {
                                   <td>Delivering</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -878,7 +889,7 @@ const Tabss = () => {
                                   <td>Awaiting</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -928,7 +939,7 @@ const Tabss = () => {
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -1012,7 +1023,7 @@ const Tabss = () => {
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -1072,7 +1083,7 @@ const Tabss = () => {
                                   <td>Delivering</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -1123,7 +1134,7 @@ const Tabss = () => {
                                   <td>Awaiting</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -1173,7 +1184,7 @@ const Tabss = () => {
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -1257,7 +1268,7 @@ const Tabss = () => {
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -1317,7 +1328,7 @@ const Tabss = () => {
                                   <td>Delivering</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -1368,7 +1379,7 @@ const Tabss = () => {
                                   <td>Awaiting</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
@@ -1418,7 +1429,7 @@ const Tabss = () => {
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="mb-2 mt-2" key={Math.random()}>
+                                      <ButtonGroup className="" key={Math.random()}>
                                         <Dropdown drop="up">
                                           <Dropdown.Toggle variant={idx.color} className="dropups">
                                             <i className={`fe fe-${idx.class}`}></i>
