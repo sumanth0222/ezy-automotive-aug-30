@@ -129,6 +129,12 @@ import QuickBookExport from '../components/widgets/quickbookexport';
 import Import1 from '../components/widgets/import';
 import Export1 from '../components/widgets/export1';
 import SuppliersPlus from '../components/elements/buttons/supplierplus';
+import SupplierEdit from '../components/elements/buttons/supplieredit';
+import SupplierInvoice from '../components/elements/buttons/supplierinvoice';
+import SupplierOrder from '../components/elements/buttons/supplierorder';
+import SupplierPayments from '../components/elements/buttons/supplierpayments';
+import SupplierMessage from '../components/elements/buttons/suppliermessage';
+import SupplierEmail from '../components/elements/buttons/supplieremail';
 
 
 export const Routingdata = [
@@ -255,6 +261,8 @@ export const Routingdata = [
   { path:`${import.meta.env.BASE_URL}maps/simplemaps`, element: <Simplemaps /> },
   { path:`${import.meta.env.BASE_URL}pages/authentication/501error`, element:<Error501 />},
 
+  // New Pages
+
   { path:`${import.meta.env.BASE_URL}widgets/automotive`, element: <Automotive /> },
   { path:`${import.meta.env.BASE_URL}widgets/vvgarage`, element: <VVGarage /> },
   { path:`${import.meta.env.BASE_URL}widgets/accounting`, element: <Accounting/> },
@@ -278,8 +286,12 @@ export const Routingdata = [
   { path:`${import.meta.env.BASE_URL}widgets/import1`, element: <Import1/> },
   { path:`${import.meta.env.BASE_URL}widgets/export1`, element: <Export1/> },
   { path:`${import.meta.env.BASE_URL}elements/buttons/supplierplus`, element: <SuppliersPlus/> },
-
-
+  { path:`${import.meta.env.BASE_URL}elements/buttons/supplieredit`, element: <SupplierEdit/> },
+  { path:`${import.meta.env.BASE_URL}elements/buttons/supplierinvoice`, element: <SupplierInvoice/> },
+  { path:`${import.meta.env.BASE_URL}elements/buttons/supplierorder`, element: <SupplierOrder/> },
+  { path:`${import.meta.env.BASE_URL}elements/buttons/supplierpayments`, element: <SupplierPayments/> },
+  { path:`${import.meta.env.BASE_URL}elements/buttons/suppliermessage`, element: <SupplierMessage/> },
+  { path:`${import.meta.env.BASE_URL}elements/buttons/supplieremail`, element: <SupplierEmail/> },
 
 ];
 
@@ -420,6 +432,8 @@ export const Sidebarcomponents=[
 { path:`${import.meta.env.BASE_URL}pages/authentication/501error`, title: "501 Error"},
 
 
+// New Pages
+
 { path:`${import.meta.env.BASE_URL}widgets/automotive`, title:"Automotive"},
 { path:`${import.meta.env.BASE_URL}widgets/vvgarage`,  title:"VVGarage"},
 { path:`${import.meta.env.BASE_URL}widgets/accounting`, title:"Accounting" },
@@ -443,6 +457,12 @@ export const Sidebarcomponents=[
 { path:`${import.meta.env.BASE_URL}widgets/import1`, title: "Import1" },
 { path:`${import.meta.env.BASE_URL}widgets/export1`, title: "Export1" },
 { path:`${import.meta.env.BASE_URL}elements/buttons/supplierplus`, title: "SuppliersPlus" },
+{ path:`${import.meta.env.BASE_URL}elements/buttons/supplieredit`, title: "SupplierEdit" },
+{ path:`${import.meta.env.BASE_URL}elements/buttons/supplierinvoice`, title: "SupplierInvoice"},
+{ path:`${import.meta.env.BASE_URL}elements/buttons/supplierorder`, title: "SupplierOrder" },
+{ path:`${import.meta.env.BASE_URL}elements/buttons/supplierpayments`, title: "SupplierPayments" },
+{ path:`${import.meta.env.BASE_URL}elements/buttons/suppliermessage`, title: "SupplierMessage"},
+{ path:`${import.meta.env.BASE_URL}elements/buttons/supplieremail`, title:"SupplierEmail" },
 
 
 ];

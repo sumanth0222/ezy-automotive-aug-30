@@ -46,9 +46,28 @@ const EmptyPage = () => {
       item[field].toLowerCase().includes(filter.toLowerCase())
     );
 
-  const handleEditClick = (itemCode) => {
-    // Navigate to the edit page with the itemCode
-    navigate(`${import.meta.env.BASE_URL}pages/settings`);
+  const handleEditClick = (phone) => {
+    navigate(`/elements/buttons/supplieredit`);
+  };
+
+  const handleInvoiceClick = (phone) => {
+    navigate(`${import.meta.env.BASE_URL}elements/buttons/supplierinvoice`);
+  };
+
+  const handleOrderClick = (phone) => {
+    navigate(`${import.meta.env.BASE_URL}elements/buttons/supplierorder`);
+  };
+
+  const handlePayments = (phone) => {
+    navigate(`${import.meta.env.BASE_URL}elements/buttons/supplierpayments`);
+  };
+
+  const handleMessageClick = (phone) => {
+    navigate(`${import.meta.env.BASE_URL}elements/buttons/suppliermessage`);
+  };
+
+  const handleEmailClick = (phone) => {
+    navigate(`${import.meta.env.BASE_URL}elements/buttons/supplieremail`);
   };
 
   const handlePlusClick = () => {
@@ -159,12 +178,44 @@ const EmptyPage = () => {
                                 <td>{phone.phone}</td>
                                 <td>{phone.website}</td>
                                 <td>
+                                  <div className="row d-flex justify-content-evenly">
                                   <button
                                     className="btn btn-sm btn-primary"
                                     onClick={() => handleEditClick(phone.phone)}
                                   >
                                     Edit
                                   </button>
+                                  <button
+                                    className="btn btn-sm btn-primary"
+                                    onClick={() => handleInvoiceClick(phone.phone)}
+                                  >
+                                    Invoice
+                                  </button>
+                                  <button
+                                    className="btn btn-sm btn-warning"
+                                    onClick={() => handleOrderClick(phone.phone)}
+                                  >
+                                    Order List
+                                  </button>
+                                  <button
+                                    className="btn btn-sm btn-warning"
+                                    onClick={() => handlePayments(phone.phone)}
+                                  >
+                                    Payment
+                                  </button>
+                                  <button
+                                    className="btn btn-sm btn-info"
+                                    onClick={() => handleMessageClick(phone.phone)}
+                                  >
+                                    Message
+                                  </button>
+                                  <button
+                                    className="btn btn-sm btn-info"
+                                    onClick={() => handleEmailClick(phone.phone)}
+                                  >
+                                    Email
+                                  </button>
+                                  </div>
                                 </td>
                               </tr>
                             )
