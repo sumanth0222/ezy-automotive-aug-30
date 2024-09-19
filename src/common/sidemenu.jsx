@@ -101,7 +101,7 @@ export const MENUITEMS = [
         title: "Vehicles",
       },
       {
-        path: ``,
+        path: `${import.meta.env.BASE_URL}elements/buttons`,
         icon: (
           <i className="fa fa-truck side-menu__icon"/>
         ),
@@ -130,14 +130,14 @@ export const MENUITEMS = [
         active:false,
         children: [
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}advancedui/counters`,
             type: "link",
             active:false,
             selected:false,
             title: "Stock Take",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}elements/avatar`,
             type: "link",
             active:false,
             selected:false,
@@ -215,14 +215,14 @@ export const MENUITEMS = [
         active:false,
         children: [
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}app/contacts`,
             type: "link",
             active:false,
             selected:false,
             title: "Loan Cars Diary",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}elements/breadcrumbs`,
             type: "link",
             active:false,
             selected:false,
@@ -232,15 +232,100 @@ export const MENUITEMS = [
         ],
       },
       {
-        path: ``,
+        title: "Integrations",
         icon: (
           <i className="fa fa-plug side-menu__icon"/>
         ),
-        type: "link",
+        type: "sub",
         selected:false,
         active:false,
-        title: "Integrations",
+        children: [
+          
+          {
+            title: "Automotive Integrations",
+            icon: (
+              <i className="fa fa-plug"/>
+            ),
+            type: "sub",
+            selected:false,
+            active:false,
+            children: [
+              {
+                path: `${import.meta.env.BASE_URL}widgets/automotive`,
+                title: "Vehicle Visuals",
+                type: "link",
+                active:false,
+                selected:false,
+              },
+              {
+                path: `${import.meta.env.BASE_URL}widgets/vvgarage`,
+                title: "vvGarage",
+                type: "link",
+                active:false,
+                selected:false,
+              },
+              
+            ],
+          },
+          {
+            title: "Accounting Integrations",
+            type: "sub",
+            selected:false,
+            active:false,
+            children: [
+              {
+                path: `${import.meta.env.BASE_URL}widgets/accounting`,
+                title: "Quickbooks",
+                type: "link",
+                active:false,
+                selected:false,
+              },
+              {
+                path: `${import.meta.env.BASE_URL}widgets/xero`,
+                title: "Xero",
+                type: "link",
+                active:false,
+                selected:false,
+              },
+              
+            ],
+          },
+          {
+            title: "Marketing Integrations",
+            type: "sub",
+            selected:false,
+            active:false,
+            children: [
+              {
+                path: `${import.meta.env.BASE_URL}widgets/marketing`,
+                title: "Mailchimp",
+                type: "link",
+                active:false,
+                selected:false,
+              },
+              
+            ],
+          },
+          {
+            title: "POS Integrations",
+            type: "sub",
+            selected:false,
+            active:false,
+            children: [
+              {
+                path: `${import.meta.env.BASE_URL}widgets/pos`,
+                title: "Stripe",
+                type: "link",
+                active:false,
+                selected:false,
+              },
+              
+            ],
+          },
+          
+        ],
       },
+      
       {
         title: "Settings",
         icon: (
@@ -251,77 +336,77 @@ export const MENUITEMS = [
         active:false,
         children: [
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/companysettings`,
             type: "link",
             active:false,
             selected:false,
             title: "Company Settings",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/publicbookings`,
             type: "link",
             active:false,
             selected:false,
             title: "Public Bookings",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/companylist`,
             type: "link",
             active:false,
             selected:false,
             title: "Company Lists",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/pricematrix`,
             type: "link",
             active:false,
             selected:false,
             title: "Price Matrix",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/remainder`,
             type: "link",
             active:false,
             selected:false,
             title: "Reminders",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/messages`,
             type: "link",
             active:false,
             selected:false,
             title: "Messages",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/schudules`,
             type: "link",
             active:false,
             selected:false,
             title: "Schedules",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/usersettings`,
             type: "link",
             active:false,
             selected:false,
             title: "User Settings",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/usersetup`,
             type: "link",
             active:false,
             selected:false,
             title: "User Setup",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/videosettings`,
             type: "link",
             active:false,
             selected:false,
             title: "Video Settings",
           },
           {
-            path: ``,
+            path: `${import.meta.env.BASE_URL}widgets/customerportal`,
             type: "link",
             active:false,
             selected:false,
@@ -329,16 +414,55 @@ export const MENUITEMS = [
           },
         ],
       },
+
       {
-        path: ``,
+        title: "Actions",
         icon: (
           <i className="fa fa-address-book side-menu__icon"/>
         ),
-        type: "link",
+        type: "sub",
         selected:false,
         active:false,
-        title: "Actions",
+        children: [
+          {
+            path: `${import.meta.env.BASE_URL}widgets/sendremainder`,
+            type: "link",
+            active:false,
+            selected:false,
+            title: "Send Reminders",
+          },
+          {
+            path: `${import.meta.env.BASE_URL}widgets/communicationcenter`,
+            type: "link",
+            active:false,
+            selected:false,
+            title: "Communication Center",
+          },
+          {
+            path: `${import.meta.env.BASE_URL}widgets/quickbookexport`,
+            type: "link",
+            active:false,
+            selected:false,
+            title: "QuickBooks Export",
+          },
+          {
+            path: `${import.meta.env.BASE_URL}widgets/import1`,
+            type: "link",
+            active:false,
+            selected:false,
+            title: "Import",
+          },
+          {
+            path: `${import.meta.env.BASE_URL}widgets/export1`,
+            type: "link",
+            active:false,
+            selected:false,
+            title: "Export",
+          },
+
+        ],
       },
+      
     ],
   },
 
@@ -1258,6 +1382,7 @@ export const MENUITEMS = [
   //           active:false,
   //           selected:false,
   //         },
+
   //         {
   //           title: "Level-2",
   //           type: "sub",

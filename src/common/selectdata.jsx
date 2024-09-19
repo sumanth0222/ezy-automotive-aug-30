@@ -120,6 +120,17 @@ export const Inspection = [
   { value: "price 6", label: " price 6" },
 ];
 
+export const Template = [
+  { value: "Color", label: " Color" },
+  { value: "Carry Out", label: " Carry Out" },
+  { value: "Input", label: " Input" },
+  { value: "Tyres", label: " Tyres" },
+  { value: "NA", label: " NA" },
+  { value: "NA", label: " NA" },
+  { value: "NA", label: " NA" },
+  { value: "NA", label: " NA" },
+];
+
 
 // Transaction Center
 export const InspectionBookings = [
@@ -259,6 +270,55 @@ export const log2 =[
   { value: "Vendor Invoice", label: " Vendor Invoice" },
   { value: "Other", label: " Other" },
 ];
+
+// Stock Take
+export const stocktake1 =[
+  { value: "Parts", label: " Parts" },
+  { value: "Consumables", label: " Consumables" },
+  { value: "Accessories", label: " Accessories" },
+  { value: "Tires", label: " Tires" },
+];
+
+export const stocktake2 =[
+  { value: "Filters", label: " Filters" },
+  { value: "Misc", label: " Misc" },
+  { value: "Oils", label: " Oils" },
+  { value: "Repairs", label: " Repairs" },
+  { value: "Service", label: " Service" },
+  { value: "Sublets", label: " Sublets" },
+];
+
+
+// Loan Cars
+
+export const states = [
+  {value: "Andhra Pradesh", label:"Andhra Pradesh"},
+  {value: "Telangana", label:"Telangana"},
+  {value: "Karnataka", label:"Karnataka"},
+  {value: "Tamil Nadu", label:"Tamil Nadu"},
+  {value: "Kerala", label:"Kerala"},
+  {value: "Delhi", label:"Delhi"},
+]
+
+// Suppliers
+export const countries = [
+  {value: "India", label:"India"},
+  {value: "USA", label:"USA"},
+  {value: "Russia", label:"Russia"},
+  {value: "UK", label:"UK"},
+  {value: "Australia", label:"Australia"},
+  {value: "Singapore", label:"Singapore"},
+]
+
+export const payment = [
+  {value: "Cash On Delivery", label:"Cash On Delivery"},
+  {value: "7 Days", label:"7 Days"},
+  {value: "15 Days", label:"15 Days"},
+  {value: "30 Days", label:"30 Days"},
+  {value: "60 Days", label:"60 Days"},
+  {value: "None", label:"None"},
+]
+
 
 
 //advancedforms

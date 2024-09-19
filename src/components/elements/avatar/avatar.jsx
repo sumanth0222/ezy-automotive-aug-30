@@ -1,303 +1,115 @@
-import{ Fragment } from 'react';
-import {  Card, Col, Row } from 'react-bootstrap';
-import { imagesData } from '../../../common/commonimages';
+import React, { useState, Fragment } from 'react';
+import { Card, Col } from 'react-bootstrap';
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
-import { Avatarsizesdata, Initialsavatarsdata, Stackedavatarsinnumbersdata } from '../../../common/commondata';
+import { useNavigate } from "react-router-dom"; 
 
-const Avatar = () => {
-  return(
-  <Fragment>
 
-    <Pageheader title="AVATARS"  heading="Elements"   active="Avatars" /> 
-    <Row>
-      <Col md={12} xl={6}>
-        <Card className="custom-card" id="sizes">
-          <Card.Body>
-            <div>
-              <h6 className="card-title mb-1">Avatar Sizes</h6>
-              <p className="text-muted card-sub-title">
-                An avatar have different sizes.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="example">
-                <div className="demo-avatar-group d-block d-sm-flex">
-                  {Avatarsizesdata.map((idx)=>(
-                  <div className={`main-img-user avatar-${idx.size}`} key={Math.random()}>
-                    <img
-                      alt="avatar"
-                      className="rounded-circle"
-                      src={idx.src}
-                    />
-                  </div>
-                  ))}
-                 
-                </div>
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col md={12} xl={6}>
-        <Card className="custom-card" id="initials">
-          <Card.Body>
-            <div>
-              <h6 className="card-title mb-1">Initials Avatars</h6>
-              <p className="text-muted card-sub-title">
-                An avatar have a temporary names of user's their photos are not
-                yet available.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="example">
-                <div className="demo-avatar-group avatar-list flex-wrap pb-2">
-                  {Initialsavatarsdata.map((idx)=>(
-                  <div className={`avatar avatar-${idx.size} bg-${idx.color} ${idx.class} rounded-circle`} key={Math.random()}>
-                  {idx.text}
-                  </div>
-                  ))}
-                
-                </div>
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col lg={6} md={6}>
-        <Card className="custom-card" id="shapes">
-          <Card.Body>
-            <div>
-              <h6 className="card-title mb-1">Avatar Shapes</h6>
-              <p className="text-muted card-sub-title">
-                An avatar have different shapes.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="example">
-                <div className="demo-avatar-group">
-                  <div className="main-img-user avatar-md me-4">
-                    <img
-                      alt="avatar"
-                      className="rounded-circle"
-                      src={imagesData('female4')}
-                    />
-                  </div>
-                  <div className="main-img-user avatar-md me-4">
-                    <img
-                      alt="avatar"
-                      className="square"
-                      src={imagesData('female5')}
-                    />
-                  </div>
-                  <div className="main-img-user avatar-md">
-                    <img
-                      alt="avatar"
-                      className="radius"
-                      src={imagesData('female6')}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col lg={6} md={6}>
-        <Card className="custom-card">
-          <Card.Body>
-            <div>
-              <h6 className="card-title mb-1">Status Indicator</h6>
-              <p className="text-muted card-sub-title">
-                An avatar have a status indicator to indicate users
-                availability.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="example">
-                <div className="demo-avatar-group">
-                  <div className="main-img-user avatar-lg main-avatar online me-4">
-                    <img
-                      alt="avatar"
-                      className="rounded-circle"
-                      src={imagesData('female8')}
-                    />
-                  </div>
-                  <div className="main-img-user avatar-lg main-avatar offline">
-                    <img
-                      alt="avatar"
-                      className="rounded-circle"
-                      src={imagesData('female8')}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col lg={6} md={6}>
-        <Card className="custom-card">
-          <Card.Body>
-            <div>
-              <h6 className="card-title mb-1">Avatars with numbers</h6>
-              <p className="text-muted card-sub-title">
-                Avatars that show number badges.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="additional-avatars">
-                <div className="demo-avatar-group">
-                  <div className="demo-avatar-group">
-                    <div className="main-img-user1 avatar-sm me-4">
-                      <img
-                        alt="avatar"
-                        className="rounded-circle"
-                        src={imagesData('female2')}
-                      />
-                      <span className="badge rounded-pill badge-primary number-badge">
-                        2
-                      </span>
-                    </div>
-                    <div className="main-img-user1 avatar-md me-4">
-                      <img
-                        alt="avatar"
-                        className="rounded-circle"
-                        src={imagesData('female1')}
-                      />
-                      <span className="badge rounded-pill bg-secondary number-badge">
-                        11
-                      </span>
-                    </div>
-                    <div className="main-img-user1 avatar-lg">
-                      <img
-                        alt="avatar"
-                        className="rounded-circle"
-                        src={imagesData('female11')}
-                      />
-                      <span className="badge rounded-pill bg-success number-badge">
-                        3
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col lg={6} md={6}>
-        <Card className="custom-card">
-          <Card.Body>
-            <div>
-              <h6 className="card-title mb-1">Avatars with icons</h6>
-              <p className="text-muted card-sub-title">
-                Avatars that show icon badges.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="additional-avatars">
-                <div className="demo-avatar-group">
-                  <div className="demo-avatar-group">
-                    <div className="main-img-user3 avatar-sm me-4">
-                      <img
-                        alt="avatar"
-                        className="rounded-circle"
-                        src={imagesData('female2')}
-                      />
-                      <span className="badge rounded-pill badge-primary icon-badgeavatar">
-                        <i className="fe fe-plus"></i>
-                      </span>
-                    </div>
-                    <div className="main-img-user3 avatar-md me-4">
-                      <img
-                        alt="avatar"
-                        className="rounded-circle"
-                        src={imagesData('female1')}
-                      />
-                      <span className="badge rounded-pill bg-secondary icon-badgeavatar">
-                        <i className="fe fe-edit"></i>
-                      </span>
-                    </div>
-                    <div className="main-img-user3 avatar-lg">
-                      <img
-                        alt="avatar"
-                        className="rounded-circle"
-                        src={imagesData('female11')}
-                      />
-                      <span className="badge rounded-pill bg-success icon-badgeavatar">
-                        <i className="fe fe-delete"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col lg={6} md={6}>
-        <Card className="custom-card">
-          <Card.Body>
-            <div>
-              <h6 className="card-title mb-1">Stacked Avatars in Numbers</h6>
-              <p className="text-muted card-sub-title">
-                Group of avatars stacked together with number representation.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="avatar-list avatar-list-stacked">
-                {Stackedavatarsinnumbersdata.map((idx)=>(
-                <span className="avatar1 brround" key={Math.random()}>
-                  <img
-                    alt=""
-                    className="rounded-circle"
-                    src={idx.src}
-                  />
-                </span>
-                ))}
-                <span className="avatar1 brround">+8</span>
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col lg={6} md={6}>
-        <Card className="custom-card">
-          <Card.Body>
-            <div>
-              <h6 className="card-title mb-1">Stacked Avatars in Numbers</h6>
-              <p className="text-muted card-sub-title">
-                Avatars that show icon badges.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="avatar-list avatar-list-stacked">
-              {Stackedavatarsinnumbersdata.map((idx)=>(
-                <span className="avatar1 brround" key={Math.random()}>
-                  <img
-                    alt=""
-                    className="rounded-circle"
-                    src={idx.src}
-                  />
-                </span>
-              ))}
-                <span className="avatar1 brround">
-                  <i className="fe fe-plus"></i>
-                </span>
-              </div>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+
+const Groups = () => {
+ 
+  const navigate = useNavigate(); 
+  const [selected, setSelected] = useState([]);
+  // Custom validation
+ 
+  const [validatedCustom, setValidatedCustom] = useState(false);
+
+  const handleSubmitCustom = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidatedCustom(true);
+  };
+
+
+
+ 
+
+  
+  const [filter, setFilter] = useState("");
+ 
+
    
-  </Fragment>
-);
+    // Handler for the Cancel button
+  const handleCancel = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
+  
+ 
+  
 
+  return (
+    <Fragment>
+      <Pageheader title="Stock Take" heading="Stock Take" active="Single Item" />
+      <div className="row">
+        <Col lg={12} md={12}>
+          <Card>
+            <Card.Header
+              className="row-sm row justify-content-between bg-primary" style={{paddingBottom:"6px"}}>
+              <div className="row-sm row">
+                <div>
+                  <a
+                    className="btn ripple btn-dark text-white btn-icon mt-2"
+                    data-placement="top"
+                    data-bs-toggle="tooltip"
+                    title=""
+                    href="#"
+                  >
+                    <i className="zmdi zmdi-assignment-o"></i>
+                  </a>
+                </div>
+                <div>
+                  <h3 className="mt-2">Stock Take - Single Item</h3>
+                </div>
+              </div>
+
+              
+            </Card.Header>
+            <Card.Body>
+              
+                      <div className="">
+                        <form className="row g-3 needs-validation" noValidate>
+
+                        <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Select A Product</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                        </div>
+                          
+                        <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Quantity Count</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                        </div>
+
+       
+                        </form>
+
+                        
+                      </div>
+
+                      <div id="button6 ">
+                      <div className="text-wrap row justify-content-between mt-4">
+
+                        <div>
+                          <button type="button" className="btn btn-danger" onClick={handleCancel}>
+                            Cancel
+                          </button>
+                        </div>
+
+                        <div>
+                          <button type="button" className="btn btn-primary" >
+                            Save
+                          </button>
+                        </div>
+                        
+                      </div>
+                    </div>
+            </Card.Body>
+          </Card>
+        </Col>
+      </div>
+    </Fragment>
+  );
 };
 
-Avatar.propTypes = {};
-
-Avatar.defaultProps = {};
-
-export default Avatar;
+export default Groups;

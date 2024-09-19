@@ -1,432 +1,203 @@
-import React,{useState, Fragment} from "react";
-import { Breadcrumb, Row, Col, Card, Collapse, Form } from "react-bootstrap";
-import Pageheader from "../../../layout/layoutcomponent/pageheader";
+import React, { useState, Fragment } from 'react';
+import { Card, Col, Button, Form } from 'react-bootstrap';
+import Pageheader from '../../../layout/layoutcomponent/pageheader';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom"; 
+import Draggable from 'react-draggable';
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Paper,
+} from "@mui/material";
 
-const Breadcrumbs = () => {
- const [Basic,setBasic] = useState(false);
- const [Custom, setCustom] = useState(false);
- const [Icon, setIcon] = useState(false);
- const [Center, setCenter] = useState(false);
- const [Right,setRight] = useState(false); 
-  return(
-  <Fragment>
-    <Pageheader title="BREADCRUMBS"  heading="Elements"   active="Breadcrumbs" /> 
+const Groups = () => {
+ 
+  const navigate = useNavigate(); 
+  const [startDate, setStartDate] = useState(null);
+  const [selected, setSelected] = useState([]);
+  // Custom validation
+ 
+  const [validatedCustom, setValidatedCustom] = useState(false);
 
+  const handleSubmitCustom = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidatedCustom(true);
+  };
 
+  // State to track each toggle button's state
+  const [toggleStates, setToggleStates] = useState({
+    gstFree: false,
+    
+  });
+
+  // Toggle button handler for individual switches
+  const handleToggle = (key) => {
+    setToggleStates((prevState) => ({
+      ...prevState,
+      [key]: !prevState[key],
+    }));
+  };
+
+  function PaperComponent(props) {
+    return (
+      <Draggable
+        handle="#draggable-dialog-title"
+        cancel={'[class*="MuiDialogContent-root"]'}
+      >
+        <Paper {...props} />
+      </Draggable>
+    );
+  }
+  const [open1, setOpen1] = useState(false);
+
+  const handleClickOpen1 = () => {
+    setOpen1(true);
+  };
   
-    <Row>
-      <Col md={12} lg={12}>
-        <Card className="custom-card" id="basic">
-          <Card.Body>
-            <div>
-              <div className="d-flex">
-              <h6 className="card-title mb-1">Basic Styling</h6>
-               <Form className="ms-auto">
-                  <Form.Check
-                    label="Show Code"
-                     type="switch"
-                    id="custom-switch"
-                    onClick={() => setBasic(!Basic)}
-                    className="showcode d-flex ms-auto "
-                  />
-                </Form>
-                </div>
-              <p className="text-muted card-sub-title">
-                The example below is the basic styling of the breadcrumb from
-                Bootstrap.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="example">
-                <div aria-label="breadcrumb">
-                  <Breadcrumb className="breadcrumb-style mg-b-0">
-                    <Breadcrumb.Item href="#">
-                      Home
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#">
-                      Library
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#" active>
-                      Data
-                    </Breadcrumb.Item>
-                  </Breadcrumb>
-                </div>
-              </div>
-            </div>
-              <Collapse in={Basic} className="mt-2">
-                <div id="example-collapse-text">
-                  <pre>
-                    <code>{`
-<div className="text-wrap">
-  <div className="example">
-    <div aria-label="breadcrumb">
-      <Breadcrumb className="breadcrumb-style mg-b-0">
-        <Breadcrumb.Item href="#">
-            Home
-        </Breadcrumb.Item>
-        <Breadcrumb.Item href="#">
-            Library
-        </Breadcrumb.Item>
-        <Breadcrumb.Item href="#" active>
-            Data
-        </Breadcrumb.Item>
-      </Breadcrumb>
-    </div>
-  </div>
-</div>
-                    `}
-                    </code>
-                  </pre>
-                </div>
-              </Collapse>
-          </Card.Body>
-        </Card>
-      </Col>
-
-      <Col md={12} lg={12}>
-        <Card className="custom-card" id="custom">
-          <Card.Body>
-            <div>
-              <div className="d-flex">
-              <h6 className="card-title mb-1">Custom Styling</h6>
-              <Form className="ms-auto">
-                  <Form.Check
-                    label="Show Code"
-                     type="switch"
-                    id="custom-switch"
-                    onClick={() => setCustom(!Custom)}
-                    className="showcode d-flex ms-auto "
-                  />
-                </Form>
-                </div>
-              <p className="text-muted card-sub-title">
-                The example below is the custom styling of the breadcrumb used
-                by this template.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="example">
-                 
-                <div aria-label="breadcrumb">
-                  <Breadcrumb className=" breadcrumb-style2 mb-0">
-                    <Breadcrumb.Item href="#">
-                      Home
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#">
-                      Library
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#" active>Data</Breadcrumb.Item>
-                  </Breadcrumb>
-                </div>
-                  
-              </div>
-            </div>
-              <Collapse in={Custom} className="mt-2">
-                <div id="example-collapse-text">
-                  <pre>
-                    <code>{`
-<div className="text-wrap">
-  <div className="example">
-    <div aria-label="breadcrumb">
-      <Breadcrumb className=" breadcrumb-style2 mb-0">
-        <Breadcrumb.Item href="#">
-             Home
-        </Breadcrumb.Item>
-        <Breadcrumb.Item href="#">
-             Library
-        </Breadcrumb.Item>
-        <Breadcrumb.Item href="#" active>Data</Breadcrumb.Item>
-      </Breadcrumb>
-    </div>
-  </div>
-</div>
-                    `}
-                    </code>
-                  </pre>
-                </div>
-              </Collapse>
-          </Card.Body>
-        </Card>
-      </Col>
-
-      <Col md={12} lg={12}>
-        <Card className="custom-card" id="divider">
-          <Card.Body>
-            <div >
-              <div className="d-flex">
-              <h6 className="card-title mb-1">Icon Divider</h6>
-                <Form className="ms-auto">
-                  <Form.Check
-                    label="Show Code"
-                     type="switch"
-                    id="custom-switch"
-                    onClick={() => setIcon(!Icon)}
-                    className="showcode d-flex ms-auto "
-                  />
-                </Form>
-                </div>
-              <p className="text-muted card-sub-title">
-                The example below is the custom styling of the breadcrumb using
-                different divider.
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="example">
-                 
-                <div aria-label="breadcrumb">
-                  <Breadcrumb className="  breadcrumb-style mb-2">
-                    <Breadcrumb.Item href="#">
-                      <svg
-                        className="svg-icon mb-1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="17"
-                        height="17"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinejoin="round"
-                        strokeLinecap="round"
-                      >
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                      </svg>{' '}
-                      Home
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#">
-                      Library
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#" active>Data</Breadcrumb.Item>
-                  </Breadcrumb>
-                  <Breadcrumb className=" breadcrumb-style2 mb-0">
-                    <Breadcrumb.Item href="#">
-                      <svg
-                        className="svg-icon mb-1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="17"
-                        height="17"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinejoin="round"
-                        strokeLinecap="round"
-                      >
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                      </svg>{' '}
-                      Home
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#">
-                      Library
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#" active>Data</Breadcrumb.Item>
-                  </Breadcrumb>
-                </div>
-                  
-              </div>
-            </div>
-              <Collapse in={Icon} className="mt-2">
-                <div id="example-collapse-text">
-                  <pre>
-                    <code>{`
-<div className="text-wrap">
-  <div className="example">
-    <div aria-label="breadcrumb">
-       <Breadcrumb className="  breadcrumb-style mb-2">
-          <Breadcrumb.Item href="#">
-            <svg
-              className="svg-icon mb-1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="17"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-            >
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-              Home
-          </Breadcrumb.Item>
-          <Breadcrumb.Item href="#">
-              Library
-          </Breadcrumb.Item>
-          <Breadcrumb.Item href="#" active>Data</Breadcrumb.Item>
-       </Breadcrumb>
-       <Breadcrumb className=" breadcrumb-style2 mb-0">
-          <Breadcrumb.Item href="#">
-            <svg
-              className="svg-icon mb-1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="17"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-            >
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-              Home
-          </Breadcrumb.Item>
-          <Breadcrumb.Item href="#">
-              Library
-          </Breadcrumb.Item>
-          <Breadcrumb.Item href="#" active>Data</Breadcrumb.Item>
-       </Breadcrumb>
-    </div>
-  </div>
-</div>
-                    `}
-                    </code>
-                  </pre>
-                </div>
-              </Collapse>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col md={12} lg={12}>
-        <Card className="custom-card" id="center">
-          <Card.Body>
-            <div>
-              <div className="d-flex">
-              <h6 className="card-title mb-1">Breadcrumbs-Center align</h6>
-               <Form className="ms-auto">
-                  <Form.Check
-                    label="Show Code"
-                     type="switch"
-                    id="custom-switch"
-                    onClick={() => setCenter(!Center)}
-                    className="showcode d-flex ms-auto "
-                  />
-                </Form>
-                </div>
-              <p className="text-muted card-sub-title">
-                The example below is the center aligment of the breadcrumb
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="example">
-                <div className="breadcrumb-3">
-                  <Breadcrumb className="breadcrumb-style1 mb-0 ceneter-align">
-                    <Breadcrumb.Item href="#" className="me-2">
-                      Home
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#" className="me-2">
-                      Library
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#" className="me-2" active>Data</Breadcrumb.Item>
-                  </Breadcrumb>
-                </div>
-                  
-              </div>
-            </div>
-              <Collapse in={Center} className="mt-2">
-                <div id="example-collapse-text">
-                  <pre>
-                    <code>{`
-<div className="text-wrap">
-  <div className="example">
-    <div className="breadcrumb-3">
-      <Breadcrumb className=" breadcrumb-style1 mb-0">
-        <Breadcrumb.Item href="#">
-          Home
-        </Breadcrumb.Item>
-        <Breadcrumb.Item href="#">
-          Library
-        </Breadcrumb.Item>
-        <Breadcrumb.Item href="#" active>Data</Breadcrumb.Item>
-      </Breadcrumb>
-    </div>
-  </div>
-</div>
-                    `}
-                    </code>
-                  </pre>
-                </div>
-              </Collapse>
-          </Card.Body>
-        </Card>
-      </Col>
-
-      <Col md={12} lg={12}>
-        <Card className="custom-card" id="right">
-          <Card.Body>
-            <div>
-              <div className="d-flex">
-              <h6 className="card-title mb-1">Breadcrumbs-Right align</h6>
-                <Form className="ms-auto">
-                  <Form.Check
-                    label="Show Code"
-                     type="switch"
-                    id="custom-switch"
-                    onClick={() => setRight(!Right)}
-                    className="showcode d-flex ms-auto "
-                  />
-                </Form>
-                </div>
-              <p className="text-muted card-sub-title">
-                The example below is the Right aligment of the breadcrumb
-              </p>
-            </div>
-            <div className="text-wrap">
-              <div className="example">
-                <div className="breadcrumb-4">
-                  <Breadcrumb className=" breadcrumb-style1 mb-0 right-align">
-                    <Breadcrumb.Item href="#">
-                      Home
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#">
-                      Library
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="#" active>Data</Breadcrumb.Item>
-                  </Breadcrumb>
-                </div>
-                  
-              </div>
-            </div>
-              <Collapse in={Right} className="mt-2">
-                <div id="example-collapse-text">
-                  <pre>
-                    <code>{`
-<div className="text-wrap">
-  <div className="example">
-    <div className="breadcrumb-4">
-       <Breadcrumb className=" breadcrumb-style1 mb-0">
-          <Breadcrumb.Item href="#">
-            Home
-          </Breadcrumb.Item>
-          <Breadcrumb.Item href="#">
-            Library
-          </Breadcrumb.Item>
-          <Breadcrumb.Item href="#" active>Data</Breadcrumb.Item>
-        </Breadcrumb>
-    </div>
-  </div>
-</div>
-                    `}
-                    </code>
-                  </pre>
-                </div>
-              </Collapse>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+  const handleClosedraggable = () => {
+    setOpen1(false);
+  };
    
-  </Fragment>
-);
-}
+    // Handler for the Cancel button
+  const handleCancel = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
+  
+ 
+  
 
-Breadcrumbs.propTypes = {};
+  return (
+    <Fragment>
+      <Pageheader title="Loan Cars" heading="Loan Cars" active="Loan Vehicle" />
+      <div className="row">
+        <Col lg={12} md={12}>
+          <Card>
+            <Card.Header
+              className="row-sm row justify-content-between bg-primary" style={{paddingBottom:"6px"}}>
+              <div className="row-sm row">
+                <div>
+                  <a
+                    className="btn ripple btn-dark text-white btn-icon mt-2"
+                    data-placement="top"
+                    data-bs-toggle="tooltip"
+                    title=""
+                    href="#"
+                  >
+                    <i className="fa fa-calendar"></i>
+                  </a>
+                </div>
+                <div>
+                  <h3 className="mt-2">Loan Vehicles</h3>
+                </div>
+              </div>
 
-Breadcrumbs.defaultProps = {};
+              <div className="row-sm row">
+               
 
-export default Breadcrumbs;
+              <div class="col-lg-3">
+                            
+                            <div class="input-group input-group">
+                   
+
+                              <div class="">
+                                <label class="">
+
+                                  <i className=" fa fa-star btn ripple btn-dark text-white btn-icon"
+                                    href="#modaldemo8"
+                                    variant="primary"
+                                    title="Create Loan"
+                                    onClick={handleClickOpen1}
+                                  ></i>
+
+                                  <Dialog
+                                    open={open1}
+                                    onClose={handleClosedraggable}
+                                    PaperComponent={PaperComponent}
+                                    aria-labelledby="draggable-dialog-title"
+                                  >
+                                    <DialogTitle style={{ cursor: "move", backgroundColor:"#38cab3" }} id="draggable-dialog-title">
+                                      Create Loan Vehicle
+                                    </DialogTitle>
+                                    <DialogContent >
+                                      <DialogContentText className='row-sm row'>
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">Rego</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">Make</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">Model</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+
+                                
+                                        <div className="col-lg-3">
+                                          <label className="form-label" htmlFor="validationCustom05">Model code</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+                                        <div className="col-lg-3">
+                                          <label className="form-label" htmlFor="validationCustom05">Model Series</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+                                        <div className="col-lg-3 ">
+                                          <Form.Label>Build Date</Form.Label>
+                                          <div className="input-group">
+                                            
+                                            <DatePicker
+                                              selected={startDate}
+                                              onChange={(date) => setStartDate(date)}
+                                              className="form-control"
+                                              placeholderText="Select Date"
+                                            />
+                                          </div>
+                                        </div>
+
+                                        <div className="col-lg-3">
+                                          <label className="form-label" htmlFor="validationCustom05">Colour</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+                                      </DialogContentText>
+                                    </DialogContent>
+                                    <DialogActions>
+                                      <Button variant="secondary" className="me-1" onClick={handleClosedraggable}>
+                                        Cancel
+                                      </Button>
+                                      <Button onClick={handleClosedraggable} className="me-1" variant="success">
+                                        Create
+                                      </Button>
+                                    </DialogActions>
+                                  </Dialog>
+                                </label>
+                              </div>
+                            </div>
+
+                          </div>
+
+              </div>
+              
+            </Card.Header>
+            <Card.Body>
+              
+                    <h3 style={{textAlign:"center"}}>No Loan Vehicles Found</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+      </div>
+    </Fragment>
+  );
+};
+
+export default Groups;
