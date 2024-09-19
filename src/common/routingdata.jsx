@@ -106,7 +106,29 @@ import Widgets from '../components/widgets/widgets';
 import LeafletMaps from '../components/maps/leafletmaps/leafletmaps';
 import Simplemaps from '../components/maps/simplemaps/simplemaps';
 import Error501 from '../components/pages/authentication/501error/501error';
-
+import Automotive from '../components/widgets/automotive';
+import VVGarage from '../components/widgets/vvgarage';
+import Accounting from '../components/widgets/accounting';
+import Xero from '../components/widgets/xero';
+import Marketing from '../components/widgets/marketing';
+import Pos from '../components/widgets/pos';
+import CompanySettings from '../components/widgets/companysettings';
+import PublicBookings from '../components/widgets/publicbookings';
+import CompanyList from '../components/widgets/companylist';
+import PriceMatrix from '../components/widgets/pricematrix';
+import Remainder from '../components/widgets/reminder';
+import Messages from '../components/widgets/messages';
+import Schedules from '../components/widgets/schudules';
+import UserSettings from '../components/widgets/usersettings';
+import UserSetup from '../components/widgets/usersetup';
+import VideoSettings1 from '../components/widgets/videosettings';
+import CustomerPortal from '../components/widgets/customerportal';
+import SendRemainder from '../components/widgets/sendremainder';
+import CommunicationCenter from '../components/widgets/communicationcenter';
+import QuickBookExport from '../components/widgets/quickbookexport';
+import Import1 from '../components/widgets/import';
+import Export1 from '../components/widgets/export1';
+import SuppliersPlus from '../components/elements/buttons/supplierplus';
 
 
 export const Routingdata = [
@@ -232,6 +254,32 @@ export const Routingdata = [
   { path:`${import.meta.env.BASE_URL}maps/leafletmaps`, element: <LeafletMaps /> },
   { path:`${import.meta.env.BASE_URL}maps/simplemaps`, element: <Simplemaps /> },
   { path:`${import.meta.env.BASE_URL}pages/authentication/501error`, element:<Error501 />},
+
+  { path:`${import.meta.env.BASE_URL}widgets/automotive`, element: <Automotive /> },
+  { path:`${import.meta.env.BASE_URL}widgets/vvgarage`, element: <VVGarage /> },
+  { path:`${import.meta.env.BASE_URL}widgets/accounting`, element: <Accounting/> },
+  { path:`${import.meta.env.BASE_URL}widgets/xero`, element: <Xero/> },
+  { path:`${import.meta.env.BASE_URL}widgets/marketing`, element: <Marketing/> },
+  { path:`${import.meta.env.BASE_URL}widgets/pos`, element: <Pos/> },
+  { path:`${import.meta.env.BASE_URL}widgets/companysettings`, element: <CompanySettings/> },
+  { path:`${import.meta.env.BASE_URL}widgets/publicbookings`, element: <PublicBookings/> },
+  { path:`${import.meta.env.BASE_URL}widgets/companylist`, element: <CompanyList/> },
+  { path:`${import.meta.env.BASE_URL}widgets/pricematrix`, element: <PriceMatrix/> },
+  { path:`${import.meta.env.BASE_URL}widgets/remainder`, element: <Remainder/> },
+  { path:`${import.meta.env.BASE_URL}widgets/messages`, element: <Messages/> },
+  { path:`${import.meta.env.BASE_URL}widgets/schudules`, element: <Schedules/> },
+  { path:`${import.meta.env.BASE_URL}widgets/usersettings`, element: <UserSettings/> },
+  { path:`${import.meta.env.BASE_URL}widgets/usersetup`, element: <UserSetup/> },
+  { path:`${import.meta.env.BASE_URL}widgets/videosettings`, element: <VideoSettings1/> },
+  { path:`${import.meta.env.BASE_URL}widgets/customerportal`, element: <CustomerPortal/> },
+  { path:`${import.meta.env.BASE_URL}widgets/sendremainder`, element: <SendRemainder/> },
+  { path:`${import.meta.env.BASE_URL}widgets/communicationcenter`, element: <CommunicationCenter/> },
+  { path:`${import.meta.env.BASE_URL}widgets/quickbookexport`, element: <QuickBookExport/> },
+  { path:`${import.meta.env.BASE_URL}widgets/import1`, element: <Import1/> },
+  { path:`${import.meta.env.BASE_URL}widgets/export1`, element: <Export1/> },
+  { path:`${import.meta.env.BASE_URL}elements/buttons/supplierplus`, element: <SuppliersPlus/> },
+
+
 
 ];
 
@@ -370,6 +418,32 @@ export const Sidebarcomponents=[
 { path:`${import.meta.env.BASE_URL}pages/authentication/404error`, title: "404 Error"},
 { path:`${import.meta.env.BASE_URL}pages/authentication/500error`, title: "500 Error"},
 { path:`${import.meta.env.BASE_URL}pages/authentication/501error`, title: "501 Error"},
+
+
+{ path:`${import.meta.env.BASE_URL}widgets/automotive`, title:"Automotive"},
+{ path:`${import.meta.env.BASE_URL}widgets/vvgarage`,  title:"VVGarage"},
+{ path:`${import.meta.env.BASE_URL}widgets/accounting`, title:"Accounting" },
+{ path:`${import.meta.env.BASE_URL}widgets/xero`, title: "Xero" },
+{ path:`${import.meta.env.BASE_URL}widgets/marketing`, title:"Marketing" },
+{ path:`${import.meta.env.BASE_URL}widgets/pos`, title:"Pos" },
+{ path:`${import.meta.env.BASE_URL}widgets/companysettings`, title: "CompanySettings" },
+{ path:`${import.meta.env.BASE_URL}widgets/publicbookings`, title: "PublicBookings" },
+{ path:`${import.meta.env.BASE_URL}widgets/companylist`, title: "CompanyList" },
+{ path:`${import.meta.env.BASE_URL}widgets/pricematrix`, title: "PriceMatrix" },
+{ path:`${import.meta.env.BASE_URL}widgets/remainder`, title: "Remainder" },
+{ path:`${import.meta.env.BASE_URL}widgets/messages`, title: "Messages" },
+{ path:`${import.meta.env.BASE_URL}widgets/schudules`, title: "Schudules" },
+{ path:`${import.meta.env.BASE_URL}widgets/usersettings`, title: "UserSettings" },
+{ path:`${import.meta.env.BASE_URL}widgets/usersetup`, title: "UserSetup" },
+{ path:`${import.meta.env.BASE_URL}widgets/videosettings`, title: "VideoSettings1" },
+{ path:`${import.meta.env.BASE_URL}widgets/customerportal`, title: "CustomerPortal" },
+{ path:`${import.meta.env.BASE_URL}widgets/sendremainder`, title: "SendRemainder" },
+{ path:`${import.meta.env.BASE_URL}widgets/communicationcenter`, title: "CommunicationCenter"},
+{ path:`${import.meta.env.BASE_URL}widgets/quickbookexport`, title: "QuickBookExport" },
+{ path:`${import.meta.env.BASE_URL}widgets/import1`, title: "Import1" },
+{ path:`${import.meta.env.BASE_URL}widgets/export1`, title: "Export1" },
+{ path:`${import.meta.env.BASE_URL}elements/buttons/supplierplus`, title: "SuppliersPlus" },
+
 
 ];
 

@@ -1,12 +1,15 @@
-import React, { Fragment } from 'react';
-import { Accordion, Col, Row } from 'react-bootstrap';
+import React, { Fragment, useState } from 'react';
+import { Accordion, Col, Row, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import "react-datepicker/dist/react-datepicker.css";
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
+import { MultiSelect } from "react-multi-select-component";
+import { Template } from "../../../common/selectdata";
 
 
 const Collapse = () => {
   const navigate = useNavigate(); // Initialize useNavigate hook
+  const [selected, setSelected] = useState([]); // MultiSelect state
 
   // Handler for the Cancel button
   const handleCancel = () => {
@@ -57,6 +60,225 @@ const Collapse = () => {
                         </form>
                       </div>
                     </div>
+
+                    <Row className="accordiondclose">
+        <Col lg={12} md={12}>
+          <div className="card overflow-hidden">
+           
+            <Card.Body>
+              <div className="panel-group1" id="accordion11" role="tablist">
+
+                <div className="card overflow-hidden mb-0">
+                  <Accordion>
+                    <Accordion.Item eventKey="Item1" className="accordion-toggle panel-heading1 ">
+                      <Accordion.Header>EXTERIOR</Accordion.Header>
+                      <Accordion.Body className="borders">
+                      <form className="row g-3 needs-validation" noValidate>
+                          {/* Additional Fields */}
+                          <div className="col-md-4">
+                              <p className="mg-b-9">Status</p>
+                              <MultiSelect
+                                value={selected}
+                                onChange={setSelected}
+                                labelledBy="Select"
+                                options={Template}
+                              />
+                            </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Description</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Product Code</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Comments</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                        </form>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </div>
+                <div className="card overflow-hidden mb-0">
+                  <Accordion>
+                    <Accordion.Item eventKey="Item1" className="accordion-toggle panel-heading1">
+                      <Accordion.Header className=" " id="headingOne">
+                        STANDARD
+                      </Accordion.Header>
+                      <Accordion.Body className="borders">
+                        <form className="row g-3 needs-validation" noValidate>
+                          {/* Additional Fields */}
+                          <div className="col-md-4">
+                              <p className="mg-b-9">Status</p>
+                              <MultiSelect
+                                value={selected}
+                                onChange={setSelected}
+                                labelledBy="Select"
+                                options={Template}
+                              />
+                            </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Description</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Product Code</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Comments</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                        </form>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </div>
+                <div className="card overflow-hidden mb-0">
+                  <Accordion>
+                    <Accordion.Item eventKey="Item1" className="accordion-toggle panel-heading1">
+                      <Accordion.Header className=" " id="headingOne">
+                        INTERIOR
+                      </Accordion.Header>
+                      <Accordion.Body className="borders">
+                        <form className="row g-3 needs-validation" noValidate>
+                          {/* Additional Fields */}
+                          <div className="col-md-4">
+                              <p className="mg-b-9">Status</p>
+                              <MultiSelect
+                                value={selected}
+                                onChange={setSelected}
+                                labelledBy="Select"
+                                options={Template}
+                              />
+                            </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Description</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Product Code</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Comments</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                        </form>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </div>
+                <div className="card overflow-hidden mb-0">
+                  <Accordion>
+                    <Accordion.Item eventKey="Item1" className="accordion-toggle panel-heading1">
+                      <Accordion.Header>TYRES</Accordion.Header>
+                      <Accordion.Body className="borders">
+                      <form className="row g-3 needs-validation" noValidate>
+                          {/* Additional Fields */}
+                          <div className="col-md-4">
+                              <p className="mg-b-9">Status</p>
+                              <MultiSelect
+                                value={selected}
+                                onChange={setSelected}
+                                labelledBy="Select"
+                                options={Template}
+                              />
+                            </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Description</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Product Code</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Comments</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                        </form>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </div>
+                <div className="card overflow-hidden mb-0">
+                  <Accordion>
+                    <Accordion.Item eventKey="Item1" className="accordion-toggle panel-heading1">
+                      <Accordion.Header>UNDERBODY</Accordion.Header>
+                      <Accordion.Body className="borders">
+                      <form className="row g-3 needs-validation" noValidate>
+                          {/* Additional Fields */}
+                          <div className="col-md-4">
+                              <p className="mg-b-9">Status</p>
+                              <MultiSelect
+                                value={selected}
+                                onChange={setSelected}
+                                labelledBy="Select"
+                                options={Template}
+                              />
+                            </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Description</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Product Code</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Comments</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                        </form>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </div>
+                <div className="card overflow-hidden mb-0">
+                  <Accordion>
+                    <Accordion.Item eventKey="Item1" className="accordion-toggle panel-heading1">
+                      <Accordion.Header>UNDER BONNET</Accordion.Header>
+                      <Accordion.Body className="borders">
+                      <form className="row g-3 needs-validation" noValidate>
+                          {/* Additional Fields */}
+                          <div className="col-md-4">
+                              <p className="mg-b-9">Status</p>
+                              <MultiSelect
+                                value={selected}
+                                onChange={setSelected}
+                                labelledBy="Select"
+                                options={Template}
+                              />
+                            </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Description</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="validationCustom05">Product Code</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                          <div className="col-md-8">
+                            <label className="form-label" htmlFor="validationCustom05">Comments</label>
+                            <input className="form-control" id="validationCustom05" type="text" required />
+                          </div>
+                        </form>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </div>
+              </div>
+            </Card.Body>
+          </div>
+        </Col>
+                    </Row>
+
+
+
+
 
                     <div id="button6">
                       <div className="text-wrap row justify-content-between">

@@ -7220,7 +7220,7 @@ pre code {
     content: "";
     border-block-start: 0;
     border-inline-end: 0.3em solid transparent;
-    border-block-end: 0.3em solid;
+    /* border-block-end: 0.3em solid; */
     border-inline-start: 0.3em solid transparent;
 }
 
@@ -26942,6 +26942,7 @@ a.option-dots {
 
 .app-sidebar .slide-menu .slide-item:before {
     content: "\f22d";
+    
     font-family: "Font Awesome 5 Free";
     position: absolute;
     inset-block-start: 9px;
@@ -55308,8 +55309,8 @@ button.bg-dark:focus {
 }
 
 .bg-orange {
-    background: #fd7e14 !important;
-    color: #fff !important;
+    /* background: #fd7e14 !important; */
+    color: #fd7e14 !important;
 }
 
 .bg-teal {
@@ -55446,8 +55447,8 @@ button.bg-dark:focus {
 }
 
 .bg-green {
-    background-color: #2dce89 !important;
-    color: #fff !important;
+    /* background-color: #2dce89 !important; */
+    color: #2dce89 !important;
 }
 
 .gutters-xs>.col,

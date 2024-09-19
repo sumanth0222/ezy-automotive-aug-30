@@ -1,1001 +1,487 @@
-import React, {Fragment, useState} from "react";
-import { Button, Card, Col, Dropdown, Form, Modal, Nav, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import { Link } from "react-router-dom";
-import { imagesData } from "../../../common/commonimages";
-import faces6 from '../../../assets/img/faces/6.jpg';
-import ProductService from "../../../common/ProductService";
+import React, { useEffect, useState } from "react";
+import { Card, Col, Row, Form, Button } from "react-bootstrap";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction";
+import { Fragment } from "react";
+import Pageheader from "../../../layout/layoutcomponent/pageheader";
+import Draggable from "react-draggable";
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Paper,
+} from "@mui/material";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { MultiSelect } from "react-multi-select-component";
+import { states } from "../../../common/selectdata";
 
-const Contacts = () => {
-  // modal Show
-  const [smShow, setSmShow] = useState(false);
+export function Calendar() {
+  let eventGuid = 0;
+  let todayStr = new Date().toISOString().replace(/T.*$/, "");
+  const INITIAL_EVENTS = [
+    {
+      id: createEventId(),
+      title: "Meeting",
+      start: todayStr,
+    },
+    {
+      id: createEventId(),
+      title: "Meeting Time",
+      start: todayStr + "T16:00:00",
+    },
+  ];
 
+  function createEventId() {
+    return String(eventGuid++);
+  }
 
-    //URl image
-    const [UrlImage, setUrlImage] = useState(faces6);
-    //Disabling input feild
-    const [UrlDisabled, setUrlDisabled] = useState(true);
-  
-    //React file input image
-    // const [img, setimg] = useState(faces6);
-    const [fileDisabled, setfileDisabled] = useState(false);
-  
-    //Default image
-    const [Image, setImage] = useState(faces6);
-  
-    // const location = useLocation();
-  
-    const putImage = () => {
-      setImage(ProductService.returnImage());
-      if (UrlImage != Image) {
-        ProductService.handleChangeUrl(UrlImage);
-        setImage(ProductService.returnImage());
-      }
-      setSmShow(false);
-    };
-    //toggle button for image 
-    const toggleImage = (type) => {
-      if (type == "fileDisabled") {
-        setfileDisabled(false);
-        setUrlDisabled(true);
-      }
-      if (type == "UrlDisabled") {
-        setUrlDisabled(false);
-        setfileDisabled(true);
-      }
-    };
-  return(
-  <Fragment>
-    <div className="breadcrumb-header justify-content-between">
-      <div className="left-content">
-        <span className="main-content-title mg-b-0 mg-b-lg-1">CONTACTS</span>
-      </div>
-      <div className="justify-content-center mt-2">
-        <Button variant="" type="button" className="btn btn-primary">
-          <i className="fe fe-plus me-1"></i> Add New Contact
-        </Button>
-      </div>
-    </div>
+  const initialstate1 = {
+    calendarEvents: [
+      {
+        title: "Atlanta Monster",
+        start: new Date("2019-04-04 00:00"),
+        id: "1001",
+      },
+      {
+        title: "My Favorite Murder",
+        start: new Date("2019-04-05 00:00"),
+        id: "1002",
+      },
+    ],
 
-    <Row className="row-sm">
-      <Col sm={12}lg={5}xl={3}>
-        <Card className="custom-card">
-          <div className="">
-            <div className="main-content-contacts pt-0">
-              <div className="main-content-left main-content-left-contacts slid1">
-                <Nav
-                  defaultActiveKey="link-1"
-                  className="nav main-nav-line  border-bottom-0 main-nav-line-chat  p-3"
-                >
-                  <Nav.Item>
-                    <Nav.Link
-                      eventKey="link-1"
-                      className="nav-link"
-                      data-bs-toggle="tab"
-                      to="#mainContactList"
-                    >
-                      All Contacts
-                    </Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link
-                      eventKey="link-2"
-                      className="nav-link"
-                      data-bs-toggle="tab"
-                      to="#mainContactList"
-                    >
-                      Favorites
-                    </Nav.Link>
-                  </Nav.Item>
-                </Nav>
+    events: [
+      {
+        title: "My Event 1",
+        id: "1",
+        bg: "bg-primary",
+        border: "border-primary",
+      },
+      {
+        title: "My Event 2",
+        id: "2",
+        bg: "bg-secondary",
+        border: "border-success",
+      },
+      {
+        title: "My Event 3",
+        id: "3",
+        bg: "bg-warning",
+        border: "border-warning",
+      },
+      { title: "My Event 4", id: "4", bg: "bg-info", border: "border-info" },
+      {
+        title: "My Event 5",
+        id: "5",
+        bg: "bg-success",
+        border: "border-success",
+      },
+      {
+        title: "My Event 6",
+        id: "6",
+        bg: "bg-danger",
+        border: "border-danger",
+      },
+    ],
+  };
+
+  const [state] = useState(initialstate1);
+
+  useEffect(() => {
+    let draggableEl = document.getElementById("external-events");
+    if (draggableEl) {
+      new Draggable(draggableEl, {
+        itemSelector: ".fc-event",
+        eventData: function (eventEl) {
+          let title = eventEl.getAttribute("title");
+          let id = eventEl.getAttribute("data");
+          let classValue = eventEl.getAttribute("class");
+          return {
+            title: title,
+            id: id,
+            className: classValue,
+          };
+        },
+      });
+    }
+  }, []);
+
+  function renderEventContent(eventInfo) {
+    return (
+      <>
+        <b>{eventInfo.timeText}</b>
+        <i>{eventInfo.event.title}</i>
+      </>
+    );
+  }
+
+  const handleEventClick = (clickInfo) => {
+    if (
+      window.confirm(
+        `Are you sure you want to delete the event '${clickInfo.event.title}'`
+      )
+    ) {
+      clickInfo.event.remove();
+    }
+  };
+
+  const handleEvents = (events) => {};
+
+  const handleDateSelect = (selectInfo) => {
+    let title = prompt("Please enter a new title for your event");
+    let calendarApi = selectInfo.view.calendar;
+
+    calendarApi.unselect();
+
+    if (title) {
+      calendarApi.addEvent({
+        id: createEventId(),
+        title,
+        start: selectInfo.startStr,
+        end: selectInfo.endStr,
+        allDay: selectInfo.allDay,
+      });
+    }
+  };
+
+  function PaperComponent(props) {
+    return (
+      <Draggable
+        handle="#draggable-dialog-title"
+        cancel={'[class*="MuiDialogContent-root"]'}
+      >
+        <Paper {...props} />
+      </Draggable>
+    );
+  }
+  const [open1, setOpen1] = useState(false);
+
+  const handleClickOpen2 = () => {
+    setOpen1(true);
+  };
+  
+  const handleClosedraggable = () => {
+    setOpen1(false);
+  };
+
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  const [filter, setFilter] = useState("");
+
+  // Filtering based on search term
+  const filterData = (data, field) =>
+    data.filter((item) =>
+      item[field].toLowerCase().includes(filter.toLowerCase())
+    );
+
+    const [selected, setSelected] = useState([]);
+
+  return (
+    <Fragment>
+      <Pageheader title="Loan Cars" heading="Loan Cars" active="Loan Cars Dairy" />
+      <div className="pd-b-0  main-content-calendar pt-0">
+        <Row>
+          <Col md={12}>
+            <Card>
+            <Card.Header
+              className="row-sm row justify-content-between bg-primary" style={{paddingBottom:"6px"}}>
+              <div className="row-sm row">
+                <div>
+                  <a
+                    className="btn ripple btn-dark text-white btn-icon mt-2"
+                    data-placement="top"
+                    data-bs-toggle="tooltip"
+                    title=""
+                    href="#"
+                  >
+                    <i className="fa fa-calendar"></i>
+                  </a>
+                </div>
+                <div>
+                  <h3 className="mt-2">Loan Car Schedule</h3>
+                </div>
+              </div>
+
+              <div className="row-sm row">
                
-                  <PerfectScrollbar style={{ height: 750 }}>
-                  <div className="main-contacts-list" id="mainContactList">
-                    <div className="main-contact-label">A</div>
-                    <div className="main-contact-item selected">
-                      <div className="main-img-user online">
-                        <img
-                          alt="avatar"
-                          src={imagesData('female2')}
-                        />
-                      </div>
-                      <div className="main-contact-body">
-                        <h6>Abigail Johnson</h6>
-                        <span className="phone">+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="">
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className="dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-item">
-                      <div className="main-img-user">
-                        <img
-                          alt="avatar"
-                          src={imagesData('female3')}
-                        />
-                      </div>
-                      <div className="main-contact-body">
-                        <h6>Archie Cantones</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="">
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-item">
-                      <div className="main-avatar online">A</div>
-                      <div className="main-contact-body">
-                        <h6>Allan Rey Palban</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-item">
-                      <div className="main-avatar bg-secondary">A</div>
-                      <div className="main-contact-body">
-                        <h6>Aileen Mante</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-label">B</div>
-                    <div className="main-contact-item">
-                      <div className="main-img-user">
-                        <img
-                          alt="avatar"
-                          src={imagesData('female4')}
-                        />
-                      </div>
-                      <div className="main-contact-body">
-                        <h6>Brandon Dilao</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-item">
-                      <div className="main-img-user online">
-                        <img
-                          alt="avatar"
-                          src={imagesData('female5')}
-                        />
-                      </div>
-                      <div className="main-contact-body">
-                        <h6>Britney Labares</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-item">
-                      <div className="main-avatar bg-danger">B</div>
-                      <div className="main-contact-body">
-                        <h6>Brateyley Cruz</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-label">C</div>
-                    <div className="main-contact-item">
-                      <div className="main-img-user">
-                        <img
-                          alt="avatar"
-                          src={imagesData('female6')}
-                        />
-                      </div>
-                      <div className="main-contact-body">
-                        <h6>Camille Audrey</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-item">
-                      <div className="main-img-user online">
-                        <img
-                          alt="avatar"
-                          src={imagesData('female7')}
-                        />
-                      </div>
-                      <div className="main-contact-body">
-                        <h6>Christian Lerio</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-item">
-                      <div className="main-img-user online">
-                        <img
-                          alt="avatar"
-                          src={imagesData('female8')}
-                        />
-                      </div>
-                      <div className="main-contact-body">
-                        <h6>Chris topher</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-label">D</div>
-                    <div className="main-contact-item">
-                      <div className="main-img-user online">
-                        <img
-                          alt="avatar"
-                          src={imagesData('female9')}
-                        />
-                      </div>
-                      <div className="main-contact-body">
-                        <h6>Darius Clayton</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-item">
-                      <div className="main-img-user">
-                        <img
-                          alt="avatar"
-                          src={imagesData('female10')}
-                        />
-                      </div>
-                      <div className="main-contact-body">
-                        <h6>Dyanne Aceron</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                    <div className="main-contact-item">
-                      <div className="main-img-user online">
-                        <img
-                          alt="avatar"
-                          src={imagesData('female11')}
-                        />
-                      </div>
-                      <div className="main-contact-body">
-                        <h6>Divina Gracia</h6>
-                        <span>+1-234-567-890</span>
-                      </div>
-                      <Dropdown className="main-contact-star">
-                        <Dropdown.Toggle variant="" >
-                          <i className="fe fe-more-vertical  tx-18"></i>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className=" dropdown-menu-end">
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-star me-2 "></i>Add to Favorite
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-edit me-2"></i>Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
-                            <i className="fe fe-trash-2 me-2"></i>Delete
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                  </div>
+
+              <div class="col-lg-3">
+                            
+                            <div class="input-group input-group">
+                   
+
+                              <div class="">
+                                {/* <label class=""> */}
+
+                                  <i className=" fa fa-star btn ripple btn-dark text-white btn-icon"
+                                    href="#modaldemo8"
+                                    variant="primary"
+                                    title="Create Loan"
+                                    onClick={handleClickOpen2}
+                                  ></i>
+
+                                  <Dialog
+                                    open={open1}
+                                    onClose={handleClosedraggable}
+                                    PaperComponent={PaperComponent}
+                                    aria-labelledby="draggable-dialog-title"
+                                  >
+                                    <DialogTitle style={{ cursor: "move", backgroundColor:"#38cab3" }} id="draggable-dialog-title">
+                                      Create Loan Car Booking
+                                    </DialogTitle>
+                                    <DialogContent >
+                                      <DialogContentText className='row-sm row'>
+
+                                      <div className="col-lg-4">
+                                        <label className="form-label" htmlFor="validationCustom05">Search Customer</label>
+                                          <input
+                                            autoComplete="off"
+                                            placeholder="Choose a Customer"
+                                            type="search"
+                                            className="form-control"
+                                            value={filter}
+                                            onChange={(e) => setFilter(e.target.value)}
+                                          />
+                                        </div>
+
+                                        <div className="col-lg-4">
+                                        <label className="form-label" htmlFor="validationCustom05">Search Bookings</label>
+                                          <input
+                                            autoComplete="off"
+                                            placeholder="Choose a Bookings"
+                                            type="search"
+                                            className="form-control"
+                                            value={filter}
+                                            onChange={(e) => setFilter(e.target.value)}
+                                          />
+                                        </div>
+
+                                        <div className="col-lg-4">
+                                        <label className="form-label" htmlFor="validationCustom05">Search Invoices</label>
+                                          <input
+                                            autoComplete="off"
+                                            placeholder="Choose a Invoices"
+                                            type="search"
+                                            className="form-control"
+                                            value={filter}
+                                            onChange={(e) => setFilter(e.target.value)}
+                                          />
+                                        </div>
+
+                                        
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">First Name</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">Last Name</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+
+                                        <div className="col-lg-4 ">
+                                          <Form.Label>Loan Date</Form.Label>
+                                          <div className="input-group">
+                                            
+                                            <DatePicker
+                                              selected={startDate}
+                                              onChange={(date) => setStartDate(date)}
+                                              className="form-control"
+                                              placeholderText="Select Date"
+                                            />
+                                          </div>
+                                        </div>
+                                        
+                                        <div className="col-lg-6">
+                                          <label className="form-label" htmlFor="validationCustom05">Address 1</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+
+                                
+                                        <div className="col-lg-6">
+                                          <label className="form-label" htmlFor="validationCustom05">Address 2</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">City</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+                                        
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">States</label>
+                                          <MultiSelect
+                                            value={selected}
+                                            onChange={setSelected}
+                                            labelledBy="Select"
+                                            options={states}
+                                          />
+                                        </div>
+
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">Zip Code</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">Phone Number</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">Cell</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">Email</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+
+                                        {/* Start Date Field */}
+                                        <div className="col-lg-6">
+                                          <Form.Label>Start Date</Form.Label>
+                                          <div className="input-group">
+                                            <span className="input-group-text">
+                                              <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                            </span>
+                                            <DatePicker
+                                              selected={startDate}
+                                              onChange={(date) => setStartDate(date)}
+                                              className="form-control"
+                                              placeholderText="Select Start Date"
+                                            />
+                                          </div>
+                                        </div>
+                                        {/* End Date Field */}
+                                        <div className="col-lg-6">
+                                          <Form.Label>Start Time</Form.Label>
+                                          <div className="input-group">
+                                            <span className="input-group-text">
+                                              <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                            </span>
+                                            <DatePicker
+                                              selected={endDate}
+                                              onChange={(date) => setEndDate(date)}
+                                              className="form-control"
+                                              placeholderText="Select End Date"
+                                            />
+                                          </div>
+                                        </div>
+
+                                        {/* Start Date Field */}
+                                        <div className="col-lg-6">
+                                          <Form.Label>Return Date</Form.Label>
+                                          <div className="input-group">
+                                            <span className="input-group-text">
+                                              <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                            </span>
+                                            <DatePicker
+                                              selected={startDate}
+                                              onChange={(date) => setStartDate(date)}
+                                              className="form-control"
+                                              placeholderText="Select Start Date"
+                                            />
+                                          </div>
+                                        </div>
+                                        {/* End Date Field */}
+                                        <div className="col-lg-6">
+                                          <Form.Label>Return Time</Form.Label>
+                                          <div className="input-group">
+                                            <span className="input-group-text">
+                                              <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                            </span>
+                                            <DatePicker
+                                              selected={endDate}
+                                              onChange={(date) => setEndDate(date)}
+                                              className="form-control"
+                                              placeholderText="Select End Date"
+                                            />
+                                          </div>
+                                        </div>
+                                      </DialogContentText>
+                                    </DialogContent>
+                                    <DialogActions>
+                                      <Button variant="secondary" className="me-1" onClick={handleClosedraggable}>
+                                        Cancel
+                                      </Button>
+                                      <Button onClick={handleClosedraggable} className="me-1" variant="success">
+                                        Create
+                                      </Button>
+                                    </DialogActions>
+                                  </Dialog>
+                                {/* </label> */}
+                              </div>
+                            </div>
+
+                          </div>
+
+              </div>
               
-                </PerfectScrollbar>
-              </div>
-            </div>
-          </div>
-        </Card>
-      </Col>
-      <Col sm={12} lg={7} xl={9}>
-        <div className="">
-          <Link className="main-header-arrow" to="#" id="ChatBodyHide">
-            <i className="icon ion-md-arrow-back"></i>
-          </Link>
-          <div className="main-content-body main-content-body-contacts card custom-card">
-            <div className="main-contact-info-header pt-3">
-              <div className="media">
-                <div className="main-img-user">
-                  <img
-                    alt="avatar"
-                    src={Image}
-                  />{" "}
-                  <Link to="#" onClick={() => setSmShow(true)}>
-                    <i className="fe fe-camera"></i>
-                  </Link>
-                  <Modal
-                      size="sm"
-                      show={smShow}
-                     
-                      aria-labelledby="example-modal-sizes-title-sm"
-                      centered
-                    >
-                      <Modal.Header>
-                        <Modal.Title id="example-modal-sizes-title-sm">
-                          Upload New Image
-                        </Modal.Title>
-                         <Button
-                          variant=""
-                          aria-label="Close"
-                          onClick={() => setSmShow(false)}
-                          className="btn-close me-auto"
-                          data-bs-dismiss="modal"
-                          type="button"
+            </Card.Header>
+              <Card.Body>
+                <Row>
+                  {/* Commented Draggable Events */}
+                  {/* 
+                  <Col md={12} sm={12} lg={3}>
+                    <div id="external-events">
+                      <h4>Draggable Events</h4>
+                      {state.events.map((event) => (
+                        <div
+                          className={`fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event ${event.bg} ${event.border}`}
+                          title={event.title}
+                          data={event.id}
+                          key={event.id}
                         >
-                          <span aria-hidden="true">&times;</span>
-                        </Button>
-                      </Modal.Header>
-                      <Modal.Body>
-                        <Form.Group controlId="formFile" className="mb-3">
-
-                          <div onClick={() => { toggleImage("fileDisabled"); }}>
-                            <Form.Control type="file" disabled={fileDisabled} onChange={(ele) => ProductService.handleChange(ele)} />
-                          </div>
-                          <br></br>
-                          <div onClick={() => { toggleImage("UrlDisabled"); }}>
-                            <Form.Control type="text" disabled={UrlDisabled} onChange={(ele) => { setUrlImage(ele.target.value); }} />
-                          </div>
-                          <br></br>
-                          <Link to="#">
-                            <button className='btn-sm btn-primary' onClick={() => { putImage(); }}>submit</button>
-                          </Link>
-                        </Form.Group>
-
-                      </Modal.Body>
-                    </Modal>
-                </div>
-                <div className="media-body">
-                  <h5>EZY</h5>
-                  <p>Web Designer</p>
-                  <Nav className="contact-info">
-                    <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>Call</Tooltip>}
-                    >
-                      <Link
-                        to="#"
-                        className="contact-icon border tx-inverse"
-                        data-bs-toggle="tooltip"
-                        title="Call"
-                      >
-                        <i className="fe fe-phone"></i>
-                      </Link>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>Video</Tooltip>}
-                    >
-                      <Link
-                        to="#"
-                        className="contact-icon border tx-inverse"
-                        data-bs-toggle="tooltip"
-                        title="Video"
-                      >
-                        <i className="fe fe-video"></i>
-                      </Link>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>Message</Tooltip>}
-                    >
-                      <Link
-                        to="#"
-                        className="contact-icon border tx-inverse"
-                        data-bs-toggle="tooltip"
-                        title="message"
-                      >
-                        <i className="fe fe-message-square"></i>
-                      </Link>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>Add to Group</Tooltip>}
-                    >
-                      <Link
-                        to="#"
-                        className="contact-icon border tx-inverse"
-                        data-bs-toggle="tooltip"
-                        title="Add to Group"
-                      >
-                        <i className="fe fe-user-plus"></i>
-                      </Link>
-                    </OverlayTrigger>
-                    <OverlayTrigger
-                      placement="top"
-                      overlay={<Tooltip>Block</Tooltip>}
-                    >
-                      <Link
-                        to="#"
-                        className="contact-icon border tx-inverse"
-                        data-bs-toggle="tooltip"
-                        title="Block"
-                      >
-                        <i className="fe fe-slash"></i>
-                      </Link>
-                    </OverlayTrigger>
-                  </Nav>
-                </div>
-              </div>
-              <div className="main-contact-action btn-list pt-3 pe-0 me-3">
-                <OverlayTrigger
-                  placement="top"
-                  overlay={<Tooltip>Edit Profile</Tooltip>}
-                >
-                  <Link
-                    to="#"
-                    className="btn ripple btn-primary text-white btn-icon"
-                    data-placement="top"
-                    data-bs-toggle="tooltip"
-                    title="Edit Profile"
-                  >
-                    <i className="fe fe-edit"></i>
-                  </Link>
-                </OverlayTrigger>
-                <OverlayTrigger
-                  placement="top"
-                  overlay={<Tooltip>Delete Profile</Tooltip>}
-                >
-                  <Link
-                    to="#"
-                    className="btn ripple btn-secondary text-white btn-icon"
-                    data-placement="top"
-                    data-bs-toggle="tooltip"
-                    title="Delete Profile"
-                  >
-                    <i className="fe fe-trash-2"></i>
-                  </Link>
-                </OverlayTrigger>
-                <OverlayTrigger
-                  placement="top"
-                  overlay={<Tooltip>Add Favorite</Tooltip>}
-                >
-                  <Link
-                    to="#"
-                    className="btn ripple btn-warning text-white btn-icon"
-                    data-placement="top"
-                    data-bs-toggle="tooltip"
-                    title="Add Favorite"
-                  >
-                    <i className="fe fe-star"></i>
-                  </Link>
-                </OverlayTrigger>
-              </div>
-            </div>
-            <div className="main-contact-info-body p-4">
-              <div>
-                <h6>Biography :</h6>
-                <p>
-                  Ut enim ad minima veniam, quis nostrum exercitationem ullam
-                  corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-                  consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                  voluptate velit esse quam nihil molestiae consequatur, vel
-                  illum qui dolorem eum fugiat quo voluptas nulla pariatur.
-                </p>
-                <p>
-                  Ut enim ad minima veniam, quis nostrum exercitationem ullam
-                  corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-                  consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                  voluptate velit esse quam nihil molestiae consequatur, vel
-                  illum qui dolorem eum fugiat quo voluptas nulla
-                  pariaturexplicabo. Nemo enim ipsam voluptatem quia voluptas
-                  sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-                  dolores eos qui ratione voluptatem sequi nesciunt.
-                </p>
-              </div>
-              <div className="media-list pb-0">
-                <div className="media">
-                  <div className="media-body">
-                    <div>
-                      <label>Work :</label>{" "}
-                      <span className="tx-medium">+1 (234) 567 8901</span>
+                          <div className="fc-event-main">{event.title}</div>
+                        </div>
+                      ))}
                     </div>
-                    <div>
-                      <label>Personal :</label>{" "}
-                      <span className="tx-medium">+1 (498) 021 0090</span>
+                  </Col> 
+                  */}
+                  <Col md={12} lg={12}>
+                    <div id="calendar2">
+                      <FullCalendar
+                        plugins={[
+                          dayGridPlugin,
+                          timeGridPlugin,
+                          interactionPlugin,
+                        ]}
+                        headerToolbar={{
+                          left: "prev,next today",
+                          center: "title",
+                          right: "dayGridMonth,timeGridWeek,timeGridDay",
+                        }}
+                        initialView="dayGridMonth"
+                        editable={true}
+                        selectable={true}
+                        selectMirror={true}
+                        dayMaxEvents={true}
+                        weekends={state.weekendsVisible}
+                        initialEvents={INITIAL_EVENTS}
+                        select={handleDateSelect}
+                        eventContent={renderEventContent}
+                        eventClick={handleEventClick}
+                        eventsSet={handleEvents}
+                      />
                     </div>
-                  </div>
-                </div>
-                <div className="media">
-                  <div className="media-body">
-                    <div>
-                      <label>Gmail Account :</label>{" "}
-                      <span className="tx-medium">Dactyl.taylor@gmail.com</span>
-                    </div>
-                    <div>
-                      <label>Other Account :</label>{" "}
-                      <span className="tx-medium">me@bootstrapdash.me</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="media">
-                  <div className="media-body">
-                    <div>
-                      <label>Current Address :</label>{" "}
-                      <span className="tx-medium">
-                        012 Dashboard Apartments, Dayl Francisco, California
-                        13245
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="media mb-0">
-                  <div className="media-body">
-                    <div>
-                      <label>Call History :</label>{" "}
-                      <span className="tx-medium">
-                        Duration of last call: 5m 25sec
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <Card className="custom-card">
-            <Card.Header className="card-header">Recent Contacts</Card.Header>
-            <Card.Body className="card-body">
-              <Row>
-                <Col xxl={4} md={12} lg={12} xl={6}>
-                  <div className="border d-flex p-2 br-5 mb-2 flex-wrap">
-                    <div className="recent-contacts me-3">
-                      <div className="main-img-user avatar-md">
-                        <img
-                          alt="avatar"
-                          className="rounded-circle"
-                          src={imagesData('female5')}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h6 className="mt-1 mb-1">Abigali kelly</h6>
-                      <p className="mb-0 text-muted">Front end</p>
-                    </div>
-                    <div className="my-auto ms-auto">
-                      <nav className="contact-info d-flex">
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Call</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Call"
-                          >
-                            <i className="fe fe-phone tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Video</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Video"
-                          >
-                            <i className="fe fe-video tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                      </nav>
-                    </div>
-                  </div>
-                </Col>
-                <Col xxl={4} md={12} lg={12} xl={6}>
-                  <div className="border d-flex p-2 br-5 mb-2 flex-wrap">
-                    <div className="recent-contacts me-3">
-                      <div className="main-img-user avatar-md">
-                        <img
-                          alt="avatar"
-                          className="rounded-circle"
-                          src={imagesData('female2')}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h6 className="mt-1 mb-1">Brenda Crux</h6>
-                      <p className="mb-0 text-muted">Angular</p>
-                    </div>
-                    <div className="my-auto ms-auto">
-                      <nav className="contact-info d-flex">
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Call</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Call"
-                          >
-                            <i className="fe fe-phone tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Video</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Video"
-                          >
-                            <i className="fe fe-video tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                      </nav>
-                    </div>
-                  </div>
-                </Col>
-                <Col xxl={4} md={12} lg={12} xl={6}>
-                  <div className="border d-flex p-2 br-5 mb-2 flex-wrap">
-                    <div className="recent-contacts me-3">
-                      <div className="main-img-user avatar-md">
-                        <img
-                          alt="avatar"
-                          className="rounded-circle"
-                          src={imagesData('female8')}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h6 className="mt-1 mb-1">Rach Michelle</h6>
-                      <p className="mb-0 text-muted">Php</p>
-                    </div>
-                    <div className="my-auto ms-auto">
-                      <nav className="contact-info d-flex">
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Call</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Call"
-                          >
-                            <i className="fe fe-phone tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Video</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Video"
-                          >
-                            <i className="fe fe-video tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                      </nav>
-                    </div>
-                  </div>
-                </Col>
-                <Col xxl={4} md={12} lg={12} xl={6}>
-                  <div className="border d-flex p-2 br-5 mb-2 flex-wrap">
-                    <div className="recent-contacts me-3">
-                      <div className="main-img-user avatar-md">
-                        <img
-                          alt="avatar"
-                          className="rounded-circle"
-                          src={imagesData('female9')}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h6 className="mt-1 mb-1">Matt Harder</h6>
-                      <p className="mb-0 text-muted">Codeignitor</p>
-                    </div>
-                    <div className="my-auto ms-auto">
-                      <nav className="contact-info d-flex">
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Call</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Call"
-                          >
-                            <i className="fe fe-phone tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Video</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Video"
-                          >
-                            <i className="fe fe-video tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                      </nav>
-                    </div>
-                  </div>
-                </Col>
-                <Col xxl={4} md={12} lg={12} xl={6}>
-                  <div className="border d-flex p-2 br-5 mb-2 flex-wrap">
-                    <div className="recent-contacts me-3">
-                      <div className="main-img-user avatar-md">
-                        <img
-                          alt="avatar"
-                          className="rounded-circle"
-                          src={imagesData('female1')}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h6 className="mt-1 mb-1">Micheal Phelps</h6>
-                      <p className="mb-0 text-muted">Web Testing</p>
-                    </div>
-                    <div className="my-auto ms-auto">
-                      <nav className="contact-info d-flex">
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Call</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Call"
-                          >
-                            <i className="fe fe-phone tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Video</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Video"
-                          >
-                            <i className="fe fe-video tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                      </nav>
-                    </div>
-                  </div>
-                </Col>
-                <Col xxl={4} md={12} lg={12} xl={6}>
-                  <div className="border d-flex p-2 br-5 mb-2 flex-wrap">
-                    <div className="recent-contacts me-3">
-                      <div className="main-img-user avatar-md">
-                        <img
-                          alt="avatar"
-                          className="rounded-circle"
-                          src={imagesData('female7')}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h6 className="mt-1 mb-1">Azenda Hills</h6>
-                      <p className="mb-0 text-muted">Django</p>
-                    </div>
-                    <div className="my-auto ms-auto d-md-flex">
-                      <nav className="contact-info d-flex">
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Call</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Call"
-                          >
-                            <i className="fe fe-phone tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                        <OverlayTrigger
-                          placement="top"
-                          overlay={<Tooltip>Video</Tooltip>}
-                        >
-                          <Link
-                            to="#"
-                            className="contact-icon border tx-inverse rounded-pill"
-                            data-bs-toggle="tooltip"
-                            title="Video"
-                          >
-                            <i className="fe fe-video tx-12"></i>
-                          </Link>
-                        </OverlayTrigger>
-                      </nav>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
-        </div>
-      </Col>
-    </Row>
-  
-  </Fragment>
-);
+                  </Col>
+                </Row>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </div>
+    </Fragment>
+  );
 }
-Contacts.propTypes = {};
 
-Contacts.defaultProps = {};
+Calendar.propTypes = {};
 
-export default Contacts;
+Calendar.defaultProps = {};
+
+export default Calendar;

@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import { MultiSelect } from "react-multi-select-component";
-import { options, InspectionBookings } from "../../../common/selectdata";
+import { InspectionBookings } from "../../../common/selectdata";
 import { Link } from "react-router-dom";
 import { dropdownwithiconsdata } from "../../../common/commondata";
 import { useNavigate } from "react-router-dom";
@@ -712,7 +712,7 @@ const Tabss = () => {
                           <div className="row-sm row">
                             <div className="col-lg-12">
                               <div className="text-wrap">
-                                <div className="btn-list">
+                                <div className="btn-list mt-3">
                                   <button type="button" className="btn btn-primary">
                                     Month
                                   </button>
