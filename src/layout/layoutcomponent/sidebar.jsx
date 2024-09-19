@@ -216,7 +216,7 @@ const Sidebar = () => {
                 className="main-logo  desktop-logo"
                 alt="logo"
               /> */}
-              <h2 className=""><b>EZY MOTORS</b></h2>
+              <h2 className=""><b>Drive Mech</b></h2>
               {/* <img
                 src={imagesData('logowhite')}
                 className="main-logo  desktop-dark"

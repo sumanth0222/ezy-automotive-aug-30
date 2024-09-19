@@ -39,13 +39,13 @@ const Invoice = () => {
                 <Col lg={6}>
                   <p className="h3">Invoice From:</p>
                   <address>
-                    EZY Motors
+                    Drive Mech
                     <br />
                     1234 Service Lane
                     <br />
                     State, City
                     <br />
-                    support@ezymotors.com
+                    support@Drive Mech.com
                   </address>
                 </Col>
                 <Col lg={6} className=" text-end">
@@ -105,7 +105,7 @@ const Invoice = () => {
                         <div className="invoice-notes">
                           <label className="main-content-label tx-13">Notes</label>
                           <p className="text-dark">
-                            Thank you for choosing EZY Motors for your service needs. Please contact us if you have any questions regarding this invoice.
+                            Thank you for choosing Drive Mech for your service needs. Please contact us if you have any questions regarding this invoice.
                           </p>
                         </div>
                       </td>

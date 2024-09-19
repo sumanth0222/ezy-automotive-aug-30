@@ -141,7 +141,7 @@ const Profile = () => {
                                     </p>
                                     <p className="text-muted ms-md-4 ms-0 mb-2">
                                       <span><i className="fa fa-globe me-2"></i></span>
-                                      <span className="font-weight-semibold me-2">Website:</span><span>EZY MOTORS</span>
+                                      <span className="font-weight-semibold me-2">Website:</span><span>Drive Mech</span>
                                     </p>
                                   </div>
                                 </div>

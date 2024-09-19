@@ -240,7 +240,7 @@ export default function Header() {
                   className="mobile-logo logo-1"
                   alt="logo"
                 /> */}
-                <h1 className="mobile-logo dark-logo-1"><b>EZY MOTORS</b></h1>
+                <h1 className="mobile-logo dark-logo-1"><b>Drive Mech</b></h1>
                 {/* <img
                   src={imagesData('logowhite')}
                   className="mobile-logo dark-logo-1"
@@ -267,7 +267,7 @@ export default function Header() {
                   className="mobile-logo logo-1"
                   alt="logo"
                 /> */}
-                <h1 className="mobile-logo dark-logo-1"><b>EZY MOTORS</b></h1>
+                <h1 className="mobile-logo dark-logo-1"><b>Drive Mech</b></h1>
                 {/* <img
                   src={imagesData('logowhite')}
                   className="mobile-logo dark-logo-1"
@@ -904,7 +904,7 @@ export default function Header() {
 
                           <div className="wd-90p">
                             <div className="d-flex">
-                              <h5 className="mb-0 name">EZY</h5>
+                              <h5 className="mb-0 name">Drive Mech</h5>
                             </div>
                             <p className="mb-0 desc">
                               I'm sorry but i'm not sure how to help you with
@@ -1274,7 +1274,7 @@ export default function Header() {
                           </div>
                           <div className="ms-3 my-auto">
                             <h6 className="tx-15 font-weight-semibold mb-0">
-                              EZY
+                              Drive Mech
                             </h6>
                             <span className="dropdown-title-text subtext op-6  tx-12">
                               Premium Member

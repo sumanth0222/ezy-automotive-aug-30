@@ -457,7 +457,7 @@ const Todotask = () => {
                               </Dropdown.Toggle>
                               <Dropdown.Menu className="dropdown-menu tx-13">
                                 <div className="main-header-profile">
-                                  <div className="tx-16 h5 mg-b-0">EZY Motors</div>
+                                  <div className="tx-16 h5 mg-b-0">Drive Mech</div>
                                   <span>Welcome</span>
                                 </div>
                                 {/* <Dropdown.Item href="#">View Total Tasks</Dropdown.Item>
@@ -688,7 +688,7 @@ const Todotask = () => {
                               </Dropdown.Toggle>
                               <Dropdown.Menu className="dropdown-menu tx-13">
                                 <div className="main-header-profile">
-                                  <div className="tx-16 h5 mg-b-0">EZY Motors</div>
+                                  <div className="tx-16 h5 mg-b-0">Drive Mech</div>
                                   <span>Vehicle No</span>
                                 </div>
                                 <Dropdown.Item href="#">View Total Vehicles</Dropdown.Item>

@@ -70,7 +70,7 @@ const Lockscreen = () => {
                               />
                             </div>
                             <div className="mx-auto text-center mt-4 mg-b-20">
-                              <h5 className="mg-b-10 tx-16">EZY</h5>
+                              <h5 className="mg-b-10 tx-16">Drive Mech</h5>
                               <p className="tx-13 text-muted">
                                 Enter Your Password to View your Screen
                               </p>

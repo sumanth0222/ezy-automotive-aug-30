@@ -9,7 +9,7 @@ return (
         <div className="container-fluid pt-0 ht-100p">
           Copyright © 2024{" "}  
            <Link to="#" className="text-primary">
-             EZY
+             Drive Mech
           </Link>
            <span className="fa fa-heart text-danger"></span> 
           <Link to="#"> </Link> All rights reserved

@@ -72,7 +72,7 @@ const SignIn = () => {
                               </div> */}
                               <div className="">
                                 <div className="main-signup-header">
-                                  <h1 className='text-dark'><b>EZY</b></h1>
+                                  <h1 className='text-dark'><b>Drive Mech</b></h1>
                                   <h3>Welcome back!</h3>
                                   <h6 className="font-weight-semibold mb-4">
                                     Please sign in to continue.
@@ -191,7 +191,7 @@ const SignIn = () => {
                               </div>
                               <div className="">
                                 <div className="main-signup-header">
-                                <h1 className='text-dark'><b>EZY MOTORS</b></h1>
+                                <h1 className='text-dark'><b>Drive Mech</b></h1>
                                   <h3>Welcome back!</h3>
                                   <h6 className="font-weight-semibold mb-4 text-dark" >
                                     Please sign in to continue.
