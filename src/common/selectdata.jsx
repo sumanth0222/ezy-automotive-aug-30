@@ -319,8 +319,22 @@ export const payment = [
   {value: "None", label:"None"},
 ]
 
+export const status = [
+  {value: "Open", label:"Open"},
+  {value: "Closed", label:"Closed"},
+  {value: "Processed", label:"Processed"},
+  {value: "None", label:"None"},
+  {value: "None", label:"None"},
+  {value: "None", label:"None"},
+  {value: "None", label:"None"},
+  {value: "None", label:"None"},
+]
 
-
+export const invoice = [
+  {value: "Invoice", label:"Invoice"},
+  {value: "Credit", label:"Credit"},
+  
+]
 //advancedforms
 export const options = [
   { value: "eg1", label: " eg1" },
