@@ -75,7 +75,7 @@ const Settings = () => {
     <Fragment>
 
       {/* <Pageheader />   */}
-      <Pageheader title="Edit"     active="Edit" />
+      <Pageheader title="Products"  heading="Products"   active="Edit" />
 
       <Row className='faq'>
         <Col xl={12}>

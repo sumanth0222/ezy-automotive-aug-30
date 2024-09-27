@@ -144,18 +144,24 @@ const Groups = () => {
                                         </div>
 
                                 
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-4">
                                           <label className="form-label" htmlFor="validationCustom05">Model code</label>
                                           <input className="form-control" id="validationCustom05" type="text" required />
                                         </div>
-                                        <div className="col-lg-3">
+                                        <div className="col-lg-4">
                                           <label className="form-label" htmlFor="validationCustom05">Model Series</label>
                                           <input className="form-control" id="validationCustom05" type="text" required />
                                         </div>
-                                        <div className="col-lg-3 ">
+                                        <div className="col-lg-4">
+                                          <label className="form-label" htmlFor="validationCustom05">Colour</label>
+                                          <input className="form-control" id="validationCustom05" type="text" required />
+                                        </div>
+                                        <div className="col-lg-5 ">
                                           <Form.Label>Build Date</Form.Label>
                                           <div className="input-group">
-                                            
+                                          <span className="input-group-text">
+                                            <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                          </span>
                                             <DatePicker
                                               selected={startDate}
                                               onChange={(date) => setStartDate(date)}
@@ -165,10 +171,7 @@ const Groups = () => {
                                           </div>
                                         </div>
 
-                                        <div className="col-lg-3">
-                                          <label className="form-label" htmlFor="validationCustom05">Colour</label>
-                                          <input className="form-control" id="validationCustom05" type="text" required />
-                                        </div>
+                                        
                                       </DialogContentText>
                                     </DialogContent>
                                     <DialogActions>
