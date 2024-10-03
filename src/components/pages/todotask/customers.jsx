@@ -182,37 +182,38 @@ const Customers = () => {
                                     className="btn btn-sm btn-primary"
                                     // onClick={() => handleEditClick(phone.phone)}
                                   >
-                                    Edit
+                                   <i className="fa fa-edit"></i>
                                   </button>
                                   <button
                                     className="btn btn-sm btn-primary"
                                     // onClick={() => handleInvoiceClick(phone.phone)}
                                   >
-                                    Invoice
+                                    <i className="fas fa-file-alt"></i>
+                                    
                                   </button>
                                   <button
                                     className="btn btn-sm btn-warning"
                                     // onClick={() => handleOrderClick(phone.phone)}
                                   >
-                                    Order List
+                                    <i className="fa fa-list-ol"></i>
                                   </button>
                                   <button
                                     className="btn btn-sm btn-warning"
                                     // onClick={() => handlePayments(phone.phone)}
                                   >
-                                    Payment
+                                    <i className="fab fa-cc-amex"></i>
                                   </button>
                                   <button
                                     className="btn btn-sm btn-info"
                                     // onClick={() => handleMessageClick(phone.phone)}
                                   >
-                                    Message
+                                    <i className="fa fa-comments"></i>
                                   </button>
                                   <button
                                     className="btn btn-sm btn-info"
                                     // onClick={() => handleEmailClick(phone.phone)}
                                   >
-                                    Email
+                                     <i className="fa fa-envelope"></i>
                                   </button>
                                   </div>
                                 </td>

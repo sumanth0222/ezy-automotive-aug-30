@@ -125,7 +125,7 @@ const Groups = () => {
                                     className="btn btn-sm btn-primary"
                                     onClick={() => handleEditClick(name.itemcode)}
                                   >
-                                    Edit
+                                   <i className="fa fa-edit"></i>
                                   </button>
                                 </td>
                               </tr>

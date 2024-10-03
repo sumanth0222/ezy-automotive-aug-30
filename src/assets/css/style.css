@@ -12987,7 +12987,7 @@ tr {
     height: 1.5rem;
     width: 3rem;
     background: #f5f6fb;
-    border-radius: 50px;
+    border-radius: 0px;
     position: relative;
     vertical-align: bottom;
     border: 1px solid #ebeaf1;
@@ -13002,7 +13002,7 @@ tr {
     inset-block-start: 1px;
     inset-inline-start: 1px;
     background: #fff;
-    border-radius: 50%;
+    border-radius: 0px;
     transition: 0.3s left;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
 }

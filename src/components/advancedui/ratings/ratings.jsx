@@ -91,7 +91,7 @@ const Collapse = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -114,7 +114,7 @@ const Collapse = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.dontUpdateQty ? "green" : "orange",
+                                    backgroundColor: toggleStates.dontUpdateQty ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -137,7 +137,7 @@ const Collapse = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.serialNumber ? "green" : "orange",
+                                    backgroundColor: toggleStates.serialNumber ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -160,7 +160,7 @@ const Collapse = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.priceLookup ? "green" : "orange",
+                                    backgroundColor: toggleStates.priceLookup ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -184,7 +184,7 @@ const Collapse = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.priceLookup1 ? "green" : "orange",
+                                    backgroundColor: toggleStates.priceLookup1 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -208,7 +208,7 @@ const Collapse = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.priceLookup2 ? "green" : "orange",
+                                    backgroundColor: toggleStates.priceLookup2 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >

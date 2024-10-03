@@ -108,7 +108,7 @@ const Import1 = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree1 ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree1 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -191,7 +191,7 @@ const Import1 = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree2 ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree2 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -274,7 +274,7 @@ const Import1 = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree3 ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree3 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -357,7 +357,7 @@ const Import1 = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree4 ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree4 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -380,7 +380,7 @@ const Import1 = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree10 ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree10 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -461,7 +461,7 @@ const Import1 = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree5 ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree5 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -544,7 +544,7 @@ const Import1 = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree6 ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree6 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -627,7 +627,7 @@ const Import1 = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree7 ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree7 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -711,7 +711,7 @@ const Import1 = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree8 ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree8 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -795,7 +795,7 @@ const Import1 = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree9 ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree9 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >

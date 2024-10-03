@@ -154,7 +154,7 @@ const UserSettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.reservedstock ? "green" : "orange",
+                                    backgroundColor: toggleStates.reservedstock ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >

@@ -263,7 +263,7 @@ const Collapse = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree ? "#323251" : "orange",
                                     color: "white",
                                   }}
                                 >
@@ -286,7 +286,7 @@ const Collapse = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.dontUpdateQty ? "green" : "orange",
+                                    backgroundColor: toggleStates.dontUpdateQty ? "#323251" : "orange",
                                     color: "white",
                                   }}
                                 >
@@ -309,7 +309,7 @@ const Collapse = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.serialNumber ? "green" : "orange",
+                                    backgroundColor: toggleStates.serialNumber ? "#323251" : "orange",
                                     color: "white",
                                   }}
                                 >
@@ -332,7 +332,7 @@ const Collapse = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.priceLookup ? "green" : "orange",
+                                    backgroundColor: toggleStates.priceLookup ? "#323251" : "orange",
                                     color: "white",
                                   }}
                                 >

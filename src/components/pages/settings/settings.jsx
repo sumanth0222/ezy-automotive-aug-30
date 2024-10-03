@@ -251,7 +251,7 @@ const Settings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -274,7 +274,7 @@ const Settings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: isActive ? "green" : "orange",
+                                    backgroundColor: isActive ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -300,7 +300,7 @@ const Settings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.priceLookup ? "green" : "orange",
+                                    backgroundColor: toggleStates.priceLookup ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >

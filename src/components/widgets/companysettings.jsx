@@ -134,7 +134,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.gstFree ? "green" : "orange",
+                                    backgroundColor: toggleStates.gstFree ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -158,7 +158,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.dontUpdateQty ? "green" : "orange",
+                                    backgroundColor: toggleStates.dontUpdateQty ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -184,7 +184,7 @@ const CompanySettings = () => {
                                     <span
                                       className="custom-switch-indicator custom-switch-indicator-lg"
                                       style={{
-                                        backgroundColor: toggleStates.priceLookup ? "green" : "orange",
+                                        backgroundColor: toggleStates.priceLookup ? "#323251" : "#d6d6e6",
                                         color: "white",
                                       }}
                                     >
@@ -225,7 +225,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.serialNumber ? "green" : "orange",
+                                    backgroundColor: toggleStates.serialNumber ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -302,7 +302,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.reservedstock ? "green" : "orange",
+                                    backgroundColor: toggleStates.reservedstock ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -340,7 +340,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.orderqty1 ? "green" : "orange",
+                                    backgroundColor: toggleStates.orderqty1 ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -426,7 +426,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.Vehicle ? "green" : "orange",
+                                    backgroundColor: toggleStates.Vehicle ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -456,7 +456,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.Fleet ? "green" : "orange",
+                                    backgroundColor: toggleStates.Fleet ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -546,7 +546,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.shopmonth ? "green" : "orange",
+                                    backgroundColor: toggleStates.shopmonth ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -576,7 +576,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.jobstatus ? "green" : "orange",
+                                    backgroundColor: toggleStates.jobstatus ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -668,7 +668,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.pricetax ? "green" : "orange",
+                                    backgroundColor: toggleStates.pricetax ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -692,7 +692,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.taxfreight ? "green" : "orange",
+                                    backgroundColor: toggleStates.taxfreight ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -715,7 +715,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.roundtotal ? "green" : "orange",
+                                    backgroundColor: toggleStates.roundtotal ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -739,7 +739,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.discounttax ? "green" : "orange",
+                                    backgroundColor: toggleStates.discounttax ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -829,7 +829,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.partnumber ? "green" : "orange",
+                                    backgroundColor: toggleStates.partnumber ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -852,7 +852,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.labourquantity ? "green" : "orange",
+                                    backgroundColor: toggleStates.labourquantity ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -875,7 +875,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.lineprices ? "green" : "orange",
+                                    backgroundColor: toggleStates.lineprices ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -898,7 +898,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.header ? "green" : "orange",
+                                    backgroundColor: toggleStates.header ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -921,7 +921,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.jobcard ? "green" : "orange",
+                                    backgroundColor: toggleStates.jobcard ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -944,7 +944,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.jobnumber ? "green" : "orange",
+                                    backgroundColor: toggleStates.jobnumber ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -967,7 +967,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.ordersattached ? "green" : "orange",
+                                    backgroundColor: toggleStates.ordersattached ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -990,7 +990,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.pricingjobcard ? "green" : "orange",
+                                    backgroundColor: toggleStates.pricingjobcard ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -1014,7 +1014,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.tyredetails ? "green" : "orange",
+                                    backgroundColor: toggleStates.tyredetails ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -1037,7 +1037,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.mergebundle ? "green" : "orange",
+                                    backgroundColor: toggleStates.mergebundle ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -1060,7 +1060,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.workedfield ? "green" : "orange",
+                                    backgroundColor: toggleStates.workedfield ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -1083,7 +1083,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.invoiceline ? "green" : "orange",
+                                    backgroundColor: toggleStates.invoiceline ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -1107,7 +1107,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.oninvoice ? "green" : "orange",
+                                    backgroundColor: toggleStates.oninvoice ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -1130,7 +1130,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.onprocessvoice ? "green" : "orange",
+                                    backgroundColor: toggleStates.onprocessvoice ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -1153,7 +1153,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.invoicepostdate ? "green" : "orange",
+                                    backgroundColor: toggleStates.invoicepostdate ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
@@ -1176,7 +1176,7 @@ const CompanySettings = () => {
                                 <span
                                   className="custom-switch-indicator custom-switch-indicator-lg"
                                   style={{
-                                    backgroundColor: toggleStates.serviceadvisors ? "green" : "orange",
+                                    backgroundColor: toggleStates.serviceadvisors ? "#323251" : "#d6d6e6",
                                     color: "white",
                                   }}
                                 >
