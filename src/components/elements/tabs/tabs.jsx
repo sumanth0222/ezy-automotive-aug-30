@@ -105,6 +105,7 @@ const Tabss = () => {
                       <Tab eventKey="Bookings" title={<><span>Bookings</span> <span className="badge bg-danger ms-2">6</span></>}>
                         <div className="tab-pane active">
                           <div className="row-sm row">
+                            
                             <div className="col-lg-4">
                               <Form.Label>Start Date</Form.Label>
                               <div className="input-group">
