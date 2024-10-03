@@ -335,6 +335,75 @@ export const invoice = [
   {value: "Credit", label:"Credit"},
   
 ]
+
+// settings (Company settings)
+export const FA = [
+  {value: "Everytime", label:"Everytime"},
+  {value: "Weekly", label:"Weekly"},
+  {value: "Two Weeks", label:"Two Weeks"},
+  {value: "Monthly", label:"Monthly"},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+]
+
+export const Products1 = [
+  {value: "Current Cost", label:"Current Cost"},
+  {value: "Average Cost", label:"Average Cost"},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+]
+
+export const vehiclegroup = [
+  {value: "agricultural", label:"agricultural"},
+  {value: "Bicycles", label:"Bicycles"},
+  {value: "coffee Equipment", label:"coffee Equipment"},
+  {value: "Light Commercial", label:"Light Commercial"},
+  {value: "Machinery", label:"Machinery"},
+  {value: "Marine", label:"Marine"},
+  {value: "Motorcycle", label:"Motorcycle"},
+  {value: "Musical Instruments", label:"Musical Instruments"},
+  {value: "Recreational Vehicles", label:"Recreational Vehicles"},
+  {value: "Recycling Machines", label:"Recycling Machines"},
+  {value: "VEHICLE_BODY_GROUP_TYPES.SAIL_BOAT", label:"VEHICLE_BODY_GROUP_TYPES.SAIL_BOAT"},
+  {value: "Sewing Machines", label:"Sewing Machines"},
+  {value: "Standard System Types", label:"Standard System Types"},
+  {value: "Trailers", label:"Trailers"},
+  {value: "Trucks/ Articulated", label:"Trucks/ Articulated"},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  
+
+]
+
+export const settings2 = [
+  {value: "Always", label:"Always"},
+  {value: "Never", label:"Never"},
+  {value: "Ask Me Every Time", label:"Ask Me Every Time"},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+  {value: "", label:""},
+]
+
+
+
+
+
+
 //advancedforms
 export const options = [
   { value: "eg1", label: " eg1" },
