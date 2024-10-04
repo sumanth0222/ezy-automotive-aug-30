@@ -90,6 +90,25 @@ const UserSettings = () => {
                         </form>
                       </div>
                     </div>
+
+                    <div id="button6">
+                      <div className="text-wrap row justify-content-between">
+                        <div className="btn-list">
+                          <button type="button" className="btn btn-primary" onClick={handleCancel}>
+                            Cancel
+                          </button>
+
+
+
+                        </div>
+                        <div>
+                          <button type="button" className="btn btn-teal">
+                            Save
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    
                   </div>
                 </Accordion.Body>
               </Accordion.Item>
@@ -174,16 +193,6 @@ const UserSettings = () => {
                         </form>
                       </div>
                     </div>
-                  </div>
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-
-
-
-          
-
-            
 
                     <div id="button6">
                       <div className="text-wrap row justify-content-between">
@@ -202,6 +211,18 @@ const UserSettings = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+
+
+
+          
+
+            
+
+                    
 
 
           </div>

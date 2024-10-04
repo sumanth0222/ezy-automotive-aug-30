@@ -399,6 +399,61 @@ export const settings2 = [
   {value: "", label:""},
 ]
 
+// settings usersetup
+
+export const NGroup = [
+  {value: "ADMIN", label:"ADMIN"},
+  {value: "INVOICE + CUST PAY", label:"INVOICE + CUST PAY"},
+  {value: "INVOICE ONLY", label:"INVOICE ONLY"},
+  {value: "MANAGER", label:"MANAGER"},
+  {value: "MECHANIC", label:"MECHANIC"},
+  {value: "OWNER", label:"OWNER"},
+  {value: "PAYONLY", label:"PAYONLY"},
+  {value: "SALES", label:"SALES"},
+  {value: "TECHNICIAN", label:"TECHNICIAN"},
+  {value: "USER", label:"USER"},
+]
+
+export const NStatus = [
+  {value: "Active", label:"Active"},
+  {value: "Inactive", label:"Inactive"},
+  {value: "Blocked", label:"Blocked"},
+  
+]
+
+// Actions
+
+export const cc = [
+  {value: "Communicate By Postcode", label:"Communicate By Postcode"},
+  {value: "Communicate By Vehicle Details", label:"Communicate By Vehicle Details"},
+  {value: "Communicate with Customers", label:"Communicate with Customers"},
+  {value: "Communicate with Customers Source", label:"Communicate with Customers Source"},
+  {value: "Communicate By Last in Date", label:"Communicate By Last in Date"},
+ 
+
+]
+
+export const ct = [
+  {value: "Email All", label:"Email All"},
+  {value: "SMS All", label:"SMS All"},
+  {value: "Print All", label:"Print All"},
+  {value: "Use Preferred Contact Method", label:"Use Preferred Contact Method"},
+
+]
+
+
+
+
+export const cs = [
+  {value: "Social Media", label:"Social Media"},
+  {value: "Google Search", label:"Google Search"},
+  {value: "Radio/Tv Advertising", label:"Radio/Tv Advertising"},
+  {value: "Referral - Word of Mouth", label:"Referral - Word of Mouth"},
+  {value: "Newspapers/Industry Magazines", label:"Newspapers/Industry Magazines"},
+  {value: "Promotion/Campagin", label:"Promotion/Campagin"},
+
+
+]
 
 
 

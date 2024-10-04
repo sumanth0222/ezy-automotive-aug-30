@@ -83,6 +83,10 @@ const Gallery = () => {
     navigate("/advancedui/carousel"); // Navigate to the form page
   };
 
+  const handleUserClick = () => {
+    navigate(`${import.meta.env.BASE_URL}widgets/usersetuppluss`)
+  }
+
   const [dark1, setdark1] = useState("on");
 
   return (
@@ -184,6 +188,7 @@ const Gallery = () => {
                                   ></button>
                                   <button
                                     className="btn btn-sm btn-dark fa fa-user"
+                                    onClick={handleUserClick}
                                     style={{ marginLeft: "5px" }}
                                   ></button>
                                   <button
