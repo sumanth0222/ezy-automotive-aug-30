@@ -35,6 +35,15 @@ const UserSetup = () => {
     navigate(-1);  // Redirect to the previous page
   };
 
+  const handlePlusClick = () => {
+    navigate(`${import.meta.env.BASE_URL}widgets/usersetupplus`); // Navigate to the form page
+  };
+
+  const handlePlusClick2 = () => {
+    navigate(`${import.meta.env.BASE_URL}widgets/usersetuppluss`); // Navigate to the form page
+  };
+
+
   return (
     <Fragment>
       <Pageheader title="Settings" heading="settings" active="User Setup" />
@@ -46,7 +55,7 @@ const UserSetup = () => {
 
             <Accordion className='overflow-hidden card'>
               <Accordion.Item eventKey="0">
-                <Accordion.Header className='accordion-toggle font-weight-semibold tx-12 panel-heading2'>
+                <Accordion.Header className='accordion-toggle font-weight-semibold tx-12 panel-heading2 '>
                   <div className="row-sm row">
                     <div>
                       <a className="btn ripple btn-dark text-white btn-icon" data-placement="top" href="#">
@@ -60,7 +69,34 @@ const UserSetup = () => {
                   <div className="row-sm row">
                 
 
-               
+                <div className="form-group col-lg-8 d-flex align-items-center mt-2">
+                  <div>
+                  <input
+                    autoComplete="off"
+                    placeholder="Search..."
+                    type="search"
+                    className="form-control"
+                    value={filter}
+                    onChange={(e) => setFilter(e.target.value)}
+                  />
+                  </div>
+                  <div>
+                    <a
+                      className="btn ripple btn-success text-white btn-icon"
+                      data-placement="top"
+                      data-bs-toggle="tooltip"
+                      title="Add File"
+                      href="#"
+                    >
+                      <button
+                        className="btn btn-sm btn-primary"
+                        onClick={handlePlusClick}
+                      >
+                        <li className="fa fa-plus"></li>
+                      </button>
+                    </a>
+                  </div>
+                </div>
 
               </div>
                 </Accordion.Header>
@@ -95,7 +131,8 @@ const UserSetup = () => {
                                     className="btn btn-sm btn-primary"
                                     // onClick={() => handleEditClick(phone.phone)}
                                   >
-                                    Edit
+                                    
+                                    <i className="fa fa-edit"></i>
                                   </button>
                                  
                                   </div>
@@ -143,6 +180,34 @@ const UserSetup = () => {
                       <h4 className='mt-1'>Mobile Users</h4>
                     </div>
                   </div>
+                  <div className="form-group col-lg-8 d-flex align-items-center mt-2">
+                  <div>
+                  <input
+                    autoComplete="off"
+                    placeholder="Search..."
+                    type="search"
+                    className="form-control"
+                    value={filter}
+                    onChange={(e) => setFilter(e.target.value)}
+                  />
+                  </div>
+                  <div>
+                    <a
+                      className="btn ripple btn-success text-white btn-icon"
+                      data-placement="top"
+                      data-bs-toggle="tooltip"
+                      title="Add File"
+                      href="#"
+                    >
+                      <button
+                        className="btn btn-sm btn-primary"
+                        onClick={handlePlusClick2}
+                      >
+                        <li className="fa fa-plus"></li>
+                      </button>
+                    </a>
+                  </div>
+                </div>
                 </Accordion.Header>
 
                 <Accordion.Body id="collapseFour1" className="panel-body">

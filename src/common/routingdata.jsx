@@ -136,6 +136,9 @@ import SupplierPayments from '../components/elements/buttons/supplierpayments';
 import SupplierMessage from '../components/elements/buttons/suppliermessage';
 import SupplierEmail from '../components/elements/buttons/supplieremail';
 import Customers from '../components/pages/todotask/customers';
+import UserSetupPlus from '../components/widgets/usersetupplus';
+import UserSetupPluss from '../components/widgets/usersetuppluss';
+
 
 
 export const Routingdata = [
@@ -294,7 +297,8 @@ export const Routingdata = [
   { path:`${import.meta.env.BASE_URL}elements/buttons/suppliermessage`, element: <SupplierMessage/> },
   { path:`${import.meta.env.BASE_URL}elements/buttons/supplieremail`, element: <SupplierEmail/> },
   { path:`${import.meta.env.BASE_URL}pages/todotask/customers`, element: <Customers/> },
-
+  { path:`${import.meta.env.BASE_URL}widgets/usersetupplus`, element: <UserSetupPlus/> },
+  { path:`${import.meta.env.BASE_URL}widgets/usersetuppluss`, element: <UserSetupPluss/> },
 
 
 ];
@@ -468,6 +472,8 @@ export const Sidebarcomponents=[
 { path:`${import.meta.env.BASE_URL}elements/buttons/suppliermessage`, title: "SupplierMessage"},
 { path:`${import.meta.env.BASE_URL}elements/buttons/supplieremail`, title:"SupplierEmail" },
 { path:`${import.meta.env.BASE_URL}pages/todotask/customers`, title:"Customers" },
+{ path:`${import.meta.env.BASE_URL}widgets/usersetupplus`, title: "UserSetupPlus" },
+{ path:`${import.meta.env.BASE_URL}widgets/usersetuppluss`, title: "UserSetupPluss" },
 
 ];
 
