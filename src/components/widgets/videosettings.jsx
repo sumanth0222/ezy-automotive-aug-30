@@ -20,7 +20,7 @@ const videosettings1 = () => {
     
 
     <Fragment>
-    <Pageheader title="Integrations"  heading="Automotive Integration"   active="Drive Mech" />
+    <Pageheader title="Settings"  heading="Settings"   active="Video Settings" />
       <Row className='faq'>
         <Col xl={12}>
           <div className="" id="" role="">

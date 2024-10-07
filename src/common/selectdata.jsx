@@ -421,6 +421,35 @@ export const NStatus = [
   
 ]
 
+export const matrix = [
+
+  {value: "Neve Paul", label:"Neve Paul"},
+ 
+]
+
+export const matrixtype = [
+
+  {value: "Markup", label:"Markup"},
+  {value: "Discount", label:"Discount"},
+ 
+]
+
+export const updatetype = [
+
+  {value: "Update Zero Percent Only", label:"Update Zero Percent Only"},
+  {value: "Update All", label:"Update All"},
+ 
+]
+
+
+
+
+
+
+
+
+
+
 // Actions
 
 export const cc = [
