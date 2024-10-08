@@ -132,7 +132,7 @@ const PublicBookings = () => {
     
 
     <Fragment>
-    <Pageheader title="Actions"  heading="Actions"   active="Export" />
+    <Pageheader title="Settings"  heading="Settings"   active="Public Bookings" />
       <Row className='faq'>
         <Col xl={12}>
           <div className="" id="" role="">
