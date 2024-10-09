@@ -1,11 +1,12 @@
 import React, { useState, Fragment } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Button } from 'react-bootstrap';
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import { Breadcrumb, Form } from "react-bootstrap";
 import {
   CForm,
 } from "@coreui/react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+
 
 const Customers = () => {
   const [Server, setServer] = useState("");
@@ -59,21 +60,21 @@ const Customers = () => {
   };
 
   const handlePayments = (phone) => {
-    navigate(`${import.meta.env.BASE_URL}elements/buttons/supplierpayments`);
+    navigate(`${import.meta.env.BASE_URL}pages/todotask/customerfile`);
   };
 
-  const handleMessageClick = (phone) => {
-    navigate(`${import.meta.env.BASE_URL}elements/buttons/suppliermessage`);
-  };
-
-  const handleEmailClick = (phone) => {
-    navigate(`${import.meta.env.BASE_URL}elements/buttons/supplieremail`);
-  };
-
+ 
   const handlePlusClick = () => {
     navigate(`${import.meta.env.BASE_URL}pages/todotask/customerplus`); // Navigate to the form page
   };
  
+  const handleMessage = () => {
+    navigate(`${import.meta.env.BASE_URL}pages/todotask/customermessage`)
+  }
+
+  const handleEmailClick = () => {
+    navigate(`${import.meta.env.BASE_URL}pages/todotask/customeremail`)
+  }
  
   const [dark1, setdark1] = useState("on");
 
@@ -199,19 +200,19 @@ const Customers = () => {
                                   </button>
                                   <button
                                     className="btn btn-sm btn-warning"
-                                    // onClick={() => handlePayments(phone.phone)}
+                                    onClick={handlePayments}
                                   >
                                     <i className="fas fa-file-alt"></i>
                                   </button>
                                   <button
                                     className="btn btn-sm btn-info"
-                                    // onClick={() => handleMessageClick(phone.phone)}
+                                    onClick={handleMessage}
                                   >
                                     <i className="fa fa-comments"></i>
                                   </button>
                                   <button
                                     className="btn btn-sm btn-info"
-                                    // onClick={() => handleEmailClick(phone.phone)}
+                                    onClick={handleEmailClick}
                                   >
                                      <i className="fa fa-envelope"></i>
                                   </button>
