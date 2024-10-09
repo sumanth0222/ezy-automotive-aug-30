@@ -1,9 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { Accordion, Col, Row, Button , Form, InputGroup, } from 'react-bootstrap';
 import "react-datepicker/dist/react-datepicker.css";
-import "react-datepicker/dist/react-datepicker.css";
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
-
+import DatePicker from "react-datepicker";
 
 const SupplierPayments = () => {
 
@@ -202,8 +201,23 @@ const SupplierPayments = () => {
                   <Form>
                     <Row>
                       
+                          <div className="col-lg-4">
+                              <Form.Label>Post Date</Form.Label>
+                              <div className="input-group">
+                                <span className="input-group-text">
+                                  <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                </span>
+                                <DatePicker
+                                  selected={startDate}
+                                  onChange={(date) => setStartDate(date)}
+                                  className="form-control"
+                                  placeholderText="Select Start Date"
+                                />
+                              </div>
+                          </div>
                      
-                      <Col md={4}>
+                      {/* <Col md={4}>
+
                         <Form.Group className="mb-3" controlId="formFieldBuildDate">
                           <Form.Label>Post Date</Form.Label>
                           <InputGroup>
@@ -216,7 +230,7 @@ const SupplierPayments = () => {
                             />
                           </InputGroup>
                         </Form.Group>
-                      </Col>
+                      </Col> */}
                       
                     </Row>
 
