@@ -484,7 +484,14 @@ export const cs = [
 
 ]
 
+// Customers
 
+export const contact = [
+  {value:"Email", label:"Email"},
+  {value:"SMS", label:"SMS"},
+  {value:"Opts Out", label:"Opts Out"},
+  {value:"Document", label:"Document"},
+]
 
 
 

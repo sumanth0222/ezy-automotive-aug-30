@@ -6,6 +6,10 @@ import Pageheader from '../../../layout/layoutcomponent/pageheader';
 import { Tododata, vehicleData } from '../../../common/commondata';
 import SunEditor from 'suneditor-react'; // Make sure you have this installed
 import 'suneditor/dist/css/suneditor.min.css'; // Import SunEditor styles
+import { MultiSelect } from "react-multi-select-component";
+import { Inspection, contact, countries, payment, cs } from "../../../common/selectdata";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
@@ -16,6 +20,9 @@ const Todotask = () => {
   const [formOpen, setFormOpen] = useState(false);
   const [radioValue, setRadioValue] = useState('individual');
   const [value, setValue] = useState(''); // State for SunEditor
+  const [selected, setSelected] = useState([]);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
   // Invoice State
   const [rows, setRows] = useState([
@@ -24,6 +31,11 @@ const Todotask = () => {
 
   // Toggle the expand state
   const handleExpandClick = () => setExpanded(!expanded);
+
+  // Handler for the Cancel button
+  const handleCancel = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
 
   // Toggle the form visibility
   const handleFormOpenClick = () => setFormOpen(!formOpen);
@@ -73,7 +85,7 @@ const Todotask = () => {
 
   return (
     <Fragment>
-      <Pageheader title="Customer Booking" heading="Pages" active="Customer Booking" />
+      <Pageheader title="Customers" heading="Customer" active="Calendar" />
 
       <Tab.Container id="left-tabs-example" defaultActiveKey="TabStyle01">
         <Row>
@@ -109,6 +121,7 @@ const Todotask = () => {
                               variant="outline-primary"
                               className="ms-2"
                               onClick={handleFormOpenClick}
+                              
                             >
                               <i className='fa fa-user-plus' />
                             </Button>
@@ -218,7 +231,7 @@ const Todotask = () => {
                         <div className='px-4'>
 
                           {/* Toggle option button for Individual and Company */}
-                          <ButtonGroup className="mb-3">
+                          {/* <ButtonGroup className="mb-3">
                             <ToggleButton className='bg-primary'
                               id="radio-individual"
                               type="radio"
@@ -241,204 +254,38 @@ const Todotask = () => {
                             >
                               Company
                             </ToggleButton>
-                          </ButtonGroup>
+                          </ButtonGroup> */}
 
                           {radioValue === 'individual' && (
                             <Form>
-                              <Row>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField1">
-                                    <Form.Label>First Name</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField2">
-                                    <Form.Label>Last Name</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                            
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField3">
-                                    <Form.Label>Phone</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField4">
-                                    <Form.Label>Cell</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                            
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField5">
-                                    <Form.Label>Email</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField6">
-                                    <Form.Label>Address</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                             
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField7">
-                                    <Form.Label>City</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField8">
-                                    <Form.Label>State</Form.Label>
-                                    <Form.Select aria-label="Select State">
-                                      <option value="">Select State</option>
-                                      <option value="AL">Alabama</option>
-                                      <option value="CA">California</option>
-                                      <option value="NY">New York</option>
-                                      <option value="TX">Texas</option>
-                                      <option value="FL">Florida</option>
-                                      {/* Add more states as needed */}
-                                    </Form.Select>
-                                  </Form.Group>
-                                </Col>
-                             
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField9">
-                                    <Form.Label>Zip Code</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField10">
-                                    <Form.Label>Price Type</Form.Label>
-                                    <Form.Select aria-label="Select Price Type">
-                                      <option value="">Select Price Type</option>
-                                      <option value="standard">Standard</option>
-                                      <option value="premium">Premium</option>
-                                      <option value="discount">Discount</option>
-                                      <option value="custom">Custom</option>
-                                      {/* Add more price types as needed */}
-                                    </Form.Select>
-                                  </Form.Group>
-                                </Col>
-                              </Row>
+
+                          <div className="col-md-4">
+                            <label className="form-label" htmlFor="address">Mobile</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-md-12">
+                            <label className="form-label" htmlFor="address">Message</label>
+                            <textarea className="form-control" id="address" type="text" required rows={5}></textarea>
+                          </div>
+
+                           
 
                               <Row>
-                                <Col md={12} className="d-flex justify-content-between">
+                                <Col md={12} className="d-flex justify-content-between mt-3">
                                   <Button variant="secondary" onClick={handleFormOpenClick}>
                                     Cancel
                                   </Button>
                                   <Button type="submit" className="me-2">
-                                    Submit
+                                    Send
                                   </Button>
                                 </Col>
                               </Row>
                             </Form>
                           )}
 
-                          {radioValue === 'company' && (
-                            <Form>
-                              <Row>
-                                <Col md={12}>
-                                  <Form.Group className="mb-3" controlId="formFieldCompanyName">
-                                    <Form.Label>Company Name</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                              </Row>
-
-                              <Row>
-                                <Col md={6}>
-                                  <Form.Group className="mb-3" controlId="formFieldPhone">
-                                    <Form.Label>Phone</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={6}>
-                                  <Form.Group className="mb-3" controlId="formFieldCell">
-                                    <Form.Label>Cell</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                              </Row>
-
-                              <Row>
-                                <Col md={6}>
-                                  <Form.Group className="mb-3" controlId="formFieldEmail">
-                                    <Form.Label>Email</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={6}>
-                                  <Form.Group className="mb-3" controlId="formFieldAddress">
-                                    <Form.Label>Address</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                              </Row>
-
-                              <Row>
-                                <Col md={6}>
-                                  <Form.Group className="mb-3" controlId="formFieldCity">
-                                    <Form.Label>City</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={6}>
-                                  <Form.Group className="mb-3" controlId="formFieldState">
-                                    <Form.Label>State</Form.Label>
-                                    <Form.Select aria-label="Select State">
-                                      <option value="">Select State</option>
-                                      <option value="AL">Alabama</option>
-                                      <option value="CA">California</option>
-                                      <option value="NY">New York</option>
-                                      <option value="TX">Texas</option>
-                                      <option value="FL">Florida</option>
-                                      {/* Add more states as needed */}
-                                    </Form.Select>
-                                  </Form.Group>
-                                </Col>
-                              </Row>
-
-                              <Row>
-                                <Col md={6}>
-                                  <Form.Group className="mb-3" controlId="formFieldZipCode">
-                                    <Form.Label>Zip Code</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={6}>
-                                  <Form.Group className="mb-3" controlId="formFieldPriceType">
-                                    <Form.Label>Price Type</Form.Label>
-                                    <Form.Select aria-label="Select Price Type">
-                                      <option value="">Select Price Type</option>
-                                      <option value="standard">Standard</option>
-                                      <option value="premium">Premium</option>
-                                      <option value="discount">Discount</option>
-                                      <option value="custom">Custom</option>
-                                      {/* Add more price types as needed */}
-                                    </Form.Select>
-                                  </Form.Group>
-                                </Col>
-                              </Row>
-
-                              <Row>
-                                <Col md={12} className="d-flex justify-content-between">
-                                  <Button variant="secondary" onClick={handleFormOpenClick}>
-                                    Cancel
-                                  </Button>
-                                  <Button type="submit" className="me-2">
-                                    Submit
-                                  </Button>
-                                </Col>
-                              </Row>
-
-                            </Form>
-                          )}
+                        
                         </div>
                       </Card>
                     </Collapse>
@@ -560,108 +407,95 @@ const Todotask = () => {
 
                           {
                             <Form>
+
+                          
+
+
                               <Row>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField1">
-                                    <Form.Label>Rego</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField8">
-                                    <Form.Label>State</Form.Label>
-                                    <Form.Select aria-label="Select State">
-                                      <option value="">Select State</option>
-                                      <option value="AL">Alabama</option>
-                                      <option value="CA">California</option>
-                                      <option value="NY">New York</option>
-                                      <option value="TX">Texas</option>
-                                      <option value="FL">Florida</option>
-                                      {/* Add more states as needed */}
-                                    </Form.Select>
-                                  </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField1">
-                                    <Form.Label>VIN</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                            
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField1">
-                                    <Form.Label>Make</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField8">
-                                    <Form.Label>Body Type</Form.Label>
-                                    <Form.Select aria-label="Select State">
-                                      <option value="">Select State</option>
-                                      <option value="AL">Alabama</option>
-                                      <option value="CA">California</option>
-                                      <option value="NY">New York</option>
-                                      <option value="TX">Texas</option>
-                                      <option value="FL">Florida</option>
-                                      {/* Add more states as needed */}
-                                    </Form.Select>
-                                  </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField1">
-                                    <Form.Label>Model</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                             
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField1">
-                                    <Form.Label>Color</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField1">
-                                    <Form.Label>Odometer</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
 
+                          <div className="col-lg-4">
+                            <label className="form-label" htmlFor="phone">Rego</label>
+                            <input className="form-control" id="phone" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-lg-4">
+                            <p>State</p>
+                            <MultiSelect
+                              value={selected}
+                              onChange={setSelected}
+                              labelledBy="Select"
+                              options={countries}
+                            />
+                          </div>
 
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formFieldBuildDate">
-                                    <Form.Label>Build Date</Form.Label>
-                                    <InputGroup>
-                                      <Button variant="outline-secondary">
-                                        <i className="fa fa-calendar" aria-hidden="true"></i>
-                                      </Button>
-                                      <Form.Control
-                                        type="date"
-                                        placeholder="Select Date"
-                                      />
-                                    </InputGroup>
-                                  </Form.Group>
-                                </Col>
+                          <div className="col-lg-4">
+                            <label className="form-label" htmlFor="phone">VIN</label>
+                            <input className="form-control" id="phone" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-lg-4">
+                            <label className="form-label" htmlFor="phone">Make</label>
+                            <input className="form-control" id="phone" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-lg-4">
+                            <label className="form-label" htmlFor="phone">Model</label>
+                            <input className="form-control" id="phone" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-lg-4">
+                            <p>Body Type</p>
+                            <MultiSelect
+                              value={selected}
+                              onChange={setSelected}
+                              labelledBy="Select"
+                              options={countries}
+                            />
+                          </div>
+                          <div className="col-lg-4">
+                            <label className="form-label" htmlFor="phone">Colour</label>
+                            <input className="form-control" id="phone" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-lg-4">
+                            <label className="form-label" htmlFor="phone">Odometer</label>
+                            <input className="form-control" id="phone" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          <div className="col-lg-4">
+                              <Form.Label>Build Date</Form.Label>
+                              <div className="input-group">
+                                <span className="input-group-text">
+                                  <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                </span>
+                                <DatePicker
+                                  selected={startDate}
+                                  onChange={(date) => setStartDate(date)}
+                                  className="form-control"
+                                  placeholderText="Select Start Date"
+                                />
+                              </div>
+                            </div>
+                          <div className="col-lg-4">
+                            <label className="form-label" htmlFor="phone">Fleet Code</label>
+                            <input className="form-control" id="phone" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+                          
 
+                               
 
-                                <Col md={3}>
-                                  <Form.Group className="mb-3" controlId="formField1">
-                                    <Form.Label>Fleet Code</Form.Label>
-                                    <Form.Control type="text" placeholder="" />
-                                  </Form.Group>
-                                </Col>
                               </Row>
 
 
 
                               <Row>
-                                <Col md={12} className="d-flex justify-content-between">
+                                <Col md={12} className="d-flex justify-content-between mt-3">
                                   <Button variant="secondary" onClick={handleFormOpenClick}>
                                     Cancel
                                   </Button>
                                   <Button type="submit" className="me-2">
-                                    Submit
+                                    Save
                                   </Button>
                                 </Col>
                               </Row>
@@ -767,50 +601,58 @@ const Todotask = () => {
                 {
                   <Form>
                     <Row>
-                      <Col md={3}>
+                      <Col md={4}>
                         <Form.Group className="mb-3" controlId="formField1">
                           <Form.Label>Reference</Form.Label>
                           <Form.Control type="text" placeholder="" />
                         </Form.Group>
                       </Col>
-                      <Col md={3}>
+                            <div className="col-lg-4">
+                              <Form.Label>Booking Date</Form.Label>
+                              <div className="input-group">
+                                <span className="input-group-text">
+                                  <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                </span>
+                                <DatePicker
+                                  selected={startDate}
+                                  onChange={(date) => setStartDate(date)}
+                                  className="form-control"
+                                  placeholderText="Select Start Date"
+                                />
+                              </div>
+                            </div>
+                            <div className="col-lg-4">
+                              <Form.Label>Due By</Form.Label>
+                              <div className="input-group">
+                                <span className="input-group-text">
+                                  <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                </span>
+                                <DatePicker
+                                  selected={endDate}
+                                  onChange={(date) => setEndDate(date)}
+                                  className="form-control"
+                                  placeholderText="Select End Date"
+                                />
+                              </div>
+                            </div>
+                      <Col md={4}>
                         <Form.Group className="mb-3" controlId="formField1">
                           <Form.Label>Customer Order Number</Form.Label>
                           <Form.Control type="text" placeholder="" />
                         </Form.Group>
                       </Col>
-                      <Col md={3}>
-                        <Form.Group className="mb-3" controlId="formFieldBuildDate">
-                          <Form.Label>Booking Date</Form.Label>
-                          <InputGroup>
-                            <Button variant="outline-secondary">
-                              <i className="fa fa-calendar" aria-hidden="true"></i>
-                            </Button>
-                            <Form.Control
-                              type="date"
-                              placeholder="Select Date"
-                            />
-                          </InputGroup>
+                      <Col md={8}>
+                        <Form.Group className="mb-3" controlId="formField1">
+                          <Form.Label>Description</Form.Label>
+                          <Form.Control type="text" placeholder="" />
                         </Form.Group>
                       </Col>
-                      <Col md={3}>
-                        <Form.Group className="mb-3" controlId="formFieldBuildDate">
-                          <Form.Label>Due Date</Form.Label>
-                          <InputGroup>
-                            <Button variant="outline-secondary">
-                              <i className="fa fa-calendar" aria-hidden="true"></i>
-                            </Button>
-                            <Form.Control
-                              type="date"
-                              placeholder="Select Date"
-                            />
-                          </InputGroup>
-                        </Form.Group>
-                      </Col>
+                      
+                     
                     </Row>
 
 
-                    <Row>
+                    {/* <Row>
                       <Col md={6}>
                         <Form.Group className="mb-3" controlId="formField1">
                           <Form.Label>Description</Form.Label>
@@ -818,7 +660,7 @@ const Todotask = () => {
                         </Form.Group>
                       </Col>
 
-                    </Row>
+                    </Row> */}
 
                     <div className="container mt-4">
                       <div className="row">
@@ -1007,17 +849,28 @@ const Todotask = () => {
       </Row>
 
 
-      <Row>
-        <Col md={12}>
-          <Link to={`${import.meta.env.BASE_URL}pages/faqs/`}> <Button variant={idx.color} className="btn me-2">
-            Start job
-          </Button></Link>
+      {/* <Row> */}
+      <div id="button6">
+                      <div className="text-wrap row justify-content-between">
+                        <div>
+                          <button type="button" className="btn btn-danger" onClick={handleCancel}>
+                            Cancel
+                          </button>
+                        </div>
+                        <div className="btn-list">
+                          <button type="button" className="btn btn-primary" >
+                            Start Job
+                          </button>
+                          <button type="button" className="btn btn-info">
+                            Save
+                          </button>
 
-          <Button variant={ide.color} className="btn me-2">
-            Save
-          </Button>
-        </Col>
-      </Row>
+
+                        </div>
+                        
+                      </div>
+                    </div>
+      {/* </Row> */}
 
     </Fragment>
   );

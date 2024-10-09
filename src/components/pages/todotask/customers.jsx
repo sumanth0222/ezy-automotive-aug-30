@@ -47,15 +47,15 @@ const Customers = () => {
     );
 
   const handleEditClick = (phone) => {
-    navigate(`/elements/buttons/supplieredit`);
+    navigate(`${import.meta.env.BASE_URL}pages/todotask/customeredit`);
   };
 
-  const handleInvoiceClick = (phone) => {
-    navigate(`${import.meta.env.BASE_URL}elements/buttons/supplierinvoice`);
+  const handlecarClick = (phone) => {
+    navigate(`${import.meta.env.BASE_URL}pages/todotask/customercar`);
   };
 
-  const handleOrderClick = (phone) => {
-    navigate(`${import.meta.env.BASE_URL}elements/buttons/supplierorder`);
+  const handleCustomerCalendar = (phone) => {
+    navigate(`${import.meta.env.BASE_URL}pages/todotask`);
   };
 
   const handlePayments = (phone) => {
@@ -71,7 +71,7 @@ const Customers = () => {
   };
 
   const handlePlusClick = () => {
-    navigate(`/elements/buttons/supplierplus`); // Navigate to the form page
+    navigate(`${import.meta.env.BASE_URL}pages/todotask/customerplus`); // Navigate to the form page
   };
  
  
@@ -137,7 +137,7 @@ const Customers = () => {
                     >
                       <button
                         className="btn btn-sm btn-primary"
-                        // onClick={handlePlusClick}
+                        onClick={handlePlusClick}
                       >
                         <li className="fa fa-plus"></li>
                       </button>
@@ -180,28 +180,28 @@ const Customers = () => {
                                   <div className="row d-flex justify-content-evenly">
                                   <button
                                     className="btn btn-sm btn-primary"
-                                    // onClick={() => handleEditClick(phone.phone)}
+                                    onClick={handleEditClick}
                                   >
                                    <i className="fa fa-edit"></i>
                                   </button>
                                   <button
                                     className="btn btn-sm btn-primary"
-                                    // onClick={() => handleInvoiceClick(phone.phone)}
+                                    onClick={handlecarClick}
                                   >
-                                    <i className="fas fa-file-alt"></i>
+                                    <i className="fa fa-car"></i>
                                     
                                   </button>
                                   <button
                                     className="btn btn-sm btn-warning"
-                                    // onClick={() => handleOrderClick(phone.phone)}
+                                    onClick={handleCustomerCalendar}
                                   >
-                                    <i className="fa fa-list-ol"></i>
+                                    <i className="fa fa-calendar"></i>
                                   </button>
                                   <button
                                     className="btn btn-sm btn-warning"
                                     // onClick={() => handlePayments(phone.phone)}
                                   >
-                                    <i className="fab fa-cc-amex"></i>
+                                    <i className="fas fa-file-alt"></i>
                                   </button>
                                   <button
                                     className="btn btn-sm btn-info"

@@ -138,6 +138,10 @@ import SupplierEmail from '../components/elements/buttons/supplieremail';
 import Customers from '../components/pages/todotask/customers';
 import UserSetupPlus from '../components/widgets/usersetupplus';
 import UserSetupPluss from '../components/widgets/usersetuppluss';
+import CustomerPlus from '../components/pages/todotask/customerplus';
+import CustomerEdit from '../components/pages/todotask/customeredit';
+import CustomerCars from '../components/pages/todotask/customercar';
+
 
 
 
@@ -299,6 +303,10 @@ export const Routingdata = [
   { path:`${import.meta.env.BASE_URL}pages/todotask/customers`, element: <Customers/> },
   { path:`${import.meta.env.BASE_URL}widgets/usersetupplus`, element: <UserSetupPlus/> },
   { path:`${import.meta.env.BASE_URL}widgets/usersetuppluss`, element: <UserSetupPluss/> },
+  { path:`${import.meta.env.BASE_URL}pages/todotask/customerplus`, element: <CustomerPlus/> },
+  { path:`${import.meta.env.BASE_URL}pages/todotask/customeredit`, element: <CustomerEdit/> },
+  { path:`${import.meta.env.BASE_URL}pages/todotask/customercar`, element: <CustomerCars/> },
+
 
 
 ];
@@ -474,6 +482,10 @@ export const Sidebarcomponents=[
 { path:`${import.meta.env.BASE_URL}pages/todotask/customers`, title:"Customers" },
 { path:`${import.meta.env.BASE_URL}widgets/usersetupplus`, title: "UserSetupPlus" },
 { path:`${import.meta.env.BASE_URL}widgets/usersetuppluss`, title: "UserSetupPluss" },
+{ path:`${import.meta.env.BASE_URL}pages/todotask/customerplus`, title: "CustomerPlus" },
+{ path:`${import.meta.env.BASE_URL}pages/todotask/customeredit`, title: "CustomerEdit" },
+{ path:`${import.meta.env.BASE_URL}pages/todotask/customercar`, title: "CustomerCars"},
+
 
 ];
 
