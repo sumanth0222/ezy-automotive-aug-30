@@ -83,6 +83,21 @@ const Todotask = () => {
   const idx = { color: 'primary' };
   const ide = { color: 'danger' };
 
+  const customervehicle = [
+    { rego: "10BMK", make: "Freighter", model: "", modelcode:"", modelseries:"" },
+    { rego: "08BMK", make: "Freighter", model: "", modelcode:"", modelseries:"" },
+    { rego: "07BMK", make: "Kenworth", model: "T409", modelcode:"", modelseries:"" },
+    { rego: "865BMK", make: "Freighter", model: "", modelcode:"", modelseries:"" }, 
+  ];
+
+  const [filter, setFilter] = useState("");
+
+  // Filtering based on search term
+  const filterData = (data, field) =>
+    data.filter((item) =>
+      item[field].toLowerCase().includes(filter.toLowerCase())
+    );
+
   return (
     <Fragment>
       <Pageheader title="Customers" heading="Customer" active="Calendar" />
@@ -231,7 +246,7 @@ const Todotask = () => {
                         <div className='px-4'>
 
                           {/* Toggle option button for Individual and Company */}
-                          {/* <ButtonGroup className="mb-3">
+                           <ButtonGroup className="mb-3">
                             <ToggleButton className='bg-primary'
                               id="radio-individual"
                               type="radio"
@@ -254,22 +269,83 @@ const Todotask = () => {
                             >
                               Company
                             </ToggleButton>
-                          </ButtonGroup> */}
+                          </ButtonGroup> 
 
                           {radioValue === 'individual' && (
                             <Form>
 
-                          <div className="col-md-4">
-                            <label className="form-label" htmlFor="address">Mobile</label>
+                          <div className='row row-ms'>
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="address">First Name</label>
                             <input className="form-control" id="address" type="text" required />
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
 
-                          <div className="col-md-12">
-                            <label className="form-label" htmlFor="address">Message</label>
-                            <textarea className="form-control" id="address" type="text" required rows={5}></textarea>
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="address">Last Name</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
 
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="address">Phone</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="address">Cell</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="address">Email</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="address">Address</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="address">City</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-3">
+                          <label className="form-label" htmlFor="phone">State</label>
+                            <MultiSelect
+                              value={selected}
+                              onChange={setSelected}
+                              labelledBy="Select"
+                              options={countries}
+                            />
+                          </div>
+
+                          <div className="col-lg-3">
+                            <label className="form-label" htmlFor="address">Zip Code</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-3">
+                          <label className="form-label" htmlFor="phone">Price Type</label>
+                            <MultiSelect
+                              value={selected}
+                              onChange={setSelected}
+                              labelledBy="Select"
+                              options={countries}
+                            />
+                          </div>
+
+                            
+                          </div>
                            
 
                               <Row>
@@ -278,7 +354,93 @@ const Todotask = () => {
                                     Cancel
                                   </Button>
                                   <Button type="submit" className="me-2">
-                                    Send
+                                    Sumbit
+                                  </Button>
+                                </Col>
+                              </Row>
+                            </Form>
+                          )}
+
+                          {radioValue === 'company' && (
+                            <Form>
+
+                          <div className='row row-ms'>
+
+                          <div className="col-lg-12">
+                            <label className="form-label" htmlFor="address">CompanyName</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          
+
+                          <div className="col-lg-6">
+                            <label className="form-label" htmlFor="address">Phone</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-6">
+                            <label className="form-label" htmlFor="address">Cell</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-6">
+                            <label className="form-label" htmlFor="address">Email</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-6">
+                            <label className="form-label" htmlFor="address">Address</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-6">
+                            <label className="form-label" htmlFor="address">City</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-6">
+                          <label className="form-label" htmlFor="phone">State</label>
+                            <MultiSelect
+                              value={selected}
+                              onChange={setSelected}
+                              labelledBy="Select"
+                              options={countries}
+                            />
+                          </div>
+
+                          <div className="col-lg-6">
+                            <label className="form-label" htmlFor="address">Zip Code</label>
+                            <input className="form-control" id="address" type="text" required />
+                            <div className="invalid-feedback">Please provide a valid zip.</div>
+                          </div>
+
+                          <div className="col-lg-6">
+                          <label className="form-label" htmlFor="phone">Price Type</label>
+                            <MultiSelect
+                              value={selected}
+                              onChange={setSelected}
+                              labelledBy="Select"
+                              options={countries}
+                            />
+                          </div>
+
+                            
+                          </div>
+                           
+
+                              <Row>
+                                <Col md={12} className="d-flex justify-content-between mt-3">
+                                  <Button variant="secondary" onClick={handleFormOpenClick}>
+                                    Cancel
+                                  </Button>
+                                  <Button type="submit" className="me-2">
+                                    Sumbit
                                   </Button>
                                 </Col>
                               </Row>
@@ -419,7 +581,7 @@ const Todotask = () => {
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
                           <div className="col-lg-4">
-                            <p>State</p>
+                          <label className="form-label" htmlFor="phone">State</label>
                             <MultiSelect
                               value={selected}
                               onChange={setSelected}
@@ -444,7 +606,7 @@ const Todotask = () => {
                             <div className="invalid-feedback">Please provide a valid zip.</div>
                           </div>
                           <div className="col-lg-4">
-                            <p>Body Type</p>
+                          <label className="form-label" htmlFor="phone">Body Type</label>
                             <MultiSelect
                               value={selected}
                               onChange={setSelected}
@@ -495,7 +657,7 @@ const Todotask = () => {
                                     Cancel
                                   </Button>
                                   <Button type="submit" className="me-2">
-                                    Save
+                                    Submit
                                   </Button>
                                 </Col>
                               </Row>
@@ -578,7 +740,60 @@ const Todotask = () => {
                             </Button>
                           </OverlayTrigger>
                         </Card.Footer>
-                      </Card>
+                      </Card> 
+
+                      {/* <div className="col-lg-12 col-md-12"> */}
+                        {/* <div className="card">
+
+                        <div className="table-responsive mt-4">
+                          <table className="table table-bordered text-nowrap border-bottom">
+                            <thead>
+                              <tr>
+                                <th className="wd-5p text-center">Rego</th>
+                                <th>Make</th>
+                                <th>Model</th>
+                                <th>Model Code</th>
+                                <th>Model Series</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {filterData(customervehicle, "rego").length > 0 ? (
+                                filterData(customervehicle, "rego").map(
+                                  (rego, index) => (
+                                    <tr key={index}>
+                                      <td className="wd-5p text-center">
+                                        {rego.rego}
+                                      </td>
+                                      <td>{rego.make}</td>
+                                      <td>{rego.model}</td>
+                                      <td>{rego.modelcode}</td>
+                                      <td>{rego.modelseries}</td>
+                                    </tr>
+                                  )
+                                )
+                              ) : (
+                                <tr>
+                                  <td colSpan="7" className="text-center">
+                                    No results found.
+                                  </td>
+                                </tr>
+                              )}
+                            </tbody>
+                          </table>
+                          <div className="d-flex mt-4 align-items-center">
+                            <span>Page <strong>1 of 4</strong></span>
+                            <span className="ms-auto ps-2">
+                              <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn"> Previous </button>
+                              <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn"> &lt;&lt; </button>
+                              <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn"> &lt; </button>
+                              <button type="button" className="btn-default tablebutton me-2 my-2 btn"> &gt; </button>
+                              <button type="button" className="btn-default tablebutton me-2 my-2 btn"> &gt;&gt; </button>
+                              <button type="button" className="btn-default tablebutton me-2 my-2 btn"> Next </button>
+                            </span>
+                          </div>
+                        </div>
+                      </div> */}
+                    {/* </div> */}
                     </Col>
                   ))}
                 </Row>
