@@ -46,7 +46,7 @@ const Marketing = () => {
                             </div>
                    
                             <div>
-                            <h3 className="mt-2">MailChimp Not Authorised</h3>
+                            <h3 className="mt-3">MailChimp Not Authorised</h3>
                             </div>
                     </div>
                       </div>

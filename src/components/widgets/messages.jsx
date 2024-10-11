@@ -70,7 +70,7 @@ const Messages = () => {
                                         </a>
                                     </div>
                                         <div className='mt-2'>
-                                        <h3 className="">Gentry and With Trading Messages</h3>
+                                        <h3 className="mt-2">Gentry and With Trading Messages</h3>
                                         </div>
                                 </div>
                    

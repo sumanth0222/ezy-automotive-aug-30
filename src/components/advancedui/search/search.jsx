@@ -40,7 +40,7 @@ const EmptyPage = () => {
                   </a>
                 </div>
                 <div>
-                  <h3 className="mt-2">Vehicles</h3>
+                  <h3 className="mt-3">Vehicles</h3>
                 </div>
               </div>
 

@@ -112,7 +112,7 @@ const Gallery = () => {
                   </a>
                 </div>
                 <div>
-                  <h3 className="mt-2">Mechanics</h3>
+                  <h3 className="mt-3">Mechanics</h3>
                 </div>
               </div>
 

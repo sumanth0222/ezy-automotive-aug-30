@@ -47,7 +47,7 @@ const videosettings1 = () => {
                             </div>
                    
                             <div>
-                            <h3 className="">Video Settings Not Activated</h3>
+                            <h3 className="mt-2">Video Settings Not Activated</h3>
                             </div>
                     </div>
                       </div>

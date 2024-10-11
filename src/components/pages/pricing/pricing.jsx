@@ -71,7 +71,7 @@ const Groups = () => {
                   </a>
                 </div>
                 <div>
-                  <h3 className="mt-2">Inspection Groups</h3>
+                  <h3 className="mt-3">Inspection Groups</h3>
                 </div>
               </div>
 

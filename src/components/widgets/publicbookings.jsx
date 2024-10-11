@@ -157,7 +157,7 @@ const PublicBookings = () => {
                             </a>
                           </div>
                           <div className='mt-2'>
-                            <h3 className="">Public URL</h3>
+                            <h3 className="mt-2">Public URL</h3>
                           </div>
                         </div>
 
@@ -192,7 +192,7 @@ const PublicBookings = () => {
                             </a>
                           </div>
                           <div className='mt-2'>
-                            <h3 className="">Appointment Types</h3>
+                            <h3 className="mt-1">Appointment Types</h3>
                           </div>
                         </div>
                         <div className="row-sm row ">
@@ -351,7 +351,7 @@ const PublicBookings = () => {
                             </a>
                           </div>
                           <div>
-                            <h3 className="mt-2">Booking Settings</h3>
+                            <h3 className="mt-3">Booking Settings</h3>
                           </div>
                         </div>
 
@@ -460,7 +460,7 @@ const PublicBookings = () => {
                             </a>
                           </div>
                           <div>
-                            <h3 className="mt-2">Branding</h3>
+                            <h3 className="mt-3">Branding</h3>
                           </div>
                         </div>
 

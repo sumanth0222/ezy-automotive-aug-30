@@ -40,7 +40,7 @@ const Checkout = ({ local_varaiable }) =>{
                   </a>
                 </div>
                 <div>
-                  <h3 className="">Mechanic Clock on</h3>
+                  <h3 className="mt-2">Mechanic Clock on</h3>
                 </div>
               </div>
 

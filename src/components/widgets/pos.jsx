@@ -46,7 +46,7 @@ const Pos = () => {
                             </div>
                    
                             <div>
-                            <h3 className="mt-2">Stripe Not Activated</h3>
+                            <h3 className="mt-3">Stripe Not Activated</h3>
                             </div>
                     </div>
                       </div>

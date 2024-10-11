@@ -90,7 +90,7 @@ const CommunicationCenter = () => {
                           </div>
 
                           <div>
-                            <h3 className="mt-2">Communication Center</h3>
+                            <h3 className="mt-3">Communication Center</h3>
                           </div>
                         </div>
                       </div>

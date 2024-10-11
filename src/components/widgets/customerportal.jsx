@@ -47,7 +47,7 @@ const CustomerPortal = () => {
                             </div>
                    
                             <div>
-                            <h3 className="mt-2">Customer Portal Not Activated</h3>
+                            <h3 className="mt-3">Customer Portal Not Activated</h3>
                             </div>
                     </div>
                       </div>

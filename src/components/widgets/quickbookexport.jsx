@@ -55,7 +55,7 @@ const QuickBookExport = () => {
                     <div className="card">
                     <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                         <div>
-                          <h3 className="">QuickBooks Export</h3>
+                          <h3 className="mt-2">QuickBooks Export</h3>
                         </div>
                         
                       </div>

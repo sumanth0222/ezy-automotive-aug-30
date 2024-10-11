@@ -50,7 +50,7 @@ const Collapse = () => {
                     <div className="card">
                       <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                         <div>
-                          <h3 className="">Inspection Settings</h3>
+                          <h3 className="mt-2">Inspection Settings</h3>
                         </div>
 
                       </div>

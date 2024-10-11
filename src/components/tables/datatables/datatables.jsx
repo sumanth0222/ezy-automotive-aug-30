@@ -21,7 +21,7 @@ const DataTables = () => {
             <Card className="custom-card overflow-hidden">
               <Card.Body>
                 <div>
-                  <h6 className="main-content-label mb-1">Statements</h6>
+                  
                   <p className="text-muted card-sub-title">
                     Searching, ordering and paging goodness will be immediately
                     added to the table, as shown in this example.
@@ -60,8 +60,10 @@ const DataTables = () => {
                     />
                   </Form.Group>
 
-                  <Form.Group className="mb-3 d-flex align-items-center">
+                  <Form.Group className="mb-3 align-items-center">
+                    
                     <Form.Label className="me-2">Paid Transactions</Form.Label>
+                    
                     <Form.Check
                       type="switch"
                       id="custom-switch"
@@ -71,9 +73,9 @@ const DataTables = () => {
                     />
                   </Form.Group>
 
-                  <Form.Group className="mb-3 d-flex align-items-center">
-                  <Form.Label className="me-2">Statement</Form.Label>
-                    <Form.Check
+                  <Form.Group className="mb-3  align-items-center">
+                  <Form.Label className="">Statement</Form.Label>
+                    <Form.Check className='ml-3'
                       type="switch"
                       id="statement-switch"
                       label={isStatementOn ? "YES" : "NO"}

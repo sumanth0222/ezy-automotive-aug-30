@@ -79,7 +79,7 @@ const SendRemainder = () => {
                   </a>
                 </div>
                 <div>
-                  <h3 className="mt-2">Send Remainder</h3>
+                  <h3 className="mt-3">Send Remainder</h3>
                 </div>
               </div>
 

@@ -70,7 +70,23 @@ const Alerts = () => {
   }
 
 
+ // State to track each toggle button's state
+ const [toggleStates, setToggleStates] = useState({
+  gstFree: false,
+  dontUpdateQty: false,
+  serialNumber: false,
+  priceLookup: false,
+  priceLookup1: false,
+  priceLookup2: false,
+});
 
+// Toggle button handler for individual switches
+const handleToggle = (key) => {
+  setToggleStates((prevState) => ({
+    ...prevState,
+    [key]: !prevState[key],
+  }));
+};
 
 
 
@@ -95,7 +111,7 @@ const Alerts = () => {
                   <Tabs defaultActiveKey="Tab Style 01" className="nav panel-tabs border-bottom-0">
 
                     <Tab eventKey="Tab Style 01" title="Sales Report">
-                      <div className="" id="" role="">
+                      <div className="mt-5" id="" role="">
 
                         <Accordion className='overflow-hidden'>
                           <Accordion.Item  >
@@ -106,9 +122,9 @@ const Alerts = () => {
                             <Accordion.Body id="" className="">
                               <div className="col-lg-12 col-md-12">
                                 <div className="card">
-                                  <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
-                                    <div>
-                                      <h3 className="">Sales Report</h3>
+                                  <div className="card-header row-sm row align-items-center justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
+                                    <div className=''>
+                                      <h3 className="mt-2">Sales Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -237,7 +253,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Sales Breakup</h3>
+                                      <h3 className="mt-2">Sales Breakup</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -298,12 +314,11 @@ const Alerts = () => {
                                       </div>
                                       {/* Summary By Field */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Summary</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor="sum1" >Summary</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.sum1 ? 'on' : 'off'}`} onClick={() => handleToggle('sum1')}>
+                                          <span className={toggleStates.sum1 ? 'active' : ''}>
+                                            {toggleStates.sum1 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
                                       {/* Search By Field */}
@@ -329,7 +344,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Item Sales</h3>
+                                      <h3 className="mt-2">Item Sales</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -421,12 +436,11 @@ const Alerts = () => {
                                       </div>
                                       {/* Summary  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Summary</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='sum2'>Summary</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.sum2 ? 'on' : 'off'}`} onClick={() => handleToggle('sum2')}>
+                                          <span className={toggleStates.sum2 ? 'active' : ''}>
+                                            {toggleStates.sum2 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
                                       <div className="col-lg-3">
@@ -450,7 +464,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Sales By Payment Method</h3>
+                                      <h3 className="mt-2">Sales By Payment Method</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -528,7 +542,7 @@ const Alerts = () => {
 
 
                     <Tab eventKey="Tab Style 02" title="Parts Reports">
-                      <div className="" id="" role="">
+                      <div className="mt-5" id="" role="">
 
                         <Accordion className='overflow-hidden'>
                           <Accordion.Item >
@@ -539,7 +553,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Parts Value</h3>
+                                      <h3 className="mt-2">Parts Value</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -571,12 +585,11 @@ const Alerts = () => {
 
                                       {/* Summary  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Print Zero Parts</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='print0'>Print Zero Parts</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.print0 ? 'on' : 'off'}`} onClick={() => handleToggle('print0')}>
+                                          <span className={toggleStates.print0 ? 'active' : ''}>
+                                            {toggleStates.print0 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
@@ -614,7 +627,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Parts Listing</h3>
+                                      <h3 className="mt-2">Parts Listing</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -680,12 +693,11 @@ const Alerts = () => {
 
                                       {/* Summary  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Print Zero Parts</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='print1'>Print Zero Parts</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.print1 ? 'on' : 'off'}`} onClick={() => handleToggle('print1')}>
+                                          <span className={toggleStates.print1 ? 'active' : ''}>
+                                            {toggleStates.print1 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
@@ -700,7 +712,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Stocktake Variance</h3>
+                                      <h3 className="mt-2">Stocktake Variance</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -782,7 +794,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Stock Status Report</h3>
+                                      <h3 className="mt-2">Stock Status Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -869,7 +881,7 @@ const Alerts = () => {
 
 
                     <Tab eventKey="Tab Style 03" title="Vendor Reports">
-                      <div className="" id="" role="">
+                      <div className="mt-5" id="" role="">
 
                         <Accordion className="overflow-hidden">
                           <Accordion.Item  >
@@ -880,7 +892,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Parts Order Report</h3>
+                                      <h3 className="mt-2">Parts Order Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -947,12 +959,11 @@ const Alerts = () => {
 
                                       {/* Summary  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Outstanding Only</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='outstanding'>Outstanding Only</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.outstanding ? 'on' : 'off'}`} onClick={() => handleToggle('outstanding')}>
+                                          <span className={toggleStates.outstanding ? 'active' : ''}>
+                                            {toggleStates.outstanding ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
@@ -967,7 +978,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Purchases Report</h3>
+                                      <h3 className="mt-2">Purchases Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1055,7 +1066,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Item Purchases</h3>
+                                      <h3 className="mt-2">Item Purchases</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1127,12 +1138,11 @@ const Alerts = () => {
 
                                       {/* Summary  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Summary</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='sum3'>Summary</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.sum3 ? 'on' : 'off'}`} onClick={() => handleToggle('sum3')}>
+                                          <span className={toggleStates.sum3 ? 'active' : ''}>
+                                            {toggleStates.sum3 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
@@ -1170,7 +1180,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Vendor Listing</h3>
+                                      <h3 className="mt-2">Vendor Listing</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1223,7 +1233,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Vendor Balances</h3>
+                                      <h3 className="mt-2">Vendor Balances</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1291,7 +1301,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Supplier Biller Balances</h3>
+                                      <h3 className="mt-2">Supplier Biller Balances</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1371,7 +1381,7 @@ const Alerts = () => {
 
 
                     <Tab eventKey="Tab Style 04" title=" Workshop Reports">
-                      <div className="" id="" role="">
+                      <div className="mt-5" id="" role="">
 
                         <Accordion className="overflow-hidden">
                           <Accordion.Item >
@@ -1382,7 +1392,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Work In Progress</h3>
+                                      <h3 className="mt-2">Work In Progress</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1446,12 +1456,11 @@ const Alerts = () => {
 
                                       {/* Summary  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Summary</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='sum4'>Summary</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.sum4 ? 'on' : 'off'}`} onClick={() => handleToggle('sum4')}>
+                                          <span className={toggleStates.sum4 ? 'active' : ''}>
+                                            {toggleStates.sum4 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
@@ -1470,7 +1479,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Service Due</h3>
+                                      <h3 className="mt-2">Service Due</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1544,7 +1553,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Rego Renewal Due</h3>
+                                      <h3 className="mt-2">Rego Renewal Due</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1618,7 +1627,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Vechile Listing</h3>
+                                      <h3 className="mt-2">Vechile Listing</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1671,7 +1680,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Quote Report</h3>
+                                      <h3 className="mt-2">Quote Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1745,7 +1754,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Follow Up Report</h3>
+                                      <h3 className="mt-2">Follow Up Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1819,7 +1828,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Booking Report</h3>
+                                      <h3 className="mt-2">Booking Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1901,7 +1910,7 @@ const Alerts = () => {
                     </Tab>
 
                     <Tab eventKey="Tab Style 05" title=" Mechanics Report">
-                      <div className="" id="" role="">
+                      <div className="mt-5" id="" role="">
 
                         <Accordion className="overflow-hidden ">
                           <Accordion.Item  >
@@ -1912,7 +1921,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Mechanics Performance</h3>
+                                      <h3 className="mt-2">Mechanics Performance</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -1977,24 +1986,22 @@ const Alerts = () => {
 
                                       {/* Report  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Report Type</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='reporttype'>Report Type</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.reporttype ? 'on' : 'off'}`} onClick={() => handleToggle('reporttype')}>
+                                          <span className={toggleStates.reporttype ? 'active' : ''}>
+                                            {toggleStates.reporttype ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
 
                                       {/* Summary  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Summary</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='sum5'>Summary</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.sum5 ? 'on' : 'off'}`} onClick={() => handleToggle('sum5')}>
+                                          <span className={toggleStates.sum5 ? 'active' : ''}>
+                                            {toggleStates.sum5 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
@@ -2011,12 +2018,11 @@ const Alerts = () => {
 
                                       {/* Summary  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Show Open Transactions</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='open1'>Show Open Transactions</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.open1 ? 'on' : 'off'}`} onClick={() => handleToggle('open1')}>
+                                          <span className={toggleStates.open1 ? 'active' : ''}>
+                                            {toggleStates.open1 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
@@ -2034,7 +2040,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">No Labor Times</h3>
+                                      <h3 className="mt-2">No Labor Times</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2098,24 +2104,22 @@ const Alerts = () => {
 
                                       {/* Summary  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Summary</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='sum6'>Summary</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.sum6 ? 'on' : 'off'}`} onClick={() => handleToggle('sum6')}>
+                                          <span className={toggleStates.sum6 ? 'active' : ''}>
+                                            {toggleStates.sum6 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
 
                                       {/* Report  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Show Open Transactions</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='open2'>Show Open Transactions</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.open2 ? 'on' : 'off'}`} onClick={() => handleToggle('open2')}>
+                                          <span className={toggleStates.open2 ? 'active' : ''}>
+                                            {toggleStates.open2 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
@@ -2131,7 +2135,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Mechanics Clocked On</h3>
+                                      <h3 className="mt-2">Mechanics Clocked On</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2174,7 +2178,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Mechanics Time Sheet</h3>
+                                      <h3 className="mt-2">Mechanics Time Sheet</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2259,7 +2263,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Mechanic Barcode List</h3>
+                                      <h3 className="mt-2">Mechanic Barcode List</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2308,7 +2312,7 @@ const Alerts = () => {
 
 
                     <Tab eventKey="Tab Style 06" title=" Customer Report">
-                      <div className="" id="" role="">
+                      <div className="mt-5" id="" role="">
 
                         <Accordion className="overflow-hidden">
                           <Accordion.Item >
@@ -2319,7 +2323,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Customer Balanaces</h3>
+                                      <h3 className="mt-2">Customer Balanaces</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2381,12 +2385,11 @@ const Alerts = () => {
 
                                       {/* Summary  Fields */}
                                       <div class="col-lg-3">
-                                        <Form.Label>Summary</Form.Label>
-                                        <div class="form-group">
-                                          <label class="custom-switch form-switch mb-0  p-0 form-label">
-                                            <input name="custom-switch-radio" type="checkbox" class="custom-switch-input form-control" />
-                                            <span class="custom-switch-indicator custom-switch-indicator-lg"></span>
-                                          </label>
+                                        <Form.Label htmlFor='sum7'>Summary</Form.Label>
+                                        <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.sum7 ? 'on' : 'off'}`} onClick={() => handleToggle('sum7')}>
+                                          <span className={toggleStates.sum7 ? 'active' : ''}>
+                                            {toggleStates.sum7 ? '' : ''}
+                                          </span>
                                         </div>
                                       </div>
 
@@ -2401,7 +2404,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Outstanding Customer Balances</h3>
+                                      <h3 className="mt-2">Outstanding Customer Balances</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2454,7 +2457,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Customer Listing</h3>
+                                      <h3 className="mt-2">Customer Listing</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2507,7 +2510,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Customer Sales</h3>
+                                      <h3 className="mt-2">Customer Sales</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2592,7 +2595,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Customer Open Deposits</h3>
+                                      <h3 className="mt-2">Customer Open Deposits</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2633,7 +2636,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Customer Sources</h3>
+                                      <h3 className="mt-2">Customer Sources</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2706,7 +2709,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Biller Balances</h3>
+                                      <h3 className="mt-2">Biller Balances</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2785,7 +2788,7 @@ const Alerts = () => {
                     </Tab>
 
                     <Tab eventKey="Tab Style 07" title=" Log Reports">
-                      <div className="" id="" role="">
+                      <div className="mt-5" id="" role="">
 
                         <Accordion className="overflow-hidden card">
                           <Accordion.Item >
@@ -2796,7 +2799,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Email Report</h3>
+                                      <h3 className="mt-2">Email Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2872,7 +2875,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Voided Invoice/Payment/Order Report</h3>
+                                      <h3 className="mt-2">Voided Invoice/Payment/Order Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -2948,7 +2951,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Invoice/Payment Status</h3>
+                                      <h3 className="mt-2">Invoice/Payment Status</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -3011,7 +3014,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Transaction Logo</h3>
+                                      <h3 className="mt-2">Transaction Logo</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -3096,7 +3099,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Event Report</h3>
+                                      <h3 className="mt-2">Event Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>
@@ -3170,7 +3173,7 @@ const Alerts = () => {
                                 <div className="card">
                                   <div className="card-header row-sm row justify-content-between" style={{ backgroundColor: '#38cab3', color: 'white', padding: '10px' }}>
                                     <div>
-                                      <h3 className="">Text Message Report</h3>
+                                      <h3 className="mt-2">Text Message Report</h3>
                                     </div>
                                     <div className='row-sm row'>
                                       <div>

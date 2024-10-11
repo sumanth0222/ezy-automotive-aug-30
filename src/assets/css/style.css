@@ -3473,6 +3473,7 @@ input[type=button].btn-block {
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
+    padding-top:13px;
 }
 
 .card-item-desc .card-item-desc-1 dt,
@@ -4663,7 +4664,7 @@ h2,
 
 h3,
 .h3 {
-    font-size: 1.53125rem;
+    font-size: 1.2rem;
 }
 
 h4,
@@ -7610,7 +7611,7 @@ textarea.form-control {
 .form-check {
     position: relative;
     display: block;
-    padding-inline-start: 1.25rem;
+    /* padding-inline-start: 1.25rem; */
 }
 
 .form-check-input {
@@ -9216,6 +9217,7 @@ textarea.custom-file-input.parsley-error:focus~.custom-file-label {
     padding: 10px 15px;
     line-height: 1.428;
     color: #4d5875;
+    font-size: 0.85rem;
 }
 
 .nav-tabs .nav-link:hover,
@@ -9298,8 +9300,8 @@ textarea.custom-file-input.parsley-error:focus~.custom-file-label {
 }
 
 .nav-tabs .nav-link.active {
-    color: #4d5875;
-    background-color: #fff;
+    color: #fff;
+    background-color: rgb(56, 202, 179);
     border-color: #fff;
 }
 

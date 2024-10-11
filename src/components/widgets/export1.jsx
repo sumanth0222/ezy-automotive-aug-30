@@ -158,7 +158,7 @@ const Export1 = () => {
                            
                    
                             <div>
-                            <h3 className="">Export Customers</h3>
+                            <h3 className="mt-2">Export Customers</h3>
                             </div>
                     </div>
                     <div className="row-sm row ">
@@ -224,7 +224,7 @@ const Export1 = () => {
                             
                    
                             <div>
-                            <h3 className="">Export Vehicles</h3>
+                            <h3 className="mt-2">Export Vehicles</h3>
                             </div>
                     </div>
                     <div className="row-sm row ">
@@ -288,7 +288,7 @@ const Export1 = () => {
                     <div className="row-sm row " >
                             
                             <div>
-                            <h3 className="">Export Suppliers</h3>
+                            <h3 className="mt-2">Export Suppliers</h3>
                             </div>
                     </div>
                     <div className="row-sm row ">
@@ -354,7 +354,7 @@ const Export1 = () => {
                     <div className="row-sm row " >
                             
                             <div>
-                            <h3 className="">Export Products</h3>
+                            <h3 className="mt-2">Export Products</h3>
                             </div>
                     </div>
                     <div className="row-sm row ">
@@ -439,7 +439,7 @@ const Export1 = () => {
                             
                    
                             <div>
-                            <h3 className="">Export History</h3>
+                            <h3 className="mt-2">Export History</h3>
                             </div>
                     </div>
                     <div className="row-sm row ">

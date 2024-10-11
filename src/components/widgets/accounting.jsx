@@ -79,7 +79,7 @@ const Accounting = () => {
                             </div>
                    
                             <div>
-                            <h3 className="mt-2">QuickBooks Online Not Authorised</h3>
+                            <h3 className="mt-3">QuickBooks Online Not Authorised</h3>
                             </div>
                     </div>
                       </div>
