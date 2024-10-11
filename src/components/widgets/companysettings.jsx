@@ -123,48 +123,20 @@ const CompanySettings = () => {
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="gstFree">Use Member Numbers</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.gstFree}
-                                  onChange={() => handleToggle('gstFree')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.gstFree ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.gstFree ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.gstFree ? 'on' : 'off'}`} onClick={() => handleToggle('gstFree')}>
+                              <span className={toggleStates.gstFree ? 'active' : ''}>
+                                {toggleStates.gstFree ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="dontUpdateQty">Enable 2FA</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.dontUpdateQty}
-                                  onChange={() => handleToggle('dontUpdateQty')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.dontUpdateQty ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.dontUpdateQty ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.dontUpdateQty ? 'on' : 'off'}`} onClick={() => handleToggle('dontUpdateQty')}>
+                              <span className={toggleStates.dontUpdateQty ? 'active' : ''}>
+                                {toggleStates.dontUpdateQty ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
@@ -173,25 +145,11 @@ const CompanySettings = () => {
                             <>
                               <div className="col-lg-3">
                                 <label className="form-label" htmlFor="priceLookup">Enable 2FA for All Users</label>
-                                <div className="form-group">
-                                  <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                    <input
-                                      type="checkbox"
-                                      className="custom-switch-input form-control"
-                                      checked={toggleStates.priceLookup}
-                                      onChange={() => handleToggle('priceLookup')}
-                                    />
-                                    <span
-                                      className="custom-switch-indicator custom-switch-indicator-lg"
-                                      style={{
-                                        backgroundColor: toggleStates.priceLookup ? "#323251" : "#d6d6e6",
-                                        color: "white",
-                                      }}
-                                    >
-                                      {toggleStates.priceLookup ? "On" : "Off"}
-                                    </span>
-                                  </label>
-                                </div>
+                               <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.priceLookup ? 'on' : 'off'}`} onClick={() => handleToggle('priceLookup')}>
+                              <span className={toggleStates.priceLookup ? 'active' : ''}>
+                                {toggleStates.priceLookup ? '' : ''}
+                              </span>
+                            </div>
                               </div>
 
                               <div className="col-lg-3">
@@ -214,24 +172,10 @@ const CompanySettings = () => {
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="serialNumber">Require SSO</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.serialNumber}
-                                  onChange={() => handleToggle('serialNumber')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.serialNumber ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.serialNumber ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.serialNumber ? 'on' : 'off'}`} onClick={() => handleToggle('serialNumber')}>
+                              <span className={toggleStates.serialNumber ? 'active' : ''}>
+                                {toggleStates.serialNumber ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
@@ -291,24 +235,10 @@ const CompanySettings = () => {
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="reservedstock">Reserved Stock</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.reservedstock}
-                                  onChange={() => handleToggle('reservedstock')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.reservedstock ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.reservedstock ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.reservedstock ? 'on' : 'off'}`} onClick={() => handleToggle('reservedstock')}>
+                              <span className={toggleStates.reservedstock ? 'active' : ''}>
+                                {toggleStates.reservedstock ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
@@ -329,24 +259,10 @@ const CompanySettings = () => {
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="orderqty1">Inc On Order Qty</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.orderqty1}
-                                  onChange={() => handleToggle('orderqty1')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.orderqty1 ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.orderqty1 ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.orderqty1 ? 'on' : 'off'}`} onClick={() => handleToggle('orderqty1')}>
+                              <span className={toggleStates.orderqty1 ? 'active' : ''}>
+                                {toggleStates.orderqty1 ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
@@ -415,24 +331,10 @@ const CompanySettings = () => {
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="Vehicle">Advanced Vehicle Fields</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.Vehicle}
-                                  onChange={() => handleToggle('Vehicle')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.Vehicle ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.Vehicle ? "On" : "Off"}
-                                </span>
-                              </label>
+                           <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.Vehicle ? 'on' : 'off'}`} onClick={() => handleToggle('Vehicle')}>
+                              <span className={toggleStates.Vehicle ? 'active' : ''}>
+                                {toggleStates.Vehicle ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
@@ -445,24 +347,10 @@ const CompanySettings = () => {
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="Fleet">Show Fleet Code</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.Fleet}
-                                  onChange={() => handleToggle('Fleet')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.Fleet ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.Fleet ? "On" : "Off"}
-                                </span>
-                              </label>
+                           <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.Fleet ? 'on' : 'off'}`} onClick={() => handleToggle('Fleet')}>
+                              <span className={toggleStates.Fleet ? 'active' : ''}>
+                                {toggleStates.Fleet ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
@@ -535,24 +423,10 @@ const CompanySettings = () => {
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="shopmonth">Show All Shop For Month</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.shopmonth}
-                                  onChange={() => handleToggle('shopmonth')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.shopmonth ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.shopmonth ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.shopmonth ? 'on' : 'off'}`} onClick={() => handleToggle('shopmonth')}>
+                              <span className={toggleStates.shopmonth ? 'active' : ''}>
+                                {toggleStates.shopmonth ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
@@ -565,24 +439,10 @@ const CompanySettings = () => {
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="jobstatus">Description To Job Status Comment</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.jobstatus}
-                                  onChange={() => handleToggle('jobstatus')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.jobstatus ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.jobstatus ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.jobstatus ? 'on' : 'off'}`} onClick={() => handleToggle('jobstatus')}>
+                              <span className={toggleStates.jobstatus ? 'active' : ''}>
+                                {toggleStates.jobstatus ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
@@ -657,95 +517,39 @@ const CompanySettings = () => {
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="pricetax">Prices Include Tax</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.pricetax}
-                                  onChange={() => handleToggle('pricetax')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.pricetax ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.pricetax ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.pricetax ? 'on' : 'off'}`} onClick={() => handleToggle('pricetax')}>
+                              <span className={toggleStates.pricetax ? 'active' : ''}>
+                                {toggleStates.pricetax ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="taxfreight">Tax Freight</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.taxfreight}
-                                  onChange={() => handleToggle('taxfreight')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.taxfreight ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.taxfreight ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.taxfreight ? 'on' : 'off'}`} onClick={() => handleToggle('taxfreight')}>
+                              <span className={toggleStates.taxfreight ? 'active' : ''}>
+                                {toggleStates.taxfreight  ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="roundtotal">Round Total</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.roundtotal}
-                                  onChange={() => handleToggle('roundtotal')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.roundtotal ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.roundtotal ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.roundtotal ? 'on' : 'off'}`} onClick={() => handleToggle('roundtotal')}>
+                              <span className={toggleStates.roundtotal ? 'active' : ''}>
+                                {toggleStates.roundtotal ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="discounttax">Discount  Includes Tax</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.discounttax}
-                                  onChange={() => handleToggle('discounttax')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.discounttax ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.discounttax ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.discounttax ? 'on' : 'off'}`} onClick={() => handleToggle('discounttax')}>
+                              <span className={toggleStates.discounttax ? 'active' : ''}>
+                                {toggleStates.discounttax ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
@@ -818,371 +622,147 @@ const CompanySettings = () => {
                           
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="partnumber">Hide Part Numbers</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.partnumber}
-                                  onChange={() => handleToggle('partnumber')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.partnumber ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.partnumber ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.partnumber ? 'on' : 'off'}`} onClick={() => handleToggle('partnumber')}>
+                              <span className={toggleStates.partnumber ? 'active' : ''}>
+                                {toggleStates.partnumber ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="labourquantity">Hide Labour Quantity</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.labourquantity}
-                                  onChange={() => handleToggle('labourquantity')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.labourquantity ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.labourquantity ? "On" : "Off"}
-                                </span>
-                              </label>
+                           <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.labourquantity ? 'on' : 'off'}`} onClick={() => handleToggle('labourquantity')}>
+                              <span className={toggleStates.labourquantity ? 'active' : ''}>
+                                {toggleStates.labourquantity ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="lineprices">Hide Line Prices</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.lineprices}
-                                  onChange={() => handleToggle('lineprices')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.lineprices ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.lineprices ? "On" : "Off"}
-                                </span>
-                              </label>
+                           <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.lineprices ? 'on' : 'off'}`} onClick={() => handleToggle('lineprices')}>
+                              <span className={toggleStates.lineprices ? 'active' : ''}>
+                                {toggleStates.lineprices ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="header">Line Header/ Footer on Bundles</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.header}
-                                  onChange={() => handleToggle('header')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.header ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.header ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.header ? 'on' : 'off'}`} onClick={() => handleToggle('reservedstock')}>
+                              <span className={toggleStates.header ? 'active' : ''}>
+                                {toggleStates.header ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="jobcard">Barcode On Job Card</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.jobcard}
-                                  onChange={() => handleToggle('jobcard')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.jobcard ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.jobcard ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.jobcard ? 'on' : 'off'}`} onClick={() => handleToggle('jobcard')}>
+                              <span className={toggleStates.jobcard ? 'active' : ''}>
+                                {toggleStates.jobcard ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="jobnumber">Invoice Number Equals Job Number</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.jobnumber}
-                                  onChange={() => handleToggle('jobnumber')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.jobnumber ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.jobnumber ? "On" : "Off"}
-                                </span>
-                              </label>
+                           <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.jobnumber ? 'on' : 'off'}`} onClick={() => handleToggle('jobnumber')}>
+                              <span className={toggleStates.jobnumber ? 'active' : ''}>
+                                {toggleStates.jobnumber ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="ordersattached">Cannot Process - Orders Attached</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.ordersattached}
-                                  onChange={() => handleToggle('ordersattached')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.ordersattached ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.ordersattached ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.ordersattached ? 'on' : 'off'}`} onClick={() => handleToggle('ordersattached')}>
+                              <span className={toggleStates.ordersattached ? 'active' : ''}>
+                                {toggleStates.ordersattached ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="pricingjobcard">Add Pricing To Job Card</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.pricingjobcard}
-                                  onChange={() => handleToggle('pricingjobcard')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.pricingjobcard ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.pricingjobcard ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.pricingjobcard ? 'on' : 'off'}`} onClick={() => handleToggle('pricingjobcard')}>
+                              <span className={toggleStates.pricingjobcard ? 'active' : ''}>
+                                {toggleStates.pricingjobcard ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="tyredetails">Hide Tyre Details(Job Card)</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.tyredetails}
-                                  onChange={() => handleToggle('tyredetails')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.tyredetails ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.tyredetails ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.tyredetails ? 'on' : 'off'}`} onClick={() => handleToggle('tyredetails')}>
+                              <span className={toggleStates.tyredetails ? 'active' : ''}>
+                                {toggleStates.tyredetails ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="mergebundle">Merge Bundles With Invoice Lines</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.mergebundle}
-                                  onChange={() => handleToggle('mergebundle')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.mergebundle ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.mergebundle ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.mergebundle ? 'on' : 'off'}`} onClick={() => handleToggle('mergebundle')}>
+                              <span className={toggleStates.mergebundle ? 'active' : ''}>
+                                {toggleStates.mergebundle ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="workedfield">Hours Worked Field</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.workedfield}
-                                  onChange={() => handleToggle('workedfield')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.workedfield ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.workedfield ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.workedfield ? 'on' : 'off'}`} onClick={() => handleToggle('workedfield')}>
+                              <span className={toggleStates.workedfield ? 'active' : ''}>
+                                {toggleStates.workedfield ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="invoiceline">Hide Tax On Invoice Lines</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.invoiceline}
-                                  onChange={() => handleToggle('invoiceline')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.invoiceline ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.invoiceline ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.invoiceline ? 'on' : 'off'}`} onClick={() => handleToggle('invoiceline')}>
+                              <span className={toggleStates.invoiceline ? 'active' : ''}>
+                                {toggleStates.invoiceline ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="oninvoice">Prevent Split Notes On Invoice</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.oninvoice}
-                                  onChange={() => handleToggle('oninvoice')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.oninvoice ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.oninvoice ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.oninvoice ? 'on' : 'off'}`} onClick={() => handleToggle('oninvoice')}>
+                              <span className={toggleStates.oninvoice ? 'active' : ''}>
+                                {toggleStates.oninvoice ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="onprocessvoice">Ask For Due Dates On Process Invoice</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.onprocessvoice}
-                                  onChange={() => handleToggle('onprocessvoice')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.onprocessvoice ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.onprocessvoice ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.onprocessvoice ? 'on' : 'off'}`} onClick={() => handleToggle('onprocessvoice')}>
+                              <span className={toggleStates.onprocessvoice ? 'active' : ''}>
+                                {toggleStates.onprocessvoice ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="invoicepostdate">Use Today As Invoice Post Date</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.invoicepostdate}
-                                  onChange={() => handleToggle('invoicepostdate')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.invoicepostdate ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.invoicepostdate ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.invoicepostdate ? 'on' : 'off'}`} onClick={() => handleToggle('invoicepostdate')}>
+                              <span className={toggleStates.invoicepostdate ? 'active' : ''}>
+                                {toggleStates.invoicepostdate ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="serviceadvisors">Use Service Advisors</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.serviceadvisors}
-                                  onChange={() => handleToggle('serviceadvisors')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.serviceadvisors ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.serviceadvisors ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.serviceadvisors ? 'on' : 'off'}`} onClick={() => handleToggle('serviceadvisors')}>
+                              <span className={toggleStates.serviceadvisors ? 'active' : ''}>
+                                {toggleStates.serviceadvisors ? '' : ''}
+                              </span>
                             </div>
                           </div>
 

@@ -104,18 +104,18 @@ const Customers = () => {
               </div>
 
               <div className="row-sm row">
-                <div className="col-lg-3 d-flex mt-3">
+                  <div className="col-lg-3 d-flex mt-3">
 
-                <div className={`main-toggle ms-sm-2  main-toggle-dark ${dark1}`} onClick={() => { dark1 == "on" ? setdark1("off") : setdark1("on"); }}>
-                  <span className={`${dark1 === "on" ? 'active' : ''}`}
-                    onClick={toggleActiveState}>
-                      {isActive ? 'ACTIVE' : 'INACTIVE'}
-                    </span>
-                </div>
-             
-               
+                  <div className={`main-toggle ms-sm-2  main-toggle-dark ${dark1}`} onClick={() => { dark1 == "on" ? setdark1("off") : setdark1("on"); }}>
+                    <span className={`${dark1 === "on" ? 'active' : ''}`}
+                      onClick={toggleActiveState}>
+                        {isActive ? 'ACTIVE' : 'INACTIVE'}
+                      </span>
+                  </div>
+              
+                
 
-                </div>
+                  </div>
 
                 <div className="form-group col-lg-8 d-flex align-items-center mt-2">
                   <div>

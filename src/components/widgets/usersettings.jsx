@@ -162,24 +162,10 @@ const UserSettings = () => {
 
                           <div className="col-lg-4">
                             <label className="form-label" htmlFor="reservedstock">Persist Grid Filters</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.reservedstock}
-                                  onChange={() => handleToggle('reservedstock')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.reservedstock ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.reservedstock ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.gstFree ? 'on' : 'off'}`} onClick={() => handleToggle('gstFree')}>
+                              <span className={toggleStates.gstFree ? 'active' : ''}>
+                                {toggleStates.gstFree ? '' : ''}
+                              </span>
                             </div>
                           </div>
 

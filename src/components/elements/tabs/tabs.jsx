@@ -509,7 +509,7 @@ const Tabss = () => {
                                     </Link>
                                   </td>
                                   <td className="bg-green">Online Payment</td>
-                                  <td>2 Days</td>
+                                   <td>2 Days</td>
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (

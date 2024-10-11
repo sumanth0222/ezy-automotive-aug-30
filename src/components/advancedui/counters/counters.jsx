@@ -192,24 +192,10 @@ const Groups = () => {
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="gstFree">Hide Zero Parts</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.gstFree}
-                                  onChange={() => handleToggle('gstFree')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.gstFree ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.gstFree ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.gstFree ? 'on' : 'off'}`} onClick={() => handleToggle('gstFree')}>
+                              <span className={toggleStates.gstFree ? 'active' : ''}>
+                                {toggleStates.gstFree ? '' : ''}
+                              </span>
                             </div>
                           </div>
 

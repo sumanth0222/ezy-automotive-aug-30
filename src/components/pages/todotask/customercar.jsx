@@ -135,24 +135,10 @@ const CustomerCars = () => {
                           </div>
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="gstFree3">A/C</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.gstFree3}
-                                  onChange={() => handleToggle('gstFree3')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.gstFree3 ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.gstFree3 ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.reservedstock ? 'on' : 'off'}`} onClick={() => handleToggle('reservedstock')}>
+                              <span className={toggleStates.reservedstock ? 'active' : ''}>
+                                {toggleStates.reservedstock ? '' : ''}
+                              </span>
                             </div>
                             </div>
 

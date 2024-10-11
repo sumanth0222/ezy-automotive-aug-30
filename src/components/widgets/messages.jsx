@@ -69,7 +69,7 @@ const Messages = () => {
                                         <i className="fa fa-user"></i>
                                         </a>
                                     </div>
-                                        <div className='mt-3'>
+                                        <div className='mt-2'>
                                         <h3 className="">Gentry and With Trading Messages</h3>
                                         </div>
                                 </div>

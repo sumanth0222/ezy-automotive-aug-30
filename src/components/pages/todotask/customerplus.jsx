@@ -68,70 +68,28 @@ const CustomerPlus = () => {
                             
                             <div className="col-lg-4">
                             <label className="form-label" htmlFor="gstFree1">CASH</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.gstFree1}
-                                  onChange={() => handleToggle('gstFree1')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.gstFree1 ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.gstFree1 ? "On" : "Off"}
-                                </span>
-                              </label>
+                           <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.reservedstock ? 'on' : 'off'}`} onClick={() => handleToggle('reservedstock')}>
+                              <span className={toggleStates.reservedstock ? 'active' : ''}>
+                                {toggleStates.reservedstock ? '' : ''}
+                              </span>
                             </div>
                             </div>
 
                             <div className="col-lg-4">
                             <label className="form-label" htmlFor="gstFree">Company/Individual</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.gstFree}
-                                  onChange={() => handleToggle('gstFree')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.gstFree ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.gstFree ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.gstFree ? 'on' : 'off'}`} onClick={() => handleToggle('gstFree')}>
+                              <span className={toggleStates.gstFree ? 'active' : ''}>
+                                {toggleStates.gstFree ? '' : ''}
+                              </span>
                             </div>
                             </div>
 
                             <div className="col-lg-4">
                             <label className="form-label" htmlFor="gstFree2">NON-BILLER</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.gstFree2}
-                                  onChange={() => handleToggle('gstFree2')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.gstFree2 ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.gstFree2 ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.reservedstock ? 'on' : 'off'}`} onClick={() => handleToggle('reservedstock')}>
+                              <span className={toggleStates.reservedstock ? 'active' : ''}>
+                                {toggleStates.reservedstock ? '' : ''}
+                              </span>
                             </div>
                             </div>
 
@@ -326,47 +284,19 @@ const CustomerPlus = () => {
                           
                           <div className="col-lg-2">
                             <label className="form-label" htmlFor="gstFree3">GST Free</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.gstFree3}
-                                  onChange={() => handleToggle('gstFree3')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.gstFree3 ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.gstFree3 ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.reservedstock ? 'on' : 'off'}`} onClick={() => handleToggle('reservedstock')}>
+                              <span className={toggleStates.reservedstock ? 'active' : ''}>
+                                {toggleStates.reservedstock ? '' : ''}
+                              </span>
                             </div>
                             </div>
 
                             <div className="col-lg-2">
                             <label className="form-label" htmlFor="gstFree4">Customer Limited</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.gstFree4}
-                                  onChange={() => handleToggle('gstFree4')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.gstFree4 ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.gstFree4 ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.reservedstock ? 'on' : 'off'}`} onClick={() => handleToggle('reservedstock')}>
+                              <span className={toggleStates.reservedstock ? 'active' : ''}>
+                                {toggleStates.reservedstock ? '' : ''}
+                              </span>
                             </div>
                             </div>
                         </form>

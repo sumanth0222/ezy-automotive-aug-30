@@ -46,30 +46,19 @@ const Collapse = () => {
                           <h3 className="">New Inspection</h3>
                         </div>
                       </div>
-                      <div className="" style={{paddingBottom:"15px"}}>
+                      <div className="" style={{ paddingBottom: "15px" }}>
                         <form className="row g-3 needs-validation" noValidate>
-                          
+
                           <div className="col-lg-12">
                             <label className="form-label" htmlFor="gstFree">Company/Individual</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.gstFree}
-                                  onChange={() => handleToggle('gstFree')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.gstFree ? "#323251" : "#d6d6e6",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.gstFree ? "On" : "Off"}
+                            <div className="col-lg-3 d-flex mt-3">
+                              <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.gstFree ? 'on' : 'off'}`} onClick={() => handleToggle('gstFree')}>
+                                <span className={toggleStates.gstFree ? 'active' : ''}>
+                                  {toggleStates.gstFree ? '' : ''}
                                 </span>
-                              </label>
+                              </div>
                             </div>
+
                           </div>
 
                           {/* Conditionally render fields based on toggle state */}

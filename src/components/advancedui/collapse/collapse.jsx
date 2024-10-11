@@ -13,7 +13,7 @@ import {
   Paper,
 } from "@mui/material";
 import Pageheader from "../../../layout/layoutcomponent/pageheader";
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 
 const Collapse = () => {
@@ -56,8 +56,8 @@ const Collapse = () => {
   const [dark1, setdark1] = useState("on");
 
 
-   // State to track each toggle button's state
-   const [toggleStates, setToggleStates] = useState({
+  // State to track each toggle button's state
+  const [toggleStates, setToggleStates] = useState({
     gstFree: false,
     dontUpdateQty: false,
     serialNumber: false,
@@ -105,7 +105,7 @@ const Collapse = () => {
                       </div>
 
                       {/* <div className="col-lg-3"> */}
-                        {/* <div className={`main-toggle ms-sm-2 main-toggle-dark ${dark1}`} onClick={() => { dark1 === "on" ? setdark1("off") : setdark1("on"); }}>
+                      {/* <div className={`main-toggle ms-sm-2 main-toggle-dark ${dark1}`} onClick={() => { dark1 === "on" ? setdark1("off") : setdark1("on"); }}>
                           <span></span>
                         </div> */}
                       {/* </div> */}
@@ -252,95 +252,40 @@ const Collapse = () => {
                           {/* Toggle Bars By Field */}
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="gstFree">GST Free</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.gstFree}
-                                  onChange={() => handleToggle('gstFree')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.gstFree ? "#323251" : "orange",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.gstFree ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.gstFree ? 'on' : 'off'}`} onClick={() => handleToggle('gstFree')}>
+                              <span className={toggleStates.gstFree ? 'active' : ''}>
+                                {toggleStates.gstFree ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="dontUpdateQty">Don't Upd.Qty</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.dontUpdateQty}
-                                  onChange={() => handleToggle('dontUpdateQty')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.dontUpdateQty ? "#323251" : "orange",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.dontUpdateQty ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.dontUpdateQty ? 'on' : 'off'}`} onClick={() => handleToggle('dontUpdateQty')}>
+                              <span className={toggleStates.dontUpdateQty ? 'active' : ''}>
+                                {toggleStates.dontUpdateQty ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="serialNumber">Required Serial Number</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.serialNumber}
-                                  onChange={() => handleToggle('serialNumber')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.serialNumber ? "#323251" : "orange",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.serialNumber ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.serialNumber ? 'on' : 'off'}`} onClick={() => handleToggle('serialNumber')}>
+                              <span className={toggleStates.serialNumber ? 'active' : ''}>
+                                {toggleStates.serialNumber ? '' : ''}
+                              </span>
                             </div>
                           </div>
 
                           <div className="col-lg-3">
                             <label className="form-label" htmlFor="priceLookup">Price Lookup</label>
-                            <div className="form-group">
-                              <label className="custom-switch form-switch mb-0 p-0 form-label">
-                                <input
-                                  type="checkbox"
-                                  className="custom-switch-input form-control"
-                                  checked={toggleStates.priceLookup}
-                                  onChange={() => handleToggle('priceLookup')}
-                                />
-                                <span
-                                  className="custom-switch-indicator custom-switch-indicator-lg"
-                                  style={{
-                                    backgroundColor: toggleStates.priceLookup ? "#323251" : "orange",
-                                    color: "white",
-                                  }}
-                                >
-                                  {toggleStates.priceLookup ? "On" : "Off"}
-                                </span>
-                              </label>
+                            <div className={`main-toggle ms-sm-2 main-toggle-dark ${toggleStates.priceLookup ? 'on' : 'off'}`} onClick={() => handleToggle('priceLookup')}>
+                              <span className={toggleStates.priceLookup ? 'active' : ''}>
+                                {toggleStates.priceLookup ? '' : ''}
+                              </span>
                             </div>
                           </div>
+
 
 
                           {/*  */}
@@ -403,7 +348,7 @@ const Collapse = () => {
                             <div class="input-group input-group">
                               <div class="input-group-text">
                                 <label class="ckbox wd-16 mg-b-0">
-                                <i className="mdi mdi-bank"></i>
+                                  <i className="mdi mdi-bank"></i>
                                 </label>
                               </div>
 
@@ -417,7 +362,7 @@ const Collapse = () => {
                             <div class="input-group input-group">
                               <div class="input-group-text">
                                 <label class="ckbox wd-16 mg-b-0">
-                                <i className="mdi mdi-bank"></i>
+                                  <i className="mdi mdi-bank"></i>
                                 </label>
                               </div>
 
