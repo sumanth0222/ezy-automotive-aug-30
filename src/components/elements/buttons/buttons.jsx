@@ -160,7 +160,7 @@ const EmptyPage = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center">Suppliers</th>
+                          <th className="wd-5p">Suppliers</th>
                           <th>City</th>
                           <th>Phone Number</th>
                           <th>Website</th>
@@ -171,7 +171,7 @@ const EmptyPage = () => {
                           filterData(ordersData, "phone").map(
                             (phone, index) => (
                               <tr key={index}>
-                                <td className="wd-5p text-center">
+                                <td className="wd-5p">
                                   {phone.suppliers}
                                 </td>
                                 <td>{phone.city}</td>

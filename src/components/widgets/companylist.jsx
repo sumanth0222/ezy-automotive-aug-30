@@ -173,7 +173,7 @@ const CompanyList = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          {/* <th className="wd-5p text-center">Item Code</th> */}
+                          {/* <th className="wd-5p">Item Code</th> */}
                           <th>Description</th>
                           <th></th>
                         </tr>
@@ -417,7 +417,7 @@ const CompanyList = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          {/* <th className="wd-5p text-center">Item Code</th> */}
+                          {/* <th className="wd-5p">Item Code</th> */}
                           <th>Description</th>
                           <th></th>
                         </tr>
@@ -656,7 +656,7 @@ const CompanyList = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          {/* <th className="wd-5p text-center">Item Code</th> */}
+                          {/* <th className="wd-5p">Item Code</th> */}
                           <th>Description</th>
                           <th></th>
                         </tr>
@@ -894,7 +894,7 @@ const CompanyList = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          {/* <th className="wd-5p text-center">Item Code</th> */}
+                          {/* <th className="wd-5p">Item Code</th> */}
                           <th>Description</th>
                           <th></th>
                         </tr>
@@ -1132,7 +1132,7 @@ const CompanyList = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          {/* <th className="wd-5p text-center">Item Code</th> */}
+                          {/* <th className="wd-5p">Item Code</th> */}
                           <th>Description</th>
                           <th></th>
                         </tr>
@@ -1370,7 +1370,7 @@ const CompanyList = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          {/* <th className="wd-5p text-center">Item Code</th> */}
+                          {/* <th className="wd-5p">Item Code</th> */}
                           <th>Description</th>
                           <th></th>
                         </tr>
@@ -1607,7 +1607,7 @@ const CompanyList = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center"> Code</th>
+                          <th className="wd-5p"> Code</th>
                           <th>Description</th>
                           <th></th>
                         </tr>
@@ -1696,7 +1696,7 @@ const CompanyList = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center"> Payment Method</th>
+                          <th className="wd-5p"> Payment Method</th>
                           <th>use EFTPOS</th>
                           <th></th>
                         </tr>
@@ -1785,7 +1785,7 @@ const CompanyList = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center"> Code</th>
+                          <th className="wd-5p"> Code</th>
                           <th>Description</th>
                           <th></th>
                         </tr>
@@ -1875,7 +1875,7 @@ const CompanyList = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center"> Name </th>
+                          <th className="wd-5p"> Name </th>
                           <th>Description</th>
                           <th>Category</th>
                           <th></th>

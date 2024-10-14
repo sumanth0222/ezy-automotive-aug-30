@@ -78090,7 +78090,7 @@ a.text-dark:focus {
 }
 
 .app-content .side-app {
-    padding: 0px !important;
+    padding: 0px 30px !important;
 }
 
 .main-content-left-mail .btn-compose {

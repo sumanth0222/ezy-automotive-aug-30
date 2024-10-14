@@ -109,7 +109,7 @@ const UserSetup = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center">user Name</th>
+                          <th className="wd-5p">user Name</th>
                           <th>Group</th>
                           <th>User</th>
                        
@@ -120,7 +120,7 @@ const UserSetup = () => {
                           filterData(ordersData, "name").map(
                             (name, index) => (
                               <tr key={index}>
-                                <td className="wd-5p text-center">
+                                <td className="wd-5p">
                                   {name.name}
                                 </td>
                                 <td>{name.group}</td>

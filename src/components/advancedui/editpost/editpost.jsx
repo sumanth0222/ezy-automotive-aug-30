@@ -106,7 +106,7 @@ const Groups = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center">Name</th>
+                          <th className="wd-5p">Name</th>
                           <th>Description</th>
                           <th>Edit</th>
                         </tr>
@@ -116,7 +116,7 @@ const Groups = () => {
                           filterData(ordersData, "name").map(
                             (name, index) => (
                               <tr key={index}>
-                                <td className="wd-5p text-center">
+                                <td className="wd-5p">
                                   {name.name}
                                 </td>
                                 <td>{name.description}</td>

@@ -251,7 +251,7 @@ const PriceMatrix = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center">Product Group</th>
+                          <th className="wd-5p">Product Group</th>
                           <th>Description</th>
                       
                         </tr>

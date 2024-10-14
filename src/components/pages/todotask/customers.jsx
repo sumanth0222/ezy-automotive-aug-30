@@ -161,7 +161,7 @@ const Customers = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center">Customer</th>
+                          <th className="wd-5p">Customer</th>
                           <th>Mobile Number</th>
                           <th>Phone Number</th>
                        
@@ -172,7 +172,7 @@ const Customers = () => {
                           filterData(ordersData, "phone").map(
                             (phone, index) => (
                               <tr key={index}>
-                                <td className="wd-5p text-center">
+                                <td className="wd-5p">
                                   {phone.customer}
                                 </td>
                                 <td>{phone.mobile}</td>

@@ -140,7 +140,7 @@ const EmptyPage = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center">Item Code</th>
+                          <th className="wd-5p">Item Code</th>
                           <th>Description</th>
                           <th>Brand</th>
                           <th>Retail Price</th>
@@ -154,7 +154,7 @@ const EmptyPage = () => {
                           filterData(ordersData, "itemcode").map(
                             (item, index) => (
                               <tr key={index}>
-                                <td className="wd-5p text-center">
+                                <td className="wd-5p">
                                   {item.itemcode}
                                 </td>
                                 <td>{item.description}</td>

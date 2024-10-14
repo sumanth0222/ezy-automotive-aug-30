@@ -1282,7 +1282,7 @@ export default function Header() {
                           </div>
                         </div>
                       </div>
-                      <Dropdown.Item className="dropdown-item" href={`${import.meta.env.BASE_URL}pages/profile/`}>
+                      <Dropdown.Item as={Link} to="/pages/profile">
                         <i className="far fa-user-circle"></i>Profile
                       </Dropdown.Item>
                       {/* <Dropdown.Item className="dropdown-item" href={`${import.meta.env.BASE_URL}pages/mail/chat/`}>
@@ -1297,10 +1297,7 @@ export default function Header() {
                       {/* <Dropdown.Item className="dropdown-item" href={`${import.meta.env.BASE_URL}pages/mail/mail/`}>
                         <i className="far fa-comment-dots"></i>Messages
                       </Dropdown.Item> */}
-                      <Dropdown.Item
-                        className="dropdown-item"
-                        href={`${import.meta.env.BASE_URL}pages/mail/mailsettings`}
-                      >
+                      <Dropdown.Item as={Link} to="/pages/mail/mailsettings">
                         <i className="far fa-sun"></i> Settings
                       </Dropdown.Item>
                       <Dropdown.Item className="dropdown-item" onClick={() => { auth.signOut(); routeChange() }} >

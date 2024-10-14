@@ -634,7 +634,7 @@ const CustomerEdit = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center">Rego</th>
+                          <th className="wd-5p">Rego</th>
                           <th>Make</th>
                           <th>Model</th>
                           <th>Model Code</th>
@@ -647,7 +647,7 @@ const CustomerEdit = () => {
                           filterData(customervehicle, "rego").map(
                             (rego, index) => (
                               <tr key={index}>
-                                <td className="wd-5p text-center">
+                                <td className="wd-5p">
                                   {rego.rego}
                                 </td>
                                 <td>{rego.make}</td>
@@ -795,7 +795,7 @@ const CustomerEdit = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center">Reference</th>
+                          <th className="wd-5p">Reference</th>
                           <th>Post Date</th>
                           <th>Tran Type</th>
                           <th>Status</th>
@@ -810,7 +810,7 @@ const CustomerEdit = () => {
                           filterData(customerinvoice, "reference").map(
                             (reference, index) => (
                               <tr key={index}>
-                                <td className="wd-5p text-center">
+                                <td className="wd-5p">
                                   {reference.reference}
                                 </td>
                                 <td>{reference.postdate}</td>
@@ -1031,7 +1031,7 @@ const CustomerEdit = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="wd-5p text-center">Booking Number</th>
+                          <th className="wd-5p">Booking Number</th>
                           <th>Booking Date</th>
                           <th>Status</th>
                           <th>Description</th>
@@ -1044,7 +1044,7 @@ const CustomerEdit = () => {
                           filterData(customerbookings, "bookingnumber").map(
                             (bookingnumber, index) => (
                               <tr key={index}>
-                                <td className="wd-5p text-center">
+                                <td className="wd-5p">
                                   {bookingnumber.bookingnumber}
                                 </td>
                                 <td>{bookingnumber.bookingdate}</td>

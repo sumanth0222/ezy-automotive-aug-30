@@ -2054,7 +2054,7 @@ export const Savetable = () => {
         >
           <thead>
             <tr>
-              <th className="wd-5p text-center">S NO</th>
+              <th className="wd-5p">S NO</th>
               <th>Name</th>
               <th>Last Name</th>
               <th>Position</th>
@@ -2267,7 +2267,7 @@ const EditableRow = ({
 const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
   return (
     <tr>
-      <td className="wd-5p text-center">{contact.sno}</td>
+      <td className="wd-5p">{contact.sno}</td>
       <td>{contact.Name}</td>
       <td>{contact.lastname}</td>
       <td>{contact.position}</td>

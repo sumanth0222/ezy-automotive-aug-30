@@ -749,7 +749,7 @@ const Todotask = () => {
                           <table className="table table-bordered text-nowrap border-bottom">
                             <thead>
                               <tr>
-                                <th className="wd-5p text-center">Rego</th>
+                                <th className="wd-5p">Rego</th>
                                 <th>Make</th>
                                 <th>Model</th>
                                 <th>Model Code</th>
@@ -761,7 +761,7 @@ const Todotask = () => {
                                 filterData(customervehicle, "rego").map(
                                   (rego, index) => (
                                     <tr key={index}>
-                                      <td className="wd-5p text-center">
+                                      <td className="wd-5p">
                                         {rego.rego}
                                       </td>
                                       <td>{rego.make}</td>
