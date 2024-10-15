@@ -109,6 +109,55 @@ const Tabss = () => {
   ];
 
 
+ 
+  let [isFirstCollapsed, setisFirstCollapsed] = useState(false);
+  let [isSecondCollapsed, setisSecondCollapsed] = useState(false);
+  let [isThirdCollapsed, setisThirdCollapsed] = useState(false);
+  let [isFourthCollapsed, setisFourthCollapsed] = useState(false);
+  let [isFifthCollapsed, setisFifthCollapsed] = useState(false);
+
+
+ 
+  let first = () => {
+    if (isFirstCollapsed === false) {
+      setisFirstCollapsed(true);
+    } else if (isFirstCollapsed === true) {
+      setisFirstCollapsed(false);
+    }
+  };
+  let second = () => {
+    console.log(isSecondCollapsed === !isSecondCollapsed);
+    if (isSecondCollapsed === true) {
+      setisSecondCollapsed(false);
+    } else if (isSecondCollapsed === false) {
+      setisSecondCollapsed(true);
+    }
+  };
+  let third = () => {
+    console.log(isThirdCollapsed === !isThirdCollapsed);
+    if (isThirdCollapsed === true) {
+      setisThirdCollapsed(false);
+    } else if (isThirdCollapsed === false) {
+      setisThirdCollapsed(true);
+    }
+  };
+  let fourth = () => {
+    console.log(isFourthCollapsed === !isFourthCollapsed);
+    if (isFourthCollapsed === true) {
+      setisFourthCollapsed(false);
+    } else if (isFourthCollapsed === false) {
+      setisFourthCollapsed(true);
+    }
+  };
+  let fifth = () => {
+    console.log(isFifthCollapsed === !isFifthCollapsed);
+    if (isFifthCollapsed === true) {
+      setisFifthCollapsed(false);
+    } else if (isFifthCollapsed === false) {
+      setisFifthCollapsed(true);
+    }
+  };
+ 
 
   return (
     <Fragment>
@@ -148,89 +197,66 @@ const Tabss = () => {
                 </div>
               </div>
 
-              <div className="panel panel-primary tabs-style-3">
-                <div className="tab-menu-heading">
-                  <div className="tabs-menu">
-                    <Tabs defaultActiveKey="Bookings" className="nav panel-tabs border-bottom-0">
-                      {/* Bookings Tab */}
-                      <Tab eventKey="Bookings" title={<><span>Bookings</span> <span className="badge bg-danger ms-2">6</span></>}>
-                        <div className="tab-pane active">
-                          <div className="row-sm row">
+              <Row>
+        
+        <Col lg={12} md={12}>
+          <Card className="custom-card">
+            <Card.Body>
+              
+              <div>
+                <div className="btn-list">
+                  <Button
+                    variant=""
 
-                            {/* <div className="col-lg-4">
-                              <Form.Label>Start Date</Form.Label>
-                              <div className="input-group">
-                                <span className="input-group-text">
-                                  <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
-                                </span>
-                                <DatePicker
-                                  selected={startDate}
-                                  onChange={(date) => setStartDate(date)}
-                                  className="form-control"
-                                  placeholderText="Select Start Date"
-                                />
-                              </div>
-                            </div>
-                            <div className="mg-t-20 mg-lg-t-0 col-lg-4">
-                              <Form.Label>End Date</Form.Label>
-                              <div className="input-group">
-                                <span className="input-group-text">
-                                  <i className="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
-                                </span>
-                                <DatePicker
-                                  selected={endDate}
-                                  onChange={(date) => setEndDate(date)}
-                                  className="form-control"
-                                  placeholderText="Select End Date"
-                                />
-                              </div>
-                            </div>
-                            <div id="button6">
-                              <div className="text-wrap">
-                                <div className="btn-list">
-                                  <button type="button" className="btn btn-primary">
-                                    Month
-                                  </button>
-                                  <button type="button" className="btn btn-danger">
-                                    Week
-                                  </button>
-                                  <button type="button" className="btn btn-teal">
-                                    Today
-                                  </button>
-                                </div>
-                              </div>
-                            </div> */}
+                    className="btn ripple btn-primary mb-2 mb-xl-0 me-2"
 
-
-                          </div>
-
-
-
-                          {/* Image Upload Section */}
-                          {/* <div className="row-sm row mt-4">
-                            <div className="col-lg-4">
-                              <Form.Label>Upload Image</Form.Label>
-                              <input
-                                type="file"
-                                accept="image/*"
-                                className="form-control"
-                                onChange={(e) => handleImageUpload(e)}
-                              />
-                              {selectedImage && (
-                                <div className="mt-3">
-                                  <img
-                                    src={URL.createObjectURL(selectedImage)}
-                                    alt="Uploaded Preview"
-                                    className="img-thumbnail"
-                                    style={{ width: "150px", height: "150px" }}
-                                  />
-                                </div>
-                              )}
-                            </div>
-                          </div> */}
-
-                          {/* Bookings Table */}
-                          <div className="table-responsive mt-4">
+                    role="button"
+                    onClick={() => first()}
+                  >
+                    Bookings
+                  </Button>
+                  <Button
+                    variant=""
+                    className="btn ripple btn-secondary mb-2 mb-xl-0 me-2"
+                    role="button"
+                    onClick={() => second()}
+                  >
+                    Inspections
+                  </Button>
+                  <Button
+                    variant=""
+                    className="btn ripple btn-info mb-2 mb-xl-0"
+                    role="button"
+                    onClick={() => third()}
+                  >
+                    Jobs
+                  </Button>
+                  <Button
+                    variant=""
+                    className="btn ripple btn-dark mb-2 mb-xl-0"
+                    role="button"
+                    onClick={() => fourth()}
+                  >
+                    Orders
+                  </Button>
+                  <Button
+                    variant=""
+                    className="btn ripple btn-danger mb-2 mb-xl-0"
+                    role="button"
+                    onClick={() => fifth()}
+                  >
+                    Invoices
+                  </Button>
+                </div>
+                <Row className="row-sm">
+                  {isFirstCollapsed ? (
+                    <div className="col">
+                      <div
+                        className=" multi-collapse"
+                        id="multiCollapseExample1"
+                      >
+                        <div className="mt-4">
+                        <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
@@ -477,33 +503,18 @@ const Tabss = () => {
                               </tbody>
                             </table>
                           </div>
-
-
-
                         </div>
-                      </Tab>
-
-                      {/* Inspections Tab */}
-                      <Tab eventKey="Inspections" title={<><span>Inspections</span> <span className="badge bg-danger ms-2">2</span></>}>
-                        <div className="tab-pane active">
-                          <div className="row-sm row">
-                            {/* <div className="mt-4 col-lg-10">
-                              <p className="mg-b-9">Status</p>
-                              <MultiSelect
-                                value={selected}
-                                onChange={setSelected}
-                                labelledBy="Select"
-                                options={InspectionBookings}
-                              />
-                            </div> */}
-                            {/* <div className="col-lg-2">
-                              <a className="btn ripple btn-warning text-white btn-icon mt-5" data-placement="top" data-bs-toggle="tooltip" title="Create New" href="#" onClick={handlePlus2Click}>
-                                <i className="fe fe-plus"></i>
-                              </a>
-                            </div> */}
-                          </div>
-
-                          <div className="table-responsive mt-4">
+                      </div>
+                    </div>
+                  ) : null}
+                  {isSecondCollapsed ? (
+                    <div className="col">
+                      <div
+                        className=" multi-collapse"
+                        id="multiCollapseExample2"
+                      >
+                        <div className="mt-4">
+                        <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
@@ -749,31 +760,16 @@ const Tabss = () => {
                             </table>
                           </div>
                         </div>
-                      </Tab>
-
-                      {/* Jobs Tab */}
-                      <Tab eventKey="Jobs" title={<><span>Jobs</span> <span className="badge bg-danger ms-2">6</span></>}>
-                        <div className="tab-pane active">
-
-                          {/* <div className="row-sm row">
-                            <div className="col-lg-12">
-                              <div className="text-wrap">
-                                <div className="btn-list mt-3">
-                                  <button type="button" className="btn btn-primary">
-                                    Month
-                                  </button>
-                                  <button type="button" className="btn btn-danger">
-                                    Week
-                                  </button>
-                                  <button type="button" className="btn btn-teal">
-                                    Today
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div> */}
-
-                          <div className="table-responsive mt-4">
+                      </div>
+                    </div>
+                  ) : null}
+                  {isThirdCollapsed ? (
+                    <div className="col">
+                      <div
+                        className=" multi-collapse"
+                        id="multiCollapseExample2"
+                      >
+                        <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
@@ -1012,13 +1008,264 @@ const Tabss = () => {
                               </tbody>
                             </table>
                           </div>
-                        </div>
-                      </Tab>
+                      </div>
+                    </div>
+                  ) : null}
+                  {isFourthCollapsed ? (
+                    <div className="col">
+                      <div
+                        className=" multi-collapse"
+                        id="multiCollapseExample2"
+                      >
+                        <div className="table-responsive mt-4">
+                            <table className="table table-bordered text-nowrap border-bottom">
+                              <thead>
+                                <tr>
+                                  <th>S. No</th>
+                                  <th>Invoice No</th>
+                                  <th>Booking Date</th>
+                                  <th>Source</th>
+                                  <th>Service Reg Date</th>
+                                  <th>SRC CMP DT</th>
+                                  <th>Foremen Name</th>
+                                  <th>Client Name</th>
+                                  <th>Contact No</th>
+                                  <th>Veh/Reg No</th>
+                                  <th>Make</th>
+                                  <th>Model</th>
+                                  <th>Service Cost</th>
+                                  <th>Payment Link</th>
+                                  <th>Payment Mode</th>
+                                  <th>Duration</th>
+                                  <th>TAT Status</th>
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>1</td>
+                                  <td>INV001</td>
+                                  <td>2023-08-15</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-16</td>
+                                  <td>2023-08-18</td>
+                                  <td>John Doe</td>
+                                  <td>Tiger Nixon</td>
+                                  <td>9876543210</td>
+                                  <td>XYZ1234</td>
+                                  <td>Toyota</td>
+                                  <td>Corolla</td>
+                                  <td><Link className="text-primary">$345.00</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-green">Online Payment</td>
+                                  <td>2 Days</td>
+                                  <td>Delivered</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
 
-                      {/* Orders Tab */}
-                      <Tab eventKey="Orders" title={<><span>Orders</span> <span className="badge bg-danger ms-2">1</span></>}>
-                        <div className="tab-pane active">
-                          <div className="table-responsive mt-4">
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                    {/* <button
+                                      className="btn btn-sm btn-primary fa fa-edit"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                    <button
+                                      className="btn btn-sm btn-danger fa fa-trash-alt"
+                                      onClick={() => handleDeleteClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button> */}
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>INV002</td>
+                                  <td>2023-08-12</td>
+                                  <td>Web Application</td>
+                                  <td>2023-08-13</td>
+                                  <td>2023-08-15</td>
+                                  <td>Jane Smith</td>
+                                  <td>Briele Williamson</td>
+                                  <td>9876543211</td>
+                                  <td>XYZ5678</td>
+                                  <td>Honda</td>
+                                  <td>Civic</td>
+                                  <td><Link className="text-primary">$372,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
+                                  <td>Delivering</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>INV003</td>
+                                  <td>2023-08-10</td>
+                                  <td>QR SCAN</td>
+                                  <td>2023-08-11</td>
+                                  <td>2023-08-13</td>
+                                  <td>Michael Johnson</td>
+                                  <td>Harrod Chandler</td>
+                                  <td>9876543212</td>
+                                  <td>XYZ9101</td>
+                                  <td>Ford</td>
+                                  <td>Focus</td>
+                                  <td><Link className="text-primary">$137,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>4 Days</td>
+                                  <td>Awaiting</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>4</td>
+                                  <td>INV004</td>
+                                  <td>2023-08-05</td>
+                                  <td>Mobile App</td>
+                                  <td>2023-08-06</td>
+                                  <td>2023-08-08</td>
+                                  <td>Chris Evans</td>
+                                  <td>Colleen Hurst</td>
+                                  <td>9876543213</td>
+                                  <td>XYZ1212</td>
+                                  <td>Nissan</td>
+                                  <td>Altima</td>
+                                  <td><Link className="text-primary">$109,000</Link></td>
+                                  <td>
+                                    <button
+                                      className="btn btn-sm btn-primary fa fa-credit-card"
+                                      onClick={() => handleEditClick('INV001')}
+                                      style={{ marginLeft: "5px" }}
+                                    ></button>
+                                  </td>
+                                  <td className="bg-orange">Cash on Delivery</td>
+                                  <td>3 Days</td>
+                                  <td>Delivered</td>
+                                  <td>
+                                    {dropdownwithiconsdata.map((idx) => (
+                                      <ButtonGroup className="" key={Math.random()}>
+                                        <Dropdown drop="up">
+                                          <Dropdown.Toggle variant={idx.color} className="dropups">
+                                            <i className={`fe fe-${idx.class}`}></i>
+                                          </Dropdown.Toggle>
+
+                                          <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                              <i className="fa fa-edit text-primary"></i> Edit
+                                            </Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                              <i className="fa fa-trash-alt text-danger"></i> Delete
+                                            </Dropdown.Item>
+                                            {/* Upload images option */}
+                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                              <i className="fa fa-upload text-success"></i> Upload Images
+                                            </Dropdown.Item>
+                                          </Dropdown.Menu>
+                                        </Dropdown>
+                                      </ButtonGroup>
+                                    ))}
+
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                      </div>
+                    </div>
+                  ) : null}
+                  {isFifthCollapsed ? (
+                    <div className="col">
+                      <div
+                        className=" multi-collapse"
+                        id="multiCollapseExample2"
+                      >
+                        <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
@@ -1257,257 +1504,25 @@ const Tabss = () => {
                               </tbody>
                             </table>
                           </div>
-                        </div>
-                      </Tab>
-
-                      {/* Invoices Tab */}
-                      <Tab eventKey="Invoices" title={<><span>Invoices</span> <span className="badge bg-danger ms-2">2</span></>}>
-                        <div className="tab-pane active">
-                          <div className="table-responsive mt-4">
-                            <table className="table table-bordered text-nowrap border-bottom">
-                              <thead>
-                                <tr>
-                                  <th>S. No</th>
-                                  <th>Invoice No</th>
-                                  <th>Booking Date</th>
-                                  <th>Source</th>
-                                  <th>Service Reg Date</th>
-                                  <th>SRC CMP DT</th>
-                                  <th>Foremen Name</th>
-                                  <th>Client Name</th>
-                                  <th>Contact No</th>
-                                  <th>Veh/Reg No</th>
-                                  <th>Make</th>
-                                  <th>Model</th>
-                                  <th>Service Cost</th>
-                                  <th>Payment Link</th>
-                                  <th>Payment Mode</th>
-                                  <th>Duration</th>
-                                  <th>TAT Status</th>
-                                  <th>Action</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>INV001</td>
-                                  <td>2023-08-15</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-16</td>
-                                  <td>2023-08-18</td>
-                                  <td>John Doe</td>
-                                  <td>Tiger Nixon</td>
-                                  <td>9876543210</td>
-                                  <td>XYZ1234</td>
-                                  <td>Toyota</td>
-                                  <td>Corolla</td>
-                                  <td><Link className="text-primary">$345.00</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-green">Online Payment</td>
-                                  <td>2 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
-
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
-
-                                    {/* <button
-                                      className="btn btn-sm btn-primary fa fa-edit"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                    <button
-                                      className="btn btn-sm btn-danger fa fa-trash-alt"
-                                      onClick={() => handleDeleteClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button> */}
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>INV002</td>
-                                  <td>2023-08-12</td>
-                                  <td>Web Application</td>
-                                  <td>2023-08-13</td>
-                                  <td>2023-08-15</td>
-                                  <td>Jane Smith</td>
-                                  <td>Briele Williamson</td>
-                                  <td>9876543211</td>
-                                  <td>XYZ5678</td>
-                                  <td>Honda</td>
-                                  <td>Civic</td>
-                                  <td><Link className="text-primary">$372,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivering</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
-
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
-
-
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>INV003</td>
-                                  <td>2023-08-10</td>
-                                  <td>QR SCAN</td>
-                                  <td>2023-08-11</td>
-                                  <td>2023-08-13</td>
-                                  <td>Michael Johnson</td>
-                                  <td>Harrod Chandler</td>
-                                  <td>9876543212</td>
-                                  <td>XYZ9101</td>
-                                  <td>Ford</td>
-                                  <td>Focus</td>
-                                  <td><Link className="text-primary">$137,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>4 Days</td>
-                                  <td>Awaiting</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
-
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
-
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>INV004</td>
-                                  <td>2023-08-05</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-06</td>
-                                  <td>2023-08-08</td>
-                                  <td>Chris Evans</td>
-                                  <td>Colleen Hurst</td>
-                                  <td>9876543213</td>
-                                  <td>XYZ1212</td>
-                                  <td>Nissan</td>
-                                  <td>Altima</td>
-                                  <td><Link className="text-primary">$109,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
-
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
-
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </Tab>
-                    </Tabs>
-                  </div>
-                </div>
+                      </div>
+                    </div>
+                  ) : null}
+                </Row>
               </div>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+              
+
+
+
+
+
+
+
+
+
             </Card.Body>
           </Card>
         </Col>
