@@ -9184,7 +9184,7 @@ textarea.custom-file-input.parsley-error:focus~.custom-file-label {
 
 .nav-pills .nav-link:hover,
 .nav-pills .nav-link:focus {
-    color: #323251;
+    color: var(--primary-bg-color);
 }
 
 .nav-pills .nav-link.active {
@@ -13584,7 +13584,7 @@ tr {
 .list-group-item {
     position: relative;
     display: block;
-    padding: 0.75rem 1.25rem;
+    padding: 0 1.25rem;
     margin-block-end: -1px;
     background-color: #fff;
     border: 1px solid rgb(231, 235, 243);
@@ -13611,7 +13611,7 @@ tr {
 .list-group-item.active {
     z-index: 2;
     color: #4a4a69;
-    background-color: var(--primary02) !important;
+    background-color: #333 !important;
     border-color: #ededf5 !important;
 }
 

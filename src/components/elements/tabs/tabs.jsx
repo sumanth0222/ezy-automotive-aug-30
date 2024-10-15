@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from "react";
-import { Card, Col, Form, Row, Tab, Tabs, Dropdown, DropdownButton, Collapse, ButtonGroup } from "react-bootstrap";
+import React, { Fragment, useEffect, useState } from "react";
+import { ProgressBar, Card, Col, Form, Row, Tabs, Tab, Table, Dropdown, DropdownButton, Collapse, ButtonGroup, Button } from "react-bootstrap"; // Removed duplicate Tabs import
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Pageheader from '../../../layout/layoutcomponent/pageheader';
@@ -8,6 +8,10 @@ import { InspectionBookings } from "../../../common/selectdata";
 import { Link } from "react-router-dom";
 import { dropdownwithiconsdata } from "../../../common/commondata";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux'
+import Select from 'react-select';
+import ProductService from '../../../common/ProductService';
+
 
 // Sample data
 const bookingsData = [
@@ -36,8 +40,6 @@ const invoicesData = [
 ];
 
 const Tabss = () => {
-
-  
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [filter, setFilter] = useState(""); // Search filter state
@@ -49,8 +51,6 @@ const Tabss = () => {
     data.filter((item) =>
       item[field]?.toLowerCase().includes(filter.toLowerCase())
     );
-
-
 
   // Handle image upload
   const handleImageUpload = (e) => {
@@ -74,8 +74,42 @@ const Tabss = () => {
     navigate(`${import.meta.env.BASE_URL}pages/todotask`); // Navigate to the form page
   };
   const handlePlus2Click = () => {
-    navigate(`${import.meta.env.BASE_URL}advancedui/timeline`)
-  }
+    navigate(`${import.meta.env.BASE_URL}advancedui/timeline`);
+  };
+
+  const getdata = useSelector((state) => state.cartreducer.carts);
+  const [value, setvalue] = useState("");
+
+  const handleOnchange = () => {
+    setvalue(value);
+  };
+
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [Data, setData] = useState([]);
+
+  // const { id } = useParams();
+  const id = ProductService.returnId();
+
+  const compare = () => {
+    let comparedata = getdata.filter((e) => {
+      return e.id === id;
+    });
+    setData(comparedata);
+  };
+
+  useEffect(() => {
+    compare();
+  }, [id]);
+
+  const Optioncategory1 = [
+    { value: "category-2", label: "1" },
+    { value: "category-3", label: "2" },
+    { value: "category-4", label: "3" },
+    { value: "category-5", label: "4" },
+  ];
+
+
+
   return (
     <Fragment>
       <Pageheader title="Transaction Centre" heading="Pages" active="Transaction Centre" />
@@ -85,15 +119,32 @@ const Tabss = () => {
             <Card.Body>
               <div className="d-flex justify-content-between align-items-center">
                 <div className="main-content-label mg-b-5">Transaction Centre</div>
-                <div className="ms-4 d-lg-block form-group">
-                  <input
-                    autoComplete="off"
-                    placeholder="Search..."
-                    type="search"
-                    className="form-control"
-                    value={filter}
-                    onChange={(e) => setFilter(e.target.value)}
-                  />
+                <div className="ms-4 d-lg-flex form-group">
+                  <span>
+                    <input
+                      autoComplete="off"
+                      placeholder="Search..."
+                      type="search"
+                      className="form-control"
+                      value={filter}
+                      onChange={(e) => setFilter(e.target.value)}
+                    />
+                  </span>
+                  {/* <span>
+                    <a
+                      className="btn ripple btn-warning text-white btn-icon"
+                      data-placement="top"
+                      data-bs-toggle="tooltip"
+                      title="Create New"
+                      href="#"
+                      onClick={handlePlusClick}
+                    >
+                      <i className="fe fe-plus"></i>
+
+                    </a>
+                  </span> */}
+
+
                 </div>
               </div>
 
@@ -105,8 +156,8 @@ const Tabss = () => {
                       <Tab eventKey="Bookings" title={<><span>Bookings</span> <span className="badge bg-danger ms-2">6</span></>}>
                         <div className="tab-pane active">
                           <div className="row-sm row">
-                            
-                            <div className="col-lg-4">
+
+                            {/* <div className="col-lg-4">
                               <Form.Label>Start Date</Form.Label>
                               <div className="input-group">
                                 <span className="input-group-text">
@@ -148,20 +199,12 @@ const Tabss = () => {
                                   </button>
                                 </div>
                               </div>
-                            </div>
+                            </div> */}
 
-                            <a
-                              className="btn ripple btn-warning text-white btn-icon"
-                              data-placement="top"
-                              data-bs-toggle="tooltip"
-                              title="Create New"
-                              href="#"
-                              onClick={handlePlusClick}
-                            >
-                              <i className="fe fe-plus"></i>
-                              
-                            </a>
+
                           </div>
+
+
 
                           {/* Image Upload Section */}
                           {/* <div className="row-sm row mt-4">
@@ -227,12 +270,12 @@ const Tabss = () => {
                                   <td>Corolla</td>
                                   <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$345.00</Link></td>
                                   <td>
-                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
+                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                      <button
+                                        className="btn btn-sm btn-primary fa fa-credit-card"
+                                        onClick={() => handleEditClick('INV001')}
+                                        style={{ marginLeft: "5px" }}
+                                      ></button>
                                     </Link>
                                   </td>
                                   <td className="bg-green">Online Payment</td>
@@ -289,12 +332,12 @@ const Tabss = () => {
                                   <td>Civic</td>
                                   <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$372,000</Link></td>
                                   <td>
-                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
+                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                      <button
+                                        className="btn btn-sm btn-primary fa fa-credit-card"
+                                        onClick={() => handleEditClick('INV001')}
+                                        style={{ marginLeft: "5px" }}
+                                      ></button>
                                     </Link>
                                   </td>
                                   <td className="bg-orange">Cash on Delivery</td>
@@ -340,14 +383,14 @@ const Tabss = () => {
                                   <td>XYZ9101</td>
                                   <td>Ford</td>
                                   <td>Focus</td>
-                                  <td><Link  to={`${import.meta.env.BASE_URL}pages/invoice`}className="text-primary">$137,000</Link></td>
+                                  <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$137,000</Link></td>
                                   <td>
-                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
+                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                      <button
+                                        className="btn btn-sm btn-primary fa fa-credit-card"
+                                        onClick={() => handleEditClick('INV001')}
+                                        style={{ marginLeft: "5px" }}
+                                      ></button>
                                     </Link>
                                   </td>
                                   <td className="bg-orange">Cash on Delivery</td>
@@ -394,12 +437,12 @@ const Tabss = () => {
                                   <td>Altima</td>
                                   <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$109,000</Link></td>
                                   <td>
-                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
+                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                      <button
+                                        className="btn btn-sm btn-primary fa fa-credit-card"
+                                        onClick={() => handleEditClick('INV001')}
+                                        style={{ marginLeft: "5px" }}
+                                      ></button>
                                     </Link>
                                   </td>
                                   <td className="bg-orange">Cash on Delivery</td>
@@ -444,7 +487,7 @@ const Tabss = () => {
                       <Tab eventKey="Inspections" title={<><span>Inspections</span> <span className="badge bg-danger ms-2">2</span></>}>
                         <div className="tab-pane active">
                           <div className="row-sm row">
-                            <div className="mt-4 col-lg-10">
+                            {/* <div className="mt-4 col-lg-10">
                               <p className="mg-b-9">Status</p>
                               <MultiSelect
                                 value={selected}
@@ -452,12 +495,12 @@ const Tabss = () => {
                                 labelledBy="Select"
                                 options={InspectionBookings}
                               />
-                            </div>
-                            <div className="col-lg-2">
-                              <a className="btn ripple btn-warning text-white btn-icon mt-5" data-placement="top" data-bs-toggle="tooltip" title="Create New" href="#"  onClick={handlePlus2Click}>
+                            </div> */}
+                            {/* <div className="col-lg-2">
+                              <a className="btn ripple btn-warning text-white btn-icon mt-5" data-placement="top" data-bs-toggle="tooltip" title="Create New" href="#" onClick={handlePlus2Click}>
                                 <i className="fe fe-plus"></i>
                               </a>
-                            </div>
+                            </div> */}
                           </div>
 
                           <div className="table-responsive mt-4">
@@ -500,16 +543,16 @@ const Tabss = () => {
                                   <td>Corolla</td>
                                   <td><Link className="text-primary">$345.00</Link></td>
                                   <td>
-                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
+                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                      <button
+                                        className="btn btn-sm btn-primary fa fa-credit-card"
+                                        onClick={() => handleEditClick('INV001')}
+                                        style={{ marginLeft: "5px" }}
+                                      ></button>
                                     </Link>
                                   </td>
                                   <td className="bg-green">Online Payment</td>
-                                   <td>2 Days</td>
+                                  <td>2 Days</td>
                                   <td>Delivered</td>
                                   <td>
                                     {dropdownwithiconsdata.map((idx) => (
@@ -562,12 +605,12 @@ const Tabss = () => {
                                   <td>Civic</td>
                                   <td><Link className="text-primary">$372,000</Link></td>
                                   <td>
-                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
+                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                      <button
+                                        className="btn btn-sm btn-primary fa fa-credit-card"
+                                        onClick={() => handleEditClick('INV001')}
+                                        style={{ marginLeft: "5px" }}
+                                      ></button>
                                     </Link>
                                   </td>
                                   <td className="bg-orange">Cash on Delivery</td>
@@ -665,12 +708,12 @@ const Tabss = () => {
                                   <td>Altima</td>
                                   <td><Link className="text-primary">$109,000</Link></td>
                                   <td>
-                                  <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
+                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                      <button
+                                        className="btn btn-sm btn-primary fa fa-credit-card"
+                                        onClick={() => handleEditClick('INV001')}
+                                        style={{ marginLeft: "5px" }}
+                                      ></button>
                                     </Link>
                                   </td>
                                   <td className="bg-orange">Cash on Delivery</td>
@@ -711,8 +754,8 @@ const Tabss = () => {
                       {/* Jobs Tab */}
                       <Tab eventKey="Jobs" title={<><span>Jobs</span> <span className="badge bg-danger ms-2">6</span></>}>
                         <div className="tab-pane active">
-                          
-                          <div className="row-sm row">
+
+                          {/* <div className="row-sm row">
                             <div className="col-lg-12">
                               <div className="text-wrap">
                                 <div className="btn-list mt-3">
@@ -728,7 +771,7 @@ const Tabss = () => {
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </div> */}
 
                           <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
@@ -975,7 +1018,7 @@ const Tabss = () => {
                       {/* Orders Tab */}
                       <Tab eventKey="Orders" title={<><span>Orders</span> <span className="badge bg-danger ms-2">1</span></>}>
                         <div className="tab-pane active">
-                        <div className="table-responsive mt-4">
+                          <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
@@ -1220,7 +1263,7 @@ const Tabss = () => {
                       {/* Invoices Tab */}
                       <Tab eventKey="Invoices" title={<><span>Invoices</span> <span className="badge bg-danger ms-2">2</span></>}>
                         <div className="tab-pane active">
-                        <div className="table-responsive mt-4">
+                          <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
@@ -1469,6 +1512,196 @@ const Tabss = () => {
           </Card>
         </Col>
       </Row>
+
+
+      <Row className="row-sm">
+        <Col sm={12} md={12} xl={6} lg={6} xxl={6}>
+          <Card>
+            <Card.Body>
+              <Row className="row-sm">
+                <Col xxl={6} lg={12} md={12} className="details mt-4 mt-xxl-0 mt-2">
+                  {/* Product Title */}
+                  <h4 className="product-title mb-1">
+                    Jyothi Fashion Women's Fit & Flare Knee Length Western Frock
+                  </h4>
+                  <p className="text-muted tx-13 mb-1">
+                    Women Red & Grey Checked Casual Frock
+                  </p>
+
+                  {/* Ratings */}
+                  <div className="rating mb-1">
+                    <div className="stars">
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star text-muted"></span>
+                      <span className="fa fa-star text-muted"></span>
+                    </div>
+                    <span className="review-no">41 reviews</span>
+                  </div>
+
+                  {/* Price */}
+                  <h6 className="price">
+                    Current price: <span className="h3 ms-2">$253</span>
+                  </h6>
+                  <p className="vote">
+                    <strong>91%</strong> of buyers enjoyed this product!{" "}
+                    <strong>(87 votes)</strong>
+                  </p>
+
+                  {/* Stock */}
+                  <div className="mb-3">
+                    <p className="font-weight-normal">
+                      <span className="h4">Hurry Up!</span> Sold:{" "}
+                      <span className="text-primary h5">110/150</span> products in stock.
+                    </p>
+                    <ProgressBar now={60} animated variant="primary" />
+                  </div>
+
+                  {/* Sizes */}
+                  <div className="sizes d-flex">
+                    Sizes:
+                    <div className="d-flex">
+                      {["s", "m", "l", "xl"].map((size) => (
+                        <Form.Label key={size} className="rdiobox mb-0 mx-2">
+                          <input type="radio" name="size" value={size} /> <span>{size}</span>
+                        </Form.Label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Quantity */}
+                  <div className="d-flex mt-2">
+                    <div className="mt-2 product-title">Quantity:</div>
+                    <div className="d-flex ms-2">
+                      <Select
+                        value={Optioncategory1.find((opt) => opt.value === value)}
+                        onChange={(option) => setValue(option.value)}
+                        options={Optioncategory1}
+                        placeholder="Select quantity"
+                        classNamePrefix="Select2"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Colors */}
+                  <div className="colors d-flex me-3 mt-2">
+                    <span className="mt-2">Colors:</span>
+                    <div className="d-sm-flex d-flex ms-4">
+                      {["azure", "indigo", "purple", "pink"].map((color, index) => (
+                        <Form.Label key={index} className="colorinput me-2">
+                          <input
+                            name="color"
+                            type="radio"
+                            value={color}
+                            className="colorinput-input"
+                            defaultChecked={index === 0}
+                          />
+                          <span className={`colorinput-color bg-${color}`}></span>
+                        </Form.Label>
+                      ))}
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col sm={12} md={12} xl={6} lg={6} xxl={6}>
+          <Card>
+            <Card.Body>
+              <Row className="row-sm">
+                <Col xxl={6} lg={12} md={12} className="details mt-4 mt-xxl-0 mt-2">
+                  {/* Product Title */}
+                  <h4 className="product-title mb-1">
+                    Jyothi Fashion Women's Fit & Flare Knee Length Western Frock
+                  </h4>
+                  <p className="text-muted tx-13 mb-1">
+                    Women Red & Grey Checked Casual Frock
+                  </p>
+
+                  {/* Ratings */}
+                  <div className="rating mb-1">
+                    <div className="stars">
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star text-muted"></span>
+                      <span className="fa fa-star text-muted"></span>
+                    </div>
+                    <span className="review-no">41 reviews</span>
+                  </div>
+
+                  {/* Price */}
+                  <h6 className="price">
+                    Current price: <span className="h3 ms-2">$253</span>
+                  </h6>
+                  <p className="vote">
+                    <strong>91%</strong> of buyers enjoyed this product!{" "}
+                    <strong>(87 votes)</strong>
+                  </p>
+
+                  {/* Stock */}
+                  <div className="mb-3">
+                    <p className="font-weight-normal">
+                      <span className="h4">Hurry Up!</span> Sold:{" "}
+                      <span className="text-primary h5">110/150</span> products in stock.
+                    </p>
+                    <ProgressBar now={60} animated variant="primary" />
+                  </div>
+
+                  {/* Sizes */}
+                  <div className="sizes d-flex">
+                    Sizes:
+                    <div className="d-flex">
+                      {["s", "m", "l", "xl"].map((size) => (
+                        <Form.Label key={size} className="rdiobox mb-0 mx-2">
+                          <input type="radio" name="size" value={size} /> <span>{size}</span>
+                        </Form.Label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Quantity */}
+                  <div className="d-flex mt-2">
+                    <div className="mt-2 product-title">Quantity:</div>
+                    <div className="d-flex ms-2">
+                      <Select
+                        value={Optioncategory1.find((opt) => opt.value === value)}
+                        onChange={(option) => setValue(option.value)}
+                        options={Optioncategory1}
+                        placeholder="Select quantity"
+                        classNamePrefix="Select2"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Colors */}
+                  <div className="colors d-flex me-3 mt-2">
+                    <span className="mt-2">Colors:</span>
+                    <div className="d-sm-flex d-flex ms-4">
+                      {["azure", "indigo", "purple", "pink"].map((color, index) => (
+                        <Form.Label key={index} className="colorinput me-2">
+                          <input
+                            name="color"
+                            type="radio"
+                            value={color}
+                            className="colorinput-input"
+                            defaultChecked={index === 0}
+                          />
+                          <span className={`colorinput-color bg-${color}`}></span>
+                        </Form.Label>
+                      ))}
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+
     </Fragment>
   );
 };
