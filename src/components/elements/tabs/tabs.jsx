@@ -213,39 +213,39 @@ const Tabss = () => {
                     role="button"
                     onClick={() => first()}
                   >
-                    Bookings
+                    Bookings<span className="badge bg-danger ms-2">6</span>
                   </Button>
                   <Button
                     variant=""
-                    className="btn ripple btn-secondary mb-2 mb-xl-0 me-2"
+                    className="btn ripple btn-primary mb-2 mb-xl-0 me-2"
                     role="button"
                     onClick={() => second()}
                   >
-                    Inspections
+                    Inspections<span className="badge bg-danger ms-2">2</span>
                   </Button>
                   <Button
                     variant=""
-                    className="btn ripple btn-info mb-2 mb-xl-0"
+                    className="btn ripple btn-primary mb-2 mb-xl-0"
                     role="button"
                     onClick={() => third()}
                   >
-                    Jobs
+                    Jobs<span className="badge bg-danger ms-2">6</span>
                   </Button>
                   <Button
                     variant=""
-                    className="btn ripple btn-dark mb-2 mb-xl-0"
+                    className="btn ripple btn-primary mb-2 mb-xl-0"
                     role="button"
                     onClick={() => fourth()}
                   >
-                    Orders
+                    Orders<span className="badge bg-danger ms-2">1</span>
                   </Button>
                   <Button
                     variant=""
-                    className="btn ripple btn-danger mb-2 mb-xl-0"
+                    className="btn ripple btn-primary mb-2 mb-xl-0"
                     role="button"
                     onClick={() => fifth()}
                   >
-                    Invoices
+                    Invoices<span className="badge bg-danger ms-2">2</span>
                   </Button>
                 </div>
                 <Row className="row-sm">
@@ -1523,6 +1523,7 @@ const Tabss = () => {
 
 
 
+              
             </Card.Body>
           </Card>
         </Col>
