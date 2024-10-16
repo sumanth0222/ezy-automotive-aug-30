@@ -188,22 +188,22 @@ export const MENUITEMS = [
             type: "link",
             active:false,
             selected:false,
-            title: "Mechanics",
+            title: "Manage Designations",
           },
           {
             path: `${import.meta.env.BASE_URL}pages/ecommerce/cart`,
             type: "link",
             active:false,
             selected:false,
-            title: "Service Advisors",
-          },
-          {
-            path: `${import.meta.env.BASE_URL}pages/ecommerce/checkout`,
-            type: "link",
-            active:false,
-            selected:false,
-            title: "Mechanic Clock On",
-          },
+            title: "Manage Employees",
+          }
+          // {
+          //   path: `${import.meta.env.BASE_URL}pages/ecommerce/checkout`,
+          //   type: "link",
+          //   active:false,
+          //   selected:false,
+          //   title: "Mechanic Clock On",
+          // },
           
         ],
       },

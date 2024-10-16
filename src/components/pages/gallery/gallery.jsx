@@ -57,9 +57,9 @@ const Gallery = () => {
   };
 
   const ordersData = [
-    { name: "Edit Me Mechanic 1", cell: "", options: "" },
-    { name: "Edit Me Mechanic 2", cell: "", options: "" },
-    { name: "Edit Me Mechanic 3", cell: "", options: "" },
+    { name: "Technician", cell: "", options: "" },
+    { name: "Supervisor", cell: "", options: "" },
+    { name: "Store keeper", cell: "", options: "" },
   ];
 
   const [filter, setFilter] = useState(""); // Search filter state
@@ -91,7 +91,7 @@ const Gallery = () => {
 
   return (
     <Fragment>
-      <Pageheader title="Employee" heading="Employee" active="Mechanics" />
+      <Pageheader title="Employee" heading="Employee" active="Manage Designations" />
       <div className="row">
         <Col lg={12} md={12}>
           <Card>
@@ -112,23 +112,12 @@ const Gallery = () => {
                   </a>
                 </div>
                 <div>
-                  <h3 className="mt-3">Mechanics</h3>
+                  <h3 className="mt-3">Manage Designations</h3>
                 </div>
               </div>
 
               <div className="row-sm row">
-                <div className="col-lg-3 mt-3">
-                  <div
-                    className={`main-toggle ms-sm-2 main-toggle-dark ${dark1}`}
-                    onClick={() => {
-                      setdark1(dark1 === "on" ? "off" : "on");
-                    }}
-                  >
-                    <span className={`${dark1 === "on" ? "active" : ""}`} onClick={toggleActiveState}></span>
-                  </div>
-                </div>
-
-                <div className="form-group col-lg-8 d-flex align-items-center mt-2">
+                <div className="form-group col-lg-12 d-flex align-items-center mt-2">
                   <input
                     autoComplete="off"
                     placeholder="Search..."
@@ -168,8 +157,7 @@ const Gallery = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="text-center">Name</th>
-                          <th>Cell</th>
+                          <th className="text-center">Designation Info</th>
                           <th>Options</th>
                         </tr>
                       </thead>
@@ -178,21 +166,26 @@ const Gallery = () => {
                           filterData(ordersData, "name").map((name, index) => (
                             <tr key={index}>
                               <td className="text-center">{name.name}</td>
-                              <td>{name.cell}</td>
+                             
                               <td>
                                 <div className="row">
+                                <button
+                                    className="btn btn-sm btn-dark fa fa-user"
+                                    onClick={handleUserClick}
+                                    style={{ marginLeft: "5px" }}
+                                  ></button>
                                   <button
                                     className="btn btn-sm btn-primary fa fa-edit"
                                     onClick={() => handleEditClick(name.itemcode)}
                                     style={{ marginLeft: "5px" }}
                                   ></button>
                                   <button
-                                    className="btn btn-sm btn-dark fa fa-user"
-                                    onClick={handleUserClick}
+                                    className="btn btn-sm btn-info fas fa-eye"
+                                    onClick={handleClickOpen1}
                                     style={{ marginLeft: "5px" }}
                                   ></button>
                                   <button
-                                    className="btn btn-sm btn-danger fa fa-comment"
+                                    className="btn btn-sm btn-danger far fa-trash-alt"
                                     onClick={handleClickOpen1}
                                     style={{ marginLeft: "5px" }}
                                   ></button>
