@@ -157,7 +157,7 @@ const Gallery = () => {
                     <table className="table table-bordered text-nowrap border-bottom">
                       <thead>
                         <tr>
-                          <th className="text-center">Designation Info</th>
+                          <th className="">Designation Info</th>
                           <th>Options</th>
                         </tr>
                       </thead>
@@ -165,7 +165,7 @@ const Gallery = () => {
                         {filterData(ordersData, "name").length > 0 ? (
                           filterData(ordersData, "name").map((name, index) => (
                             <tr key={index}>
-                              <td className="text-center">{name.name}</td>
+                              <td className="">{name.name}</td>
                              
                               <td>
                                 <div className="row">
