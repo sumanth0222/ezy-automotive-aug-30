@@ -255,12 +255,30 @@ const Tabss = () => {
                         className=" multi-collapse"
                         id="multiCollapseExample1"
                       >
+                         <div class="d-flex mt-4">
+                        
+                        <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
+                          <option value="10">Show 10</option>
+                          <option value="25">Show 25</option>
+                          <option value="50">Show 50</option>
+                        </select>
+
+                        <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                        </div>
+                        
+                        <span class="d-flex ms-auto">
+                          <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff"/>
+                        </span>
+                      </div>
+
                         <div className="mt-4">
                         <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
                                   <th>S. No</th>
+                                  <th>Job ID</th>
                                   <th>Invoice No</th>
                                   <th>Booking Date</th>
                                   <th>Source</th>
@@ -283,6 +301,7 @@ const Tabss = () => {
                               <tbody>
                                 <tr>
                                   <td>1</td>
+                                  <td>007</td>
                                   <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV001</Link> </td>
                                   <td>2023-08-15</td>
                                   <td>Mobile App</td>
@@ -345,6 +364,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>2</td>
+                                  <td>041</td>
                                   <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV002</Link> </td>
                                   <td>2023-08-12</td>
                                   <td>Web Application</td>
@@ -398,6 +418,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>3</td>
+                                  <td>210</td>
                                   <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}></Link> INV003</td>
                                   <td>2023-08-10</td>
                                   <td>QR SCAN</td>
@@ -450,6 +471,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>4</td>
+                                  <td>013</td>
                                   <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV004</Link> </td>
                                   <td>2023-08-05</td>
                                   <td>Mobile App</td>
@@ -513,12 +535,30 @@ const Tabss = () => {
                         className=" multi-collapse"
                         id="multiCollapseExample2"
                       >
+                         <div class="d-flex mt-4">
+                        
+                        <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
+                          <option value="10">Show 10</option>
+                          <option value="25">Show 25</option>
+                          <option value="50">Show 50</option>
+                        </select>
+
+                        <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                        </div>
+                        
+                        <span class="d-flex ms-auto">
+                          <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff"/>
+                        </span>
+                      </div>
+
                         <div className="mt-4">
                         <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
                                   <th>S. No</th>
+                                  <th>Job ID</th>
                                   <th>Invoice No</th>
                                   <th>Booking Date</th>
                                   <th>Source</th>
@@ -541,6 +581,7 @@ const Tabss = () => {
                               <tbody>
                                 <tr>
                                   <td>1</td>
+                                  <td>201</td>
                                   <td>INV001</td>
                                   <td>2023-08-15</td>
                                   <td>Mobile App</td>
@@ -603,6 +644,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>2</td>
+                                  <td>209</td>
                                   <td>INV002</td>
                                   <td>2023-08-12</td>
                                   <td>Web Application</td>
@@ -656,6 +698,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>3</td>
+                                  <td>206</td>
                                   <td>INV003</td>
                                   <td>2023-08-10</td>
                                   <td>QR SCAN</td>
@@ -706,6 +749,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>4</td>
+                                  <td>206</td>
                                   <td>INV004</td>
                                   <td>2023-08-05</td>
                                   <td>Mobile App</td>
@@ -767,13 +811,31 @@ const Tabss = () => {
                     <div className="col">
                       <div
                         className=" multi-collapse"
-                        id="multiCollapseExample2"
+                        id="multiCollapseExample3"
                       >
+                         <div class="d-flex mt-4">
+                        
+                        <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
+                          <option value="10">Show 10</option>
+                          <option value="25">Show 25</option>
+                          <option value="50">Show 50</option>
+                        </select>
+
+                        <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                        </div>
+                        
+                        <span class="d-flex ms-auto">
+                          <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff"/>
+                        </span>
+                      </div>
+
                         <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
                                   <th>S. No</th>
+                                  <th>Job ID</th>
                                   <th>Invoice No</th>
                                   <th>Booking Date</th>
                                   <th>Source</th>
@@ -796,6 +858,7 @@ const Tabss = () => {
                               <tbody>
                                 <tr>
                                   <td>1</td>
+                                  <td>305</td>
                                   <td>INV001</td>
                                   <td>2023-08-15</td>
                                   <td>Mobile App</td>
@@ -856,6 +919,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>2</td>
+                                  <td>306</td>
                                   <td>INV002</td>
                                   <td>2023-08-12</td>
                                   <td>Web Application</td>
@@ -907,6 +971,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>3</td>
+                                  <td>307</td>
                                   <td>INV003</td>
                                   <td>2023-08-10</td>
                                   <td>QR SCAN</td>
@@ -957,6 +1022,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>4</td>
+                                  <td>301</td>
                                   <td>INV004</td>
                                   <td>2023-08-05</td>
                                   <td>Mobile App</td>
@@ -1015,13 +1081,33 @@ const Tabss = () => {
                     <div className="col">
                       <div
                         className=" multi-collapse"
-                        id="multiCollapseExample2"
+                        id="multiCollapseExample4"
                       >
+                         <div class="d-flex mt-4">
+                        
+                        <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
+                          <option value="10">Show 10</option>
+                          <option value="25">Show 25</option>
+                          <option value="50">Show 50</option>
+                        </select>
+
+                        
+
+                        <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                        </div>
+                        
+                        <span class="d-flex ms-auto">
+                          <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff"/>
+                        </span>
+                      </div>
+
                         <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
                                   <th>S. No</th>
+                                  <th>Job ID</th>
                                   <th>Invoice No</th>
                                   <th>Booking Date</th>
                                   <th>Source</th>
@@ -1044,6 +1130,7 @@ const Tabss = () => {
                               <tbody>
                                 <tr>
                                   <td>1</td>
+                                  <td>406</td>
                                   <td>INV001</td>
                                   <td>2023-08-15</td>
                                   <td>Mobile App</td>
@@ -1104,6 +1191,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>2</td>
+                                  <td>406</td>
                                   <td>INV002</td>
                                   <td>2023-08-12</td>
                                   <td>Web Application</td>
@@ -1155,6 +1243,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>3</td>
+                                  <td>407</td>
                                   <td>INV003</td>
                                   <td>2023-08-10</td>
                                   <td>QR SCAN</td>
@@ -1205,6 +1294,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>4</td>
+                                  <td>401</td>
                                   <td>INV004</td>
                                   <td>2023-08-05</td>
                                   <td>Mobile App</td>
@@ -1263,13 +1353,34 @@ const Tabss = () => {
                     <div className="col">
                       <div
                         className=" multi-collapse"
-                        id="multiCollapseExample2"
+                        id="multiCollapseExample5"
                       >
+
+                      <div class="d-flex mt-4">
+                        
+                        <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
+                          <option value="10">Show 10</option>
+                          <option value="25">Show 25</option>
+                          <option value="50">Show 50</option>
+                        </select>
+
+                        <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                        </div>
+
+                        
+                        
+                        <span class="d-flex ms-auto">
+                          <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff"/>
+                        </span>
+                      </div>
+
                         <div className="table-responsive mt-4">
                             <table className="table table-bordered text-nowrap border-bottom">
                               <thead>
                                 <tr>
                                   <th>S. No</th>
+                                  <th>Job ID</th>
                                   <th>Invoice No</th>
                                   <th>Booking Date</th>
                                   <th>Source</th>
@@ -1292,6 +1403,7 @@ const Tabss = () => {
                               <tbody>
                                 <tr>
                                   <td>1</td>
+                                  <td>503</td>
                                   <td>INV001</td>
                                   <td>2023-08-15</td>
                                   <td>Mobile App</td>
@@ -1352,6 +1464,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>2</td>
+                                  <td>501</td>
                                   <td>INV002</td>
                                   <td>2023-08-12</td>
                                   <td>Web Application</td>
@@ -1403,6 +1516,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>3</td>
+                                  <td>506</td>
                                   <td>INV003</td>
                                   <td>2023-08-10</td>
                                   <td>QR SCAN</td>
@@ -1453,6 +1567,7 @@ const Tabss = () => {
                                 </tr>
                                 <tr>
                                   <td>4</td>
+                                  <td>509</td>
                                   <td>INV004</td>
                                   <td>2023-08-05</td>
                                   <td>Mobile App</td>
@@ -1535,89 +1650,269 @@ const Tabss = () => {
           <Card>
             <Card.Body>
               <Row className="row-sm">
-                <Col xxl={6} lg={12} md={12} className="details mt-4 mt-xxl-0 mt-2">
-                  {/* Product Title */}
-                  <h4 className="product-title mb-1">
-                    Jyothi Fashion Women's Fit & Flare Knee Length Western Frock
-                  </h4>
-                  <p className="text-muted tx-13 mb-1">
-                    Women Red & Grey Checked Casual Frock
-                  </p>
+                <Col xxl={6} lg={12} md={12} className="details  mt-xxl-0 ">
+                  
 
-                  {/* Ratings */}
-                  <div className="rating mb-1">
-                    <div className="stars">
-                      <span className="fa fa-star checked"></span>
-                      <span className="fa fa-star checked"></span>
-                      <span className="fa fa-star checked"></span>
-                      <span className="fa fa-star text-muted"></span>
-                      <span className="fa fa-star text-muted"></span>
-                    </div>
-                    <span className="review-no">41 reviews</span>
+
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginTop:"-20px",marginLeft:"-20px",marginRight:"-20px", paddingTop:"15px"}}>
+
+                      <div className="d-flex">
+
+                        <i class="fa fa-binoculars" style={{fontSize:"30px"}}> </i>
+
+                        <div className="list" style={{paddingLeft:"10px"}}>
+                          <p style={{marginBottom:"0px"}} title="Plate Number">AP09BC2034 (Hyderabad)</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex">
+
+                          <i class="fa fa-car" style={{fontSize:"30px"}}> </i>
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
+                            
+                          </div>
+                      </div>
+
                   </div>
 
-                  {/* Price */}
-                  <h6 className="price">
-                    Current price: <span className="h3 ms-2">$253</span>
-                  </h6>
-                  <p className="vote">
-                    <strong>91%</strong> of buyers enjoyed this product!{" "}
-                    <strong>(87 votes)</strong>
-                  </p>
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginLeft:"-20px",marginRight:"-20px",paddingBottom:"15px",paddingTop:"8px"}}>
 
-                  {/* Stock */}
-                  <div className="mb-3">
-                    <p className="font-weight-normal">
-                      <span className="h4">Hurry Up!</span> Sold:{" "}
-                      <span className="text-primary h5">110/150</span> products in stock.
-                    </p>
-                    <ProgressBar now={60} animated variant="primary" />
+                      <div className="d-flex">
+
+                        {/* <i class="fa fa-kms" style={{fontSize:"30px"}}> </i> */}
+
+                        <div className="list" style={{paddingLeft:"10px"}} >
+                          <p style={{marginBottom:"0px"}} title="Odometer Reading">000000</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex ">
+
+                          {/* <i class="fa fa-car" style={{fontSize:"30px"}}> </i> */}
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Mfg Year">NA | <span title="Vehicle Category">Hot Hatchback</span></p>
+                          </div>
+
+                          <div className="list d-flex" style={{paddingLeft:"10px"}}>
+                              <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>  
+                          </div>
+
+                      </div>
+
                   </div>
 
-                  {/* Sizes */}
-                  <div className="sizes d-flex">
-                    Sizes:
+                  {/* <div class="main-contact-action btn-list pt-3 pe-0 me-3"> */}
+                  <div className="row d-flex justify-content-flex-start" style={{paddingTop:"30px"}}>
+
                     <div className="d-flex">
-                      {["s", "m", "l", "xl"].map((size) => (
-                        <Form.Label key={size} className="rdiobox mb-0 mx-2">
-                          <input type="radio" name="size" value={size} /> <span>{size}</span>
-                        </Form.Label>
-                      ))}
+                   
+                      <i class="fa fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Name</p>
+                        <p>FIROZ</p>
+                      </div>
+                    </div>
+                    
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-phone" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Phone Number</p>
+                        <p>8008664384</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="far fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Advisor Name</p>
+                        <p>NA</p>
+                      </div>
+                    </div>
+
+
+                    
+
+                  </div>
+
+
+                  <div className="row d-flex justify-content-evenly" style={{paddingTop:"15px"}}>
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-cog" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Source</p>
+                        <p>TRIAL CARS24</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-star" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Rating</p>
+                        {/* Ratings */}
+                        <div className="rating mb-1">
+                          <div className="stars">
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
 
-                  {/* Quantity */}
-                  <div className="d-flex mt-2">
-                    <div className="mt-2 product-title">Quantity:</div>
-                    <div className="d-flex ms-2">
-                      <Select
-                        value={Optioncategory1.find((opt) => opt.value === value)}
-                        onChange={(option) => setValue(option.value)}
-                        options={Optioncategory1}
-                        placeholder="Select quantity"
-                        classNamePrefix="Select2"
-                      />
-                    </div>
+
+                <div className="row justify-content-evenly" style={{paddingTop:"30px"}}>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
+                    <p>Jc/Est</p>
                   </div>
 
-                  {/* Colors */}
-                  <div className="colors d-flex me-3 mt-2">
-                    <span className="mt-2">Colors:</span>
-                    <div className="d-sm-flex d-flex ms-4">
-                      {["azure", "indigo", "purple", "pink"].map((color, index) => (
-                        <Form.Label key={index} className="colorinput me-2">
-                          <input
-                            name="color"
-                            type="radio"
-                            value={color}
-                            className="colorinput-input"
-                            defaultChecked={index === 0}
-                          />
-                          <span className={`colorinput-color bg-${color}`}></span>
-                        </Form.Label>
-                      ))}
-                    </div>
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
+                    <p>Status</p>
                   </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
+                    <p>History</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-dollar-sign"></i></button>
+                      <p>Payments</p>
+                  </div>
+
+                 
+                
+                </div>  
+
+                <div className="row justify-content-evenly">
+
+                <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-percent"></i></button>
+                      <p>Discount</p>
+                  </div>
+
+                  <div>
+                     <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
+                     <p>Invoice</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-ellipsis-v"></i></button>
+                      <p>View More</p>
+                  </div>
+
+                </div> 
+
+                {/* Stock */}
+                <div className="mt-3">
+                    <p className="font-weight-normal">
+                      <span className="h4">Fuel Percentage</span> 
+                    </p>
+                    <ProgressBar now={40} animated variant="primary" />
+                </div>
+
+              <div className="row">
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>JC NO:</p>
+                  <p>14</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Estimate</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Arrival">2024-10-16</p>
+                  <p title="Date of Arrival">DOA</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Delivery">NA</p>
+                  <p title="Date of Delivery">DOD</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Repair</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Cust)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Discount</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Coupon</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Cust)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Cust)</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Claims</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Ins)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Ins)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Ins)</p>
+                </div>
+
+              </div>
+
+                    
+                  {/* </div> */}
+
                 </Col>
               </Row>
             </Card.Body>
@@ -1627,89 +1922,1365 @@ const Tabss = () => {
           <Card>
             <Card.Body>
               <Row className="row-sm">
-                <Col xxl={6} lg={12} md={12} className="details mt-4 mt-xxl-0 mt-2">
-                  {/* Product Title */}
-                  <h4 className="product-title mb-1">
-                    Jyothi Fashion Women's Fit & Flare Knee Length Western Frock
-                  </h4>
-                  <p className="text-muted tx-13 mb-1">
-                    Women Red & Grey Checked Casual Frock
-                  </p>
+              <Col xxl={6} lg={12} md={12} className="details  mt-xxl-0 ">
+                  
 
-                  {/* Ratings */}
-                  <div className="rating mb-1">
-                    <div className="stars">
-                      <span className="fa fa-star checked"></span>
-                      <span className="fa fa-star checked"></span>
-                      <span className="fa fa-star checked"></span>
-                      <span className="fa fa-star text-muted"></span>
-                      <span className="fa fa-star text-muted"></span>
-                    </div>
-                    <span className="review-no">41 reviews</span>
+
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginTop:"-20px",marginLeft:"-20px",marginRight:"-20px", paddingTop:"15px"}}>
+
+                      <div className="d-flex">
+
+                        <i class="fa fa-binoculars" style={{fontSize:"30px"}}> </i>
+
+                        <div className="list" style={{paddingLeft:"10px"}}>
+                          <p style={{marginBottom:"0px"}} title="Plate Number">AP09PG6789 (Hyderabad)</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex">
+
+                          <i class="fa fa-car" style={{fontSize:"30px"}}> </i>
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Brand-Model-Variant">Toyota-Land Cruiser-200 VX </p>
+                            
+                          </div>
+                      </div>
+
                   </div>
 
-                  {/* Price */}
-                  <h6 className="price">
-                    Current price: <span className="h3 ms-2">$253</span>
-                  </h6>
-                  <p className="vote">
-                    <strong>91%</strong> of buyers enjoyed this product!{" "}
-                    <strong>(87 votes)</strong>
-                  </p>
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginLeft:"-20px",marginRight:"-20px",paddingBottom:"15px",paddingTop:"8px"}}>
 
-                  {/* Stock */}
-                  <div className="mb-3">
-                    <p className="font-weight-normal">
-                      <span className="h4">Hurry Up!</span> Sold:{" "}
-                      <span className="text-primary h5">110/150</span> products in stock.
-                    </p>
-                    <ProgressBar now={60} animated variant="primary" />
+                      <div className="d-flex">
+
+                        {/* <i class="fa fa-kms" style={{fontSize:"30px"}}> </i> */}
+
+                        <div className="list" style={{paddingLeft:"10px"}} >
+                          <p style={{marginBottom:"0px"}} title="Odometer Reading">140000</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex ">
+
+                          {/* <i class="fa fa-car" style={{fontSize:"30px"}}> </i> */}
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Mfg Year">NA | <span title="Vehicle Category">sedan</span></p>
+                          </div>
+
+                          <div className="list d-flex" style={{paddingLeft:"10px"}}>
+                              <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>  
+                          </div>
+
+                      </div>
+
                   </div>
 
-                  {/* Sizes */}
-                  <div className="sizes d-flex">
-                    Sizes:
+                  {/* <div class="main-contact-action btn-list pt-3 pe-0 me-3"> */}
+                  <div className="row d-flex justify-content-flex-start" style={{paddingTop:"30px"}}>
+
                     <div className="d-flex">
-                      {["s", "m", "l", "xl"].map((size) => (
-                        <Form.Label key={size} className="rdiobox mb-0 mx-2">
-                          <input type="radio" name="size" value={size} /> <span>{size}</span>
-                        </Form.Label>
-                      ))}
+                   
+                      <i class="fa fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Name</p>
+                        <p>TRIAL CUSTOMER 6</p>
+                      </div>
+                    </div>
+                    
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-phone" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Phone Number</p>
+                        <p>7878888888</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="far fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Advisor Name</p>
+                        <p>Supervisor 1</p>
+                      </div>
+                    </div>
+
+
+                    
+
+                  </div>
+
+
+                  <div className="row d-flex justify-content-evenly" style={{paddingTop:"15px"}}>
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-cog" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Source</p>
+                        <p>WALK-IN</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-star" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Rating</p>
+                        {/* Ratings */}
+                        <div className="rating mb-1">
+                          <div className="stars">
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
 
-                  {/* Quantity */}
-                  <div className="d-flex mt-2">
-                    <div className="mt-2 product-title">Quantity:</div>
-                    <div className="d-flex ms-2">
-                      <Select
-                        value={Optioncategory1.find((opt) => opt.value === value)}
-                        onChange={(option) => setValue(option.value)}
-                        options={Optioncategory1}
-                        placeholder="Select quantity"
-                        classNamePrefix="Select2"
-                      />
+
+                <div className="row justify-content-evenly" style={{paddingTop:"30px"}}>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
+                    <p>Jc/Est</p>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
+                    <p>Status</p>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
+                    <p>History</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-dollar-sign"></i></button>
+                      <p>Payments</p>
+                  </div>
+
+                 
+                
+                </div>  
+
+                <div className="row justify-content-evenly">
+
+                <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-percent"></i></button>
+                      <p>Discount</p>
+                  </div>
+
+                  <div>
+                     <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
+                     <p>Invoice</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-ellipsis-v"></i></button>
+                      <p>View More</p>
+                  </div>
+
+                </div> 
+
+                {/* Stock */}
+                <div className="mt-3">
+                    <p className="font-weight-normal">
+                      <span className="h4">Fuel Percentage</span> 
+                    </p>
+                    <ProgressBar now={8} animated variant="primary" />
+                </div>
+
+              <div className="row">
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>JC NO:</p>
+                  <p>11</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Estimate</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Arrival">2024-10-16</p>
+                  <p title="Date of Arrival">DOA</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Delivery">NA</p>
+                  <p title="Date of Delivery">DOD</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Repair</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Cust)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Discount</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Coupon</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Cust)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Cust)</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Claims</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Ins)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Ins)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Ins)</p>
+                </div>
+
+              </div>
+
+                    
+                  {/* </div> */}
+
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+
+      <Row className="row-sm">
+        <Col sm={12} md={12} xl={6} lg={6} xxl={6}>
+          <Card>
+            <Card.Body>
+              <Row className="row-sm">
+                <Col xxl={6} lg={12} md={12} className="details  mt-xxl-0 ">
+                  
+
+
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginTop:"-20px",marginLeft:"-20px",marginRight:"-20px", paddingTop:"15px"}}>
+
+                      <div className="d-flex">
+
+                        <i class="fa fa-binoculars" style={{fontSize:"30px"}}> </i>
+
+                        <div className="list" style={{paddingLeft:"10px"}}>
+                          <p style={{marginBottom:"0px"}} title="Plate Number">AP09BC2034 (Hyderabad)</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex">
+
+                          <i class="fa fa-car" style={{fontSize:"30px"}}> </i>
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
+                            
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginLeft:"-20px",marginRight:"-20px",paddingBottom:"15px",paddingTop:"8px"}}>
+
+                      <div className="d-flex">
+
+                        {/* <i class="fa fa-kms" style={{fontSize:"30px"}}> </i> */}
+
+                        <div className="list" style={{paddingLeft:"10px"}} >
+                          <p style={{marginBottom:"0px"}} title="Odometer Reading">000000</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex ">
+
+                          {/* <i class="fa fa-car" style={{fontSize:"30px"}}> </i> */}
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Mfg Year">NA | <span title="Vehicle Category">Hot Hatchback</span></p>
+                          </div>
+
+                          <div className="list d-flex" style={{paddingLeft:"10px"}}>
+                              <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>  
+                          </div>
+
+                      </div>
+
+                  </div>
+
+                  {/* <div class="main-contact-action btn-list pt-3 pe-0 me-3"> */}
+                  <div className="row d-flex justify-content-flex-start" style={{paddingTop:"30px"}}>
+
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Name</p>
+                        <p>FIROZ</p>
+                      </div>
+                    </div>
+                    
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-phone" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Phone Number</p>
+                        <p>8008664384</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="far fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Advisor Name</p>
+                        <p>NA</p>
+                      </div>
+                    </div>
+
+
+                    
+
+                  </div>
+
+
+                  <div className="row d-flex justify-content-evenly" style={{paddingTop:"15px"}}>
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-cog" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Source</p>
+                        <p>TRIAL CARS24</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-star" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Rating</p>
+                        {/* Ratings */}
+                        <div className="rating mb-1">
+                          <div className="stars">
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
 
-                  {/* Colors */}
-                  <div className="colors d-flex me-3 mt-2">
-                    <span className="mt-2">Colors:</span>
-                    <div className="d-sm-flex d-flex ms-4">
-                      {["azure", "indigo", "purple", "pink"].map((color, index) => (
-                        <Form.Label key={index} className="colorinput me-2">
-                          <input
-                            name="color"
-                            type="radio"
-                            value={color}
-                            className="colorinput-input"
-                            defaultChecked={index === 0}
-                          />
-                          <span className={`colorinput-color bg-${color}`}></span>
-                        </Form.Label>
-                      ))}
+
+                <div className="row justify-content-evenly" style={{paddingTop:"30px"}}>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
+                    <p>Jc/Est</p>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
+                    <p>Status</p>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
+                    <p>History</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-dollar-sign"></i></button>
+                      <p>Payments</p>
+                  </div>
+
+                 
+                
+                </div>  
+
+                <div className="row justify-content-evenly">
+
+                <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-percent"></i></button>
+                      <p>Discount</p>
+                  </div>
+
+                  <div>
+                     <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
+                     <p>Invoice</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-ellipsis-v"></i></button>
+                      <p>View More</p>
+                  </div>
+
+                </div> 
+
+                {/* Stock */}
+                <div className="mt-3">
+                    <p className="font-weight-normal">
+                      <span className="h4">Fuel Percentage</span> 
+                    </p>
+                    <ProgressBar now={80} animated variant="primary" />
+                </div>
+
+              <div className="row">
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>JC NO:</p>
+                  <p>14</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Estimate</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Arrival">2024-10-16</p>
+                  <p title="Date of Arrival">DOA</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Delivery">NA</p>
+                  <p title="Date of Delivery">DOD</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Repair</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Cust)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Discount</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Coupon</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Cust)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Cust)</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Claims</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Ins)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Ins)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Ins)</p>
+                </div>
+
+              </div>
+
+                    
+                  {/* </div> */}
+
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col sm={12} md={12} xl={6} lg={6} xxl={6}>
+          <Card>
+            <Card.Body>
+              <Row className="row-sm">
+              <Col xxl={6} lg={12} md={12} className="details  mt-xxl-0 ">
+                  
+
+
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginTop:"-20px",marginLeft:"-20px",marginRight:"-20px", paddingTop:"15px"}}>
+
+                      <div className="d-flex">
+
+                        <i class="fa fa-binoculars" style={{fontSize:"30px"}}> </i>
+
+                        <div className="list" style={{paddingLeft:"10px"}}>
+                          <p style={{marginBottom:"0px"}} title="Plate Number">AP09BC2034 (Hyderabad)</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex">
+
+                          <i class="fa fa-car" style={{fontSize:"30px"}}> </i>
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
+                            
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginLeft:"-20px",marginRight:"-20px",paddingBottom:"15px",paddingTop:"8px"}}>
+
+                      <div className="d-flex">
+
+                        {/* <i class="fa fa-kms" style={{fontSize:"30px"}}> </i> */}
+
+                        <div className="list" style={{paddingLeft:"10px"}} >
+                          <p style={{marginBottom:"0px"}} title="Odometer Reading">000000</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex ">
+
+                          {/* <i class="fa fa-car" style={{fontSize:"30px"}}> </i> */}
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Mfg Year">NA | <span title="Vehicle Category">Hot Hatchback</span></p>
+                          </div>
+
+                          <div className="list d-flex" style={{paddingLeft:"10px"}}>
+                              <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>  
+                          </div>
+
+                      </div>
+
+                  </div>
+
+                  {/* <div class="main-contact-action btn-list pt-3 pe-0 me-3"> */}
+                  <div className="row d-flex justify-content-flex-start" style={{paddingTop:"30px"}}>
+
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Name</p>
+                        <p>FIROZ</p>
+                      </div>
+                    </div>
+                    
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-phone" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Phone Number</p>
+                        <p>8008664384</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="far fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Advisor Name</p>
+                        <p>NA</p>
+                      </div>
+                    </div>
+
+
+                    
+
+                  </div>
+
+
+                  <div className="row d-flex justify-content-evenly" style={{paddingTop:"15px"}}>
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-cog" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Source</p>
+                        <p>TRIAL CARS24</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-star" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Rating</p>
+                        {/* Ratings */}
+                        <div className="rating mb-1">
+                          <div className="stars">
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
+
+
+                <div className="row justify-content-evenly" style={{paddingTop:"30px"}}>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
+                    <p>Jc/Est</p>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
+                    <p>Status</p>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
+                    <p>History</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-dollar-sign"></i></button>
+                      <p>Payments</p>
+                  </div>
+
+                 
+                
+                </div>  
+
+                <div className="row justify-content-evenly">
+
+                <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-percent"></i></button>
+                      <p>Discount</p>
+                  </div>
+
+                  <div>
+                     <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
+                     <p>Invoice</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-ellipsis-v"></i></button>
+                      <p>View More</p>
+                  </div>
+
+                </div> 
+
+                {/* Stock */}
+                <div className="mt-3">
+                    <p className="font-weight-normal">
+                      <span className="h4">Fuel Percentage</span> 
+                    </p>
+                    <ProgressBar now={20} animated variant="primary" />
+                </div>
+
+              <div className="row">
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>JC NO:</p>
+                  <p>14</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Estimate</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Arrival">2024-10-16</p>
+                  <p title="Date of Arrival">DOA</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Delivery">NA</p>
+                  <p title="Date of Delivery">DOD</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Repair</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Cust)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Discount</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Coupon</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Cust)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Cust)</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Claims</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Ins)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Ins)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Ins)</p>
+                </div>
+
+              </div>
+
+                    
+                  {/* </div> */}
+
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+
+      <Row className="row-sm">
+        <Col sm={12} md={12} xl={6} lg={6} xxl={6}>
+          <Card>
+            <Card.Body>
+              <Row className="row-sm">
+                <Col xxl={6} lg={12} md={12} className="details  mt-xxl-0 ">
+                  
+
+
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginTop:"-20px",marginLeft:"-20px",marginRight:"-20px", paddingTop:"15px"}}>
+
+                      <div className="d-flex">
+
+                        <i class="fa fa-binoculars" style={{fontSize:"30px"}}> </i>
+
+                        <div className="list" style={{paddingLeft:"10px"}}>
+                          <p style={{marginBottom:"0px"}} title="Plate Number">AP09BC2034 (Hyderabad)</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex">
+
+                          <i class="fa fa-car" style={{fontSize:"30px"}}> </i>
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
+                            
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginLeft:"-20px",marginRight:"-20px",paddingBottom:"15px",paddingTop:"8px"}}>
+
+                      <div className="d-flex">
+
+                        {/* <i class="fa fa-kms" style={{fontSize:"30px"}}> </i> */}
+
+                        <div className="list" style={{paddingLeft:"10px"}} >
+                          <p style={{marginBottom:"0px"}} title="Odometer Reading">000000</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex ">
+
+                          {/* <i class="fa fa-car" style={{fontSize:"30px"}}> </i> */}
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Mfg Year">NA | <span title="Vehicle Category">Hot Hatchback</span></p>
+                          </div>
+
+                          <div className="list d-flex" style={{paddingLeft:"10px"}}>
+                              <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>  
+                          </div>
+
+                      </div>
+
+                  </div>
+
+                  {/* <div class="main-contact-action btn-list pt-3 pe-0 me-3"> */}
+                  <div className="row d-flex justify-content-flex-start" style={{paddingTop:"30px"}}>
+
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Name</p>
+                        <p>FIROZ</p>
+                      </div>
+                    </div>
+                    
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-phone" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Phone Number</p>
+                        <p>8008664384</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="far fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Advisor Name</p>
+                        <p>NA</p>
+                      </div>
+                    </div>
+
+
+                    
+
+                  </div>
+
+
+                  <div className="row d-flex justify-content-evenly" style={{paddingTop:"15px"}}>
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-cog" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Source</p>
+                        <p>TRIAL CARS24</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-star" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Rating</p>
+                        {/* Ratings */}
+                        <div className="rating mb-1">
+                          <div className="stars">
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                <div className="row justify-content-evenly" style={{paddingTop:"30px"}}>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
+                    <p>Jc/Est</p>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
+                    <p>Status</p>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
+                    <p>History</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-dollar-sign"></i></button>
+                      <p>Payments</p>
+                  </div>
+
+                 
+                
+                </div>  
+
+                <div className="row justify-content-evenly">
+
+                <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-percent"></i></button>
+                      <p>Discount</p>
+                  </div>
+
+                  <div>
+                     <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
+                     <p>Invoice</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-ellipsis-v"></i></button>
+                      <p>View More</p>
+                  </div>
+
+                </div> 
+
+                {/* Stock */}
+                <div className="mt-3">
+                    <p className="font-weight-normal">
+                      <span className="h4">Fuel Percentage</span> 
+                    </p>
+                    <ProgressBar now={50} animated variant="primary" />
+                </div>
+
+              <div className="row">
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>JC NO:</p>
+                  <p>14</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Estimate</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Arrival">2024-10-16</p>
+                  <p title="Date of Arrival">DOA</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Delivery">NA</p>
+                  <p title="Date of Delivery">DOD</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Repair</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Cust)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Discount</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Coupon</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Cust)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Cust)</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Claims</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Ins)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Ins)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Ins)</p>
+                </div>
+
+              </div>
+
+                    
+                  {/* </div> */}
+
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col sm={12} md={12} xl={6} lg={6} xxl={6}>
+          <Card>
+            <Card.Body>
+              <Row className="row-sm">
+              <Col xxl={6} lg={12} md={12} className="details  mt-xxl-0 ">
+                  
+
+
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginTop:"-20px",marginLeft:"-20px",marginRight:"-20px", paddingTop:"15px"}}>
+
+                      <div className="d-flex">
+
+                        <i class="fa fa-binoculars" style={{fontSize:"30px"}}> </i>
+
+                        <div className="list" style={{paddingLeft:"10px"}}>
+                          <p style={{marginBottom:"0px"}} title="Plate Number">AP09BC2034 (Hyderabad)</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex">
+
+                          <i class="fa fa-car" style={{fontSize:"30px"}}> </i>
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
+                            
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginLeft:"-20px",marginRight:"-20px",paddingBottom:"15px",paddingTop:"8px"}}>
+
+                      <div className="d-flex">
+
+                        {/* <i class="fa fa-kms" style={{fontSize:"30px"}}> </i> */}
+
+                        <div className="list" style={{paddingLeft:"10px"}} >
+                          <p style={{marginBottom:"0px"}} title="Odometer Reading">000000</p>
+                         
+                        </div>
+                      </div>
+
+                      <div className="d-flex ">
+
+                          {/* <i class="fa fa-car" style={{fontSize:"30px"}}> </i> */}
+
+                          <div className="list" style={{paddingLeft:"10px"}}>
+                            <p style={{marginBottom:"0px"}} title="Mfg Year">NA | <span title="Vehicle Category">Hot Hatchback</span></p>
+                          </div>
+
+                          <div className="list d-flex" style={{paddingLeft:"10px"}}>
+                              <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>  
+                          </div>
+
+                      </div>
+
+                  </div>
+
+                  {/* <div class="main-contact-action btn-list pt-3 pe-0 me-3"> */}
+                  <div className="row d-flex justify-content-flex-start" style={{paddingTop:"30px"}}>
+
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Name</p>
+                        <p>FIROZ</p>
+                      </div>
+                    </div>
+                    
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-phone" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Phone Number</p>
+                        <p>8008664384</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="far fa-user" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Advisor Name</p>
+                        <p>NA</p>
+                      </div>
+                    </div>
+
+
+                    
+
+                  </div>
+
+
+                  <div className="row d-flex justify-content-evenly" style={{paddingTop:"15px"}}>
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-cog" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Source</p>
+                        <p>TRIAL CARS24</p>
+                      </div>
+                    </div>
+
+                    <div className="d-flex">
+                   
+                      <i class="fa fa-star" style={{fontSize:"30px"}}> </i>
+                    
+                      <div className="list" style={{paddingLeft:"10px"}}>
+                        <p style={{marginBottom:"0px"}}>Customer Rating</p>
+                        {/* Ratings */}
+                        <div className="rating mb-1">
+                          <div className="stars">
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-muted"></span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                <div className="row justify-content-evenly" style={{paddingTop:"30px"}}>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
+                    <p>Jc/Est</p>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
+                    <p>Status</p>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
+                    <p>History</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-dollar-sign"></i></button>
+                      <p>Payments</p>
+                  </div>
+
+                 
+                
+                </div>  
+
+                <div className="row justify-content-evenly">
+
+                <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-percent"></i></button>
+                      <p>Discount</p>
+                  </div>
+
+                  <div>
+                     <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
+                     <p>Invoice</p>
+                  </div>
+
+                  <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-ellipsis-v"></i></button>
+                      <p>View More</p>
+                  </div>
+
+                </div> 
+
+                {/* Stock */}
+                <div className="mt-3">
+                    <p className="font-weight-normal">
+                      <span className="h4">Fuel Percentage</span> 
+                    </p>
+                    <ProgressBar now={20} animated variant="primary" />
+                </div>
+
+              <div className="row">
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>JC NO:</p>
+                  <p>14</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Estimate</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Arrival">2024-10-16</p>
+                  <p title="Date of Arrival">DOA</p>
+                </div>
+
+                <div style={{paddingTop:"30px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Delivery">NA</p>
+                  <p title="Date of Delivery">DOD</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Repair</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Cust)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Discount</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Coupon</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Cust)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Cust)</p>
+                </div>
+
+              </div>
+
+
+              <h5 style={{paddingTop:"25px"}}>Claims</h5>
+              <div className="row">
+                
+                  
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
+                  <p>Inv No(Ins)</p>
+                </div>
+
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Paid(Ins)</p>
+                </div>
+
+                <div style={{paddingTop:"5px"}}>
+                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
+                  <p>Due(Ins)</p>
+                </div>
+
+              </div>
+
+                    
+                  {/* </div> */}
+
                 </Col>
               </Row>
             </Card.Body>
