@@ -10,7 +10,15 @@ import { MultiSelect } from "react-multi-select-component";
 import { Inspection, contact, countries, payment, cs } from "../../../common/selectdata";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import Draggable from 'react-draggable';
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Paper,
+} from "@mui/material";
 
 
 
@@ -97,6 +105,118 @@ const Todotask = () => {
     data.filter((item) =>
       item[field].toLowerCase().includes(filter.toLowerCase())
     );
+
+
+    // Draggable
+    function PaperComponent(props) {
+      return (
+        <Draggable
+          handle="#draggable-dialog-title"
+          cancel={'[class*="MuiDialogContent-root"]'}
+        >
+          <Paper {...props} />
+        </Draggable>,
+  
+        <Draggable
+          handle="#draggable-dialog-title1"
+          cancel={'[class*="MuiDialogContent-root"]'}
+        >
+          <Paper {...props} />
+        </Draggable>,
+  
+  
+        <Draggable
+          handle="#draggable-dialog-title2"
+          cancel={'[class*="MuiDialogContent-root"]'}
+        >
+          <Paper {...props} />
+        </Draggable>,
+  
+        <Draggable
+          handle="#draggable-dialog-title3"
+          cancel={'[class*="MuiDialogContent-root"]'}
+        >
+          <Paper {...props} />
+        </Draggable>,
+  
+        <Draggable
+          handle="#draggable-dialog-title4"
+          cancel={'[class*="MuiDialogContent-root"]'}
+        >
+          <Paper {...props} />
+        </Draggable>,
+  
+  
+        <Draggable
+          handle="#draggable-dialog-title5"
+          cancel={'[class*="MuiDialogContent-root"]'}
+        >
+          <Paper {...props} />
+        </Draggable>,
+  
+        <Draggable
+          handle="#draggable-dialog-title6"
+          cancel={'[class*="MuiDialogContent-root"]'}
+        >
+          <Paper {...props} />
+        </Draggable>
+  
+  
+      );
+    }
+  
+    
+    const [open1, setOpen1] = useState(false);
+    const [open2, setOpen2] = useState(false);
+    const [open3, setOpen3] = useState(false);
+    const [open4, setOpen4] = useState(false);
+    const [open5, setOpen5] = useState(false);
+    const [open6, setOpen6] = useState(false);
+
+
+
+
+  const handleClickVehicles = () => {
+    setOpen1(true);
+  };
+  const handleClosedraggable1 = () => {
+    setOpen1(false);
+  };
+
+  const handleClickVehiclesCategory = () => {
+    setOpen2(true);
+  };
+  const handleClosedraggable2 = () => {
+    setOpen2(false);
+  };
+
+  const handleClickPlateColor = () => {
+    setOpen3(true);
+  };
+  const handleClosedraggable3 = () => {
+    setOpen3(false);
+  };
+
+  const handleClickCustomerSource = () => {
+    setOpen4(true);
+  };
+  const handleClosedraggable4 = () => {
+    setOpen4(false);
+  };
+
+  const handleClickTechnician = () => {
+    setOpen5(true);
+  };
+  const handleClosedraggable5 = () => {
+    setOpen5(false);
+  };
+
+  const handleClickSupervisor = () => {
+    setOpen6(true);
+  };
+  const handleClosedraggable6 = () => {
+    setOpen6(false);
+  };
 
   return (
     <Fragment>
@@ -208,17 +328,120 @@ const Todotask = () => {
                                 </div>
 
                                 <div className="col-lg-3">
-                                  <label className="form-label" htmlFor="phone">Vehicle Name*</label>
+                                  
+                                  <label className="form-label" htmlFor="phone">Vehicle Name*
+                                    <button
+                                        type="button"
+                                        className="btn btn-primary"
+                                        onClick={handleClickVehicles}
+                                      >
+                                        <i className='fa fa-plus-square' />
+                                      </button>
+                                    <Dialog
+                                      open={open1}
+                                      onClose={handleClosedraggable1}
+                                      PaperComponent={PaperComponent}
+                                      aria-labelledby="draggable-dialog-title1"
+                                    >
+
+                                          <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3" }} id="draggable-dialog-title1">
+                                              ADD NEW VEHICLE
+                                          </DialogTitle>
+
+                                          <DialogContent >
+                                            <DialogContentText className='row-sm row'>
+
+                                              <div className="col-lg-12">
+                                                <label className="form-label" htmlFor="validationCustom05">Vehicle Brand*</label>
+                                                <MultiSelect
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                options={countries}
+                                              />
+                                              </div>
+                                              <div className="col-lg-12">
+                                                <label className="form-label" htmlFor="validationCustom05">Vehicle Model*</label>
+                                                <MultiSelect
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                options={countries}
+                                              />
+                                              </div>
+                                              <div className="col-lg-12">
+                                                <label className="form-label" htmlFor="validationCustom05">Vehicle Variant*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Vehicle Variant'  required />
+                                              </div>
+
+                                            </DialogContentText>
+                                          </DialogContent>
+
+                                          <DialogActions>
+                                            <Button variant="secondary" className="me-1" onClick={handleClosedraggable1}>
+                                              Close
+                                            </Button>
+                                            <Button className="me-1" variant="success">
+                                              Save
+                                            </Button>
+                                          </DialogActions>
+                                    </Dialog>
+
+                                  </label>
+                                  
                                   <MultiSelect
                                     value={selected}
                                     onChange={setSelected}
                                     labelledBy="Select"
                                     options={countries}
                                   />
+                                  
                                 </div>
 
                                 <div className="col-lg-3">
-                                  <label className="form-label" htmlFor="phone">Vehicle Category*</label>
+                                  <label className="form-label" htmlFor="phone">Vehicle Category*
+                                    <button
+                                      type="button"
+                                      className="btn btn-primary"
+                                      onClick={handleClickVehiclesCategory}
+                                    >
+                                      <i className='fa fa-plus-square' />
+                                    </button>
+                                    <Dialog
+                                      open={open2}
+                                      onClose={handleClosedraggable2}
+                                      PaperComponent={PaperComponent}
+                                      aria-labelledby="draggable-dialog-title2"
+                                    >
+
+                                          <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3" }} id="draggable-dialog-title2">
+                                              ADD NEW VEHICLE CATEGORY
+                                          </DialogTitle>
+
+                                          <DialogContent >
+                                            <DialogContentText className='row-sm row'>
+
+                                              
+                                              <div className="col-lg-12">
+                                                <label className="form-label" htmlFor="validationCustom05">Vehicle Category Name*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Vehicle Category Name' required />
+                                              </div>
+
+                                            </DialogContentText>
+                                          </DialogContent>
+
+                                          <DialogActions>
+                                            <Button variant="secondary" className="me-1" onClick={handleClosedraggable2}>
+                                              Close
+                                            </Button>
+                                            <Button className="me-1" variant="success">
+                                              Save
+                                            </Button>
+                                          </DialogActions>
+                                    </Dialog>
+
+
+                                  </label>
                                   <MultiSelect
                                     value={selected}
                                     onChange={setSelected}
@@ -234,7 +457,48 @@ const Todotask = () => {
                                 </div>
 
                                 <div className="col-lg-3">
-                                  <label className="form-label" htmlFor="phone">Number Plate Color*</label>
+                                  <label className="form-label" htmlFor="phone">Number Plate Color*
+                                    <button
+                                      type="button"
+                                      className="btn btn-primary"
+                                      onClick={handleClickPlateColor}
+                                    >
+                                      <i className='fa fa-plus-square' />
+                                    </button>
+                                    <Dialog
+                                      open={open3}
+                                      onClose={handleClosedraggable3}
+                                      PaperComponent={PaperComponent}
+                                      aria-labelledby="draggable-dialog-title3"
+                                    >
+
+                                          <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3" }} id="draggable-dialog-title3">
+                                            NUMBER PLATE COLOR
+                                          </DialogTitle>
+
+                                          <DialogContent >
+                                            <DialogContentText className='row-sm row'>
+
+                                              <p style={{paddingTop:"15px"}}>White (Private Vehicle)</p> 
+                                              <b></b><b></b>
+                                              <p>Black (Self- Driven commercial vehicles)</p>
+                                              <b></b>
+                                              <p>Yellow (Commercial Vehicle)</p>
+                                              <p>Blue (Vehicles used by foreign delegates in India)</p>
+                                              <p>Green (Electric Vehicle)</p>
+                                              
+
+                                            </DialogContentText>
+                                          </DialogContent>
+
+                                          <DialogActions>
+                                            <Button variant="secondary" className="me-1" onClick={handleClosedraggable3}>
+                                              Close
+                                            </Button>
+                                            
+                                          </DialogActions>
+                                    </Dialog>
+                                  </label>
                                   <MultiSelect
                                     value={selected}
                                     onChange={setSelected}
@@ -251,7 +515,89 @@ const Todotask = () => {
 
 
                                 <div className="col-lg-3">
-                                  <label className="form-label" htmlFor="phone">Customer Source</label>
+                                  <label className="form-label" htmlFor="phone">Customer Source
+                                   <button
+                                      type="button"
+                                      className="btn btn-primary"
+                                      onClick={handleClickCustomerSource}
+                                    >
+                                      <i className='fa fa-plus-square' />
+                                    </button>
+                                    <Dialog
+                                      open={open4}
+                                      onClose={handleClosedraggable4}
+                                      PaperComponent={PaperComponent}
+                                      aria-labelledby="draggable-dialog-title4"
+                                    >
+
+                                          <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3" }} id="draggable-dialog-title4">
+                                              ADD NEW CUSTOMER SOURCE
+                                          </DialogTitle>
+
+                                          <DialogContent >
+                                            <DialogContentText className='row-sm row'>
+
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Company Name*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Company Name' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">GST Number*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter GSTIN Number' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Email Id*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Email Id' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Contact Number*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Contact Number' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Contact Person</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Contact Person' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Alternate Contact Nbr</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Alternate Contact Nbr' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Address*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Address' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">City</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter City' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">State</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter State' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">SMS Remainders</label>
+                                                <MultiSelect
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                options={countries}
+                                              />
+                                              </div>
+                                              
+                                              
+
+                                            </DialogContentText>
+                                          </DialogContent>
+
+                                          <DialogActions>
+                                            <Button variant="secondary" className="me-1" onClick={handleClosedraggable4}>
+                                              Close
+                                            </Button>
+                                            <Button className="me-1" variant="success">
+                                              Save
+                                            </Button>
+                                          </DialogActions>
+                                    </Dialog>
+                                  </label>
                                   <MultiSelect
                                     value={selected}
                                     onChange={setSelected}
@@ -279,7 +625,108 @@ const Todotask = () => {
                                 </div>
 
                                 <div className="col-lg-3">
-                                  <label className="form-label" htmlFor="phone">Technician</label>
+                                  <label className="form-label" htmlFor="phone">Technician
+                                    <button
+                                      type="button"
+                                      className="btn btn-primary"
+                                      onClick={handleClickTechnician}
+                                    >
+                                      <i className='fa fa-plus-square' />
+                                    </button>
+                                    <Dialog
+                                      open={open5}
+                                      onClose={handleClosedraggable5}
+                                      PaperComponent={PaperComponent}
+                                      aria-labelledby="draggable-dialog-title5"
+                                    >
+
+                                          <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3" }} id="draggable-dialog-title5">
+                                              ADD NEW TECHNICIAN
+                                          </DialogTitle>
+
+                                          <DialogContent >
+                                            <DialogContentText className='row-sm row'>
+
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Workshop Id*</label>
+                                                <MultiSelect
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                options={countries}
+                                              />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">First Name*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter First Name' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Last Name*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Last Name' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Username*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Username' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Email Id</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Email Id' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Contact Number*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Contact Number' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Password*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Password' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="address">Password Expiry Date*</label>
+                                                <input className="form-control" id="address" type="date" required />
+                                                <div className="invalid-feedback">Please provide a valid zip.</div>
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Designation*</label>
+                                                <MultiSelect
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                options={countries}
+                                              />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="address">Date Of Birth</label>
+                                                <input className="form-control" id="address" type="date" required />
+                                                <div className="invalid-feedback">Please provide a valid zip.</div>
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="address">Date Of Anniversary</label>
+                                                <input className="form-control" id="address" type="date" required />
+                                                <div className="invalid-feedback">Please provide a valid zip.</div>
+                                              </div>
+
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Address</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Address' required />
+                                              </div>
+                                              
+                                              
+                                              
+                                              
+
+                                            </DialogContentText>
+                                          </DialogContent>
+
+                                          <DialogActions>
+                                            <Button variant="secondary" className="me-1" onClick={handleClosedraggable5}>
+                                              Close
+                                            </Button>
+                                            <Button className="me-1" variant="success">
+                                              Save
+                                            </Button>
+                                          </DialogActions>
+                                    </Dialog>
+                                  </label>
                                   <MultiSelect
                                     value={selected}
                                     onChange={setSelected}
@@ -289,7 +736,108 @@ const Todotask = () => {
                                 </div>
 
                                 <div className="col-lg-3">
-                                  <label className="form-label" htmlFor="phone">Supervisor</label>
+                                  <label className="form-label" htmlFor="phone">Supervisor
+                                    <button
+                                      type="button"
+                                      className="btn btn-primary"
+                                      onClick={handleClickSupervisor}
+                                    >
+                                      <i className='fa fa-plus-square' />
+                                    </button>
+                                    <Dialog
+                                      open={open6}
+                                      onClose={handleClosedraggable6}
+                                      PaperComponent={PaperComponent}
+                                      aria-labelledby="draggable-dialog-title6"
+                                    >
+
+                                          <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3" }} id="draggable-dialog-title6">
+                                              ADD NEW SUPERVISOR
+                                          </DialogTitle>
+
+                                          <DialogContent >
+                                            <DialogContentText className='row-sm row'>
+
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Workshop Id*</label>
+                                                <MultiSelect
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                options={countries}
+                                              />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">First Name*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter First Name' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Last Name*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Last Name' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Username*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Username' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Email Id</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Email Id' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Contact Number*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Contact Number' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Password*</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Password' required />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="address">Password Expiry Date*</label>
+                                                <input className="form-control" id="address" type="date" required />
+                                                <div className="invalid-feedback">Please provide a valid zip.</div>
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Designation*</label>
+                                                <MultiSelect
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                options={countries}
+                                              />
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="address">Date Of Birth</label>
+                                                <input className="form-control" id="address" type="date" required />
+                                                <div className="invalid-feedback">Please provide a valid zip.</div>
+                                              </div>
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="address">Date Of Anniversary</label>
+                                                <input className="form-control" id="address" type="date" required />
+                                                <div className="invalid-feedback">Please provide a valid zip.</div>
+                                              </div>
+
+                                              <div className="col-lg-6">
+                                                <label className="form-label" htmlFor="validationCustom05">Address</label>
+                                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Address' required />
+                                              </div>
+                                              
+                                              
+                                              
+                                              
+
+                                            </DialogContentText>
+                                          </DialogContent>
+
+                                          <DialogActions>
+                                            <Button variant="secondary" className="me-1" onClick={handleClosedraggable6}>
+                                              Close
+                                            </Button>
+                                            <Button className="me-1" variant="success">
+                                              Save
+                                            </Button>
+                                          </DialogActions>
+                                    </Dialog>
+                                  </label>
                                   <MultiSelect
                                     value={selected}
                                     onChange={setSelected}
