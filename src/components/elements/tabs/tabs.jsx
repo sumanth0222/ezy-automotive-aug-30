@@ -109,7 +109,7 @@ const Tabss = () => {
   ];
 
 
- 
+
   let [isFirstCollapsed, setisFirstCollapsed] = useState(false);
   let [isSecondCollapsed, setisSecondCollapsed] = useState(false);
   let [isThirdCollapsed, setisThirdCollapsed] = useState(false);
@@ -117,7 +117,7 @@ const Tabss = () => {
   let [isFifthCollapsed, setisFifthCollapsed] = useState(false);
 
 
- 
+
   let first = () => {
     if (isFirstCollapsed === false) {
       setisFirstCollapsed(true);
@@ -157,7 +157,7 @@ const Tabss = () => {
       setisFifthCollapsed(true);
     }
   };
- 
+
 
   return (
     <Fragment>
@@ -165,10 +165,10 @@ const Tabss = () => {
       <Row className="row-sm">
         <Col xl={12}>
           <Card className="mg-b-20" id="tabs-style3">
-            <Card.Body>
+            <Card.Body className="py-0">
               <div className="d-flex justify-content-between align-items-center">
-                <div className="main-content-label mg-b-5">Transaction Centre</div>
-                <div className="ms-4 d-lg-flex form-group">
+                <div className="main-content-label ">Transaction Centre</div>
+                <div className="mt-2 d-lg-flex form-group">
                   <span>
                     <input
                       autoComplete="off"
@@ -197,160 +197,165 @@ const Tabss = () => {
                 </div>
               </div>
 
-              <Row>
-        
-        <Col lg={12} md={12}>
-          <Card className="custom-card">
-            <Card.Body>
-              
-              <div>
-                <div className="btn-list">
-                  <Button
-                    variant=""
+              <Row className="p-0">
 
-                    className="btn ripple btn-primary mb-2 mb-xl-0 me-2"
+                <Col lg={12} md={12} className="p-0">
+                  <Card className="custom-card p-0">
+                    <Card.Body className="px-0">
 
-                    role="button"
-                    onClick={() => first()}
-                  >
-                    Bookings<span className="badge bg-danger ms-2">6</span>
-                  </Button>
-                  <Button
-                    variant=""
-                    className="btn ripple btn-primary mb-2 mb-xl-0 me-2"
-                    role="button"
-                    onClick={() => second()}
-                  >
-                    Inspections<span className="badge bg-danger ms-2">2</span>
-                  </Button>
-                  <Button
-                    variant=""
-                    className="btn ripple btn-primary mb-2 mb-xl-0"
-                    role="button"
-                    onClick={() => third()}
-                  >
-                    Jobs<span className="badge bg-danger ms-2">6</span>
-                  </Button>
-                  <Button
-                    variant=""
-                    className="btn ripple btn-primary mb-2 mb-xl-0"
-                    role="button"
-                    onClick={() => fourth()}
-                  >
-                    Orders<span className="badge bg-danger ms-2">1</span>
-                  </Button>
-                  <Button
-                    variant=""
-                    className="btn ripple btn-primary mb-2 mb-xl-0"
-                    role="button"
-                    onClick={() => fifth()}
-                  >
-                    Invoices<span className="badge bg-danger ms-2">2</span>
-                  </Button>
-                </div>
-                <Row className="row-sm">
-                  {isFirstCollapsed ? (
-                    <div className="col">
-                      <div
-                        className=" multi-collapse"
-                        id="multiCollapseExample1"
-                      >
-                         <div class="d-flex mt-4">
-                        
-                        <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
-                          <option value="10">Show 10</option>
-                          <option value="25">Show 25</option>
-                          <option value="50">Show 50</option>
-                        </select>
+                      <div>
+                        <div className="btn-list">
+                          <Button
+                            variant=""
 
-                        <div>
-                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                            className="btn ripple btn-primary mb-2 mb-xl-0 me-2"
+
+                            role="button"
+                            onClick={() => first()}
+                          >
+                            <i className="far fa-handshake" /> &nbsp;
+                            Bookings<span className="badge bg-danger ms-2">6</span>
+                          </Button>
+                          <Button
+                            variant=""
+                            className="btn ripple btn-primary mb-xl-0 me-2"
+                            role="button"
+                            onClick={() => second()}
+                          >
+                            <i className="fa fa-search-plus" /> &nbsp;
+                            Inspections<span className="badge bg-danger ms-2">2</span>
+                          </Button>
+                          <Button
+                            variant=""
+                            className="btn ripple btn-primary  mb-xl-0"
+                            role="button"
+                            onClick={() => third()}
+                          >
+                            <i className="fa fa-user-md" /> &nbsp;
+                            Jobs<span className="badge bg-danger ms-2">6</span>
+                          </Button>
+                          <Button
+                            variant=""
+                            className="btn ripple btn-primary  mb-xl-0"
+                            role="button"
+                            onClick={() => fourth()}
+                          >
+                            <i className="fa fa-tasks" /> &nbsp;
+                            Orders<span className="badge bg-danger ms-2">1</span>
+                          </Button>
+                          <Button
+                            variant=""
+                            className="btn ripple btn-primary  mb-xl-0"
+                            role="button"
+                            onClick={() => fifth()}
+                          >
+                            <i className="far fa-file-alt" /> &nbsp;
+                            Invoices<span className="badge bg-danger ms-2">2</span>
+                          </Button>
                         </div>
-                        
-                        <span class="d-flex ms-auto">
-                          <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff"/>
-                        </span>
-                      </div>
+                        <Row className="row-sm">
+                          {isFirstCollapsed ? (
+                            <div className="col">
+                              <div
+                                className=" multi-collapse"
+                                id="multiCollapseExample1"
+                              >
+                                <div class="d-flex mt-2">
 
-                        <div className="mt-4">
-                        <div className="table-responsive mt-4">
-                            <table className="table table-bordered text-nowrap border-bottom">
-                              <thead>
-                                <tr>
-                                  <th>S. No</th>
-                                  <th>Job ID</th>
-                                  <th>Invoice No</th>
-                                  <th>Booking Date</th>
-                                  <th>Source</th>
-                                  <th>Service Reg Date</th>
-                                  <th>SRC CMP DT</th>
-                                  <th>Foremen Name</th>
-                                  <th>Client Name</th>
-                                  <th>Contact No</th>
-                                  <th>Veh/Reg No</th>
-                                  <th>Make</th>
-                                  <th>Model</th>
-                                  <th>Service Cost</th>
-                                  <th>Payment Link</th>
-                                  <th>Payment Mode</th>
-                                  <th>Duration</th>
-                                  <th>TAT Status</th>
-                                  <th>Action</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>007</td>
-                                  <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV001</Link> </td>
-                                  <td>2023-08-15</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-16</td>
-                                  <td>2023-08-18</td>
-                                  <td>John Doe</td>
-                                  <td>Tiger Nixon</td>
-                                  <td>9876543210</td>
-                                  <td>XYZ1234</td>
-                                  <td>Toyota</td>
-                                  <td>Corolla</td>
-                                  <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$345.00</Link></td>
-                                  <td>
-                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                      <button
-                                        className="btn btn-sm btn-primary fa fa-credit-card"
-                                        onClick={() => handleEditClick('INV001')}
-                                        style={{ marginLeft: "5px" }}
-                                      ></button>
-                                    </Link>
-                                  </td>
-                                  <td className="bg-green">Online Payment</td>
-                                  <td>2 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                  <select class=" mb-2 selectpage border me-1" fdprocessedid="53840a">
+                                    <option value="10">Show 10</option>
+                                    <option value="25">Show 25</option>
+                                    <option value="50">Show 50</option>
+                                  </select>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                  <div>
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                                  </div>
 
-                                    {/* <button
+                                  <span class="d-flex ms-auto">
+                                    <input class="form-control mb-2" placeholder="Search..." value="" fdprocessedid="phgiff" />
+                                  </span>
+                                </div>
+
+                                <div className="mt-4">
+                                  <div className="table-responsive mt-4">
+                                    <table className="table table-bordered text-nowrap border-bottom">
+                                      <thead>
+                                        <tr>
+                                          <th>S. No</th>
+                                          <th>Job ID</th>
+                                          <th>Invoice No</th>
+                                          <th>Booking Date</th>
+                                          <th>Source</th>
+                                          <th>Service Reg Date</th>
+                                          <th>SRC CMP DT</th>
+                                          <th>Foremen Name</th>
+                                          <th>Client Name</th>
+                                          <th>Contact No</th>
+                                          <th>Veh/Reg No</th>
+                                          <th>Make</th>
+                                          <th>Model</th>
+                                          <th>Service Cost</th>
+                                          <th>Payment Link</th>
+                                          <th>Payment Mode</th>
+                                          <th>Duration</th>
+                                          <th>TAT Status</th>
+                                          <th>Action</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>1</td>
+                                          <td>007</td>
+                                          <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV001</Link> </td>
+                                          <td>2023-08-15</td>
+                                          <td>Mobile App</td>
+                                          <td>2023-08-16</td>
+                                          <td>2023-08-18</td>
+                                          <td>John Doe</td>
+                                          <td>Tiger Nixon</td>
+                                          <td>9876543210</td>
+                                          <td>XYZ1234</td>
+                                          <td>Toyota</td>
+                                          <td>Corolla</td>
+                                          <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$345.00</Link></td>
+                                          <td>
+                                            <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                              <button
+                                                className="btn btn-sm btn-primary fa fa-credit-card"
+                                                onClick={() => handleEditClick('INV001')}
+                                                style={{ marginLeft: "5px" }}
+                                              ></button>
+                                            </Link>
+                                          </td>
+                                          <td className="bg-green">Online Payment</td>
+                                          <td>2 Days</td>
+                                          <td>Delivered</td>
+                                          <td>
+                                            {dropdownwithiconsdata.map((idx) => (
+                                              <ButtonGroup className="" key={Math.random()}>
+                                                <Dropdown drop="up">
+                                                  <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                    <i className={`fe fe-${idx.class}`}></i>
+                                                  </Dropdown.Toggle>
+
+                                                  <Dropdown.Menu>
+                                                    <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                      <i className="fa fa-edit text-primary"></i> Edit
+                                                    </Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                      <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                    </Dropdown.Item>
+                                                    {/* Upload images option */}
+                                                    <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                      <i className="fa fa-upload text-success"></i> Upload Images
+                                                    </Dropdown.Item>
+                                                  </Dropdown.Menu>
+                                                </Dropdown>
+                                              </ButtonGroup>
+                                            ))}
+
+                                            {/* <button
                                       className="btn btn-sm btn-primary fa fa-edit"
                                       onClick={() => handleEditClick('INV001')}
                                       style={{ marginLeft: "5px" }}
@@ -360,277 +365,277 @@ const Tabss = () => {
                                       onClick={() => handleDeleteClick('INV001')}
                                       style={{ marginLeft: "5px" }}
                                     ></button> */}
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>041</td>
-                                  <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV002</Link> </td>
-                                  <td>2023-08-12</td>
-                                  <td>Web Application</td>
-                                  <td>2023-08-13</td>
-                                  <td>2023-08-15</td>
-                                  <td>Jane Smith</td>
-                                  <td>Briele Williamson</td>
-                                  <td>9876543211</td>
-                                  <td>XYZ5678</td>
-                                  <td>Honda</td>
-                                  <td>Civic</td>
-                                  <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$372,000</Link></td>
-                                  <td>
-                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                      <button
-                                        className="btn btn-sm btn-primary fa fa-credit-card"
-                                        onClick={() => handleEditClick('INV001')}
-                                        style={{ marginLeft: "5px" }}
-                                      ></button>
-                                    </Link>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivering</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>2</td>
+                                          <td>041</td>
+                                          <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV002</Link> </td>
+                                          <td>2023-08-12</td>
+                                          <td>Web Application</td>
+                                          <td>2023-08-13</td>
+                                          <td>2023-08-15</td>
+                                          <td>Jane Smith</td>
+                                          <td>Briele Williamson</td>
+                                          <td>9876543211</td>
+                                          <td>XYZ5678</td>
+                                          <td>Honda</td>
+                                          <td>Civic</td>
+                                          <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$372,000</Link></td>
+                                          <td>
+                                            <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                              <button
+                                                className="btn btn-sm btn-primary fa fa-credit-card"
+                                                onClick={() => handleEditClick('INV001')}
+                                                style={{ marginLeft: "5px" }}
+                                              ></button>
+                                            </Link>
+                                          </td>
+                                          <td className="bg-orange">Cash on Delivery</td>
+                                          <td>3 Days</td>
+                                          <td>Delivering</td>
+                                          <td>
+                                            {dropdownwithiconsdata.map((idx) => (
+                                              <ButtonGroup className="" key={Math.random()}>
+                                                <Dropdown drop="up">
+                                                  <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                    <i className={`fe fe-${idx.class}`}></i>
+                                                  </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                  <Dropdown.Menu>
+                                                    <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                      <i className="fa fa-edit text-primary"></i> Edit
+                                                    </Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                      <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                    </Dropdown.Item>
+                                                    {/* Upload images option */}
+                                                    <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                      <i className="fa fa-upload text-success"></i> Upload Images
+                                                    </Dropdown.Item>
+                                                  </Dropdown.Menu>
+                                                </Dropdown>
+                                              </ButtonGroup>
+                                            ))}
 
 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>210</td>
-                                  <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}></Link> INV003</td>
-                                  <td>2023-08-10</td>
-                                  <td>QR SCAN</td>
-                                  <td>2023-08-11</td>
-                                  <td>2023-08-13</td>
-                                  <td>Michael Johnson</td>
-                                  <td>Harrod Chandler</td>
-                                  <td>9876543212</td>
-                                  <td>XYZ9101</td>
-                                  <td>Ford</td>
-                                  <td>Focus</td>
-                                  <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$137,000</Link></td>
-                                  <td>
-                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                      <button
-                                        className="btn btn-sm btn-primary fa fa-credit-card"
-                                        onClick={() => handleEditClick('INV001')}
-                                        style={{ marginLeft: "5px" }}
-                                      ></button>
-                                    </Link>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>4 Days</td>
-                                  <td>Awaiting</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>3</td>
+                                          <td>210</td>
+                                          <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}></Link> INV003</td>
+                                          <td>2023-08-10</td>
+                                          <td>QR SCAN</td>
+                                          <td>2023-08-11</td>
+                                          <td>2023-08-13</td>
+                                          <td>Michael Johnson</td>
+                                          <td>Harrod Chandler</td>
+                                          <td>9876543212</td>
+                                          <td>XYZ9101</td>
+                                          <td>Ford</td>
+                                          <td>Focus</td>
+                                          <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$137,000</Link></td>
+                                          <td>
+                                            <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                              <button
+                                                className="btn btn-sm btn-primary fa fa-credit-card"
+                                                onClick={() => handleEditClick('INV001')}
+                                                style={{ marginLeft: "5px" }}
+                                              ></button>
+                                            </Link>
+                                          </td>
+                                          <td className="bg-orange">Cash on Delivery</td>
+                                          <td>4 Days</td>
+                                          <td>Awaiting</td>
+                                          <td>
+                                            {dropdownwithiconsdata.map((idx) => (
+                                              <ButtonGroup className="" key={Math.random()}>
+                                                <Dropdown drop="up">
+                                                  <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                    <i className={`fe fe-${idx.class}`}></i>
+                                                  </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                  <Dropdown.Menu>
+                                                    <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                      <i className="fa fa-edit text-primary"></i> Edit
+                                                    </Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                      <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                    </Dropdown.Item>
+                                                    {/* Upload images option */}
+                                                    <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                      <i className="fa fa-upload text-success"></i> Upload Images
+                                                    </Dropdown.Item>
+                                                  </Dropdown.Menu>
+                                                </Dropdown>
+                                              </ButtonGroup>
+                                            ))}
 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>013</td>
-                                  <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV004</Link> </td>
-                                  <td>2023-08-05</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-06</td>
-                                  <td>2023-08-08</td>
-                                  <td>Chris Evans</td>
-                                  <td>Colleen Hurst</td>
-                                  <td>9876543213</td>
-                                  <td>XYZ1212</td>
-                                  <td>Nissan</td>
-                                  <td>Altima</td>
-                                  <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$109,000</Link></td>
-                                  <td>
-                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                      <button
-                                        className="btn btn-sm btn-primary fa fa-credit-card"
-                                        onClick={() => handleEditClick('INV001')}
-                                        style={{ marginLeft: "5px" }}
-                                      ></button>
-                                    </Link>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>4</td>
+                                          <td>013</td>
+                                          <td> <Link to={`${import.meta.env.BASE_URL}pages/invoice`}>INV004</Link> </td>
+                                          <td>2023-08-05</td>
+                                          <td>Mobile App</td>
+                                          <td>2023-08-06</td>
+                                          <td>2023-08-08</td>
+                                          <td>Chris Evans</td>
+                                          <td>Colleen Hurst</td>
+                                          <td>9876543213</td>
+                                          <td>XYZ1212</td>
+                                          <td>Nissan</td>
+                                          <td>Altima</td>
+                                          <td><Link to={`${import.meta.env.BASE_URL}pages/invoice`} className="text-primary">$109,000</Link></td>
+                                          <td>
+                                            <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                              <button
+                                                className="btn btn-sm btn-primary fa fa-credit-card"
+                                                onClick={() => handleEditClick('INV001')}
+                                                style={{ marginLeft: "5px" }}
+                                              ></button>
+                                            </Link>
+                                          </td>
+                                          <td className="bg-orange">Cash on Delivery</td>
+                                          <td>3 Days</td>
+                                          <td>Delivered</td>
+                                          <td>
+                                            {dropdownwithiconsdata.map((idx) => (
+                                              <ButtonGroup className="" key={Math.random()}>
+                                                <Dropdown drop="up">
+                                                  <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                    <i className={`fe fe-${idx.class}`}></i>
+                                                  </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                  <Dropdown.Menu>
+                                                    <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                      <i className="fa fa-edit text-primary"></i> Edit
+                                                    </Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                      <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                    </Dropdown.Item>
+                                                    {/* Upload images option */}
+                                                    <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                      <i className="fa fa-upload text-success"></i> Upload Images
+                                                    </Dropdown.Item>
+                                                  </Dropdown.Menu>
+                                                </Dropdown>
+                                              </ButtonGroup>
+                                            ))}
 
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ) : null}
-                  {isSecondCollapsed ? (
-                    <div className="col">
-                      <div
-                        className=" multi-collapse"
-                        id="multiCollapseExample2"
-                      >
-                         <div class="d-flex mt-4">
-                        
-                        <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
-                          <option value="10">Show 10</option>
-                          <option value="25">Show 25</option>
-                          <option value="50">Show 50</option>
-                        </select>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          ) : null}
+                          {isSecondCollapsed ? (
+                            <div className="col">
+                              <div
+                                className=" multi-collapse"
+                                id="multiCollapseExample2"
+                              >
+                                <div class="d-flex mt-4">
 
-                        <div>
-                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
-                        </div>
-                        
-                        <span class="d-flex ms-auto">
-                          <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff"/>
-                        </span>
-                      </div>
+                                  <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
+                                    <option value="10">Show 10</option>
+                                    <option value="25">Show 25</option>
+                                    <option value="50">Show 50</option>
+                                  </select>
 
-                        <div className="mt-4">
-                        <div className="table-responsive mt-4">
-                            <table className="table table-bordered text-nowrap border-bottom">
-                              <thead>
-                                <tr>
-                                  <th>S. No</th>
-                                  <th>Job ID</th>
-                                  <th>Invoice No</th>
-                                  <th>Booking Date</th>
-                                  <th>Source</th>
-                                  <th>Service Reg Date</th>
-                                  <th>SRC CMP DT</th>
-                                  <th>Foremen Name</th>
-                                  <th>Client Name</th>
-                                  <th>Contact No</th>
-                                  <th>Veh/Reg No</th>
-                                  <th>Make</th>
-                                  <th>Model</th>
-                                  <th>Service Cost</th>
-                                  <th>Payment Link</th>
-                                  <th>Payment Mode</th>
-                                  <th>Duration</th>
-                                  <th>TAT Status</th>
-                                  <th>Action</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>201</td>
-                                  <td>INV001</td>
-                                  <td>2023-08-15</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-16</td>
-                                  <td>2023-08-18</td>
-                                  <td>John Doe</td>
-                                  <td>Tiger Nixon</td>
-                                  <td>9876543210</td>
-                                  <td>XYZ1234</td>
-                                  <td>Toyota</td>
-                                  <td>Corolla</td>
-                                  <td><Link className="text-primary">$345.00</Link></td>
-                                  <td>
-                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                      <button
-                                        className="btn btn-sm btn-primary fa fa-credit-card"
-                                        onClick={() => handleEditClick('INV001')}
-                                        style={{ marginLeft: "5px" }}
-                                      ></button>
-                                    </Link>
-                                  </td>
-                                  <td className="bg-green">Online Payment</td>
-                                  <td>2 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                  <div>
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                                  </div>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                  <span class="d-flex ms-auto">
+                                    <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff" />
+                                  </span>
+                                </div>
 
-                                    {/* <button
+                                <div className="mt-4">
+                                  <div className="table-responsive mt-4">
+                                    <table className="table table-bordered text-nowrap border-bottom">
+                                      <thead>
+                                        <tr>
+                                          <th>S. No</th>
+                                          <th>Job ID</th>
+                                          <th>Invoice No</th>
+                                          <th>Booking Date</th>
+                                          <th>Source</th>
+                                          <th>Service Reg Date</th>
+                                          <th>SRC CMP DT</th>
+                                          <th>Foremen Name</th>
+                                          <th>Client Name</th>
+                                          <th>Contact No</th>
+                                          <th>Veh/Reg No</th>
+                                          <th>Make</th>
+                                          <th>Model</th>
+                                          <th>Service Cost</th>
+                                          <th>Payment Link</th>
+                                          <th>Payment Mode</th>
+                                          <th>Duration</th>
+                                          <th>TAT Status</th>
+                                          <th>Action</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>1</td>
+                                          <td>201</td>
+                                          <td>INV001</td>
+                                          <td>2023-08-15</td>
+                                          <td>Mobile App</td>
+                                          <td>2023-08-16</td>
+                                          <td>2023-08-18</td>
+                                          <td>John Doe</td>
+                                          <td>Tiger Nixon</td>
+                                          <td>9876543210</td>
+                                          <td>XYZ1234</td>
+                                          <td>Toyota</td>
+                                          <td>Corolla</td>
+                                          <td><Link className="text-primary">$345.00</Link></td>
+                                          <td>
+                                            <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                              <button
+                                                className="btn btn-sm btn-primary fa fa-credit-card"
+                                                onClick={() => handleEditClick('INV001')}
+                                                style={{ marginLeft: "5px" }}
+                                              ></button>
+                                            </Link>
+                                          </td>
+                                          <td className="bg-green">Online Payment</td>
+                                          <td>2 Days</td>
+                                          <td>Delivered</td>
+                                          <td>
+                                            {dropdownwithiconsdata.map((idx) => (
+                                              <ButtonGroup className="" key={Math.random()}>
+                                                <Dropdown drop="up">
+                                                  <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                    <i className={`fe fe-${idx.class}`}></i>
+                                                  </Dropdown.Toggle>
+
+                                                  <Dropdown.Menu>
+                                                    <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                      <i className="fa fa-edit text-primary"></i> Edit
+                                                    </Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                      <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                    </Dropdown.Item>
+                                                    {/* Upload images option */}
+                                                    <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                      <i className="fa fa-upload text-success"></i> Upload Images
+                                                    </Dropdown.Item>
+                                                  </Dropdown.Menu>
+                                                </Dropdown>
+                                              </ButtonGroup>
+                                            ))}
+
+                                            {/* <button
                                       className="btn btn-sm btn-primary fa fa-edit"
                                       onClick={() => handleEditClick('INV001')}
                                       style={{ marginLeft: "5px" }}
@@ -640,272 +645,272 @@ const Tabss = () => {
                                       onClick={() => handleDeleteClick('INV001')}
                                       style={{ marginLeft: "5px" }}
                                     ></button> */}
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>209</td>
-                                  <td>INV002</td>
-                                  <td>2023-08-12</td>
-                                  <td>Web Application</td>
-                                  <td>2023-08-13</td>
-                                  <td>2023-08-15</td>
-                                  <td>Jane Smith</td>
-                                  <td>Briele Williamson</td>
-                                  <td>9876543211</td>
-                                  <td>XYZ5678</td>
-                                  <td>Honda</td>
-                                  <td>Civic</td>
-                                  <td><Link className="text-primary">$372,000</Link></td>
-                                  <td>
-                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                      <button
-                                        className="btn btn-sm btn-primary fa fa-credit-card"
-                                        onClick={() => handleEditClick('INV001')}
-                                        style={{ marginLeft: "5px" }}
-                                      ></button>
-                                    </Link>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivering</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>2</td>
+                                          <td>209</td>
+                                          <td>INV002</td>
+                                          <td>2023-08-12</td>
+                                          <td>Web Application</td>
+                                          <td>2023-08-13</td>
+                                          <td>2023-08-15</td>
+                                          <td>Jane Smith</td>
+                                          <td>Briele Williamson</td>
+                                          <td>9876543211</td>
+                                          <td>XYZ5678</td>
+                                          <td>Honda</td>
+                                          <td>Civic</td>
+                                          <td><Link className="text-primary">$372,000</Link></td>
+                                          <td>
+                                            <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                              <button
+                                                className="btn btn-sm btn-primary fa fa-credit-card"
+                                                onClick={() => handleEditClick('INV001')}
+                                                style={{ marginLeft: "5px" }}
+                                              ></button>
+                                            </Link>
+                                          </td>
+                                          <td className="bg-orange">Cash on Delivery</td>
+                                          <td>3 Days</td>
+                                          <td>Delivering</td>
+                                          <td>
+                                            {dropdownwithiconsdata.map((idx) => (
+                                              <ButtonGroup className="" key={Math.random()}>
+                                                <Dropdown drop="up">
+                                                  <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                    <i className={`fe fe-${idx.class}`}></i>
+                                                  </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                  <Dropdown.Menu>
+                                                    <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                      <i className="fa fa-edit text-primary"></i> Edit
+                                                    </Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                      <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                    </Dropdown.Item>
+                                                    {/* Upload images option */}
+                                                    <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                      <i className="fa fa-upload text-success"></i> Upload Images
+                                                    </Dropdown.Item>
+                                                  </Dropdown.Menu>
+                                                </Dropdown>
+                                              </ButtonGroup>
+                                            ))}
 
 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>206</td>
-                                  <td>INV003</td>
-                                  <td>2023-08-10</td>
-                                  <td>QR SCAN</td>
-                                  <td>2023-08-11</td>
-                                  <td>2023-08-13</td>
-                                  <td>Michael Johnson</td>
-                                  <td>Harrod Chandler</td>
-                                  <td>9876543212</td>
-                                  <td>XYZ9101</td>
-                                  <td>Ford</td>
-                                  <td>Focus</td>
-                                  <td><Link className="text-primary">$137,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>4 Days</td>
-                                  <td>Awaiting</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>3</td>
+                                          <td>206</td>
+                                          <td>INV003</td>
+                                          <td>2023-08-10</td>
+                                          <td>QR SCAN</td>
+                                          <td>2023-08-11</td>
+                                          <td>2023-08-13</td>
+                                          <td>Michael Johnson</td>
+                                          <td>Harrod Chandler</td>
+                                          <td>9876543212</td>
+                                          <td>XYZ9101</td>
+                                          <td>Ford</td>
+                                          <td>Focus</td>
+                                          <td><Link className="text-primary">$137,000</Link></td>
+                                          <td>
+                                            <button
+                                              className="btn btn-sm btn-primary fa fa-credit-card"
+                                              onClick={() => handleEditClick('INV001')}
+                                              style={{ marginLeft: "5px" }}
+                                            ></button>
+                                          </td>
+                                          <td className="bg-orange">Cash on Delivery</td>
+                                          <td>4 Days</td>
+                                          <td>Awaiting</td>
+                                          <td>
+                                            {dropdownwithiconsdata.map((idx) => (
+                                              <ButtonGroup className="" key={Math.random()}>
+                                                <Dropdown drop="up">
+                                                  <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                    <i className={`fe fe-${idx.class}`}></i>
+                                                  </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                  <Dropdown.Menu>
+                                                    <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                      <i className="fa fa-edit text-primary"></i> Edit
+                                                    </Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                      <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                    </Dropdown.Item>
+                                                    {/* Upload images option */}
+                                                    <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                      <i className="fa fa-upload text-success"></i> Upload Images
+                                                    </Dropdown.Item>
+                                                  </Dropdown.Menu>
+                                                </Dropdown>
+                                              </ButtonGroup>
+                                            ))}
 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>206</td>
-                                  <td>INV004</td>
-                                  <td>2023-08-05</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-06</td>
-                                  <td>2023-08-08</td>
-                                  <td>Chris Evans</td>
-                                  <td>Colleen Hurst</td>
-                                  <td>9876543213</td>
-                                  <td>XYZ1212</td>
-                                  <td>Nissan</td>
-                                  <td>Altima</td>
-                                  <td><Link className="text-primary">$109,000</Link></td>
-                                  <td>
-                                    <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
-                                      <button
-                                        className="btn btn-sm btn-primary fa fa-credit-card"
-                                        onClick={() => handleEditClick('INV001')}
-                                        style={{ marginLeft: "5px" }}
-                                      ></button>
-                                    </Link>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>4</td>
+                                          <td>206</td>
+                                          <td>INV004</td>
+                                          <td>2023-08-05</td>
+                                          <td>Mobile App</td>
+                                          <td>2023-08-06</td>
+                                          <td>2023-08-08</td>
+                                          <td>Chris Evans</td>
+                                          <td>Colleen Hurst</td>
+                                          <td>9876543213</td>
+                                          <td>XYZ1212</td>
+                                          <td>Nissan</td>
+                                          <td>Altima</td>
+                                          <td><Link className="text-primary">$109,000</Link></td>
+                                          <td>
+                                            <Link to={`${import.meta.env.BASE_URL}pages/pricing`}>
+                                              <button
+                                                className="btn btn-sm btn-primary fa fa-credit-card"
+                                                onClick={() => handleEditClick('INV001')}
+                                                style={{ marginLeft: "5px" }}
+                                              ></button>
+                                            </Link>
+                                          </td>
+                                          <td className="bg-orange">Cash on Delivery</td>
+                                          <td>3 Days</td>
+                                          <td>Delivered</td>
+                                          <td>
+                                            {dropdownwithiconsdata.map((idx) => (
+                                              <ButtonGroup className="" key={Math.random()}>
+                                                <Dropdown drop="up">
+                                                  <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                    <i className={`fe fe-${idx.class}`}></i>
+                                                  </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                  <Dropdown.Menu>
+                                                    <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                      <i className="fa fa-edit text-primary"></i> Edit
+                                                    </Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                      <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                    </Dropdown.Item>
+                                                    {/* Upload images option */}
+                                                    <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                      <i className="fa fa-upload text-success"></i> Upload Images
+                                                    </Dropdown.Item>
+                                                  </Dropdown.Menu>
+                                                </Dropdown>
+                                              </ButtonGroup>
+                                            ))}
 
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ) : null}
-                  {isThirdCollapsed ? (
-                    <div className="col">
-                      <div
-                        className=" multi-collapse"
-                        id="multiCollapseExample3"
-                      >
-                         <div class="d-flex mt-4">
-                        
-                        <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
-                          <option value="10">Show 10</option>
-                          <option value="25">Show 25</option>
-                          <option value="50">Show 50</option>
-                        </select>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          ) : null}
+                          {isThirdCollapsed ? (
+                            <div className="col">
+                              <div
+                                className=" multi-collapse"
+                                id="multiCollapseExample3"
+                              >
+                                <div class="d-flex mt-4">
 
-                        <div>
-                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
-                        </div>
-                        
-                        <span class="d-flex ms-auto">
-                          <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff"/>
-                        </span>
-                      </div>
+                                  <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
+                                    <option value="10">Show 10</option>
+                                    <option value="25">Show 25</option>
+                                    <option value="50">Show 50</option>
+                                  </select>
 
-                        <div className="table-responsive mt-4">
-                            <table className="table table-bordered text-nowrap border-bottom">
-                              <thead>
-                                <tr>
-                                  <th>S. No</th>
-                                  <th>Job ID</th>
-                                  <th>Invoice No</th>
-                                  <th>Booking Date</th>
-                                  <th>Source</th>
-                                  <th>Service Reg Date</th>
-                                  <th>SRC CMP DT</th>
-                                  <th>Foremen Name</th>
-                                  <th>Client Name</th>
-                                  <th>Contact No</th>
-                                  <th>Veh/Reg No</th>
-                                  <th>Make</th>
-                                  <th>Model</th>
-                                  <th>Service Cost</th>
-                                  <th>Payment Link</th>
-                                  <th>Payment Mode</th>
-                                  <th>Duration</th>
-                                  <th>TAT Status</th>
-                                  <th>Action</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>305</td>
-                                  <td>INV001</td>
-                                  <td>2023-08-15</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-16</td>
-                                  <td>2023-08-18</td>
-                                  <td>John Doe</td>
-                                  <td>Tiger Nixon</td>
-                                  <td>9876543210</td>
-                                  <td>XYZ1234</td>
-                                  <td>Toyota</td>
-                                  <td>Corolla</td>
-                                  <td><Link className="text-primary">$345.00</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-green">Online Payment</td>
-                                  <td>2 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                  <div>
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                                  </div>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                  <span class="d-flex ms-auto">
+                                    <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff" />
+                                  </span>
+                                </div>
 
-                                    {/* <button
+                                <div className="table-responsive mt-4">
+                                  <table className="table table-bordered text-nowrap border-bottom">
+                                    <thead>
+                                      <tr>
+                                        <th>S. No</th>
+                                        <th>Job ID</th>
+                                        <th>Invoice No</th>
+                                        <th>Booking Date</th>
+                                        <th>Source</th>
+                                        <th>Service Reg Date</th>
+                                        <th>SRC CMP DT</th>
+                                        <th>Foremen Name</th>
+                                        <th>Client Name</th>
+                                        <th>Contact No</th>
+                                        <th>Veh/Reg No</th>
+                                        <th>Make</th>
+                                        <th>Model</th>
+                                        <th>Service Cost</th>
+                                        <th>Payment Link</th>
+                                        <th>Payment Mode</th>
+                                        <th>Duration</th>
+                                        <th>TAT Status</th>
+                                        <th>Action</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>305</td>
+                                        <td>INV001</td>
+                                        <td>2023-08-15</td>
+                                        <td>Mobile App</td>
+                                        <td>2023-08-16</td>
+                                        <td>2023-08-18</td>
+                                        <td>John Doe</td>
+                                        <td>Tiger Nixon</td>
+                                        <td>9876543210</td>
+                                        <td>XYZ1234</td>
+                                        <td>Toyota</td>
+                                        <td>Corolla</td>
+                                        <td><Link className="text-primary">$345.00</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-green">Online Payment</td>
+                                        <td>2 Days</td>
+                                        <td>Delivered</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
+
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
+
+                                          {/* <button
                                       className="btn btn-sm btn-primary fa fa-edit"
                                       onClick={() => handleEditClick('INV001')}
                                       style={{ marginLeft: "5px" }}
@@ -915,269 +920,269 @@ const Tabss = () => {
                                       onClick={() => handleDeleteClick('INV001')}
                                       style={{ marginLeft: "5px" }}
                                     ></button> */}
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>306</td>
-                                  <td>INV002</td>
-                                  <td>2023-08-12</td>
-                                  <td>Web Application</td>
-                                  <td>2023-08-13</td>
-                                  <td>2023-08-15</td>
-                                  <td>Jane Smith</td>
-                                  <td>Briele Williamson</td>
-                                  <td>9876543211</td>
-                                  <td>XYZ5678</td>
-                                  <td>Honda</td>
-                                  <td>Civic</td>
-                                  <td><Link className="text-primary">$372,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivering</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>2</td>
+                                        <td>306</td>
+                                        <td>INV002</td>
+                                        <td>2023-08-12</td>
+                                        <td>Web Application</td>
+                                        <td>2023-08-13</td>
+                                        <td>2023-08-15</td>
+                                        <td>Jane Smith</td>
+                                        <td>Briele Williamson</td>
+                                        <td>9876543211</td>
+                                        <td>XYZ5678</td>
+                                        <td>Honda</td>
+                                        <td>Civic</td>
+                                        <td><Link className="text-primary">$372,000</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-orange">Cash on Delivery</td>
+                                        <td>3 Days</td>
+                                        <td>Delivering</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
 
 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>307</td>
-                                  <td>INV003</td>
-                                  <td>2023-08-10</td>
-                                  <td>QR SCAN</td>
-                                  <td>2023-08-11</td>
-                                  <td>2023-08-13</td>
-                                  <td>Michael Johnson</td>
-                                  <td>Harrod Chandler</td>
-                                  <td>9876543212</td>
-                                  <td>XYZ9101</td>
-                                  <td>Ford</td>
-                                  <td>Focus</td>
-                                  <td><Link className="text-primary">$137,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>4 Days</td>
-                                  <td>Awaiting</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>3</td>
+                                        <td>307</td>
+                                        <td>INV003</td>
+                                        <td>2023-08-10</td>
+                                        <td>QR SCAN</td>
+                                        <td>2023-08-11</td>
+                                        <td>2023-08-13</td>
+                                        <td>Michael Johnson</td>
+                                        <td>Harrod Chandler</td>
+                                        <td>9876543212</td>
+                                        <td>XYZ9101</td>
+                                        <td>Ford</td>
+                                        <td>Focus</td>
+                                        <td><Link className="text-primary">$137,000</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-orange">Cash on Delivery</td>
+                                        <td>4 Days</td>
+                                        <td>Awaiting</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>301</td>
-                                  <td>INV004</td>
-                                  <td>2023-08-05</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-06</td>
-                                  <td>2023-08-08</td>
-                                  <td>Chris Evans</td>
-                                  <td>Colleen Hurst</td>
-                                  <td>9876543213</td>
-                                  <td>XYZ1212</td>
-                                  <td>Nissan</td>
-                                  <td>Altima</td>
-                                  <td><Link className="text-primary">$109,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>4</td>
+                                        <td>301</td>
+                                        <td>INV004</td>
+                                        <td>2023-08-05</td>
+                                        <td>Mobile App</td>
+                                        <td>2023-08-06</td>
+                                        <td>2023-08-08</td>
+                                        <td>Chris Evans</td>
+                                        <td>Colleen Hurst</td>
+                                        <td>9876543213</td>
+                                        <td>XYZ1212</td>
+                                        <td>Nissan</td>
+                                        <td>Altima</td>
+                                        <td><Link className="text-primary">$109,000</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-orange">Cash on Delivery</td>
+                                        <td>3 Days</td>
+                                        <td>Delivered</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
 
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                      </div>
-                    </div>
-                  ) : null}
-                  {isFourthCollapsed ? (
-                    <div className="col">
-                      <div
-                        className=" multi-collapse"
-                        id="multiCollapseExample4"
-                      >
-                         <div class="d-flex mt-4">
-                        
-                        <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
-                          <option value="10">Show 10</option>
-                          <option value="25">Show 25</option>
-                          <option value="50">Show 50</option>
-                        </select>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          ) : null}
+                          {isFourthCollapsed ? (
+                            <div className="col">
+                              <div
+                                className=" multi-collapse"
+                                id="multiCollapseExample4"
+                              >
+                                <div class="d-flex mt-4">
 
-                        
+                                  <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
+                                    <option value="10">Show 10</option>
+                                    <option value="25">Show 25</option>
+                                    <option value="50">Show 50</option>
+                                  </select>
 
-                        <div>
-                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
-                        </div>
-                        
-                        <span class="d-flex ms-auto">
-                          <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff"/>
-                        </span>
-                      </div>
 
-                        <div className="table-responsive mt-4">
-                            <table className="table table-bordered text-nowrap border-bottom">
-                              <thead>
-                                <tr>
-                                  <th>S. No</th>
-                                  <th>Job ID</th>
-                                  <th>Invoice No</th>
-                                  <th>Booking Date</th>
-                                  <th>Source</th>
-                                  <th>Service Reg Date</th>
-                                  <th>SRC CMP DT</th>
-                                  <th>Foremen Name</th>
-                                  <th>Client Name</th>
-                                  <th>Contact No</th>
-                                  <th>Veh/Reg No</th>
-                                  <th>Make</th>
-                                  <th>Model</th>
-                                  <th>Service Cost</th>
-                                  <th>Payment Link</th>
-                                  <th>Payment Mode</th>
-                                  <th>Duration</th>
-                                  <th>TAT Status</th>
-                                  <th>Action</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>406</td>
-                                  <td>INV001</td>
-                                  <td>2023-08-15</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-16</td>
-                                  <td>2023-08-18</td>
-                                  <td>John Doe</td>
-                                  <td>Tiger Nixon</td>
-                                  <td>9876543210</td>
-                                  <td>XYZ1234</td>
-                                  <td>Toyota</td>
-                                  <td>Corolla</td>
-                                  <td><Link className="text-primary">$345.00</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-green">Online Payment</td>
-                                  <td>2 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                  <div>
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                                  </div>
 
-                                    {/* <button
+                                  <span class="d-flex ms-auto">
+                                    <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff" />
+                                  </span>
+                                </div>
+
+                                <div className="table-responsive mt-4">
+                                  <table className="table table-bordered text-nowrap border-bottom">
+                                    <thead>
+                                      <tr>
+                                        <th>S. No</th>
+                                        <th>Job ID</th>
+                                        <th>Invoice No</th>
+                                        <th>Booking Date</th>
+                                        <th>Source</th>
+                                        <th>Service Reg Date</th>
+                                        <th>SRC CMP DT</th>
+                                        <th>Foremen Name</th>
+                                        <th>Client Name</th>
+                                        <th>Contact No</th>
+                                        <th>Veh/Reg No</th>
+                                        <th>Make</th>
+                                        <th>Model</th>
+                                        <th>Service Cost</th>
+                                        <th>Payment Link</th>
+                                        <th>Payment Mode</th>
+                                        <th>Duration</th>
+                                        <th>TAT Status</th>
+                                        <th>Action</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>406</td>
+                                        <td>INV001</td>
+                                        <td>2023-08-15</td>
+                                        <td>Mobile App</td>
+                                        <td>2023-08-16</td>
+                                        <td>2023-08-18</td>
+                                        <td>John Doe</td>
+                                        <td>Tiger Nixon</td>
+                                        <td>9876543210</td>
+                                        <td>XYZ1234</td>
+                                        <td>Toyota</td>
+                                        <td>Corolla</td>
+                                        <td><Link className="text-primary">$345.00</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-green">Online Payment</td>
+                                        <td>2 Days</td>
+                                        <td>Delivered</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
+
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
+
+                                          {/* <button
                                       className="btn btn-sm btn-primary fa fa-edit"
                                       onClick={() => handleEditClick('INV001')}
                                       style={{ marginLeft: "5px" }}
@@ -1187,270 +1192,270 @@ const Tabss = () => {
                                       onClick={() => handleDeleteClick('INV001')}
                                       style={{ marginLeft: "5px" }}
                                     ></button> */}
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>406</td>
-                                  <td>INV002</td>
-                                  <td>2023-08-12</td>
-                                  <td>Web Application</td>
-                                  <td>2023-08-13</td>
-                                  <td>2023-08-15</td>
-                                  <td>Jane Smith</td>
-                                  <td>Briele Williamson</td>
-                                  <td>9876543211</td>
-                                  <td>XYZ5678</td>
-                                  <td>Honda</td>
-                                  <td>Civic</td>
-                                  <td><Link className="text-primary">$372,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivering</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>2</td>
+                                        <td>406</td>
+                                        <td>INV002</td>
+                                        <td>2023-08-12</td>
+                                        <td>Web Application</td>
+                                        <td>2023-08-13</td>
+                                        <td>2023-08-15</td>
+                                        <td>Jane Smith</td>
+                                        <td>Briele Williamson</td>
+                                        <td>9876543211</td>
+                                        <td>XYZ5678</td>
+                                        <td>Honda</td>
+                                        <td>Civic</td>
+                                        <td><Link className="text-primary">$372,000</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-orange">Cash on Delivery</td>
+                                        <td>3 Days</td>
+                                        <td>Delivering</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
 
 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>407</td>
-                                  <td>INV003</td>
-                                  <td>2023-08-10</td>
-                                  <td>QR SCAN</td>
-                                  <td>2023-08-11</td>
-                                  <td>2023-08-13</td>
-                                  <td>Michael Johnson</td>
-                                  <td>Harrod Chandler</td>
-                                  <td>9876543212</td>
-                                  <td>XYZ9101</td>
-                                  <td>Ford</td>
-                                  <td>Focus</td>
-                                  <td><Link className="text-primary">$137,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>4 Days</td>
-                                  <td>Awaiting</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>3</td>
+                                        <td>407</td>
+                                        <td>INV003</td>
+                                        <td>2023-08-10</td>
+                                        <td>QR SCAN</td>
+                                        <td>2023-08-11</td>
+                                        <td>2023-08-13</td>
+                                        <td>Michael Johnson</td>
+                                        <td>Harrod Chandler</td>
+                                        <td>9876543212</td>
+                                        <td>XYZ9101</td>
+                                        <td>Ford</td>
+                                        <td>Focus</td>
+                                        <td><Link className="text-primary">$137,000</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-orange">Cash on Delivery</td>
+                                        <td>4 Days</td>
+                                        <td>Awaiting</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>401</td>
-                                  <td>INV004</td>
-                                  <td>2023-08-05</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-06</td>
-                                  <td>2023-08-08</td>
-                                  <td>Chris Evans</td>
-                                  <td>Colleen Hurst</td>
-                                  <td>9876543213</td>
-                                  <td>XYZ1212</td>
-                                  <td>Nissan</td>
-                                  <td>Altima</td>
-                                  <td><Link className="text-primary">$109,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>4</td>
+                                        <td>401</td>
+                                        <td>INV004</td>
+                                        <td>2023-08-05</td>
+                                        <td>Mobile App</td>
+                                        <td>2023-08-06</td>
+                                        <td>2023-08-08</td>
+                                        <td>Chris Evans</td>
+                                        <td>Colleen Hurst</td>
+                                        <td>9876543213</td>
+                                        <td>XYZ1212</td>
+                                        <td>Nissan</td>
+                                        <td>Altima</td>
+                                        <td><Link className="text-primary">$109,000</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-orange">Cash on Delivery</td>
+                                        <td>3 Days</td>
+                                        <td>Delivered</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
 
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                        </div>
-                      </div>
-                    </div>
-                  ) : null}
-                  {isFifthCollapsed ? (
-                    <div className="col">
-                      <div
-                        className=" multi-collapse"
-                        id="multiCollapseExample5"
-                      >
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          ) : null}
+                          {isFifthCollapsed ? (
+                            <div className="col">
+                              <div
+                                className=" multi-collapse"
+                                id="multiCollapseExample5"
+                              >
 
-                      <div class="d-flex mt-4">
-                        
-                        <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
-                          <option value="10">Show 10</option>
-                          <option value="25">Show 25</option>
-                          <option value="50">Show 50</option>
-                        </select>
+                                <div class="d-flex mt-4">
 
-                        <div>
-                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
-                        </div>
+                                  <select class=" mb-4 selectpage border me-1" fdprocessedid="53840a">
+                                    <option value="10">Show 10</option>
+                                    <option value="25">Show 25</option>
+                                    <option value="50">Show 50</option>
+                                  </select>
 
-                        
-                        
-                        <span class="d-flex ms-auto">
-                          <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff"/>
-                        </span>
-                      </div>
+                                  <div>
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313">Excel</button>
+                                  </div>
 
-                        <div className="table-responsive mt-4">
-                            <table className="table table-bordered text-nowrap border-bottom">
-                              <thead>
-                                <tr>
-                                  <th>S. No</th>
-                                  <th>Job ID</th>
-                                  <th>Invoice No</th>
-                                  <th>Booking Date</th>
-                                  <th>Source</th>
-                                  <th>Service Reg Date</th>
-                                  <th>SRC CMP DT</th>
-                                  <th>Foremen Name</th>
-                                  <th>Client Name</th>
-                                  <th>Contact No</th>
-                                  <th>Veh/Reg No</th>
-                                  <th>Make</th>
-                                  <th>Model</th>
-                                  <th>Service Cost</th>
-                                  <th>Payment Link</th>
-                                  <th>Payment Mode</th>
-                                  <th>Duration</th>
-                                  <th>TAT Status</th>
-                                  <th>Action</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>503</td>
-                                  <td>INV001</td>
-                                  <td>2023-08-15</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-16</td>
-                                  <td>2023-08-18</td>
-                                  <td>John Doe</td>
-                                  <td>Tiger Nixon</td>
-                                  <td>9876543210</td>
-                                  <td>XYZ1234</td>
-                                  <td>Toyota</td>
-                                  <td>Corolla</td>
-                                  <td><Link className="text-primary">$345.00</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-green">Online Payment</td>
-                                  <td>2 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
 
-                                    {/* <button
+                                  <span class="d-flex ms-auto">
+                                    <input class="form-control mb-4" placeholder="Search..." value="" fdprocessedid="phgiff" />
+                                  </span>
+                                </div>
+
+                                <div className="table-responsive mt-4">
+                                  <table className="table table-bordered text-nowrap border-bottom">
+                                    <thead>
+                                      <tr>
+                                        <th>S. No</th>
+                                        <th>Job ID</th>
+                                        <th>Invoice No</th>
+                                        <th>Booking Date</th>
+                                        <th>Source</th>
+                                        <th>Service Reg Date</th>
+                                        <th>SRC CMP DT</th>
+                                        <th>Foremen Name</th>
+                                        <th>Client Name</th>
+                                        <th>Contact No</th>
+                                        <th>Veh/Reg No</th>
+                                        <th>Make</th>
+                                        <th>Model</th>
+                                        <th>Service Cost</th>
+                                        <th>Payment Link</th>
+                                        <th>Payment Mode</th>
+                                        <th>Duration</th>
+                                        <th>TAT Status</th>
+                                        <th>Action</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>503</td>
+                                        <td>INV001</td>
+                                        <td>2023-08-15</td>
+                                        <td>Mobile App</td>
+                                        <td>2023-08-16</td>
+                                        <td>2023-08-18</td>
+                                        <td>John Doe</td>
+                                        <td>Tiger Nixon</td>
+                                        <td>9876543210</td>
+                                        <td>XYZ1234</td>
+                                        <td>Toyota</td>
+                                        <td>Corolla</td>
+                                        <td><Link className="text-primary">$345.00</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-green">Online Payment</td>
+                                        <td>2 Days</td>
+                                        <td>Delivered</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
+
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
+
+                                          {/* <button
                                       className="btn btn-sm btn-primary fa fa-edit"
                                       onClick={() => handleEditClick('INV001')}
                                       style={{ marginLeft: "5px" }}
@@ -1460,175 +1465,174 @@ const Tabss = () => {
                                       onClick={() => handleDeleteClick('INV001')}
                                       style={{ marginLeft: "5px" }}
                                     ></button> */}
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>501</td>
-                                  <td>INV002</td>
-                                  <td>2023-08-12</td>
-                                  <td>Web Application</td>
-                                  <td>2023-08-13</td>
-                                  <td>2023-08-15</td>
-                                  <td>Jane Smith</td>
-                                  <td>Briele Williamson</td>
-                                  <td>9876543211</td>
-                                  <td>XYZ5678</td>
-                                  <td>Honda</td>
-                                  <td>Civic</td>
-                                  <td><Link className="text-primary">$372,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivering</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>2</td>
+                                        <td>501</td>
+                                        <td>INV002</td>
+                                        <td>2023-08-12</td>
+                                        <td>Web Application</td>
+                                        <td>2023-08-13</td>
+                                        <td>2023-08-15</td>
+                                        <td>Jane Smith</td>
+                                        <td>Briele Williamson</td>
+                                        <td>9876543211</td>
+                                        <td>XYZ5678</td>
+                                        <td>Honda</td>
+                                        <td>Civic</td>
+                                        <td><Link className="text-primary">$372,000</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-orange">Cash on Delivery</td>
+                                        <td>3 Days</td>
+                                        <td>Delivering</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
 
 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>506</td>
-                                  <td>INV003</td>
-                                  <td>2023-08-10</td>
-                                  <td>QR SCAN</td>
-                                  <td>2023-08-11</td>
-                                  <td>2023-08-13</td>
-                                  <td>Michael Johnson</td>
-                                  <td>Harrod Chandler</td>
-                                  <td>9876543212</td>
-                                  <td>XYZ9101</td>
-                                  <td>Ford</td>
-                                  <td>Focus</td>
-                                  <td><Link className="text-primary">$137,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>4 Days</td>
-                                  <td>Awaiting</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>3</td>
+                                        <td>506</td>
+                                        <td>INV003</td>
+                                        <td>2023-08-10</td>
+                                        <td>QR SCAN</td>
+                                        <td>2023-08-11</td>
+                                        <td>2023-08-13</td>
+                                        <td>Michael Johnson</td>
+                                        <td>Harrod Chandler</td>
+                                        <td>9876543212</td>
+                                        <td>XYZ9101</td>
+                                        <td>Ford</td>
+                                        <td>Focus</td>
+                                        <td><Link className="text-primary">$137,000</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-orange">Cash on Delivery</td>
+                                        <td>4 Days</td>
+                                        <td>Awaiting</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>509</td>
-                                  <td>INV004</td>
-                                  <td>2023-08-05</td>
-                                  <td>Mobile App</td>
-                                  <td>2023-08-06</td>
-                                  <td>2023-08-08</td>
-                                  <td>Chris Evans</td>
-                                  <td>Colleen Hurst</td>
-                                  <td>9876543213</td>
-                                  <td>XYZ1212</td>
-                                  <td>Nissan</td>
-                                  <td>Altima</td>
-                                  <td><Link className="text-primary">$109,000</Link></td>
-                                  <td>
-                                    <button
-                                      className="btn btn-sm btn-primary fa fa-credit-card"
-                                      onClick={() => handleEditClick('INV001')}
-                                      style={{ marginLeft: "5px" }}
-                                    ></button>
-                                  </td>
-                                  <td className="bg-orange">Cash on Delivery</td>
-                                  <td>3 Days</td>
-                                  <td>Delivered</td>
-                                  <td>
-                                    {dropdownwithiconsdata.map((idx) => (
-                                      <ButtonGroup className="" key={Math.random()}>
-                                        <Dropdown drop="up">
-                                          <Dropdown.Toggle variant={idx.color} className="dropups">
-                                            <i className={`fe fe-${idx.class}`}></i>
-                                          </Dropdown.Toggle>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>4</td>
+                                        <td>509</td>
+                                        <td>INV004</td>
+                                        <td>2023-08-05</td>
+                                        <td>Mobile App</td>
+                                        <td>2023-08-06</td>
+                                        <td>2023-08-08</td>
+                                        <td>Chris Evans</td>
+                                        <td>Colleen Hurst</td>
+                                        <td>9876543213</td>
+                                        <td>XYZ1212</td>
+                                        <td>Nissan</td>
+                                        <td>Altima</td>
+                                        <td><Link className="text-primary">$109,000</Link></td>
+                                        <td>
+                                          <button
+                                            className="btn btn-sm btn-primary fa fa-credit-card"
+                                            onClick={() => handleEditClick('INV001')}
+                                            style={{ marginLeft: "5px" }}
+                                          ></button>
+                                        </td>
+                                        <td className="bg-orange">Cash on Delivery</td>
+                                        <td>3 Days</td>
+                                        <td>Delivered</td>
+                                        <td>
+                                          {dropdownwithiconsdata.map((idx) => (
+                                            <ButtonGroup className="" key={Math.random()}>
+                                              <Dropdown drop="up">
+                                                <Dropdown.Toggle variant={idx.color} className="dropups">
+                                                  <i className={`fe fe-${idx.class}`}></i>
+                                                </Dropdown.Toggle>
 
-                                          <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handleEditClick('INV002')}>
-                                              <i className="fa fa-edit text-primary"></i> Edit
-                                            </Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
-                                              <i className="fa fa-trash-alt text-danger"></i> Delete
-                                            </Dropdown.Item>
-                                            {/* Upload images option */}
-                                            <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
-                                              <i className="fa fa-upload text-success"></i> Upload Images
-                                            </Dropdown.Item>
-                                          </Dropdown.Menu>
-                                        </Dropdown>
-                                      </ButtonGroup>
-                                    ))}
+                                                <Dropdown.Menu>
+                                                  <Dropdown.Item onClick={() => handleEditClick('INV002')}>
+                                                    <i className="fa fa-edit text-primary"></i> Edit
+                                                  </Dropdown.Item>
+                                                  <Dropdown.Item onClick={() => handleDeleteClick('INV002')}>
+                                                    <i className="fa fa-trash-alt text-danger"></i> Delete
+                                                  </Dropdown.Item>
+                                                  {/* Upload images option */}
+                                                  <Dropdown.Item onClick={() => handleUploadClick('INV002')}>
+                                                    <i className="fa fa-upload text-success"></i> Upload Images
+                                                  </Dropdown.Item>
+                                                </Dropdown.Menu>
+                                              </Dropdown>
+                                            </ButtonGroup>
+                                          ))}
 
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          ) : null}
+                        </Row>
                       </div>
-                    </div>
-                  ) : null}
-                </Row>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-              
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </Row>
 
 
 
@@ -1638,7 +1642,8 @@ const Tabss = () => {
 
 
 
-              
+
+
             </Card.Body>
           </Card>
         </Col>
@@ -1648,122 +1653,110 @@ const Tabss = () => {
 
 
       <Row className="row-sm">
-        <Col sm={12} md={12} xl={6} lg={6} xxl={6}>
-          <Card>
+        <Col sm={12} md={12} xl={12} lg={12} xxl={12}>
+          <Card className="shadow " style={{ borderRadius: "10px" }}>
             <Card.Body>
-              <Row className="row-sm">
-                <Col xxl={6} lg={12} md={12} className="details  mt-xxl-0 ">
-                  
+              <Row className="row-sm border-bottom">
+                <Col xxl={12} lg={12} md={12} className="details  mt-xxl-0 ">
 
+                  <div className="row d-flex justify-content-between border-bottom" style={{ backgroundColor: "#38cab3", marginTop: "-10px", marginLeft: "0px", marginRight: "0px", paddingTop: "5px" }}>
 
-                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginTop:"-20px",marginLeft:"-20px",marginRight:"-20px", paddingTop:"15px"}}>
+                    <div className="d-flex align-items-center">
 
-                      <div className="d-flex">
+                      <i class="fa fa-binoculars" style={{ fontSize: "15px" }}> </i>
 
-                        <i class="fa fa-binoculars" style={{fontSize:"30px"}}> </i>
-
-                        <div className="list" style={{paddingLeft:"10px"}}>
-                          <p style={{marginBottom:"0px"}} title="Plate Number">AP09BC2034 (Hyderabad)</p>
-                         
-                        </div>
-                      </div>
-
-                      <div className="d-flex">
-
-                          <i class="fa fa-car" style={{fontSize:"30px"}}> </i>
-
-                          <div className="list" style={{paddingLeft:"10px"}}>
-                            <p style={{marginBottom:"0px"}} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
-                            
-                          </div>
-                      </div>
-
-                  </div>
-
-                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginLeft:"-20px",marginRight:"-20px",paddingBottom:"15px",paddingTop:"8px"}}>
-
-                      <div className="d-flex">
-
-                        {/* <i class="fa fa-kms" style={{fontSize:"30px"}}> </i> */}
-
-                        <div className="list" style={{paddingLeft:"10px"}} >
-                          <p style={{marginBottom:"0px"}} title="Odometer Reading">000000</p>
-                         
-                        </div>
-                      </div>
-
-                      <div className="d-flex ">
-
-                          {/* <i class="fa fa-car" style={{fontSize:"30px"}}> </i> */}
-
-                          <div className="list" style={{paddingLeft:"10px"}}>
-                            <p style={{marginBottom:"0px"}} title="Mfg Year">NA | <span title="Vehicle Category">Hot Hatchback</span></p>
-                          </div>
-
-                          <div className="list d-flex" style={{paddingLeft:"10px"}}>
-                              <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>  
-                          </div>
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }} title="Plate Number">AP09BC2034 (Hyderabad)</p>
 
                       </div>
+                    </div>
+
+                    <div className="d-flex align-items-center">
+
+                      <i class="fa fa-car" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
+
+                      </div>
+                    </div>
+
+                    <div className="d-flex align-items-center">
+
+                      {/* <i class="fa fa-kms" style={{fontSize:"15px"}}> </i> */}
+
+                      <div className="list" >
+                        <p style={{ marginBottom: "0px" }} title="Odometer Reading">000000</p>
+
+                      </div>
+                    </div>
+
+                    <div className="d-flex align-items-center">
+
+                      {/* <i class="fa fa-car" style={{fontSize:"15px"}}> </i> */}
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }} title="Mfg Year">NA | <span title="Vehicle Category">Hot Hatchback</span></p>
+                      </div>
+
+                      <div className="list d-flex" style={{ paddingLeft: "10px" }}>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>
+                      </div>
+
+                    </div>
 
                   </div>
 
                   {/* <div class="main-contact-action btn-list pt-3 pe-0 me-3"> */}
-                  <div className="row d-flex justify-content-flex-start" style={{paddingTop:"30px"}}>
+                  <div className="row d-flex justify-content-flex-start border-bottom mb-2" style={{ paddingTop: "30px" }}>
 
                     <div className="d-flex">
-                   
-                      <i class="fa fa-user" style={{fontSize:"30px"}}> </i>
-                    
-                      <div className="list" style={{paddingLeft:"10px"}}>
-                        <p style={{marginBottom:"0px"}}>Customer Name</p>
-                        <p>FIROZ</p>
+
+                      <i class="fa fa-user" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }}>Customer Name</p>
+                        <p>Bharath</p>
                       </div>
                     </div>
-                    
-                    <div className="d-flex">
-                   
-                      <i class="fa fa-phone" style={{fontSize:"30px"}}> </i>
-                    
-                      <div className="list" style={{paddingLeft:"10px"}}>
-                        <p style={{marginBottom:"0px"}}>Phone Number</p>
+
+                    <div className="d-flex ">
+
+                      <i class="fa fa-phone" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }}>Phone Number</p>
                         <p>8008664384</p>
                       </div>
                     </div>
 
                     <div className="d-flex">
-                   
-                      <i class="far fa-user" style={{fontSize:"30px"}}> </i>
-                    
-                      <div className="list" style={{paddingLeft:"10px"}}>
-                        <p style={{marginBottom:"0px"}}>Advisor Name</p>
+
+                      <i class="far fa-user" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }}>Advisor Name</p>
                         <p>NA</p>
                       </div>
                     </div>
 
 
-                    
-
-                  </div>
-
-
-                  <div className="row d-flex justify-content-evenly" style={{paddingTop:"15px"}}>
                     <div className="d-flex">
-                   
-                      <i class="fa fa-cog" style={{fontSize:"30px"}}> </i>
-                    
-                      <div className="list" style={{paddingLeft:"10px"}}>
-                        <p style={{marginBottom:"0px"}}>Customer Source</p>
+
+                      <i class="fa fa-cog" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }}>Customer Source</p>
                         <p>TRIAL CARS24</p>
                       </div>
                     </div>
 
                     <div className="d-flex">
-                   
-                      <i class="fa fa-star" style={{fontSize:"30px"}}> </i>
-                    
-                      <div className="list" style={{paddingLeft:"10px"}}>
-                        <p style={{marginBottom:"0px"}}>Customer Rating</p>
+
+                      <i class="fa fa-star" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }}>Customer Rating</p>
                         {/* Ratings */}
                         <div className="rating mb-1">
                           <div className="stars">
@@ -1777,143 +1770,139 @@ const Tabss = () => {
                       </div>
 
                     </div>
+
+                    <Col xxl={2} lg={2} md={12} >
+                      <p className="font-weight-normal">
+                        <span className="h6">Fuel Percentage</span>
+                      </p>
+                      <ProgressBar now={80} animated variant="primary" style={{ height: "5px" }} />
+                    </Col>
                   </div>
 
+                  <div className="row border-bottom mb-2" style={{ paddingTop: "0px" }}>
+                    <Col xxl={7} lg={7} md={12} className="d-flex justify-content-between">
 
-                <div className="row justify-content-evenly" style={{paddingTop:"30px"}}>
+                      <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
+                        <p style={{ fontSize: "10px" }}>Jc/Est</p>
+                      </div>
 
-                  <div>
-                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
-                    <p>Jc/Est</p>
-                  </div>
+                      <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
+                        <p style={{ fontSize: "10px" }}>Status</p>
+                      </div>
 
-                  <div>
-                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
-                    <p>Status</p>
-                  </div>
+                      <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
+                        <p style={{ fontSize: "10px" }}>History</p>
+                      </div>
 
-                  <div>
-                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
-                    <p>History</p>
-                  </div>
+                      <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-dollar-sign"></i></button>
+                        <p style={{ fontSize: "10px" }}>Payments</p>
+                      </div>
 
-                  <div>
-                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-dollar-sign"></i></button>
-                      <p>Payments</p>
-                  </div>
+                      <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-percent"></i></button>
+                        <p style={{ fontSize: "10px" }}>Discount</p>
+                      </div>
 
-                 
-                
-                </div>  
+                      <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
+                        <p style={{ fontSize: "10px" }}>Invoice</p>
+                      </div>
 
-                <div className="row justify-content-evenly">
+                      <div>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-ellipsis-v"></i></button>
+                        <p style={{ fontSize: "10px" }}>View More</p>
+                      </div>
+                    </Col>
+                    <Col xxl={5} lg={5} md={12} className="d-flex justify-content-between">
 
-                <div>
-                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-percent"></i></button>
-                      <p>Discount</p>
-                  </div>
-
-                  <div>
-                     <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
-                     <p>Invoice</p>
-                  </div>
-
-                  <div>
-                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-ellipsis-v"></i></button>
-                      <p>View More</p>
-                  </div>
-
-                </div> 
-
-                {/* Stock */}
-                <div className="mt-3">
-                    <p className="font-weight-normal">
-                      <span className="h4">Fuel Percentage</span> 
-                    </p>
-                    <ProgressBar now={80} animated variant="primary" />
-                </div>
-
-              <div className="row">
-                <div style={{paddingTop:"30px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>JC NO:</p>
-                  <p>14</p>
-                </div>
-
-                <div style={{paddingTop:"30px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Estimate</p>
-                </div>
-
-                <div style={{paddingTop:"30px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Arrival">2024-10-16</p>
-                  <p title="Date of Arrival">DOA</p>
-                </div>
-
-                <div style={{paddingTop:"30px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Delivery">NA</p>
-                  <p title="Date of Delivery">DOD</p>
-                </div>
-
-              </div>
-
-
-              <h5 style={{paddingTop:"25px"}}>Repair</h5>
-              <div className="row">
-                
-                  
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
-                  <p>Inv No(Cust)</p>
-                </div>
-
-
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Discount</p>
-                </div>
-
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Coupon</p>
-                </div>
-
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Paid(Cust)</p>
-                </div>
-
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Due(Cust)</p>
-                </div>
-
-              </div>
-
-
-              <h5 style={{paddingTop:"25px"}}>Claims</h5>
-              <div className="row">
-                
-                  
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
-                  <p>Inv No(Ins)</p>
-                </div>
-
-
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Paid(Ins)</p>
-                </div>
-
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Due(Ins)</p>
-                </div>
-
-              </div>
-
+                        <p className="d-flex align-items-center bg-primary rounded px-2 py-0 shadow" style={{ color: "#fff" }}><b>JC NO:&nbsp;</b> 14</p>
+                      
                     
-                  {/* </div> */}
+                      
+                      <div  style={{ paddingTop: "10px" }}>
+                        <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                        <p>Estimate</p>
+                      </div>
+                      <div className="border-end"></div>
+                      <div className="" style={{ paddingTop: "10px" }}>
+                        <p style={{ marginBottom: "0px", color: "#38cab3" }} title="Date of Arrival">2024-10-16</p>
+                        <p title="Date of Arrival">DOA</p>
+                      </div>
+
+                      <div style={{ paddingTop: "10px" }}>
+                        <p style={{ marginBottom: "0px", color: "#38cab3" }} title="Date of Delivery">NA</p>
+                        <p title="Date of Delivery">DOD</p>
+                      </div>
+                    </Col>
+
+                  </div>
+
+
+                  {/* Stock */}
+                  <div className=" row ">
+
+
+
+                    <Col xxl={7} lg={7} md={12} >
+
+                      <div className="d-flex justify-content-between align-items-center">
+                        <h6 className="bg-primary p-2 rounded shadow">Repair:</h6>
+                        <div style={{ paddingTop: "5px" }}>
+                          <p style={{ marginBottom: "0px", color: "#38cab3" }}>NA</p>
+                          <p>Inv No(Cust)</p>
+                        </div>
+
+
+                        <div style={{ paddingTop: "5px" }}>
+                          <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                          <p>Discount</p>
+                        </div>
+
+                        <div style={{ paddingTop: "5px" }}>
+                          <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                          <p>Coupon</p>
+                        </div>
+
+                        <div style={{ paddingTop: "5px" }}>
+                          <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                          <p>Paid(Cust)</p>
+                        </div>
+
+                        <div style={{ paddingTop: "5px" }}>
+                          <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                          <p>Due(Cust)</p>
+                        </div>
+                      </div>
+                    </Col>
+
+                    <Col xxl={5} lg={5} md={12} >
+
+                      <div className="d-flex justify-content-between align-items-center">
+                        <h6 className="bg-primary p-2 rounded shadow">Claims:</h6>
+                        <div style={{ paddingTop: "5px" }}>
+                          <p style={{ marginBottom: "0px", color: "#38cab3" }}>NA</p>
+                          <p>Inv No(Ins)</p>
+                        </div>
+
+
+                        <div style={{ paddingTop: "5px" }}>
+                          <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                          <p>Paid(Ins)</p>
+                        </div>
+
+                        <div style={{ paddingTop: "5px" }}>
+                          <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                          <p>Due(Ins)</p>
+                        </div>
+                      </div>
+                    </Col>
+
+                  </div>
+
 
                 </Col>
               </Row>
@@ -1921,121 +1910,115 @@ const Tabss = () => {
           </Card>
         </Col>
         <Col sm={12} md={12} xl={6} lg={6} xxl={6}>
-          <Card>
+          <Card className="shadow " style={{ borderRadius: "10px" }}>
             <Card.Body>
               <Row className="row-sm">
-              <Col xxl={6} lg={12} md={12} className="details  mt-xxl-0 ">
-                  
+                <Col xxl={6} lg={12} md={12} className="details  mt-xxl-0 ">
 
 
-                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginTop:"-20px",marginLeft:"-20px",marginRight:"-20px", paddingTop:"15px"}}>
 
-                      <div className="d-flex">
+                  <div className="row d-flex justify-content-between" style={{ backgroundColor: "#38cab3", marginTop: "-20px", marginLeft: "-20px", marginRight: "-20px", paddingTop: "15px" }}>
 
-                        <i class="fa fa-binoculars" style={{fontSize:"30px"}}> </i>
+                    <div className="d-flex">
 
-                        <div className="list" style={{paddingLeft:"10px"}}>
-                          <p style={{marginBottom:"0px"}} title="Plate Number">AP09BC2034 (Hyderabad)</p>
-                         
-                        </div>
+                      <i class="fa fa-binoculars" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }} title="Plate Number">AP09BC2034 (Hyderabad)</p>
+
                       </div>
+                    </div>
 
-                      <div className="d-flex">
+                    <div className="d-flex">
 
-                          <i class="fa fa-car" style={{fontSize:"30px"}}> </i>
+                      <i class="fa fa-car" style={{ fontSize: "15px" }}> </i>
 
-                          <div className="list" style={{paddingLeft:"10px"}}>
-                            <p style={{marginBottom:"0px"}} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
-                            
-                          </div>
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
+
                       </div>
+                    </div>
 
                   </div>
 
-                  <div className="row d-flex justify-content-evenly" style={{backgroundColor:"#38cab3",marginLeft:"-20px",marginRight:"-20px",paddingBottom:"15px",paddingTop:"8px"}}>
+                  <div className="row d-flex justify-content-between" style={{ backgroundColor: "#38cab3", marginLeft: "-20px", marginRight: "-20px", paddingBottom: "5px", paddingTop: "8px" }}>
 
-                      <div className="d-flex">
+                    <div className="d-flex align-items-center">
 
-                        {/* <i class="fa fa-kms" style={{fontSize:"30px"}}> </i> */}
+                      {/* <i class="fa fa-kms" style={{fontSize:"15px"}}> </i> */}
 
-                        <div className="list" style={{paddingLeft:"10px"}} >
-                          <p style={{marginBottom:"0px"}} title="Odometer Reading">000000</p>
-                         
-                        </div>
-                      </div>
-
-                      <div className="d-flex ">
-
-                          {/* <i class="fa fa-car" style={{fontSize:"30px"}}> </i> */}
-
-                          <div className="list" style={{paddingLeft:"10px"}}>
-                            <p style={{marginBottom:"0px"}} title="Mfg Year">NA | <span title="Vehicle Category">Hot Hatchback</span></p>
-                          </div>
-
-                          <div className="list d-flex" style={{paddingLeft:"10px"}}>
-                              <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>  
-                          </div>
+                      <div className="list" >
+                        <p style={{ marginBottom: "0px" }} title="Odometer Reading">000000</p>
 
                       </div>
+                    </div>
+
+                    <div className="d-flex align-items-center">
+
+                      {/* <i class="fa fa-car" style={{fontSize:"15px"}}> </i> */}
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }} title="Mfg Year">NA | <span title="Vehicle Category">Hot Hatchback</span></p>
+                      </div>
+
+                      <div className="list d-flex" style={{ paddingLeft: "10px" }}>
+                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>
+                      </div>
+
+                    </div>
 
                   </div>
 
                   {/* <div class="main-contact-action btn-list pt-3 pe-0 me-3"> */}
-                  <div className="row d-flex justify-content-flex-start" style={{paddingTop:"30px"}}>
+                  <div className="row d-flex justify-content-flex-start" style={{ paddingTop: "30px" }}>
 
                     <div className="d-flex">
-                   
-                      <i class="fa fa-user" style={{fontSize:"30px"}}> </i>
-                    
-                      <div className="list" style={{paddingLeft:"10px"}}>
-                        <p style={{marginBottom:"0px"}}>Customer Name</p>
-                        <p>FIROZ</p>
-                      </div>
-                    </div>
-                    
-                    <div className="d-flex">
-                   
-                      <i class="fa fa-phone" style={{fontSize:"30px"}}> </i>
-                    
-                      <div className="list" style={{paddingLeft:"10px"}}>
-                        <p style={{marginBottom:"0px"}}>Phone Number</p>
-                        <p>8008664384</p>
+
+                      <i class="fa fa-user" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }}>Customer Name</p>
+                        <p>Sumanth</p>
                       </div>
                     </div>
 
+                    <div className="d-flex ">
+
+                      <i class="fa fa-phone" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }}>Phone Number</p>
+                        <p>6302703786</p>
+                      </div>
+                    </div>
+
                     <div className="d-flex">
-                   
-                      <i class="far fa-user" style={{fontSize:"30px"}}> </i>
-                    
-                      <div className="list" style={{paddingLeft:"10px"}}>
-                        <p style={{marginBottom:"0px"}}>Advisor Name</p>
+
+                      <i class="far fa-user" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }}>Advisor Name</p>
                         <p>NA</p>
                       </div>
                     </div>
 
 
-                    
-
-                  </div>
-
-
-                  <div className="row d-flex justify-content-evenly" style={{paddingTop:"15px"}}>
                     <div className="d-flex">
-                   
-                      <i class="fa fa-cog" style={{fontSize:"30px"}}> </i>
-                    
-                      <div className="list" style={{paddingLeft:"10px"}}>
-                        <p style={{marginBottom:"0px"}}>Customer Source</p>
-                        <p>TRIAL CARS24</p>
+
+                      <i class="fa fa-cog" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }}>Customer Source</p>
+                        <p>TRIAL CARS25</p>
                       </div>
                     </div>
 
                     <div className="d-flex">
-                   
-                      <i class="fa fa-star" style={{fontSize:"30px"}}> </i>
-                    
-                      <div className="list" style={{paddingLeft:"10px"}}>
-                        <p style={{marginBottom:"0px"}}>Customer Rating</p>
+
+                      <i class="fa fa-star" style={{ fontSize: "15px" }}> </i>
+
+                      <div className="list" style={{ paddingLeft: "10px" }}>
+                        <p style={{ marginBottom: "0px" }}>Customer Rating</p>
                         {/* Ratings */}
                         <div className="rating mb-1">
                           <div className="stars">
@@ -2049,142 +2032,140 @@ const Tabss = () => {
                       </div>
 
                     </div>
+
                   </div>
 
 
-                <div className="row justify-content-evenly" style={{paddingTop:"30px"}}>
 
-                  <div>
-                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
-                    <p>Jc/Est</p>
-                  </div>
+                  <div className="row" style={{ paddingTop: "0px" }}>
 
-                  <div>
-                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
-                    <p>Status</p>
-                  </div>
+                    <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
+                      <p style={{ fontSize: "10px" }}>Jc/Est</p>
+                    </div>
 
-                  <div>
-                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
-                    <p>History</p>
-                  </div>
+                    <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
+                      <p style={{ fontSize: "10px" }}>Status</p>
+                    </div>
 
-                  <div>
+                    <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
+                      <p style={{ fontSize: "10px" }}>History</p>
+                    </div>
+
+                    <div>
                       <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-dollar-sign"></i></button>
-                      <p>Payments</p>
-                  </div>
+                      <p style={{ fontSize: "10px" }}>Payments</p>
+                    </div>
 
-                 
-                
-                </div>  
-
-                <div className="row justify-content-evenly">
-
-                <div>
+                    <div>
                       <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-percent"></i></button>
-                      <p>Discount</p>
-                  </div>
+                      <p style={{ fontSize: "10px" }}>Discount</p>
+                    </div>
 
-                  <div>
-                     <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
-                     <p>Invoice</p>
-                  </div>
+                    <div>
+                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
+                      <p style={{ fontSize: "10px" }}>Invoice</p>
+                    </div>
 
-                  <div>
+                    <div>
                       <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-ellipsis-v"></i></button>
-                      <p>View More</p>
+                      <p style={{ fontSize: "10px" }}>View More</p>
+                    </div>
+
                   </div>
 
-                </div> 
 
-                {/* Stock */}
-                <div className="mt-3">
-                    <p className="font-weight-normal">
-                      <span className="h4">Fuel Percentage</span> 
-                    </p>
-                    <ProgressBar now={20} animated variant="primary" />
-                </div>
+                  {/* Stock */}
+                  <div className=" row ">
+                    <Col xxl={4} lg={4} md={12} >
+                      <p className="font-weight-normal">
+                        <span className="h6">Fuel Percentage</span>
+                      </p>
+                      <ProgressBar now={40} animated variant="primary" style={{ height: "5px" }} />
+                    </Col>
+                    <Col xxl={8} lg={8} md={12} className="d-flex justify-content-between">
+                      <div style={{ paddingTop: "10px" }}>
+                        <p style={{ marginBottom: "0px", color: "#38cab3" }}>JC NO:</p>
+                        <p>14</p>
+                      </div>
 
-              <div className="row">
-                <div style={{paddingTop:"30px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>JC NO:</p>
-                  <p>14</p>
-                </div>
+                      <div style={{ paddingTop: "10px" }}>
+                        <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                        <p>Estimate</p>
+                      </div>
 
-                <div style={{paddingTop:"30px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Estimate</p>
-                </div>
+                      <div style={{ paddingTop: "10px" }}>
+                        <p style={{ marginBottom: "0px", color: "#38cab3" }} title="Date of Arrival">2024-10-16</p>
+                        <p title="Date of Arrival">DOA</p>
+                      </div>
 
-                <div style={{paddingTop:"30px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Arrival">2024-10-16</p>
-                  <p title="Date of Arrival">DOA</p>
-                </div>
-
-                <div style={{paddingTop:"30px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}} title="Date of Delivery">NA</p>
-                  <p title="Date of Delivery">DOD</p>
-                </div>
-
-              </div>
-
-
-              <h5 style={{paddingTop:"25px"}}>Repair</h5>
-              <div className="row">
-                
-                  
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
-                  <p>Inv No(Cust)</p>
-                </div>
+                      <div style={{ paddingTop: "10px" }}>
+                        <p style={{ marginBottom: "0px", color: "#38cab3" }} title="Date of Delivery">NA</p>
+                        <p title="Date of Delivery">DOD</p>
+                      </div>
+                    </Col>
+                  </div>
 
 
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Discount</p>
-                </div>
 
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Coupon</p>
-                </div>
-
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Paid(Cust)</p>
-                </div>
-
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Due(Cust)</p>
-                </div>
-
-              </div>
+                  <h6 style={{ paddingTop: "0px" }}>Repair</h6>
+                  <div className="row">
 
 
-              <h5 style={{paddingTop:"25px"}}>Claims</h5>
-              <div className="row">
-                
-                  
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>NA</p>
-                  <p>Inv No(Ins)</p>
-                </div>
+                    <div style={{ paddingTop: "5px" }}>
+                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>NA</p>
+                      <p>Inv No(Cust)</p>
+                    </div>
 
 
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Paid(Ins)</p>
-                </div>
+                    <div style={{ paddingTop: "5px" }}>
+                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                      <p>Discount</p>
+                    </div>
 
-                <div style={{paddingTop:"5px"}}>
-                  <p style={{marginBottom:"0px",color:"#38cab3"}}>0.00</p>
-                  <p>Due(Ins)</p>
-                </div>
+                    <div style={{ paddingTop: "5px" }}>
+                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                      <p>Coupon</p>
+                    </div>
 
-              </div>
+                    <div style={{ paddingTop: "5px" }}>
+                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                      <p>Paid(Cust)</p>
+                    </div>
 
-                    
+                    <div style={{ paddingTop: "5px" }}>
+                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                      <p>Due(Cust)</p>
+                    </div>
+
+                  </div>
+
+
+                  <h6 style={{ paddingTop: "0px" }}>Claims</h6>
+                  <div className="row">
+
+
+                    <div style={{ paddingTop: "5px" }}>
+                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>NA</p>
+                      <p>Inv No(Ins)</p>
+                    </div>
+
+
+                    <div style={{ paddingTop: "5px" }}>
+                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                      <p>Paid(Ins)</p>
+                    </div>
+
+                    <div style={{ paddingTop: "5px" }}>
+                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
+                      <p>Due(Ins)</p>
+                    </div>
+
+                  </div>
+
+
                   {/* </div> */}
 
                 </Col>

@@ -102,18 +102,19 @@ const Todotask = () => {
     <Fragment>
       <Pageheader title="Customers" heading="Customer" active="Calendar" />
 
-      <Tab.Container id="left-tabs-example" defaultActiveKey="TabStyle01">
+      <Tab.Container id="left-tabs-example" defaultActiveKey="TabStyle01" >
         <Row>
           <Col md={12} xl={12} lg={12}>
             <Card>
               <Nav variant="pills" className="flex-column">
-                <div className="list-group list-group-transparent mb-0 mail-inbox">
+                <div className="list-group list-group-transparent mb-0 mail-inbox" >
                   <Row>
                     <Col md={12} xl={12} lg={12}>
-                      <Nav.Item>
+                      <Nav.Item style={{heigth:"45px"}}>
                         <Nav.Link
+                        
                           eventKey="TabStyle01"
-                          className="list-group-item d-flex align-items-center justify-content-between border-0"
+                          className="list-group-item d-flex align-items-center justify-content-between border-0" 
                         >
                           <div className="d-flex align-items-center">
                             <i className="fa fa-user fs-18 me-4  border-primary brround bg-primary-transparent text-primary"></i>

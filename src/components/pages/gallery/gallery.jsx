@@ -92,17 +92,17 @@ const Gallery = () => {
   return (
     <Fragment>
       <Pageheader title="Employee" heading="Employee" active="Manage Designations" />
-      <div className="row">
+      <div className="row p-0">
         <Col lg={12} md={12}>
-          <Card>
+          <Card className="p-0">
             <Card.Header
-              className="row-sm row justify-content-between bg-primary"
-              style={{ backgroundColor: "#41bde1", paddingBottom:"6px"}}
+              className="row-sm row justify-content-between bg-primary p-0"
+              style={{ backgroundColor: "#41bde1"}}
             >
-              <div className="row-sm row">
+              <div className="row-sm row align-items-center">
                 <div>
                   <a
-                    className="btn ripple btn-dark text-white btn-icon mt-2"
+                    className="btn ripple btn-dark text-white btn-icon"
                     data-placement="top"
                     data-bs-toggle="tooltip"
                     title="icon"
@@ -112,12 +112,12 @@ const Gallery = () => {
                   </a>
                 </div>
                 <div>
-                  <h3 className="mt-3">Manage Designations</h3>
+                  <h6 className="">Manage Designations</h6>
                 </div>
               </div>
 
-              <div className="row-sm row">
-                <div className="form-group col-lg-12 d-flex align-items-center mt-2">
+              <div className="row-sm row align-items-center">
+                <div className="col-lg-12 d-flex p-0 align-items-center">
                   <input
                     autoComplete="off"
                     placeholder="Search..."
@@ -154,7 +154,7 @@ const Gallery = () => {
                   onSubmit={handleSubmitCustom}
                 >
                   <div className="table-responsive mt-4">
-                    <table className="table table-bordered text-nowrap border-bottom">
+                    <table className="table table-bordered text-nowrap border-bottom m-0">
                       <thead>
                         <tr>
                           <th className="">Designation Info</th>
