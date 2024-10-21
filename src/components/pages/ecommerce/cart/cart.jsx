@@ -123,17 +123,16 @@ const Cart = () => {
   return (
     <Fragment>
       <Pageheader title="Employees" heading="Employees" active="Service Advisors" />
-      <div className="row">
-        <Col lg={12} md={12}>
+      <div className="row p-0">
+        <Col lg={12} md={12} className="p-0">
           <Card>
             <Card.Header
-              className="row-sm row justify-content-between bg-primary"
-              style={{ backgroundColor: "#41bde1", paddingBottom: "6px" }}
+              className="row-sm row justify-content-between bg-primary p-0"
             >
-              <div className="row-sm row">
+              <div className="row-sm row align-items-center py-0">
                 <div>
                   <a
-                    className="btn ripple btn-dark text-white btn-icon mt-2"
+                    className="btn ripple btn-dark text-white btn-icon p-0"
                     data-placement="top"
                     data-bs-toggle="tooltip"
                     title="icon"
@@ -143,12 +142,12 @@ const Cart = () => {
                   </a>
                 </div>
                 <div>
-                  <h3 className="mt-3">Manage Employees</h3>
+                  <h3>Manage Employees</h3>
                 </div>
               </div>
 
-              <div className="row-sm row">
-                <div className="form-group col-lg-12 d-flex align-items-center mt-2">
+              <div className="row-sm row p-0 ">
+                <div className="col-lg-12 d-flex align-items-center">
                   <input
                     autoComplete="off"
                     placeholder="Search..."
@@ -213,32 +212,50 @@ const Cart = () => {
                               <td>{item.passwordExpiry}</td>
                               <td>{item.contactNumber}</td>
                               <td>
-                               
-                              
-                                
+
+                                <input
+                                  type="checkbox"
+                                  name="custom-switch-checkbox3"
+                                  className="custom-switch-input"
+                                />
+                                <span className="custom-switch-indicator custom-radius"></span>
+
                               </td>
                               <td>
                                 <div className="row">
-                                  <button
-                                    className="btn btn-sm btn-dark fa fa-user"
-                                    onClick={handleUserClick}
-                                    style={{ marginLeft: "5px" }}
-                                  ></button>
-                                  <button
-                                    className="btn btn-sm btn-primary fa fa-edit"
-                                    onClick={() => handleEditClick(item.itemcode)}
-                                    style={{ marginLeft: "5px" }}
-                                  ></button>
-                                  <button
-                                    className="btn btn-sm btn-info fas fa-eye"
-                                    onClick={handleClickOpen1}
-                                    style={{ marginLeft: "5px" }}
-                                  ></button>
-                                  <button
-                                    className="btn btn-sm btn-danger far fa-trash-alt"
-                                    onClick={handleClickOpen1}
-                                    style={{ marginLeft: "5px" }}
-                                  ></button>
+                                  <div className="btn-group">
+                                    <button
+                                      type="button"
+                                      className="btn btn-primary dropdown-toggle"
+                                      data-bs-toggle="dropdown"
+                                      aria-expanded="false"
+                                      style={{ border: "none" }}
+                                    >
+                                      &#8230; {/* Three dots */}
+                                    </button>
+                                    <ul className="dropdown-menu">
+                                      <li>
+                                        <button className="dropdown-item" onClick={handleUserClick}>
+                                          User
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button className="dropdown-item" onClick={() => handleEditClick(item.itemcode)}>
+                                          Edit
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button className="dropdown-item" onClick={handleClickOpen1}>
+                                          View
+                                        </button>
+                                      </li>
+                                      <li>
+                                        <button className="dropdown-item" onClick={handleClickOpen1}>
+                                          Delete
+                                        </button>
+                                      </li>
+                                    </ul>
+                                  </div>
                                 </div>
                               </td>
                             </tr>

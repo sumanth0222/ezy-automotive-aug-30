@@ -13,6 +13,7 @@ import Select from 'react-select';
 import ProductService from '../../../common/ProductService';
 
 
+
 // Sample data
 const bookingsData = [
   { date: "21/08/2024", customer: "Sumanth", vehicle: "Audi" },
@@ -167,14 +168,14 @@ const Tabss = () => {
           <Card className="mg-b-20" id="tabs-style3">
             <Card.Body className="py-0">
               <div className="d-flex justify-content-between align-items-center">
-                <div className="main-content-label ">Transaction Centre</div>
+                <div className="main-content-label ">Transaction Centre / Service Queue</div>
                 <div className="mt-2 d-lg-flex form-group">
                   <span>
                     <input
                       autoComplete="off"
                       placeholder="Search..."
                       type="search"
-                      className="form-control"
+                      className="form-control shadow rounded"
                       value={filter}
                       onChange={(e) => setFilter(e.target.value)}
                     />
@@ -208,51 +209,126 @@ const Tabss = () => {
                           <Button
                             variant=""
 
-                            className="btn ripple btn-primary mb-2 mb-xl-0 me-2"
+                            className="btn ripple  shadow"
 
                             role="button"
                             onClick={() => first()}
                           >
-                            <i className="far fa-handshake" /> &nbsp;
-                            Bookings<span className="badge bg-danger ms-2">6</span>
+                            <Row className="justify-content-center align-items-center">
+                              <Col>
+                              <i className="fa fa-wrench" />
+                              </Col>
+                           
+                            <Col style={{fontSize:"10px", fontWeight:"400"}}>
+                            Under <br />
+                            Servicing
+                            </Col>
+                            <Col>
+                            <span className="badge bg-danger ms-2">6</span>
+                            </Col>
+                            </Row>
                           </Button>
                           <Button
                             variant=""
-                            className="btn ripple btn-primary mb-xl-0 me-2"
+                            className="btn ripple  shadow"
                             role="button"
                             onClick={() => second()}
                           >
-                            <i className="fa fa-search-plus" /> &nbsp;
-                            Inspections<span className="badge bg-danger ms-2">2</span>
+                            <Row className="justify-content-center align-items-center">
+                            <Col lg={2}>
+                            <i className="fa fa-table" /> 
+                            </Col>
+                            <Col lg={6} style={{fontSize:"10px", fontWeight:"400"}}>
+                            Next Day<br />
+                            Delivery
+                            </Col>
+                            <Col lg={2}>
+                            <span className="badge bg-danger ms-2">2</span>
+                            </Col>
+                           </Row>
                           </Button>
                           <Button
                             variant=""
-                            className="btn ripple btn-primary  mb-xl-0"
+                            className="btn ripple  shadow"
                             role="button"
                             onClick={() => third()}
                           >
-                            <i className="fa fa-user-md" /> &nbsp;
-                            Jobs<span className="badge bg-danger ms-2">6</span>
+                            <Row className="justify-content-center align-items-center">
+                              <Col>
+                              <i className="far fa-calendar-check" />
+                              </Col>
+                              <Col style={{fontSize:"10px", fontWeight:"400"}}>
+                              Upcoming <br />
+                              Delivery
+                              </Col>
+                              <Col>
+                              <span className="badge bg-danger ms-2">6</span>
+                              </Col>
+                           
+                           
+                            </Row>
                           </Button>
                           <Button
                             variant=""
-                            className="btn ripple btn-primary  mb-xl-0"
+                            className="btn ripple  shadow"
                             role="button"
                             onClick={() => fourth()}
                           >
-                            <i className="fa fa-tasks" /> &nbsp;
-                            Orders<span className="badge bg-danger ms-2">1</span>
+                            <Row className="justify-content-center align-items-center">
+                            <Col lg={2}>
+                            <i className="fa fa-truck" />
+                           </Col>
+                           <Col lg={7} style={{fontSize:"10px", fontWeight:"400"}}>
+                           Ready for<br/> 
+                           Delivery
+                           </Col>
+                           <Col lg={2}>
+                           <span className="badge bg-danger ms-2">1</span>
+                           </Col>
+                          </Row>
                           </Button>
                           <Button
                             variant=""
-                            className="btn ripple btn-primary  mb-xl-0"
+                            className="btn ripple  shadow"
                             role="button"
                             onClick={() => fifth()}
                           >
-                            <i className="far fa-file-alt" /> &nbsp;
-                            Invoices<span className="badge bg-danger ms-2">2</span>
+                            <Row className="justify-content-center align-items-center">
+                              <Col> <i className="far fa-file-alt" /></Col>
+                              <Col style={{fontSize:"10px", fontWeight:"400"}}>
+                                Payment<br/>
+                                Processing
+                              </Col>
+                              <Col>
+                                <span className="badge bg-danger ms-2">2</span>
+                              </Col>
+                              </Row>
+                          </Button>
+                          <Button
+                            variant=""
+                            className="btn ripple  shadow"
+                            role="button"
+                            onClick={() => fifth()}
+                          >
+                            <Row className="justify-content-center align-items-center">
+                              <Col>
+                                <i className="far fa-file-alt" />
+                              </Col>
+                              <Col style={{fontSize:"10px", fontWeight:"400"}}>
+
+                                Completed<br />
+                                Service
+                              </Col>
+                              <Col>
+                                <span className="badge bg-danger ms-2">2</span>
+                              </Col>
+                            </Row>
+
+
                           </Button>
                         </div>
+
+
                         <Row className="row-sm">
                           {isFirstCollapsed ? (
                             <div className="col">
@@ -1629,6 +1705,9 @@ const Tabss = () => {
                           ) : null}
                         </Row>
                       </div>
+
+
+
                     </Card.Body>
                   </Card>
                 </Col>
@@ -1659,21 +1738,21 @@ const Tabss = () => {
               <Row className="row-sm border-bottom">
                 <Col xxl={12} lg={12} md={12} className="details  mt-xxl-0 ">
 
-                  <div className="row d-flex justify-content-between border-bottom" style={{ backgroundColor: "#38cab3", marginTop: "-10px", marginLeft: "0px", marginRight: "0px", paddingTop: "5px" }}>
+                  <div className="row d-flex justify-content-between border-bottom shadow rounded" style={{ backgroundColor: "#38cab3", marginTop: "-10px", marginLeft: "0px", marginRight: "0px", paddingTop: "1px" }}>
 
                     <div className="d-flex align-items-center">
 
-                      <i class="fa fa-binoculars" style={{ fontSize: "15px" }}> </i>
+                      <i class="fa fa-binoculars text-light" style={{ fontSize: "15px" }}> </i>
 
                       <div className="list" style={{ paddingLeft: "10px" }}>
-                        <p style={{ marginBottom: "0px" }} title="Plate Number">AP09BC2034 (Hyderabad)</p>
+                        <p style={{ marginBottom: "0px" }} title="Plate Number">AP09BC2034 <b className="text-light">(Hyderabad)</b></p>
 
                       </div>
                     </div>
 
                     <div className="d-flex align-items-center">
 
-                      <i class="fa fa-car" style={{ fontSize: "15px" }}> </i>
+                      <i class="fa fa-car text-light" style={{ fontSize: "15px" }}> </i>
 
                       <div className="list" style={{ paddingLeft: "10px" }}>
                         <p style={{ marginBottom: "0px" }} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
@@ -1686,7 +1765,7 @@ const Tabss = () => {
                       {/* <i class="fa fa-kms" style={{fontSize:"15px"}}> </i> */}
 
                       <div className="list" >
-                        <p style={{ marginBottom: "0px" }} title="Odometer Reading">000000</p>
+                        <p style={{ marginBottom: "0px" }} title="Odometer Reading"><i className="fas fa-tachometer-alt text-light" /> 000000</p>
 
                       </div>
                     </div>
@@ -1716,7 +1795,7 @@ const Tabss = () => {
 
                       <div className="list" style={{ paddingLeft: "10px" }}>
                         <p style={{ marginBottom: "0px" }}>Customer Name</p>
-                        <p>Bharath</p>
+                        <p><b className="shadow">Bharath</b></p>
                       </div>
                     </div>
 
@@ -1726,7 +1805,7 @@ const Tabss = () => {
 
                       <div className="list" style={{ paddingLeft: "10px" }}>
                         <p style={{ marginBottom: "0px" }}>Phone Number</p>
-                        <p>8008664384</p>
+                        <p><b className="shadow">8008664384</b></p>
                       </div>
                     </div>
 
@@ -1747,7 +1826,7 @@ const Tabss = () => {
 
                       <div className="list" style={{ paddingLeft: "10px" }}>
                         <p style={{ marginBottom: "0px" }}>Customer Source</p>
-                        <p>TRIAL CARS24</p>
+                        <p><b className="shadow rounded">TRIAL CARS24</b></p>
                       </div>
                     </div>
 
@@ -1760,8 +1839,8 @@ const Tabss = () => {
                         {/* Ratings */}
                         <div className="rating mb-1">
                           <div className="stars">
-                            <span className="fa fa-star text-muted"></span>
-                            <span className="fa fa-star text-muted"></span>
+                            <span className="fa fa-star text-primary"></span>
+                            <span className="fa fa-star text-primary"></span>
                             <span className="fa fa-star text-muted"></span>
                             <span className="fa fa-star text-muted"></span>
                             <span className="fa fa-star text-muted"></span>
@@ -1817,13 +1896,13 @@ const Tabss = () => {
                         <p style={{ fontSize: "10px" }}>View More</p>
                       </div>
                     </Col>
-                    <Col xxl={5} lg={5} md={12} className="d-flex justify-content-between">
+                    <Col xxl={5} lg={5} md={12} className="d-flex justify-content-between align-items-center">
 
-                        <p className="d-flex align-items-center bg-primary rounded px-2 py-0 shadow" style={{ color: "#fff" }}><b>JC NO:&nbsp;</b> 14</p>
-                      
-                    
-                      
-                      <div  style={{ paddingTop: "10px" }}>
+                      <p className="d-flex align-items-center bg-primary rounded px-2 py-0 shadow" style={{ color: "#fff", height:"20px" }}><b>JC NO:&nbsp;</b> 14</p>
+
+
+
+                      <div style={{ paddingTop: "10px" }}>
                         <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
                         <p>Estimate</p>
                       </div>
@@ -1850,7 +1929,7 @@ const Tabss = () => {
                     <Col xxl={7} lg={7} md={12} >
 
                       <div className="d-flex justify-content-between align-items-center">
-                        <h6 className="bg-primary p-2 rounded shadow">Repair:</h6>
+                        <h6 className="bg-primary px-2 py-1  rounded shadow" style={{ fontSize:"10px"}}>Repair:</h6>
                         <div style={{ paddingTop: "5px" }}>
                           <p style={{ marginBottom: "0px", color: "#38cab3" }}>NA</p>
                           <p>Inv No(Cust)</p>
@@ -1882,7 +1961,7 @@ const Tabss = () => {
                     <Col xxl={5} lg={5} md={12} >
 
                       <div className="d-flex justify-content-between align-items-center">
-                        <h6 className="bg-primary p-2 rounded shadow">Claims:</h6>
+                        <h6 className="bg-primary px-2 py-1 rounded shadow" style={{ fontSize:"10px"}}>Claims:</h6>
                         <div style={{ paddingTop: "5px" }}>
                           <p style={{ marginBottom: "0px", color: "#38cab3" }}>NA</p>
                           <p>Inv No(Ins)</p>
@@ -1903,270 +1982,6 @@ const Tabss = () => {
 
                   </div>
 
-
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col sm={12} md={12} xl={6} lg={6} xxl={6}>
-          <Card className="shadow " style={{ borderRadius: "10px" }}>
-            <Card.Body>
-              <Row className="row-sm">
-                <Col xxl={6} lg={12} md={12} className="details  mt-xxl-0 ">
-
-
-
-                  <div className="row d-flex justify-content-between" style={{ backgroundColor: "#38cab3", marginTop: "-20px", marginLeft: "-20px", marginRight: "-20px", paddingTop: "15px" }}>
-
-                    <div className="d-flex">
-
-                      <i class="fa fa-binoculars" style={{ fontSize: "15px" }}> </i>
-
-                      <div className="list" style={{ paddingLeft: "10px" }}>
-                        <p style={{ marginBottom: "0px" }} title="Plate Number">AP09BC2034 (Hyderabad)</p>
-
-                      </div>
-                    </div>
-
-                    <div className="d-flex">
-
-                      <i class="fa fa-car" style={{ fontSize: "15px" }}> </i>
-
-                      <div className="list" style={{ paddingLeft: "10px" }}>
-                        <p style={{ marginBottom: "0px" }} title="Brand-Model-Variant">Ashok Leyland-Stile-LE</p>
-
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <div className="row d-flex justify-content-between" style={{ backgroundColor: "#38cab3", marginLeft: "-20px", marginRight: "-20px", paddingBottom: "5px", paddingTop: "8px" }}>
-
-                    <div className="d-flex align-items-center">
-
-                      {/* <i class="fa fa-kms" style={{fontSize:"15px"}}> </i> */}
-
-                      <div className="list" >
-                        <p style={{ marginBottom: "0px" }} title="Odometer Reading">000000</p>
-
-                      </div>
-                    </div>
-
-                    <div className="d-flex align-items-center">
-
-                      {/* <i class="fa fa-car" style={{fontSize:"15px"}}> </i> */}
-
-                      <div className="list" style={{ paddingLeft: "10px" }}>
-                        <p style={{ marginBottom: "0px" }} title="Mfg Year">NA | <span title="Vehicle Category">Hot Hatchback</span></p>
-                      </div>
-
-                      <div className="list d-flex" style={{ paddingLeft: "10px" }}>
-                        <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313" title="Fuel Type">NA</button>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  {/* <div class="main-contact-action btn-list pt-3 pe-0 me-3"> */}
-                  <div className="row d-flex justify-content-flex-start" style={{ paddingTop: "30px" }}>
-
-                    <div className="d-flex">
-
-                      <i class="fa fa-user" style={{ fontSize: "15px" }}> </i>
-
-                      <div className="list" style={{ paddingLeft: "10px" }}>
-                        <p style={{ marginBottom: "0px" }}>Customer Name</p>
-                        <p>Sumanth</p>
-                      </div>
-                    </div>
-
-                    <div className="d-flex ">
-
-                      <i class="fa fa-phone" style={{ fontSize: "15px" }}> </i>
-
-                      <div className="list" style={{ paddingLeft: "10px" }}>
-                        <p style={{ marginBottom: "0px" }}>Phone Number</p>
-                        <p>6302703786</p>
-                      </div>
-                    </div>
-
-                    <div className="d-flex">
-
-                      <i class="far fa-user" style={{ fontSize: "15px" }}> </i>
-
-                      <div className="list" style={{ paddingLeft: "10px" }}>
-                        <p style={{ marginBottom: "0px" }}>Advisor Name</p>
-                        <p>NA</p>
-                      </div>
-                    </div>
-
-
-                    <div className="d-flex">
-
-                      <i class="fa fa-cog" style={{ fontSize: "15px" }}> </i>
-
-                      <div className="list" style={{ paddingLeft: "10px" }}>
-                        <p style={{ marginBottom: "0px" }}>Customer Source</p>
-                        <p>TRIAL CARS25</p>
-                      </div>
-                    </div>
-
-                    <div className="d-flex">
-
-                      <i class="fa fa-star" style={{ fontSize: "15px" }}> </i>
-
-                      <div className="list" style={{ paddingLeft: "10px" }}>
-                        <p style={{ marginBottom: "0px" }}>Customer Rating</p>
-                        {/* Ratings */}
-                        <div className="rating mb-1">
-                          <div className="stars">
-                            <span className="fa fa-star text-muted"></span>
-                            <span className="fa fa-star text-muted"></span>
-                            <span className="fa fa-star text-muted"></span>
-                            <span className="fa fa-star text-muted"></span>
-                            <span className="fa fa-star text-muted"></span>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-
-
-                  <div className="row" style={{ paddingTop: "0px" }}>
-
-                    <div>
-                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-file-alt"></i></button>
-                      <p style={{ fontSize: "10px" }}>Jc/Est</p>
-                    </div>
-
-                    <div>
-                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-thumbs-up"></i></button>
-                      <p style={{ fontSize: "10px" }}>Status</p>
-                    </div>
-
-                    <div>
-                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-history"></i></button>
-                      <p style={{ fontSize: "10px" }}>History</p>
-                    </div>
-
-                    <div>
-                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-dollar-sign"></i></button>
-                      <p style={{ fontSize: "10px" }}>Payments</p>
-                    </div>
-
-                    <div>
-                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fas fa-percent"></i></button>
-                      <p style={{ fontSize: "10px" }}>Discount</p>
-                    </div>
-
-                    <div>
-                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-print"></i></button>
-                      <p style={{ fontSize: "10px" }}>Invoice</p>
-                    </div>
-
-                    <div>
-                      <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-ellipsis-v"></i></button>
-                      <p style={{ fontSize: "10px" }}>View More</p>
-                    </div>
-
-                  </div>
-
-
-                  {/* Stock */}
-                  <div className=" row ">
-                    <Col xxl={4} lg={4} md={12} >
-                      <p className="font-weight-normal">
-                        <span className="h6">Fuel Percentage</span>
-                      </p>
-                      <ProgressBar now={40} animated variant="primary" style={{ height: "5px" }} />
-                    </Col>
-                    <Col xxl={8} lg={8} md={12} className="d-flex justify-content-between">
-                      <div style={{ paddingTop: "10px" }}>
-                        <p style={{ marginBottom: "0px", color: "#38cab3" }}>JC NO:</p>
-                        <p>14</p>
-                      </div>
-
-                      <div style={{ paddingTop: "10px" }}>
-                        <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
-                        <p>Estimate</p>
-                      </div>
-
-                      <div style={{ paddingTop: "10px" }}>
-                        <p style={{ marginBottom: "0px", color: "#38cab3" }} title="Date of Arrival">2024-10-16</p>
-                        <p title="Date of Arrival">DOA</p>
-                      </div>
-
-                      <div style={{ paddingTop: "10px" }}>
-                        <p style={{ marginBottom: "0px", color: "#38cab3" }} title="Date of Delivery">NA</p>
-                        <p title="Date of Delivery">DOD</p>
-                      </div>
-                    </Col>
-                  </div>
-
-
-
-                  <h6 style={{ paddingTop: "0px" }}>Repair</h6>
-                  <div className="row">
-
-
-                    <div style={{ paddingTop: "5px" }}>
-                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>NA</p>
-                      <p>Inv No(Cust)</p>
-                    </div>
-
-
-                    <div style={{ paddingTop: "5px" }}>
-                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
-                      <p>Discount</p>
-                    </div>
-
-                    <div style={{ paddingTop: "5px" }}>
-                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
-                      <p>Coupon</p>
-                    </div>
-
-                    <div style={{ paddingTop: "5px" }}>
-                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
-                      <p>Paid(Cust)</p>
-                    </div>
-
-                    <div style={{ paddingTop: "5px" }}>
-                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
-                      <p>Due(Cust)</p>
-                    </div>
-
-                  </div>
-
-
-                  <h6 style={{ paddingTop: "0px" }}>Claims</h6>
-                  <div className="row">
-
-
-                    <div style={{ paddingTop: "5px" }}>
-                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>NA</p>
-                      <p>Inv No(Ins)</p>
-                    </div>
-
-
-                    <div style={{ paddingTop: "5px" }}>
-                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
-                      <p>Paid(Ins)</p>
-                    </div>
-
-                    <div style={{ paddingTop: "5px" }}>
-                      <p style={{ marginBottom: "0px", color: "#38cab3" }}>0.00</p>
-                      <p>Due(Ins)</p>
-                    </div>
-
-                  </div>
-
-
-                  {/* </div> */}
 
                 </Col>
               </Row>

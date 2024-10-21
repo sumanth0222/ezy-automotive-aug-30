@@ -3446,7 +3446,7 @@ input[type=button].btn-block {
     padding-inline-start: 1.25rem;
     padding-inline-end: 1.25rem;
     /* padding-block-start: 1.25rem; */
-    
+
 }
 
 .card-header {
@@ -3473,7 +3473,7 @@ input[type=button].btn-block {
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
-    padding-top:13px;
+    padding-top: 13px;
 }
 
 .card-item-desc .card-item-desc-1 dt,
@@ -26942,7 +26942,7 @@ a.option-dots {
 
 .app-sidebar .slide-menu .slide-item:before {
     content: "\f22d";
-    
+
     font-family: "Font Awesome 5 Free";
     position: absolute;
     inset-block-start: 9px;
@@ -53835,6 +53835,7 @@ div.dtr-bs-modal table.table tr:first-child td {
     color: var(--primary-bg-color) !important;
     letter-spacing: -1px;
 }
+
 .main-signup-header h3 {
     font-weight: 500;
     color: var(--primary-bg-color) !important;
@@ -79037,6 +79038,24 @@ select:focus-visible {
     background: #2a2e3f;
 }
 
+.dropdown-container {
+    height: 35px;
+    border: none;
+    border-bottom: 2px solid !important;
+    box-shadow: 0px 2px 1px 1px #3333333b;
+    border-radius: 5px;
+}
+
+.form-control {
+
+    height: 35px !important;
+    border: none !important;
+    border-bottom: 2px solid !important;
+    box-shadow: 0px 2px 1px 1px #3333333b !important;
+    border-radius: 5px !important;
+
+}
+
 .dark-theme .rmsc {
     --rmsc-main: #000;
     --rmsc-selected: #38cab3;
@@ -81011,4 +81030,6 @@ input:focus-visible {
 .transparent-theme .btn-danger-light {
     color: #fff !important;
 }
+
 /*# sourceMappingURL=style.css.map */
+
