@@ -1,8 +1,6 @@
 import React, { useState, Fragment } from "react";
-import { Form, Nav, Card, Row, Col, Button } from "react-bootstrap";
-import { Link } from 'react-router-dom';
-import { CForm } from "@coreui/react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import { Card, Col, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom"; 
 import Draggable from "react-draggable";
 import {
   Dialog,
@@ -94,21 +92,6 @@ const Cart = () => {
   ];
 
   const [filter, setFilter] = useState(""); // Search filter state
-  const [isActive, setIsActive] = useState(true); // Set initial state to true to show table by default
-
-  // Toggle button handler
-  const toggleActiveState = () => {
-    setIsActive(!isActive);
-  };
-
-  // Filtering based on search term
-  const filterData = (data, field) =>
-    data.filter((item) => item[field].toLowerCase().includes(filter.toLowerCase()));
-
-  const handleEditClick = (itemCode) => {
-    // Navigate to the edit page with the itemCode
-    navigate(`${import.meta.env.BASE_URL}pages/aboutus`);
-  };
 
   const handlePlusClick = () => {
     navigate("/advancedui/carousel"); // Navigate to the form page
@@ -119,6 +102,10 @@ const Cart = () => {
   };
 
   const [dark1, setdark1] = useState("on");
+
+  // Filtering based on search term
+  const filterData = (data, field) =>
+    data.filter((item) => item[field].toLowerCase().includes(filter.toLowerCase()));
 
   return (
     <Fragment>
@@ -176,130 +163,104 @@ const Cart = () => {
               </div>
             </Card.Header>
             <Card.Body>
-              {isActive ? (
-                <CForm
-                  className="row g-3 needs-validation"
-                  noValidate
-                  validated={validatedCustom}
-                  onSubmit={handleSubmitCustom}
-                >
-                  <div className="table-responsive mt-4">
-                    <table className="table table-bordered text-nowrap border-bottom">
-                      <thead>
-                        <tr>
-                          <th className="">Workshop Id</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
-                          <th>Email Id</th>
-                          <th>Designation</th>
-                          <th>Password Expiry Date</th>
-                          <th>Contact Number</th>
-                          <th>Mobile Auth</th>
-                          <th>Options</th>
+              <div className="table-responsive mt-4">
+                <table className="table table-bordered text-nowrap border-bottom">
+                  <thead>
+                    <tr>
+                      <th>Workshop Id</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Username</th>
+                      <th>Email Id</th>
+                      <th>Designation</th>
+                      <th>Password Expiry Date</th>
+                      <th>Contact Number</th>
+                      <th>Mobile Auth</th>
+                      <th>Employees Auth</th>
+                      <th>Options</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filterData(ordersData, "firstName").length > 0 ? (
+                      filterData(ordersData, "firstName").map((item, index) => (
+                        <tr key={index}>
+                          <td>{item.workshopId}</td>
+                          <td>{item.firstName}</td>
+                          <td>{item.lastName}</td>
+                          <td>{item.username}</td>
+                          <td>{item.email}</td>
+                          <td>{item.designation}</td>
+                          <td>{item.passwordExpiry}</td>
+                          <td>{item.contactNumber}</td>
+                          <td>
+                            <input
+                              type="checkbox"
+                              checked={item.mobileAuth === "Enabled"}
+                              readOnly
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="checkbox" className=""
+                              checked={item.mobileAuth === "Enabled"}
+                              readOnly
+                            />
+                          </td>
+                          <td>
+                            <div className="dropdown">
+                              <button
+                                className="btn btn-primary dropdown-toggle"
+                                type="button"
+                                id={`dropdownMenu${index}`}
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                ...
+                              </button>
+                              <ul className="dropdown-menu" aria-labelledby={`dropdownMenu${index}`}>
+                                <li>
+                                  <button className="dropdown-item" onClick={handleUserClick}>
+                                    User
+                                  </button>
+                                </li>
+                                <li>
+                                  <button className="dropdown-item" onClick={handleClickOpen1}>
+                                    View
+                                  </button>
+                                </li>
+                                <li>
+                                  <button className="dropdown-item">
+                                    Delete
+                                  </button>
+                                </li>
+                              </ul>
+                            </div>
+                          </td>
                         </tr>
-                      </thead>
-                      <tbody>
-                        {filterData(ordersData, "firstName").length > 0 ? (
-                          filterData(ordersData, "firstName").map((item, index) => (
-                            <tr key={index}>
-                              <td>{item.workshopId}</td>
-                              <td>{item.firstName}</td>
-                              <td>{item.lastName}</td>
-                              <td>{item.username}</td>
-                              <td>{item.email}</td>
-                              <td>{item.designation}</td>
-                              <td>{item.passwordExpiry}</td>
-                              <td>{item.contactNumber}</td>
-                              <td>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan="10" className="text-center">
+                          No records found.
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
 
-                                <input
-                                  type="checkbox"
-                                  name="custom-switch-checkbox3"
-                                  className="custom-switch-input"
-                                />
-                                <span className="custom-switch-indicator custom-radius"></span>
-
-                              </td>
-                              <td>
-                                <div className="row">
-                                  <div className="btn-group">
-                                    <button
-                                      type="button"
-                                      className="btn btn-primary dropdown-toggle"
-                                      data-bs-toggle="dropdown"
-                                      aria-expanded="false"
-                                      style={{ border: "none" }}
-                                    >
-                                      &#8230; {/* Three dots */}
-                                    </button>
-                                    <ul className="dropdown-menu">
-                                      <li>
-                                        <button className="dropdown-item" onClick={handleUserClick}>
-                                          User
-                                        </button>
-                                      </li>
-                                      <li>
-                                        <button className="dropdown-item" onClick={() => handleEditClick(item.itemcode)}>
-                                          Edit
-                                        </button>
-                                      </li>
-                                      <li>
-                                        <button className="dropdown-item" onClick={handleClickOpen1}>
-                                          View
-                                        </button>
-                                      </li>
-                                      <li>
-                                        <button className="dropdown-item" onClick={handleClickOpen1}>
-                                          Delete
-                                        </button>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                          ))
-                        ) : (
-                          <tr>
-                            <td colSpan="10" className="text-center">
-                              No records Found.
-                            </td>
-                          </tr>
-                        )}
-                      </tbody>
-                    </table>
-                    <div className="d-flex mt-4 align-items-center">
-                      <span>Page <strong>1 of 4</strong></span>
-                      <span className="ms-auto ps-2">
-                        <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn">
-                          Previous
-                        </button>
-                        <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn">
-                          &lt;&lt;
-                        </button>
-                        <button type="button" disabled className="btn-default tablebutton me-2 my-2 btn">
-                          &lt;
-                        </button>
-                        <button type="button" className="btn-default tablebutton me-2 my-2 btn">
-                          &gt;
-                        </button>
-                        <button type="button" className="btn-default tablebutton me-2 my-2 btn">
-                          &gt;&gt;
-                        </button>
-                        <button type="button" className="btn-default tablebutton me-2 my-2 btn">
-                          Next
-                        </button>
-                      </span>
-
-                    </div>
-                  </div>
-                </CForm>
-              ) : (
-                <div className="d-flex justify-content-center align-items-center">
-                  <h5>No Mechanics Found.</h5>
+              {/* Pagination controls - moved outside of the table */}
+              <div className="d-flex mt-4 justify-content-between">
+                <span>Page <strong>1 of 4</strong></span>
+                <div>
+                  <button type="button" disabled className="btn-default tablebutton me-2 btn">
+                    Previous
+                  </button>
+                  <button type="button" className="btn-default tablebutton me-2 btn">
+                    Next
+                  </button>
                 </div>
-              )}
+              </div>
             </Card.Body>
           </Card>
         </Col>
@@ -320,21 +281,16 @@ const Cart = () => {
             <label className="form-label" htmlFor="validationCustom05">Cell</label>
             <input className="form-control" id="validationCustom05" type="text" required />
             <label className="form-label" htmlFor="validationCustom06">Message</label>
-            <textarea className="form-control" id="validationCustom06" required></textarea>
+            <textarea className="form-control" id="validationCustom06"></textarea>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClosedraggable}>Cancel</Button>
-          <Button onClick={handleClosedraggable}>Send</Button>
+          <Button className="btn" onClick={handleClosedraggable}>Cancel</Button>
+          <Button className="btn" onClick={handleSubmitCustom}>Submit</Button>
         </DialogActions>
       </Dialog>
-
     </Fragment>
   );
-}
-
-Cart.propTypes = {};
-
-Cart.defaultProps = {};
+};
 
 export default Cart;
