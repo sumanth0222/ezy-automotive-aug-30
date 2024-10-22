@@ -2308,7 +2308,7 @@ const Tabss = () => {
                           aria-labelledby="draggable-dialog-title6"
                         >
 
-                          <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3", color: "#fff" }} id="draggable-dialog-title6">
+                          <DialogTitle style={{ cursor: "move", fontSize:"13px", backgroundColor: "#38cab3", color: "#fff" }} id="draggable-dialog-title6">
                             Job Card No : 11
                             <div className="row">
                                 <div>
@@ -2361,7 +2361,7 @@ const Tabss = () => {
 
                               </div>
 
-                              <hr className="col-lg-10" style={{border:"2px solid #000"}}></hr>
+                              <hr className="col-lg-12" style={{border:"1px solid #666"}}></hr>
 
 
                               <div className="col-lg-12 mt-3">
@@ -2414,7 +2414,7 @@ const Tabss = () => {
 
                               </div>
 
-                              <hr className="col-lg-10" style={{border:"2px solid #000"}}></hr>
+                              <hr className="col-lg-12" style={{border:"1px solid #666"}}></hr>
 
                               
 
