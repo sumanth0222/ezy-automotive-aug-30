@@ -245,7 +245,7 @@ const myfunction = (inputvalue) => {
             </Link>
           </div>
           <div className="main-header-center ms-4 d-sm-none d-md-none d-lg-block form-group">
-          <Form.Control defaultValue ={InputValue}
+          <input defaultValue ={InputValue}
               autoComplete="off" onChange={(ele => { myfunction(ele.target.value); setInputValue(ele.target.value); })} 
               className="form-control"
               placeholder="Search..."

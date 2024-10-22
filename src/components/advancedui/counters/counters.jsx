@@ -148,7 +148,7 @@ const Groups = () => {
                                 autoComplete="off"
                                 placeholder="Search..."
                                 type="search"
-                                className="form-control"
+                                className="rounded"
                                 value={filter}
                                 onChange={(e) => setFilter(e.target.value)}
                               />
@@ -171,7 +171,7 @@ const Groups = () => {
                                 autoComplete="off"
                                 placeholder="Search..."
                                 type="search"
-                                className="form-control"
+                                className="rounded"
                                 value={filter1}
                                 onChange={(e) => setFilter1(e.target.value)}
                               />
@@ -183,7 +183,7 @@ const Groups = () => {
                                 autoComplete="off"
                                 placeholder="Search..."
                                 type="search"
-                                className="form-control"
+                                className="rounded"
                                 value={filter2}
                                 onChange={(e) => setFilter2(e.target.value)}
                               />

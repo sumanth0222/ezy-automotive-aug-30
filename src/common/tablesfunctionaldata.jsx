@@ -332,7 +332,7 @@ export const GlobalFilter = ({ filter, setFilter }) => {
       <input
         value={filter || ""}
         onChange={(e) => setFilter(e.target.value)}
-        className="form-control mb-4"
+        className="rounded mb-4"
         placeholder="Search..."
       />
     </span>
@@ -2761,7 +2761,7 @@ const GlobalFilter1 = ({ filter, setFilter }) => {
     <input
       value={filter || ""}
       onChange={(e) => setFilter(e.target.value)}
-      className="form-control"
+      className="rounded"
       placeholder="Search..."
     />
   );
@@ -3099,7 +3099,7 @@ export const GlobalFilter2 = ({ filter, setFilter }) => {
       <input
         value={filter || ""}
         onChange={(e) => setFilter(e.target.value)}
-        className="form-control"
+        className="rounded"
         placeholder="Search..."
       />
     </span>

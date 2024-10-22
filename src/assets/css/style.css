@@ -79040,8 +79040,8 @@ select:focus-visible {
 
 .dropdown-container {
     height: 35px;
-    border: none;
-    border-bottom: 2px solid !important;
+    border: none !important;
+    border-bottom: 1px solid #666 !important;
     box-shadow: 0px 2px 1px 1px #3333333b;
     border-radius: 5px;
 }
@@ -79050,7 +79050,7 @@ select:focus-visible {
 
     height: 35px !important;
     border: none !important;
-    border-bottom: 2px solid !important;
+    border-bottom: 1px solid #666 !important;
     box-shadow: 0px 2px 1px 1px #3333333b !important;
     border-radius: 5px !important;
 

@@ -243,7 +243,7 @@ const Todotask = () => {
                           <div className="d-flex align-items-center p-0">
                             <div className=" mx-2">
                               <InputGroup className="input-group">
-                                <Form.Control
+                                <input className='form-control1'
                                   type="text"
                                   placeholder="Search here..."
                                   onChange={(e) => myfunction(e.target.value)}

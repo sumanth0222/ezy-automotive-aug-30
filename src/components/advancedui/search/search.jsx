@@ -53,7 +53,7 @@ const EmptyPage = () => {
                     autoComplete="off"
                     placeholder="Search..."
                     type="search"
-                    className="form-control"
+                    className="rounded"
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
                   />
