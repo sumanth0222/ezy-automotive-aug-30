@@ -2000,13 +2000,17 @@ const Tabss = () => {
                         >
 
                           <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3", color: "#fff" }} id="draggable-dialog-title1">
-                            Status
+                            Vehicle Ready
                           </DialogTitle>
 
                           <DialogContent >
                             <DialogContentText className='row-sm row'>
-                              <h1><b>VehicleIs Ready</b></h1>
 
+                              <div className="row"> 
+                               <p>Dear Workshop,</p>
+                            
+                               <p>Estimation is not completed for this jobcard.</p>
+                              </div>
                               {/* <div className="col-lg-6">
                                           <label className="form-label" htmlFor="validationCustom05">Company Name*</label>
                                           <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Company Name' required />
@@ -2049,11 +2053,11 @@ const Tabss = () => {
 
                           <DialogActions>
                             <Button variant="secondary" className="me-1" onClick={handleClosedraggable1}>
-                              Close
+                              Ok
                             </Button>
-                            <Button className="me-1" variant="success">
+                            {/* <Button className="me-1" variant="success">
                               Save
-                            </Button>
+                            </Button> */}
                           </DialogActions>
                         </Dialog>
                       </div>
@@ -2070,49 +2074,15 @@ const Tabss = () => {
                         >
 
                           <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3", color: "#fff" }} id="draggable-dialog-title2">
-                            History
+                            Vehicle History
                           </DialogTitle>
 
                           <DialogContent >
                             <DialogContentText className='row-sm row'>
 
-                              {/* <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Company Name*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Company Name' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">GST Number*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter GSTIN Number' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Email Id*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Email Id' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Contact Number*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Contact Number' required />
-                              </div>
+                              <p>Choose your option:</p>
 
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">City</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter City' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">State</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter State' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">SMS Remainders</label>
-                                <MultiSelect
-                                  value={selected}
-                                  onChange={setSelected}
-                                  labelledBy="Select"
-                                  options={countries}
-                                />
-                              </div> */}
-
-
-
+                    
                             </DialogContentText>
                           </DialogContent>
 
@@ -2121,7 +2091,10 @@ const Tabss = () => {
                               Close
                             </Button>
                             <Button className="me-1" variant="success">
-                              Save
+                              Internal History
+                            </Button>
+                            <Button className="me-1" variant="success">
+                              RAMP Garages
                             </Button>
                           </DialogActions>
                         </Dialog>
@@ -2139,48 +2112,111 @@ const Tabss = () => {
                         >
 
                           <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3", color: "#fff" }} id="draggable-dialog-title3">
-                            Payments
+                            Edit Payment Details
+                            <p className="mt-2">Order Id: 11 | Total Amount: Rs: 0.00 | Total Discount: Rs: 0.00 | Total Paid:Rs: 0.00 | Total Due: Rs: 0.00</p>
                           </DialogTitle>
 
                           <DialogContent >
                             <DialogContentText className='row-sm row'>
 
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Company Name*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Company Name' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">GST Number*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter GSTIN Number' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Email Id*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Email Id' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Contact Number*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Contact Number' required />
-                              </div>
-
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">City</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter City' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">State</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter State' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">SMS Remainders</label>
-                                <MultiSelect
-                                  value={selected}
-                                  onChange={setSelected}
-                                  labelledBy="Select"
-                                  options={countries}
-                                />
-                              </div>
 
 
+                            <div className="mt-2 col-lg-12">
+                                  <div className="table-responsive mt-4">
+                                    <table className="table table-bordered text-nowrap border-bottom" >
+                                      
+                                      <tbody>
+                                        <tr>
+
+                                          <td>1</td>
+                                          <td>To Be Paid By Customer :</td>
+                                         <td>Rs: 0.00</td>
+
+                                        </tr>
+                                        <tr>
+                                          <td>2</td>
+                                          <td>Total Paid By Customer :</td>
+                                          <td>	Rs: 0</td>
+                                          
+                                        </tr>
+                                        <tr>
+                                          <td>3</td>
+                                          <td>Total Due From Customer :</td>
+                                          <td>Rs: 0</td>
+                                          
+                                         
+                                        </tr>
+                                        
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+
+
+
+
+                              <div className="col-lg-4">
+                                <Button className="mt-3" variant="success">
+                                   Pay By Card
+                                </Button>
+                              </div>
+                              <div className="col-lg-4">
+                          
+                                <input className="form-control mt-3" id="validationCustom05" type="text" placeholder='Enter Amount' required />
+                              </div>
+                              <div className="col-lg-4">
+                                
+                                <input className="form-control mt-3" id="validationCustom05" type="text" placeholder='Enter Remarks' required />
+                              </div>
+
+                              <div className="col-lg-4">
+                                <Button className="mt-3" variant="success">
+                                   Pay By Cash
+                                </Button>
+                              </div>
+                              <div className="col-lg-4">
+                          
+                                <input className="form-control mt-3" id="validationCustom05" type="text" placeholder='Enter Amount' required />
+                              </div>
+                              <div className="col-lg-4">
+                                
+                                <input className="form-control mt-3" id="validationCustom05" type="text" placeholder='Enter Remarks' required />
+                              </div>
+
+
+                              <div className="col-lg-4">
+                                <Button className="mt-3" variant="success">
+                                   Pay By Cheque
+                                </Button>
+                              </div>
+                              <div className="col-lg-4">
+                          
+                                <input className="form-control mt-3" id="validationCustom05" type="text" placeholder='Enter Amount' required />
+                              </div>
+                              <div className="col-lg-4">
+                                
+                                <input className="form-control mt-3" id="validationCustom05" type="text" placeholder='Enter Remarks' required />
+                              </div>
+
+
+                              <div className="col-lg-4">
+                                <Button className="mt-3" variant="success">
+                                   Pay By Other
+                                </Button>
+                              </div>
+                              <div className="col-lg-4">
+                          
+                                <input className="form-control mt-3" id="validationCustom05" type="text" placeholder='Enter Amount' required />
+                              </div>
+                              <div className="col-lg-4">
+                                
+                                <input className="form-control mt-3" id="validationCustom05" type="text" placeholder='Enter Remarks' required />
+                              </div>
+
+
+                              <div>
+                                <p className="mt-3" ><a href="#">TERMS AND CONDITIONS</a> </p>
+                              </div>
 
                             </DialogContentText>
                           </DialogContent>
@@ -2190,7 +2226,7 @@ const Tabss = () => {
                               Close
                             </Button>
                             <Button className="me-1" variant="success">
-                              Save
+                              Edit
                             </Button>
                           </DialogActions>
                         </Dialog>
@@ -2208,59 +2244,21 @@ const Tabss = () => {
                         >
 
                           <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3", color: "#fff" }} id="draggable-dialog-title4">
-                            Discount
+                            Alert!
                           </DialogTitle>
 
                           <DialogContent >
                             <DialogContentText className='row-sm row'>
 
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Company Name*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Company Name' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">GST Number*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter GSTIN Number' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Email Id*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Email Id' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Contact Number*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Contact Number' required />
-                              </div>
-
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">City</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter City' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">State</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter State' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">SMS Remainders</label>
-                                <MultiSelect
-                                  value={selected}
-                                  onChange={setSelected}
-                                  labelledBy="Select"
-                                  options={countries}
-                                />
-                              </div>
-
-
-
+                              <p className="mt-3">Either the bill is not ready or the due amount equal to or less than 0.</p>
                             </DialogContentText>
                           </DialogContent>
 
                           <DialogActions>
                             <Button variant="secondary" className="me-1" onClick={handleClosedraggable4}>
-                              Close
+                              OK
                             </Button>
-                            <Button className="me-1" variant="success">
-                              Save
-                            </Button>
+                            
                           </DialogActions>
                         </Dialog>
                       </div>
@@ -2277,59 +2275,24 @@ const Tabss = () => {
                         >
 
                           <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3", color: "#fff" }} id="draggable-dialog-title5">
-                            Invoice
+                            Message!
                           </DialogTitle>
 
                           <DialogContent >
                             <DialogContentText className='row-sm row'>
-
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Company Name*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Company Name' required />
+                              <div className="row">
+                               <p>Dear Workshop,</p>
+                               <p>Either estimation is empty or vehicle is not marked ready!</p>
                               </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">GST Number*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter GSTIN Number' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Email Id*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Email Id' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Contact Number*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Contact Number' required />
-                              </div>
-
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">City</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter City' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">State</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter State' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">SMS Remainders</label>
-                                <MultiSelect
-                                  value={selected}
-                                  onChange={setSelected}
-                                  labelledBy="Select"
-                                  options={countries}
-                                />
-                              </div>
-
-
 
                             </DialogContentText>
                           </DialogContent>
 
                           <DialogActions>
                             <Button variant="secondary" className="me-1" onClick={handleClosedraggable5}>
-                              Close
+                              OK
                             </Button>
-                            <Button className="me-1" variant="success">
-                              Save
-                            </Button>
+                            
                           </DialogActions>
                         </Dialog>
                       </div>
@@ -2346,47 +2309,140 @@ const Tabss = () => {
                         >
 
                           <DialogTitle style={{ cursor: "move", backgroundColor: "#38cab3", color: "#fff" }} id="draggable-dialog-title6">
-                            More Details
+                            Job Card No : 11
+                            <div className="row">
+                                <div>
+                                  <p className="mt-2" style={{marginTop:"0px", marginBottom:"0px"}}>Vehicle Number</p>
+                                  <p>4455RDFF</p>
+                                </div>
+                                <div>
+                                  <p className="mt-2" style={{marginTop:"0px", marginBottom:"0px"}}>Customer Name</p>
+                                  <p>TRIAL CUSTOMER 6</p>
+                                </div>
+                            </div>
+
+                            <div className="row">
+                                <div>
+                                  <p className="mt-2" style={{marginTop:"0px", marginBottom:"0px"}}>Vehicle Name</p>
+                                  <p>Toyota-Land Cruiser-200</p>
+                                </div>
+                                <div>
+                                  <p className="mt-2" style={{marginTop:"0px", marginBottom:"0px"}}>Phone Number</p>
+                                  <p>7878888888</p>
+                                </div>
+                            </div>
                           </DialogTitle>
 
                           <DialogContent >
                             <DialogContentText className='row-sm row'>
 
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Company Name*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Company Name' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">GST Number*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter GSTIN Number' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Email Id*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Email Id' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">Contact Number*</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter Contact Number' required />
+                              <div className="col-lg-12 mt-3">
+                                <Button className="me-1" variant="success">
+                                  Edit
+                                </Button>
                               </div>
 
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">City</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter City' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">State</label>
-                                <input className="form-control" id="validationCustom05" type="text" placeholder='Enter State' required />
-                              </div>
-                              <div className="col-lg-6">
-                                <label className="form-label" htmlFor="validationCustom05">SMS Remainders</label>
-                                <MultiSelect
-                                  value={selected}
-                                  onChange={setSelected}
-                                  labelledBy="Select"
-                                  options={countries}
-                                />
+                              <div className="row col-lg-12 mt-3">
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-user"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Profile</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-address-card"></i></button>
+                                    <p style={{ fontSize: "10px" }}>RC</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-adjust"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Insurance</p>
+                                  </div>
+
                               </div>
 
+                              <hr className="col-lg-10" style={{border:"2px solid #000"}}></hr>
+
+
+                              <div className="col-lg-12 mt-3">
+                                <Button className="me-1" variant="success">
+                                  Manage
+                                </Button>
+                              </div>
+
+                              <div className="row col-lg-12 mt-3">
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-upload"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Images</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-user-secret"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Cust-Source</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-wrench"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Technicians</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-car"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Claims</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-spinner"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Salvage</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-id-card"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Coupons</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-bell"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Alert</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-star"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Feedback</p>
+                                  </div>
+
+                              </div>
+
+                              <hr className="col-lg-10" style={{border:"2px solid #000"}}></hr>
+
+                              
+
+
+                              <div className="col-lg-12 mt-3">
+                                <Button className="me-1" variant="success">
+                                  Closure
+                                </Button>
+                              </div>
+
+                              <div className="row col-lg-12 mt-3">
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="far fa-address-card"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Gate Pass</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-flag-checkered"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Done</p>
+                                  </div>
+
+                                  <div className="col-lg-2">
+                                    <button type="button" class="btn  btn-rounded btn btn-dark" fdprocessedid="e5313"><i class="fa fa-trash"></i></button>
+                                    <p style={{ fontSize: "10px" }}>Delete</p>
+                                  </div>
+
+                              </div>
 
 
                             </DialogContentText>
@@ -2396,9 +2452,7 @@ const Tabss = () => {
                             <Button variant="secondary" className="me-1" onClick={handleClosedraggable6}>
                               Close
                             </Button>
-                            <Button className="me-1" variant="success">
-                              Save
-                            </Button>
+                           
                           </DialogActions>
                         </Dialog>
                       </div>

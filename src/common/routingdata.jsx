@@ -144,7 +144,8 @@ import CustomerCars from '../components/pages/todotask/customercar';
 import CustomerFile from '../components/pages/todotask/customerfiles';
 import CustomerMessage from '../components/pages/todotask/customermessage';
 import CustomerEmail from '../components/pages/todotask/customeremail';
-
+import ManageBrandwiseConsumables from '../components/reports/partsreports/manageBrandwiseConsumables';
+import ManageConsumbleBrands from '../components/reports/partsreports/manageConsumbleBrands';
 
 
 
@@ -319,7 +320,8 @@ export const Routingdata = [
   { path:`${import.meta.env.BASE_URL}pages/todotask/customerfile`, element: <CustomerFile/> },
   { path:`${import.meta.env.BASE_URL}pages/todotask/customermessage`, element: <CustomerMessage/> },
   { path:`${import.meta.env.BASE_URL}pages/todotask/customeremail`, element: <CustomerEmail/> },
-
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageBrandwiseConsumables`, element: <ManageBrandwiseConsumables/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageConsumbleBrands`, element: <ManageConsumbleBrands/> },
 
 
 
@@ -505,8 +507,8 @@ export const Sidebarcomponents=[
 { path:`${import.meta.env.BASE_URL}pages/todotask/customerfile`, title: "CustomerFile" },
 { path:`${import.meta.env.BASE_URL}pages/todotask/customermessage`, title: "CustomerMessage" },
 { path:`${import.meta.env.BASE_URL}pages/todotask/customeremail`, title: "CustomerEmail" },
-
-
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageBrandwiseConsumables`, title:"ManageBrandwiseConsumables" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageConsumbleBrands`, title:"ManageConsumbleBrands" },
 
 ];
 
