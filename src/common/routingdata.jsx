@@ -161,9 +161,21 @@ import ManageVendors from '../components/reports/partsreports/manageVendors';
 import ManageWorkshop from '../components/reports/partsreports/manageWorkshop';
 import ViewLog from '../components/reports/partsreports/viewLogs';
 import ManageVehicleCategory from '../components/reports/partsreports/manageVehicleCategory';
-
-
-
+import ManageWorkshopSalvages from '../components/reports/salesreports/manageWorkshopSalvages';
+import MotoAppControl from '../components/reports/salesreports/motoAppControlPanel';
+import BusinessDashboard from '../components/reports/salesreports/businessDashboard';
+import CreditNotes from '../components/reports/salesreports/creditNotes';
+import InventoryManagement from '../components/reports/salesreports/inventoryManagement';
+import ManageCounterSales from '../components/reports/salesreports/manageCounterSales';
+import ManageDayBook from '../components/reports/salesreports/manageDaybook';
+import ManagePackageSales from '../components/reports/salesreports/managePackageSales';
+import ManagePackages from '../components/reports/salesreports/managePackages';
+import ManageServices from '../components/reports/salesreports/manageServices';
+import Offers from '../components/reports/salesreports/offers';
+import ServiceStatus from '../components/reports/salesreports/serviceStatus';
+import DeletedRecords from '../components/reports/salesreports/deletedRecords';
+import ServiceHistory from '../components/reports/salesreports/serviceHistory';
+import TechnicianProductivity from '../components/reports/salesreports/technicianProductivity';
 
 
 
@@ -348,6 +360,22 @@ export const Routingdata = [
   { path:`${import.meta.env.BASE_URL}reports/partsreports/manageVendors`, element: <ManageVendors/> },
   { path:`${import.meta.env.BASE_URL}reports/partsreports/manageWorkshop`, element: <ManageWorkshop/> },
   { path:`${import.meta.env.BASE_URL}reports/partsreports/viewLog`, element: <ViewLog/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/manageWorkshopSalvages`, element: <ManageWorkshopSalvages/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/motoAppControlPanel`, element: <MotoAppControl/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/BusinessDashboard`, element: <BusinessDashboard/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/creditNotes`, element: <CreditNotes/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/inventoryManagement`, element: <InventoryManagement/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/manageCounterSales`, element: <ManageCounterSales/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/manageDayBook`, element: <ManageDayBook/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/managePackageSales`, element: <ManagePackageSales/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/managePackages`, element: <ManagePackages/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/manageServices`, element: <ManageServices/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/offers`, element: <Offers/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/serviceStatus`, element: <ServiceStatus/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/deletedRecords`, element: <DeletedRecords/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/serviceHistory`, element: <ServiceHistory/> },
+  { path:`${import.meta.env.BASE_URL}reports/salesreports/technicianProductivity`, element: <TechnicianProductivity/> },
+
 
 
 
@@ -547,8 +575,21 @@ export const Sidebarcomponents=[
 { path:`${import.meta.env.BASE_URL}reports/partsreports/manageVendors`, title: "ManageVendors" },
 { path:`${import.meta.env.BASE_URL}reports/partsreports/manageWorkshop`, title: "ManageWorkshop" },
 { path:`${import.meta.env.BASE_URL}reports/partsreports/viewLog`, title: "ViewLog" },
-
-
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/manageWorkshopSalvages`, title: "ManageWorkshopSalvages" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/motoAppControlPanel`, title: "MotoAppControl" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/BusinessDashboard`, title: "BusinessDashboard" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/creditNotes`, title: "CreditNotes" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/inventoryManagement`, title: "InventoryManagement" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/manageCounterSales`, title: "ManageCounterSales" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/manageDayBook`, title: "ManageDayBook" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/managePackageSales`, title: "ManagePackageSales" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/managePackages`, title: "ManagePackages" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/manageServices`, title: "ManageServices" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/offers`, title: "Offers" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/serviceStatus`, title: "ServiceStatus" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/deletedRecords`, title: "DeletedRecords"},
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/serviceHistory`, title: "ServiceHistory" },
+{ path:`${import.meta.env.BASE_URL}reports/salesreports/technicianProductivity`, title: "TechnicianProductivity" },
 
 
 
