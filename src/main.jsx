@@ -15,6 +15,8 @@ import Workshop from './components/elements/alerts/workshop-reports';
 import Mechanic from './components/elements/alerts/mechanic-report';
 import Customer from  './components/elements/alerts/customer-report';
 import LogoReports from './components/elements/alerts/logo-reports';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 
 const App = React.lazy(() => import("./layout/App"));
