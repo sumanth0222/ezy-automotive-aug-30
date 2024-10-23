@@ -146,9 +146,21 @@ import CustomerMessage from '../components/pages/todotask/customermessage';
 import CustomerEmail from '../components/pages/todotask/customeremail';
 import ManageBrandwiseConsumables from '../components/reports/partsreports/manageBrandwiseConsumables';
 import ManageConsumbleBrands from '../components/reports/partsreports/manageConsumbleBrands';
-
-
-
+import ManageCustomerSource from '../components/reports/partsreports/manageCustomerSource';
+import ManageInsuranceProvider from '../components/reports/partsreports/manageInsuranceProvider';
+import ManageInsuranceStatusInfo from '../components/reports/partsreports/manageInsuranceStatusInfo';
+import ManageInvoicingCategoryInfo from '../components/reports/partsreports/manageInvoicingCategoryInfo';
+import ManageMessageTemplates from '../components/reports/partsreports/manageMessageTemplates';
+import ManageSparesMaster from '../components/reports/partsreports/manageSparesMaster';
+import ManageTax from '../components/reports/partsreports/manageTax';
+import ManageTermConditions from '../components/reports/partsreports/manageTermConditions';
+// import ManageVehicleCategory from '../components/reports/partsreports/manageBrandwiseConsumables';
+import ManageVehicleChecklists from '../components/reports/partsreports/manageVehicleChecklists';
+import ManageVehicleModels from '../components/reports/partsreports/manageVehicleModels';
+import ManageVendors from '../components/reports/partsreports/manageVendors';
+import ManageWorkshop from '../components/reports/partsreports/manageWorkshop';
+import ViewLog from '../components/reports/partsreports/viewLogs';
+import ManageVehicleCategory from '../components/reports/partsreports/manageVehicleCategory';
 
 
 
@@ -322,8 +334,20 @@ export const Routingdata = [
   { path:`${import.meta.env.BASE_URL}pages/todotask/customeremail`, element: <CustomerEmail/> },
   { path:`${import.meta.env.BASE_URL}reports/partsreports/manageBrandwiseConsumables`, element: <ManageBrandwiseConsumables/> },
   { path:`${import.meta.env.BASE_URL}reports/partsreports/manageConsumbleBrands`, element: <ManageConsumbleBrands/> },
-
-
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageCustomerSource`, element: <ManageCustomerSource/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageInsuranceProvider`, element: <ManageInsuranceProvider/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageInsurancStatusInfo`, element: <ManageInsuranceStatusInfo/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageInvoicingCategoryInfo`, element: <ManageInvoicingCategoryInfo/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageMessageTemplates`, element: <ManageMessageTemplates/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageSparesMaster`, element: <ManageSparesMaster/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageTax`, element: <ManageTax/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageTermConditions`, element: <ManageTermConditions/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageVehicleCategory`, element: <ManageVehicleCategory/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageVehicleChecklists`, element: <ManageVehicleChecklists/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageVehicleModels`, element: <ManageVehicleModels/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageVendors`, element: <ManageVendors/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/manageWorkshop`, element: <ManageWorkshop/> },
+  { path:`${import.meta.env.BASE_URL}reports/partsreports/viewLog`, element: <ViewLog/> },
 
 
 
@@ -509,6 +533,29 @@ export const Sidebarcomponents=[
 { path:`${import.meta.env.BASE_URL}pages/todotask/customeremail`, title: "CustomerEmail" },
 { path:`${import.meta.env.BASE_URL}reports/partsreports/manageBrandwiseConsumables`, title:"ManageBrandwiseConsumables" },
 { path:`${import.meta.env.BASE_URL}reports/partsreports/manageConsumbleBrands`, title:"ManageConsumbleBrands" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageCustomerSource`, title: "ManageCustomerSource" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageInsuranceProvider`, title: "ManageInsuranceProvider" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageInsurancStatusInfo`, title: "ManageInsuranceStatusInfo" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageInvoicingCategoryInfo`, title:"ManageInvoicingCategoryInfo" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageMessageTemplates`, title: "ManageMessageTemplates" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageSparesMaster`, title: "ManageSparesMaster" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageTax`, title: "ManageTax" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageTermConditions`, title: "ManageTermConditions" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageVehicleCategory`, title: "ManageVehicleCategory" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageVehicleChecklists`, title: "ManageVehicleChecklists" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageVehicleModels`, title: "ManageVehicleModels" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageVendors`, title: "ManageVendors" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/manageWorkshop`, title: "ManageWorkshop" },
+{ path:`${import.meta.env.BASE_URL}reports/partsreports/viewLog`, title: "ViewLog" },
+
+
+
+
+
+
+
+
+
 
 ];
 
