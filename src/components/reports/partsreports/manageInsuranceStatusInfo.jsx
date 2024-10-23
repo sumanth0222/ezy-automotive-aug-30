@@ -1,152 +1,216 @@
 import React, { useState, Fragment } from "react";
 import { Card, Col, Button } from "react-bootstrap";
 import { CForm } from "@coreui/react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import Draggable from "react-draggable";
 import {
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-    Paper,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Paper,
 } from "@mui/material";
 import Pageheader from "../../../layout/layoutcomponent/pageheader";
 
-// Custom Paper component for draggable dialog
-const PaperComponent = (props) => {
-    return (
-        <Draggable handle="#draggable-dialog-title" cancel={'[class*="MuiDialogTitle-root"]'}>
-            <Paper {...props} />
-        </Draggable>
-    );
-};
-
 const ManageInsuranceStatusInfo = () => {
-    const navigate = useNavigate();
-    const [open1, setOpen1] = useState(false);
-    const [filter, setFilter] = useState(""); // Add filter state
+  const [Server, setServer] = useState("");
+  const navigate = useNavigate();
 
-    const handleClickOpen1 = () => {
-        setOpen1(true);
-        console.log('View Details Clicked');
-    };
+  const handleOnchangeServer = (e) => {
+    setServer(e.target.value);
+  };
 
-    const handleClosedraggable = () => {
-        setOpen1(false);
-    };
-
-    const handlePlusClick = () => {
-        navigate("/advancedui/carousel");
-    };
-
+  function PaperComponent(props) {
     return (
-        <Fragment>
-            <Pageheader
-                title="System Configuration"
-                heading="System Configuration"
-                active="Manage Insurance Status Info"
-            />
-            <div className="row p-0">
-                <Col lg={12} md={12}>
-                    <Card className="p-0">
-                        <Card.Header
-                            className="row-sm row justify-content-between bg-primary p-0"
-                            style={{ backgroundColor: "#41bde1" }}
-                        >
-                            <div className="row-sm row align-items-center">
-                                <div>
-                                    <a
-                                        className="btn ripple btn-dark text-white btn-icon"
-                                        data-placement="top"
-                                        data-bs-toggle="tooltip"
-                                        title="icon"
-                                        href="#"
-                                    >
-                                        <i className="fa fa-cogs"></i>
-                                    </a>
+      <Draggable
+        handle="#draggable-dialog-title"
+        cancel={'[class*="MuiDialogContent-root"]'}
+      >
+        <Paper {...props} />
+      </Draggable>
+    );
+  }
+
+  const [open1, setOpen1] = useState(false);
+
+  const handleClickOpen1 = () => {
+    setOpen1(true);
+  };
+
+  const handleClosedraggable = () => {
+    setOpen1(false);
+  };
+
+  // Custom validation
+  const [Custom, setCustom] = useState("");
+  const handleOnchangeCustom = (e) => {
+    setCustom(e.target.value);
+  };
+
+  const [validatedCustom, setValidatedCustom] = useState(false);
+
+  const handleSubmitCustom = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidatedCustom(true);
+  };
+
+  // Data from the image
+  const consumablesData = [
+    { InsuranceStatusName: "CLAIM INTIMATION", Action: "" },
+    { InsuranceStatusName: "ENTERED", Action: "" },
+    { InsuranceStatusName: "COMPLETED   ", Action: "" },
+    
+  ];
+
+  const [filter, setFilter] = useState(""); // Search filter state
+  const [isActive, setIsActive] = useState(true); // Set initial state to true to show table by default
+
+  // Toggle button handler
+  const toggleActiveState = () => {
+    setIsActive(!isActive);
+  };
+
+  // Filtering based on search term
+  const filterData = (data, field) =>
+    data.filter((item) =>
+      item[field].toLowerCase().includes(filter.toLowerCase())
+    );
+
+  const handleEditClick = (itemCode) => {
+    // Navigate to the edit page with the itemCode
+    navigate(`${import.meta.env.BASE_URL}pages/aboutus`);
+  };
+
+  const handlePlusClick = () => {
+    navigate("/advancedui/carousel"); // Navigate to the form page
+  };
+
+  const handleUserClick = () => {
+    navigate(`${import.meta.env.BASE_URL}widgets/usersetuppluss`);
+  };
+
+  const [dark1, setdark1] = useState("on");
+
+  return (
+    <Fragment>
+      <Pageheader
+        title="System Configuration"
+        heading="System Configuration"
+        active="Manage Insurance Status Info"
+      />
+      <div className="row p-0">
+        <Col lg={12} md={12}>
+          <Card className="p-0">
+            <Card.Header
+              className="row-sm row justify-content-between bg-primary p-0"
+              style={{ backgroundColor: "#41bde1" }}
+            >
+              <div className="row-sm row align-items-center">
+                <div>
+                  <a
+                    className="btn ripple btn-dark text-white btn-icon"
+                    data-placement="top"
+                    data-bs-toggle="tooltip"
+                    title="icon"
+                    href="#"
+                  >
+                    <i className="fa fa-cogs"></i>
+                  </a>
+                </div>
+                <div>
+                  <h6 className="">Manage Insurance Status Info</h6>
+                </div>
+              </div>
+
+              <div className="row-sm row align-items-center">
+                <div className="col-lg-12 d-flex p-0 align-items-center">
+                  <input
+                    autoComplete="off"
+                    placeholder="Search..."
+                    type="search"
+                    className="form-control"
+                    value={filter}
+                    onChange={(e) => setFilter(e.target.value)}
+                  />
+                  <div>
+                    <button
+                      className="btn btn-sm btn-primary"
+                      onClick={handlePlusClick}
+                    >
+                      <li className="fa fa-plus"></li>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </Card.Header>
+            <Card.Body>
+              {isActive ? (
+                <CForm
+                  className="row g-3 needs-validation"
+                  noValidate
+                  validated={validatedCustom}
+                  onSubmit={handleSubmitCustom}
+                >
+                  <div className="table-responsive mt-4">
+                    <table className="table table-bordered text-nowrap border-bottom m-0">
+                      <thead>
+                        <tr>
+                          <th>Consumables Brand Name</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {filterData(consumablesData, "InsuranceStatusName")
+                          .length > 0 ? (
+                          filterData(
+                            consumablesData,
+                            "InsuranceStatusName"
+                          ).map((item, index) => (
+                            <tr key={index}>
+                              <td>{item.InsuranceStatusName}</td>
+                              <td>
+                                <div className="row">
+                                  <button
+                                    className="btn btn-sm btn-dark fa fa-user"
+                                    onClick={handleUserClick}
+                                    style={{ marginLeft: "5px" }}
+                                  ></button>
+                                  <button
+                                    className="btn btn-sm btn-primary fa fa-edit"
+                                    onClick={() =>
+                                      handleEditClick(item.InsuranceStatusName)
+                                    }
+                                    style={{ marginLeft: "5px" }}
+                                  ></button>
+                                  <button
+                                    className="btn btn-sm btn-info fas fa-eye"
+                                    onClick={handleClickOpen1}
+                                    style={{ marginLeft: "5px" }}
+                                  ></button>
+                                  <button
+                                    className="btn btn-sm btn-danger far fa-trash-alt"
+                                    onClick={handleClickOpen1}
+                                    style={{ marginLeft: "5px" }}
+                                  ></button>
                                 </div>
-                                <div>
-                                    <h6 className="">Manage Insurance Status Info</h6>
-                                </div>
-                            </div>
-                            <div className="row-sm row align-items-center">
-                                <div className="col-lg-12 d-flex p-0 align-items-center">
-                                    <input
-                                        autoComplete="off"
-                                        placeholder="Search..."
-                                        type="search"
-                                        className="form-control"
-                                        value={filter}
-                                        onChange={(e) => setFilter(e.target.value)}
-                                    />
-                                    <div>
-                                        <button
-                                            className="btn btn-sm btn-primary"
-                                            onClick={handlePlusClick}
-                                        >
-                                            <li className="fa fa-plus"></li>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </Card.Header>
-                        <Card.Body>
-                            <CForm className="row g-3 needs-validation" noValidate>
-                                <div className="table-responsive mt-4">
-                                    <table className="table table-bordered text-nowrap border-bottom m-0">
-                                        <thead>
-                                            <tr>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div className="dropdown">
-                                                        <button
-                                                            className="btn btn-sm btn-secondary "
-                                                            type="button"
-                                                            id="dropdownMenuButton"
-                                                            data-bs-toggle="dropdown"
-                                                            aria-expanded="false"
-                                                        >
-                                                            ...
-                                                        </button>
-                                                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <li>
-                                                                <button
-                                                                    className="dropdown-item"
-                                                                    onClick={handleClickOpen1}
-                                                                >
-                                                                    <i className="fas fa-eye"></i> View Details
-                                                                </button>
-                                                            </li>
-                                                            <li>
-                                                                <button
-                                                                    className="dropdown-item"
-                                                                    onClick={() => console.log('Edit Clicked')}
-                                                                >
-                                                                    <i className="fa fa-edit"></i> Edit
-                                                                </button>
-                                                            </li>
-                                                            <li>
-                                                                <button
-                                                                    className="dropdown-item text-danger"
-                                                                    onClick={() => console.log('Delete Clicked')}
-                                                                >
-                                                                    <i className="fas fa-trash-alt"></i> Delete
-                                                                </button>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </CForm>
-                            <div className="d-flex mt-4 align-items-center">
+                              </td>
+                            </tr>
+                          ))
+                        ) : (
+                          <tr>
+                            <td colSpan="3" className="text-center">
+                              No records found.
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                    <div className="d-flex mt-4 align-items-center">
                       <span>
                         Page <strong>1 of 4</strong>
                       </span>
@@ -192,30 +256,53 @@ const ManageInsuranceStatusInfo = () => {
                         </button>
                       </span>
                     </div>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </div>
-            <Dialog
-                open={open1}
-                onClose={handleClosedraggable}
-                PaperComponent={PaperComponent}
-                aria-labelledby="draggable-dialog-title"
-            >
-                <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-                    Draggable Dialog
-                </DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
-                        This is a draggable dialog. You can add more content as needed.
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClosedraggable}>Close</Button>
-                </DialogActions>
-            </Dialog>
-        </Fragment>
-    );
+                  </div>
+                </CForm>
+              ) : (
+                <div className="d-flex justify-content-center align-items-center">
+                  <h5>No records found.</h5>
+                </div>
+              )}
+            </Card.Body>
+          </Card>
+        </Col>
+      </div>
+
+      {/* Dialog Component for Message */}
+      <Dialog
+        open={open1}
+        onClose={handleClosedraggable}
+        PaperComponent={PaperComponent}
+        aria-labelledby="draggable-dialog-title"
+      >
+        <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
+          Edit Me
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            <label className="form-label" htmlFor="validationCustom05">
+              Cell
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="validationCustom05"
+              placeholder="Cell"
+              required
+              value={Custom}
+              onChange={handleOnchangeCustom}
+            />
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={handleClosedraggable}>
+            Cancel
+          </Button>
+          <Button onClick={handleClosedraggable}>Save</Button>
+        </DialogActions>
+      </Dialog>
+    </Fragment>
+  );
 };
 
 export default ManageInsuranceStatusInfo;
