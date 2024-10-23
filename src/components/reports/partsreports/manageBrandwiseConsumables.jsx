@@ -14,7 +14,6 @@ import {
 import Pageheader from "../../../layout/layoutcomponent/pageheader";
 
 const ManageBrandwiseConsumables = () => {
-
   const [Server, setServer] = useState("");
   const navigate = useNavigate();
 
