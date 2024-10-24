@@ -3,7 +3,7 @@ import React from "react";
 const MotoAppControl = ()=>{
     return(
 
-        <h1>This is Moto App Control Panel page From Manage Workshop</h1>
+        <h1>You are not entitled for authorizing the moto app</h1>
     )
 }
 export default MotoAppControl;
